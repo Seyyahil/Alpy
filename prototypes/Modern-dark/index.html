@@ -1,0 +1,3478 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Keeplane keeps projects moving with tasks, project boards, deadlines, team updates, and file sharing in one clear plan."
+    />
+    <meta name="theme-color" content="#000000" />
+    <title>Keeplane — Keep every project moving.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --canvas: #000000;
+        --surface-1: #151515;
+        --surface-2: #1c1c1c;
+        --surface-3: #242424;
+        --surface-4: #333333;
+        --heading: #f1f1f1;
+        --body: #a1a1a1;
+        --muted: #767676;
+        --border: #333333;
+        --border-quiet: #1c1c1c;
+        --accent: #fca701;
+        --accent-hover: #cd8801;
+        --accent-soft: #3f2a00;
+        --accent-text: #e1c590;
+        --focus: #0a4fdf;
+        --white: #ffffff;
+        --black: #000000;
+        --transparent: #00000000;
+        --radius-sm: 4px;
+        --radius-md: 8px;
+        --radius-lg: 12px;
+        --radius-xl: 16px;
+        --radius-2xl: 24px;
+        --space-4: 4px;
+        --space-8: 8px;
+        --space-12: 12px;
+        --space-16: 16px;
+        --space-20: 20px;
+        --space-24: 24px;
+        --space-32: 32px;
+        --space-40: 40px;
+        --space-48: 48px;
+        --space-52: 52px;
+        --space-64: 64px;
+        --space-80: 80px;
+        --space-96: 96px;
+        --space-120: 120px;
+        --space-192: 192px;
+        --size-1020: 1020px;
+        --container: calc(var(--size-1020) + var(--space-192));
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background: var(--canvas);
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        overflow-x: hidden;
+        background: var(--canvas);
+        color: var(--body);
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      figure {
+        margin: 0;
+      }
+
+      img {
+        height: auto;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      summary {
+        font: inherit;
+      }
+
+      button {
+        color: inherit;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--focus);
+        outline-offset: 4px;
+      }
+
+      ::selection {
+        background: var(--accent);
+        color: var(--black);
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 100;
+        top: var(--space-16);
+        left: var(--space-16);
+        min-height: var(--space-40);
+        padding: var(--space-8) var(--space-16);
+        transform: translateY(calc(-100% - var(--space-24)));
+        border-radius: var(--radius-md);
+        background: var(--heading);
+        color: var(--black);
+        font-size: 14px;
+        line-height: 20px;
+        transition: transform 180ms ease;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .container {
+        width: min(calc(100% - var(--space-32)), var(--container));
+        margin-inline: auto;
+      }
+
+      .section {
+        position: relative;
+        padding-block: var(--space-120);
+        background: var(--canvas);
+      }
+
+      main > section + section {
+        border-top: 1px solid var(--border-quiet);
+      }
+
+      section[id] {
+        scroll-margin-top: var(--space-96);
+      }
+
+      .section-label,
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-8);
+        width: fit-content;
+        margin: 0;
+        color: var(--body);
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .badge {
+        padding: var(--space-4) var(--space-8);
+        border: 1px solid var(--accent);
+        border-radius: 9999px;
+        background: var(--accent-soft);
+        color: var(--accent-text);
+      }
+
+      .section-label::before {
+        width: var(--space-20);
+        height: 1px;
+        background: var(--accent);
+        content: "";
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--heading);
+      }
+
+      h1 {
+        max-width: 15ch;
+        margin-bottom: var(--space-24);
+        font-size: 57px;
+        font-weight: 500;
+        line-height: 68px;
+        letter-spacing: -0.02px;
+      }
+
+      h2 {
+        max-width: 18ch;
+        margin-bottom: var(--space-20);
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 56px;
+        letter-spacing: -0.02px;
+      }
+
+      h3 {
+        margin-bottom: var(--space-8);
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 28px;
+      }
+
+      .lead {
+        max-width: 58ch;
+        color: var(--body);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      .section-heading {
+        display: grid;
+        gap: var(--space-24);
+        margin-bottom: var(--space-64);
+      }
+
+      .section-heading p:last-child,
+      .copy-block p:last-child {
+        margin-bottom: 0;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: var(--space-52);
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-8);
+        padding: 0 var(--space-24);
+        border: 1px solid var(--accent);
+        border-radius: var(--radius-md);
+        background: var(--accent);
+        color: var(--black);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        transition:
+          background-color 360ms ease,
+          border-color 360ms ease,
+          transform 360ms ease;
+      }
+
+      .button:hover {
+        border-color: var(--accent-hover);
+        background: var(--accent-hover);
+        transform: translateY(-2px);
+      }
+
+      .button:active {
+        transform: translateY(0);
+      }
+
+      .button--outline {
+        border-color: var(--border);
+        background: var(--surface-1);
+        color: var(--heading);
+      }
+
+      .button--outline:hover {
+        border-color: var(--surface-4);
+        background: var(--surface-2);
+      }
+
+      .button--dark {
+        border-color: var(--black);
+        background: var(--black);
+        color: var(--white);
+      }
+
+      .button--dark:hover {
+        border-color: var(--surface-3);
+        background: var(--surface-3);
+      }
+
+      .button svg {
+        width: var(--space-20);
+        height: var(--space-20);
+        flex: 0 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        z-index: 50;
+        top: 0;
+        border-bottom: 1px solid var(--border-quiet);
+        background: var(--canvas);
+      }
+
+      .nav-shell {
+        display: flex;
+        min-height: var(--space-80);
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-24);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-12);
+        color: var(--heading);
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 28px;
+      }
+
+      .brand-mark {
+        position: relative;
+        width: var(--space-32);
+        height: var(--space-32);
+        flex: 0 0 auto;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface-2);
+      }
+
+      .brand-mark::before,
+      .brand-mark::after {
+        position: absolute;
+        content: "";
+      }
+
+      .brand-mark::before {
+        top: var(--space-8);
+        left: var(--space-8);
+        width: var(--space-12);
+        height: var(--space-12);
+        border-radius: var(--radius-sm);
+        background: var(--accent);
+      }
+
+      .brand-mark::after {
+        right: var(--space-4);
+        bottom: var(--space-4);
+        width: var(--space-12);
+        height: 1px;
+        background: var(--heading);
+        transform: rotate(-45deg);
+        transform-origin: right center;
+      }
+
+      .desktop-nav,
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: var(--space-32);
+      }
+
+      .desktop-nav a,
+      .sign-in {
+        color: var(--body);
+        font-size: 14px;
+        line-height: 20px;
+        transition: color 360ms ease;
+      }
+
+      .desktop-nav a:hover,
+      .sign-in:hover {
+        color: var(--heading);
+      }
+
+      .nav-cta {
+        min-height: var(--space-40);
+        padding-inline: var(--space-16);
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .menu-toggle {
+        display: none;
+        width: var(--space-48);
+        height: var(--space-48);
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface-1);
+      }
+
+      .menu-toggle svg {
+        width: var(--space-24);
+        height: var(--space-24);
+      }
+
+      .mobile-nav {
+        display: none;
+        padding: 0 0 var(--space-24);
+      }
+
+      .mobile-nav[data-open="true"] {
+        display: grid;
+        gap: var(--space-8);
+      }
+
+      .mobile-nav a {
+        display: flex;
+        min-height: var(--space-48);
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: var(--space-16);
+        border: 1px solid var(--border-quiet);
+        border-radius: var(--radius-md);
+        color: var(--heading);
+      }
+
+      .hero {
+        position: relative;
+        isolation: isolate;
+        min-height: 160svh;
+        padding: 0;
+      }
+
+      .hero::before {
+        position: absolute;
+        z-index: -1;
+        inset: 0 0 auto;
+        height: 100svh;
+        background-image:
+          linear-gradient(var(--surface-1) 1px, var(--transparent) 1px),
+          linear-gradient(90deg, var(--surface-1) 1px, var(--transparent) 1px),
+          radial-gradient(ellipse at 50% 44%, var(--surface-2), var(--transparent) 64%);
+        background-size:
+          var(--space-48) var(--space-48),
+          var(--space-48) var(--space-48),
+          100% 100%;
+        content: "";
+        mask-image: linear-gradient(to bottom, black, transparent);
+      }
+
+      .hero-sticky {
+        position: sticky;
+        top: var(--space-80);
+        display: grid;
+        min-height: calc(100svh - var(--space-80));
+        align-items: center;
+        padding-block: var(--space-40);
+      }
+
+      .hero-layout {
+        display: grid;
+        grid-template-areas:
+          "copy product"
+          "scenes product";
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        grid-template-rows: auto auto;
+        align-items: center;
+        gap: var(--space-32) var(--space-48);
+      }
+
+      .hero-copy {
+        display: grid;
+        grid-area: copy;
+        justify-items: start;
+        align-self: end;
+        max-width: 46ch;
+        text-align: left;
+      }
+
+      .hero-copy .badge {
+        margin-bottom: var(--space-24);
+      }
+
+      .hero-copy .lead {
+        max-width: 44ch;
+        margin-bottom: var(--space-32);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: var(--space-12);
+        margin-bottom: 0;
+      }
+
+      .hero-scenes {
+        position: relative;
+        display: grid;
+        grid-area: scenes;
+        align-self: start;
+        gap: var(--space-4);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hero-scenes::before,
+      .hero-scenes::after {
+        position: absolute;
+        top: var(--space-16);
+        bottom: var(--space-16);
+        left: calc(var(--space-16) - 1px);
+        width: 1px;
+        content: "";
+      }
+
+      .hero-scenes::before {
+        background: var(--border);
+      }
+
+      .hero-scenes::after {
+        bottom: auto;
+        height: calc((100% - var(--space-32)) * var(--story-progress, 0));
+        background: var(--accent);
+        transition: height 80ms linear;
+      }
+
+      .hero-scene {
+        position: relative;
+        display: grid;
+        min-height: var(--space-52);
+        grid-template-columns: var(--space-32) minmax(0, 1fr);
+        align-items: center;
+        gap: var(--space-12);
+        padding: var(--space-8) var(--space-12) var(--space-8) 0;
+        color: var(--muted);
+        transition:
+          color 240ms ease,
+          opacity 240ms ease;
+      }
+
+      .hero-scene::before {
+        position: relative;
+        z-index: 1;
+        width: var(--space-8);
+        height: var(--space-8);
+        justify-self: center;
+        border: 1px solid var(--border);
+        border-radius: 9999px;
+        background: var(--canvas);
+        content: "";
+        transition:
+          border-color 240ms ease,
+          background-color 240ms ease,
+          transform 240ms ease;
+      }
+
+      .hero-scene strong,
+      .hero-scene span {
+        display: block;
+      }
+
+      .hero-scene strong {
+        color: currentColor;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+      }
+
+      .hero-scene span {
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .hero-scene.is-active {
+        color: var(--heading);
+      }
+
+      .hero-scene.is-active::before {
+        border-color: var(--accent);
+        background: var(--accent);
+        transform: scale(1.5);
+      }
+
+      .hero-product {
+        position: relative;
+        width: 100%;
+        max-width: none;
+        grid-area: product;
+        margin: 0;
+        padding: var(--space-12);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-2xl);
+        background: var(--surface-1);
+        box-shadow:
+          inset 0 1px 0 var(--surface-4),
+          0 24px 64px var(--black);
+      }
+
+      .hero-product::before {
+        position: absolute;
+        top: calc(var(--space-12) * -1);
+        left: var(--space-32);
+        width: var(--space-80);
+        height: 1px;
+        background: var(--accent);
+        content: "";
+      }
+
+      .product-visual {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        border: 1px solid var(--border-quiet);
+        border-radius: var(--radius-xl);
+        background: var(--black);
+      }
+
+      .planner-shell {
+        display: grid;
+        height: 100%;
+        grid-template-rows: var(--space-64) minmax(0, 1fr);
+        background: var(--black);
+        color: var(--body);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .planner-topbar {
+        display: flex;
+        min-width: 0;
+        align-items: center;
+        gap: var(--space-16);
+        padding-inline: var(--space-20);
+        border-bottom: 1px solid var(--border-quiet);
+      }
+
+      .planner-mark {
+        display: grid;
+        width: var(--space-32);
+        height: var(--space-32);
+        flex: 0 0 auto;
+        place-items: center;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface-2);
+        color: var(--accent);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .planner-project {
+        min-width: 0;
+      }
+
+      .planner-project strong,
+      .planner-project span {
+        display: block;
+      }
+
+      .planner-project strong {
+        color: var(--heading);
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .planner-project span {
+        color: var(--muted);
+      }
+
+      .planner-topbar-meta {
+        display: flex;
+        align-items: center;
+        gap: var(--space-12);
+        margin-inline-start: auto;
+        padding-inline-end: calc(var(--space-192) + var(--space-24));
+      }
+
+      .planner-status {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-8);
+        color: var(--body);
+      }
+
+      .planner-status::before {
+        width: var(--space-8);
+        height: var(--space-8);
+        border-radius: 9999px;
+        background: var(--accent);
+        content: "";
+      }
+
+      .planner-avatars {
+        display: flex;
+        padding-inline-start: var(--space-8);
+      }
+
+      .planner-avatar {
+        display: grid;
+        width: var(--space-24);
+        height: var(--space-24);
+        margin-inline-start: calc(var(--space-8) * -1);
+        place-items: center;
+        border: 1px solid var(--black);
+        border-radius: 9999px;
+        background: var(--surface-4);
+        color: var(--heading);
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .planner-workspace {
+        display: grid;
+        min-height: 0;
+        grid-template-columns: var(--space-192) minmax(0, 1fr);
+      }
+
+      .planner-sidebar {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        padding: var(--space-16) var(--space-12);
+        border-inline-end: 1px solid var(--border-quiet);
+      }
+
+      .planner-nav-label {
+        margin: 0 0 var(--space-8) var(--space-12);
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .planner-nav {
+        display: grid;
+        gap: var(--space-4);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .planner-nav li {
+        display: grid;
+        min-height: var(--space-40);
+        grid-template-columns: var(--space-24) minmax(0, 1fr);
+        align-items: center;
+        gap: var(--space-8);
+        padding-inline: var(--space-12);
+        border-radius: var(--radius-md);
+        color: var(--muted);
+      }
+
+      .hero[data-story-state="0"] .planner-nav-item--board,
+      .hero[data-story-state="1"] .planner-nav-item--timeline,
+      .hero[data-story-state="2"] .planner-nav-item--updates {
+        border: 1px solid var(--border);
+        background: var(--surface-1);
+        color: var(--heading);
+      }
+
+      .planner-nav svg {
+        width: var(--space-16);
+        height: var(--space-16);
+      }
+
+      .planner-sidebar-note {
+        margin-top: auto;
+        padding: var(--space-12);
+        border-top: 1px solid var(--border-quiet);
+        color: var(--muted);
+      }
+
+      .planner-sidebar-note strong {
+        display: block;
+        margin-bottom: var(--space-4);
+        color: var(--body);
+        font-weight: 600;
+      }
+
+      .planner-stage {
+        position: absolute;
+        inset: var(--space-64) 0 0 var(--space-192);
+        overflow: hidden;
+      }
+
+      .planner-view {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        gap: var(--space-16);
+        padding: var(--space-20);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(var(--space-12));
+        transition:
+          opacity 180ms ease,
+          transform 180ms ease;
+      }
+
+      .hero[data-story-state="0"] .planner-view--board,
+      .hero[data-story-state="1"] .planner-view--timeline,
+      .hero[data-story-state="2"] .planner-view--updates {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .planner-view-heading {
+        display: flex;
+        min-width: 0;
+        align-items: center;
+        gap: var(--space-16);
+      }
+
+      .planner-view-heading div:first-child {
+        min-width: 0;
+      }
+
+      .planner-view-heading strong,
+      .planner-view-heading span {
+        display: block;
+      }
+
+      .planner-view-heading strong {
+        color: var(--heading);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+      }
+
+      .planner-view-heading span {
+        color: var(--muted);
+      }
+
+      .planner-view-chip {
+        display: inline-flex;
+        min-height: var(--space-32);
+        align-items: center;
+        gap: var(--space-8);
+        margin-inline-start: auto;
+        padding-inline: var(--space-12);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        color: var(--body);
+        white-space: nowrap;
+      }
+
+      .planner-view-chip::before {
+        width: var(--space-8);
+        height: var(--space-8);
+        border-radius: 9999px;
+        background: var(--accent);
+        content: "";
+      }
+
+      .board-grid {
+        display: grid;
+        min-height: 0;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-12);
+      }
+
+      .board-column {
+        min-width: 0;
+        padding: var(--space-12);
+        border: 1px solid var(--border-quiet);
+        border-radius: var(--radius-lg);
+        background: var(--surface-1);
+      }
+
+      .board-column-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-8);
+        margin-bottom: var(--space-12);
+        color: var(--body);
+        font-weight: 600;
+      }
+
+      .board-count {
+        display: grid;
+        min-width: var(--space-24);
+        height: var(--space-24);
+        place-items: center;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .task-card {
+        display: grid;
+        gap: var(--space-12);
+        padding: var(--space-12);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface-2);
+      }
+
+      .task-card + .task-card {
+        margin-top: var(--space-8);
+      }
+
+      .task-card.is-active {
+        border-color: var(--accent);
+      }
+
+      .task-card-title {
+        color: var(--heading);
+        font-weight: 500;
+      }
+
+      .task-card-meta {
+        display: flex;
+        align-items: center;
+        gap: var(--space-8);
+        color: var(--muted);
+      }
+
+      .task-card-meta .planner-avatar {
+        margin: 0;
+      }
+
+      .task-priority {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-4);
+        margin-inline-start: auto;
+      }
+
+      .task-priority::before {
+        width: var(--space-4);
+        height: var(--space-4);
+        border-radius: 9999px;
+        background: var(--accent);
+        content: "";
+      }
+
+      .timeline-board,
+      .activity-panel,
+      .files-panel {
+        min-width: 0;
+        border: 1px solid var(--border-quiet);
+        border-radius: var(--radius-lg);
+        background: var(--surface-1);
+      }
+
+      .timeline-board {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .timeline-dates,
+      .timeline-row {
+        display: grid;
+        grid-template-columns: calc(var(--space-120) + var(--space-24)) repeat(5, minmax(0, 1fr));
+      }
+
+      .timeline-dates {
+        min-height: var(--space-40);
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+        color: var(--muted);
+      }
+
+      .timeline-dates span,
+      .timeline-row > span {
+        padding-inline: var(--space-12);
+      }
+
+      .timeline-dates span + span {
+        border-inline-start: 1px solid var(--border-quiet);
+      }
+
+      .timeline-row {
+        position: relative;
+        min-height: var(--space-64);
+        align-items: center;
+        border-bottom: 1px solid var(--border-quiet);
+      }
+
+      .timeline-row:last-child {
+        border-bottom: 0;
+      }
+
+      .timeline-row > span {
+        color: var(--body);
+        font-weight: 500;
+      }
+
+      .timeline-track {
+        position: relative;
+        height: 100%;
+        grid-column: 2 / -1;
+        border-inline-start: 1px solid var(--border-quiet);
+        background-image: repeating-linear-gradient(
+          to right,
+          var(--transparent) 0,
+          var(--transparent) calc(20% - 1px),
+          var(--border-quiet) calc(20% - 1px),
+          var(--border-quiet) 20%
+        );
+      }
+
+      .timeline-bar {
+        position: absolute;
+        top: 50%;
+        height: var(--space-24);
+        transform: translateY(-50%);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-3);
+      }
+
+      .timeline-bar--research {
+        left: 4%;
+        width: 32%;
+      }
+
+      .timeline-bar--prototype {
+        left: 24%;
+        width: 46%;
+        border-color: var(--accent);
+        background: var(--accent-soft);
+      }
+
+      .timeline-bar--launch {
+        left: 62%;
+        width: 30%;
+      }
+
+      .timeline-today {
+        position: absolute;
+        z-index: 1;
+        top: var(--space-40);
+        bottom: 0;
+        left: 58%;
+        width: 1px;
+        background: var(--accent);
+      }
+
+      .timeline-today::before {
+        position: absolute;
+        top: calc(var(--space-4) * -1);
+        left: calc(var(--space-4) * -1);
+        width: var(--space-8);
+        height: var(--space-8);
+        border-radius: 9999px;
+        background: var(--accent);
+        content: "";
+      }
+
+      .updates-grid {
+        display: grid;
+        min-height: 0;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: var(--space-12);
+      }
+
+      .activity-panel,
+      .files-panel {
+        padding: var(--space-16);
+      }
+
+      .panel-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-12);
+        margin-bottom: var(--space-12);
+        color: var(--heading);
+        font-weight: 600;
+      }
+
+      .panel-title span {
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      .activity-item {
+        display: grid;
+        grid-template-columns: var(--space-32) minmax(0, 1fr) auto;
+        align-items: start;
+        gap: var(--space-12);
+        padding-block: var(--space-12);
+        border-top: 1px solid var(--border-quiet);
+      }
+
+      .activity-copy strong,
+      .activity-copy span {
+        display: block;
+      }
+
+      .activity-copy strong {
+        color: var(--heading);
+        font-weight: 500;
+      }
+
+      .activity-copy span,
+      .activity-time {
+        color: var(--muted);
+      }
+
+      .file-card {
+        display: grid;
+        grid-template-columns: var(--space-40) minmax(0, 1fr);
+        align-items: center;
+        gap: var(--space-12);
+        padding-block: var(--space-12);
+        border-top: 1px solid var(--border-quiet);
+      }
+
+      .file-icon {
+        display: grid;
+        width: var(--space-40);
+        height: var(--space-40);
+        place-items: center;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface-2);
+        color: var(--body);
+      }
+
+      .file-icon svg {
+        width: var(--space-20);
+        height: var(--space-20);
+      }
+
+      .file-card strong,
+      .file-card span {
+        display: block;
+      }
+
+      .file-card strong {
+        color: var(--heading);
+        font-weight: 500;
+      }
+
+      .file-card span {
+        color: var(--muted);
+      }
+
+      .product-events {
+        position: absolute;
+        z-index: 3;
+        bottom: var(--space-24);
+        left: var(--space-24);
+        min-width: calc(var(--space-192) + var(--space-40));
+        min-height: var(--space-40);
+        pointer-events: none;
+      }
+
+      .product-event {
+        position: absolute;
+        inset: 0 auto auto 0;
+        display: inline-flex;
+        min-height: var(--space-40);
+        align-items: center;
+        gap: var(--space-8);
+        padding: var(--space-8) var(--space-12);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface-2);
+        color: var(--heading);
+        font-size: 12px;
+        line-height: 20px;
+        opacity: 0;
+        transform: translateY(var(--space-12));
+        transition:
+          opacity 240ms ease,
+          transform 240ms ease;
+      }
+
+      .product-event::before {
+        width: var(--space-8);
+        height: var(--space-8);
+        flex: 0 0 auto;
+        border-radius: 9999px;
+        background: var(--accent);
+        content: "";
+      }
+
+      .hero[data-story-state="0"] .product-event[data-event="0"],
+      .hero[data-story-state="1"] .product-event[data-event="1"],
+      .hero[data-story-state="2"] .product-event[data-event="2"] {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .concept-label {
+        position: absolute;
+        z-index: 3;
+        top: var(--space-24);
+        right: var(--space-32);
+        bottom: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-8);
+        padding: var(--space-8) var(--space-12);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface-2);
+        color: var(--body);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .concept-label::before {
+        width: var(--space-8);
+        height: var(--space-8);
+        border-radius: 9999px;
+        background: var(--accent);
+        content: "";
+      }
+
+      .product-preview {
+        padding-top: var(--space-80);
+      }
+
+      .preview-intro {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        align-items: end;
+        gap: var(--space-64);
+        margin-bottom: var(--space-48);
+      }
+
+      .preview-intro .section-label {
+        margin-bottom: var(--space-24);
+      }
+
+      .preview-intro p {
+        max-width: 50ch;
+        margin-bottom: 0;
+      }
+
+      .preview-frame {
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-2xl);
+        background: var(--surface-1);
+      }
+
+      .preview-frame img {
+        width: 100%;
+      }
+
+      .preview-caption {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-24);
+        padding: var(--space-16) var(--space-24);
+        border-top: 1px solid var(--border);
+        color: var(--body);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .preview-caption span:first-child {
+        color: var(--heading);
+      }
+
+      /* Compact vertical product story: copy stays stacked above the mockup. */
+      .hero {
+        min-height: 0;
+        padding: var(--space-96) 0 var(--space-80);
+      }
+
+      .hero-sticky {
+        position: static;
+        min-height: 0;
+        padding-block: 0;
+      }
+
+      .hero-layout {
+        grid-template-areas:
+          "copy"
+          "product";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: var(--space-64);
+      }
+
+      .hero-copy {
+        justify-items: center;
+        justify-self: center;
+        align-self: auto;
+        max-width: var(--size-1020);
+        text-align: center;
+      }
+
+      .hero-copy .lead {
+        max-width: 54ch;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-scenes {
+        display: none;
+      }
+
+      .hero-product-flow {
+        position: relative;
+        grid-area: product;
+      }
+
+      .hero-product {
+        width: 100%;
+        max-width: var(--container);
+        margin-inline: auto;
+      }
+
+      .product-flow-enabled .hero-product-flow {
+        height: calc(100svh + (var(--space-192) * 3));
+      }
+
+      .product-flow-enabled .hero-product {
+        position: sticky;
+        top: var(--space-96);
+        transform: translate3d(0, var(--product-flow-y, var(--space-24)), 0);
+        will-change: transform;
+      }
+
+      .product-event {
+        transition:
+          opacity 100ms linear,
+          transform 100ms ease-out;
+      }
+
+      .product-story-static {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: var(--space-12);
+        border-block: 1px solid var(--border);
+      }
+
+      .product-story-static div {
+        display: grid;
+        gap: var(--space-4);
+        padding: var(--space-16);
+      }
+
+      .product-story-static div + div {
+        border-left: 1px solid var(--border);
+      }
+
+      .product-story-static strong {
+        color: var(--heading);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+      }
+
+      .product-story-static span {
+        color: var(--body);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .product-flow-enabled .product-story-static {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        margin: -1px;
+        padding: 0;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+
+      .product-preview {
+        padding-block: var(--space-80);
+        border-right: 0;
+        border-bottom: 0;
+        border-left: 0;
+        background: var(--canvas);
+      }
+
+      .preview-intro {
+        align-items: center;
+        margin-bottom: var(--space-40);
+      }
+
+      .preview-intro h2 {
+        margin-bottom: 0;
+        font-size: 33px;
+        line-height: 40px;
+      }
+
+      .preview-flow {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        border-block: 1px solid var(--border);
+      }
+
+      .preview-item {
+        display: grid;
+        min-height: var(--space-96);
+        align-content: center;
+        gap: var(--space-8);
+        padding: var(--space-20);
+      }
+
+      .preview-item + .preview-item {
+        border-left: 1px solid var(--border);
+      }
+
+      .preview-item span {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .preview-item strong {
+        color: var(--heading);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+      }
+
+      .how {
+        border-right: 0;
+        border-bottom: 0;
+        border-left: 0;
+        background: var(--canvas);
+      }
+
+      .how-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-block: 1px solid var(--border);
+      }
+
+      .step {
+        padding: var(--space-40) var(--space-32);
+      }
+
+      .step + .step {
+        border-left: 1px solid var(--border);
+      }
+
+      .step-number {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: var(--space-32);
+        color: var(--body);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .step-number svg {
+        width: var(--space-24);
+        height: var(--space-24);
+        color: var(--heading);
+      }
+
+      .step p {
+        max-width: 32ch;
+        margin-bottom: 0;
+        color: var(--body);
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .features-list {
+        border-top: 1px solid var(--border);
+      }
+
+      .feature-row {
+        display: grid;
+        grid-template-columns: var(--space-64) minmax(0, 0.8fr) minmax(0, 1.2fr);
+        align-items: center;
+        gap: var(--space-32);
+        min-height: var(--space-120);
+        padding-block: var(--space-24);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .feature-icon {
+        display: grid;
+        width: var(--space-48);
+        height: var(--space-48);
+        place-items: center;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        background: var(--surface-1);
+        color: var(--heading);
+      }
+
+      .feature-icon svg {
+        width: var(--space-24);
+        height: var(--space-24);
+      }
+
+      .feature-row h3,
+      .feature-row p {
+        margin-bottom: 0;
+      }
+
+      .feature-row p {
+        max-width: 52ch;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .workflow {
+        overflow: hidden;
+        border-right: 0;
+        border-bottom: 0;
+        border-left: 0;
+        background: var(--canvas);
+      }
+
+      .workflow-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+        align-items: center;
+        gap: var(--space-80);
+      }
+
+      .media-stack {
+        position: relative;
+        min-height: calc(var(--space-192) * 3);
+      }
+
+      .media-main,
+      .media-inset {
+        overflow: hidden;
+        border: 1px solid var(--border);
+        background: var(--surface-2);
+      }
+
+      .media-main {
+        position: absolute;
+        inset: 0 var(--space-80) var(--space-80) 0;
+        border-radius: var(--radius-2xl);
+      }
+
+      .media-main img,
+      .media-inset img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .media-main img {
+        object-position: center;
+      }
+
+      .media-inset {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: calc(var(--space-192) + var(--space-40));
+        height: calc(var(--space-192) * 2);
+        border-radius: var(--radius-xl);
+        box-shadow: 0 24px 64px var(--black);
+      }
+
+      .media-inset img {
+        object-position: center;
+      }
+
+      .workflow-copy .section-label {
+        margin-bottom: var(--space-24);
+      }
+
+      .workflow-copy .lead {
+        margin-bottom: var(--space-32);
+      }
+
+      .workflow-points {
+        display: grid;
+        gap: var(--space-16);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .workflow-points li {
+        display: grid;
+        grid-template-columns: var(--space-24) minmax(0, 1fr);
+        gap: var(--space-12);
+        color: var(--body);
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .workflow-points svg {
+        width: var(--space-20);
+        height: var(--space-20);
+        color: var(--body);
+      }
+
+      .integrations {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .integrations::before {
+        position: absolute;
+        z-index: -1;
+        inset: var(--space-80) 0 auto;
+        height: calc(var(--space-192) * 2);
+        background-image:
+          linear-gradient(var(--surface-1) 1px, var(--transparent) 1px),
+          linear-gradient(90deg, var(--surface-1) 1px, var(--transparent) 1px);
+        background-size: var(--space-48) var(--space-48);
+        content: "";
+        mask-image: linear-gradient(to bottom, black, transparent);
+      }
+
+      .integration-visual {
+        overflow: hidden;
+        margin-bottom: var(--space-32);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-2xl);
+        background: var(--black);
+      }
+
+      .integration-map {
+        display: grid;
+        min-height: calc(var(--space-192) * 2 + var(--space-64));
+        grid-template-columns: minmax(0, 1fr) var(--space-96) minmax(0, 1.15fr);
+        align-items: stretch;
+        gap: var(--space-24);
+        padding: var(--space-48);
+        background: var(--black);
+      }
+
+      .integration-sources {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-12);
+      }
+
+      .integration-node {
+        display: grid;
+        min-width: 0;
+        align-content: space-between;
+        gap: var(--space-20);
+        padding: var(--space-20);
+        border: 1px solid var(--border-quiet);
+        border-radius: var(--radius-lg);
+        background: var(--surface-1);
+      }
+
+      .integration-node-head {
+        display: flex;
+        align-items: center;
+        gap: var(--space-12);
+      }
+
+      .integration-node-icon,
+      .integration-hub-mark {
+        display: grid;
+        width: var(--space-40);
+        height: var(--space-40);
+        flex: 0 0 auto;
+        place-items: center;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface-2);
+        color: var(--body);
+      }
+
+      .integration-node-icon svg,
+      .integration-hub-mark svg {
+        width: var(--space-20);
+        height: var(--space-20);
+      }
+
+      .integration-node strong,
+      .integration-node span {
+        display: block;
+      }
+
+      .integration-node strong {
+        color: var(--heading);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+      }
+
+      .integration-node span {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .integration-node-foot {
+        display: flex;
+        align-items: center;
+        gap: var(--space-8);
+        padding-top: var(--space-12);
+        border-top: 1px solid var(--border-quiet);
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .integration-node-foot::before {
+        width: var(--space-8);
+        height: var(--space-8);
+        border: 1px solid var(--body);
+        border-radius: 9999px;
+        content: "";
+      }
+
+      .integration-bridge {
+        position: relative;
+        min-height: var(--space-192);
+      }
+
+      .integration-bridge::before,
+      .integration-bridge::after {
+        position: absolute;
+        background: var(--border);
+        content: "";
+      }
+
+      .integration-bridge::before {
+        top: calc(var(--space-48) + var(--space-24));
+        bottom: calc(var(--space-48) + var(--space-24));
+        left: 50%;
+        width: 1px;
+      }
+
+      .integration-bridge::after {
+        top: 50%;
+        right: 0;
+        left: 0;
+        height: 1px;
+      }
+
+      .integration-bridge-dot,
+      .integration-bridge-arrow {
+        position: absolute;
+        z-index: 1;
+        display: grid;
+        place-items: center;
+        background: var(--black);
+      }
+
+      .integration-bridge-dot {
+        top: 50%;
+        left: 50%;
+        width: var(--space-16);
+        height: var(--space-16);
+        transform: translate(-50%, -50%);
+        border: 1px solid var(--accent);
+        border-radius: 9999px;
+      }
+
+      .integration-bridge-dot::after {
+        width: var(--space-4);
+        height: var(--space-4);
+        border-radius: 9999px;
+        background: var(--accent);
+        content: "";
+      }
+
+      .integration-bridge-arrow {
+        top: 50%;
+        right: 0;
+        width: var(--space-24);
+        height: var(--space-24);
+        transform: translate(50%, -50%);
+        color: var(--accent);
+      }
+
+      .integration-bridge-arrow svg {
+        width: var(--space-16);
+        height: var(--space-16);
+      }
+
+      .integration-hub {
+        display: grid;
+        min-width: 0;
+        align-content: start;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-xl);
+        background: var(--surface-1);
+      }
+
+      .integration-hub-head {
+        display: flex;
+        align-items: center;
+        gap: var(--space-16);
+        padding: var(--space-24);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .integration-hub-mark {
+        background: var(--accent-soft);
+        color: var(--accent);
+      }
+
+      .integration-hub-head strong,
+      .integration-hub-head span {
+        display: block;
+      }
+
+      .integration-hub-head strong {
+        color: var(--heading);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+      }
+
+      .integration-hub-head span {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .integration-hub-state {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-8);
+        margin-inline-start: auto;
+        color: var(--body);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .integration-hub-state::before {
+        width: var(--space-8);
+        height: var(--space-8);
+        border-radius: 9999px;
+        background: var(--accent);
+        content: "";
+      }
+
+      .integration-stream {
+        display: grid;
+        padding-inline: var(--space-24);
+      }
+
+      .integration-stream-row {
+        display: grid;
+        min-height: var(--space-64);
+        grid-template-columns: var(--space-32) minmax(0, 1fr) auto;
+        align-items: center;
+        gap: var(--space-12);
+        border-bottom: 1px solid var(--border-quiet);
+      }
+
+      .integration-stream-row:last-child {
+        border-bottom: 0;
+      }
+
+      .integration-stream-index {
+        display: grid;
+        width: var(--space-32);
+        height: var(--space-32);
+        place-items: center;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .integration-stream-copy strong,
+      .integration-stream-copy span {
+        display: block;
+      }
+
+      .integration-stream-copy strong {
+        color: var(--heading);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+      }
+
+      .integration-stream-copy span,
+      .integration-stream-time {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .integration-stream-row.is-current .integration-stream-index {
+        border-color: var(--accent);
+        background: var(--accent-soft);
+        color: var(--accent-text);
+      }
+
+      .integration-categories {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-block: 1px solid var(--border);
+      }
+
+      .integration-category {
+        padding: var(--space-24);
+      }
+
+      .integration-category + .integration-category {
+        border-left: 1px solid var(--border);
+      }
+
+      .integration-category svg {
+        width: var(--space-24);
+        height: var(--space-24);
+        margin-bottom: var(--space-16);
+        color: var(--body);
+      }
+
+      .integration-category h3 {
+        margin-bottom: var(--space-4);
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .integration-category p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .availability-note {
+        margin: var(--space-16) 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .pricing {
+        border-right: 0;
+        border-bottom: 0;
+        border-left: 0;
+        background: var(--canvas);
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-24);
+        max-width: var(--size-1020);
+        margin-inline: auto;
+      }
+
+      .price-card {
+        display: flex;
+        min-height: calc(var(--space-192) * 2);
+        flex-direction: column;
+        padding: var(--space-40);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-xl);
+        background: var(--surface-2);
+      }
+
+      .price-card--featured {
+        border-color: var(--accent);
+      }
+
+      .price-card .badge {
+        margin-bottom: var(--space-24);
+      }
+
+      .price-card:not(.price-card--featured) .badge {
+        border-color: var(--border);
+        background: var(--surface-3);
+        color: var(--body);
+      }
+
+      .plan-name {
+        margin-bottom: var(--space-8);
+        color: var(--heading);
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 32px;
+        letter-spacing: -0.02px;
+      }
+
+      .plan-price {
+        margin-bottom: var(--space-24);
+        color: var(--heading);
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 48px;
+        letter-spacing: -0.02px;
+      }
+
+      .plan-price span {
+        color: var(--body);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+
+      .plan-copy {
+        min-height: var(--space-64);
+        margin-bottom: var(--space-24);
+        color: var(--body);
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .plan-list {
+        display: grid;
+        gap: var(--space-12);
+        margin: 0 0 var(--space-32);
+        padding: var(--space-24) 0 0;
+        border-top: 1px solid var(--border);
+        list-style: none;
+      }
+
+      .plan-list li {
+        display: grid;
+        grid-template-columns: var(--space-20) minmax(0, 1fr);
+        gap: var(--space-12);
+        color: var(--body);
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .plan-list svg {
+        width: var(--space-20);
+        height: var(--space-20);
+        color: var(--body);
+      }
+
+      .price-card .button {
+        width: 100%;
+        margin-top: auto;
+      }
+
+      .faq-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+        align-items: start;
+        gap: var(--space-80);
+      }
+
+      .faq-layout .section-label {
+        margin-bottom: var(--space-24);
+      }
+
+      .faq-list {
+        border-top: 1px solid var(--border);
+      }
+
+      details {
+        border-bottom: 1px solid var(--border);
+      }
+
+      summary {
+        display: grid;
+        min-height: var(--space-80);
+        cursor: pointer;
+        grid-template-columns: minmax(0, 1fr) var(--space-24);
+        align-items: center;
+        gap: var(--space-24);
+        color: var(--heading);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        list-style: none;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .faq-plus {
+        position: relative;
+        width: var(--space-24);
+        height: var(--space-24);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+      }
+
+      .faq-plus::before,
+      .faq-plus::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: var(--space-12);
+        height: 1px;
+        background: var(--body);
+        content: "";
+        transform: translate(-50%, -50%);
+        transition: transform 180ms ease;
+      }
+
+      .faq-plus::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+
+      details[open] .faq-plus::after {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      .faq-answer {
+        max-width: 62ch;
+        padding: 0 var(--space-48) var(--space-24) 0;
+        color: var(--body);
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .faq-answer p {
+        margin-bottom: 0;
+      }
+
+      .final-cta {
+        padding: var(--space-80) 0 var(--space-120);
+      }
+
+      .cta-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: end;
+        gap: var(--space-48);
+        padding: var(--space-64);
+        border-radius: var(--radius-2xl);
+        background: var(--accent);
+        color: var(--black);
+      }
+
+      .cta-panel .section-label,
+      .cta-panel h2,
+      .cta-panel p {
+        color: var(--black);
+      }
+
+      .cta-panel .section-label::before {
+        background: var(--black);
+      }
+
+      .cta-panel .section-label {
+        margin-bottom: var(--space-24);
+      }
+
+      .cta-panel h2 {
+        margin-bottom: var(--space-16);
+      }
+
+      .cta-panel p {
+        max-width: 52ch;
+        margin-bottom: 0;
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--border-quiet);
+        padding: var(--space-64) 0 var(--space-32);
+      }
+
+      .footer-top {
+        display: grid;
+        grid-template-columns: 1fr repeat(4, minmax(120px, 0.5fr));
+        gap: var(--space-40);
+        padding-bottom: var(--space-64);
+      }
+
+      .footer-brand p {
+        max-width: 32ch;
+        margin: var(--space-16) 0 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .footer-column h3 {
+        margin-bottom: var(--space-16);
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .footer-column a {
+        display: block;
+        width: fit-content;
+        padding-block: var(--space-4);
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .footer-column a:hover {
+        color: var(--heading);
+      }
+
+      .footer-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-24);
+        padding-top: var(--space-24);
+        border-top: 1px solid var(--border-quiet);
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .footer-bottom p {
+        margin-bottom: 0;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+      .motion-ready .reveal {
+        opacity: 0;
+        transform: translateY(var(--space-24));
+        transition:
+          opacity 600ms ease,
+          transform 600ms ease;
+      }
+
+      .motion-ready .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 960px) {
+        .desktop-nav,
+        .nav-actions {
+          display: none;
+        }
+
+        .menu-toggle {
+          display: inline-flex;
+        }
+
+        .hero {
+          min-height: 0;
+          padding: var(--space-64) 0 var(--space-80);
+        }
+
+        .hero-sticky {
+          position: static;
+          min-height: 0;
+          padding-block: 0;
+        }
+
+        .hero-layout {
+          grid-template-areas:
+            "copy"
+            "product";
+          grid-template-columns: 1fr;
+          gap: var(--space-48);
+        }
+
+        .hero-copy {
+          justify-items: center;
+          justify-self: center;
+          max-width: var(--size-1020);
+          text-align: center;
+        }
+
+        .hero-actions {
+          justify-content: center;
+        }
+
+        .hero-product {
+          max-width: var(--size-1020);
+          margin-inline: auto;
+        }
+
+        .product-events {
+          display: none;
+        }
+
+        .planner-topbar-meta {
+          padding-inline-end: 0;
+        }
+
+        .integration-map {
+          grid-template-columns: 1fr;
+          padding: var(--space-32);
+        }
+
+        .integration-bridge {
+          min-height: var(--space-64);
+        }
+
+        .integration-bridge::before {
+          inset: 0 auto 0 50%;
+          width: 1px;
+        }
+
+        .integration-bridge::after {
+          display: none;
+        }
+
+        .integration-bridge-arrow {
+          top: auto;
+          right: auto;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%, 50%) rotate(90deg);
+        }
+
+        .preview-intro,
+        .workflow-grid,
+        .faq-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .preview-intro,
+        .workflow-grid,
+        .faq-layout {
+          gap: var(--space-48);
+        }
+
+        .preview-flow {
+          grid-template-columns: 1fr;
+        }
+
+        .preview-item + .preview-item {
+          border-top: 1px solid var(--border);
+          border-left: 0;
+        }
+
+        .media-stack {
+          min-height: calc(var(--space-192) * 2 + var(--space-120));
+        }
+
+        .footer-top {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .footer-brand {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .section {
+          padding-block: var(--space-80);
+        }
+
+        h1 {
+          font-size: 40px;
+          line-height: 48px;
+        }
+
+        h2 {
+          font-size: 33px;
+          line-height: 40px;
+        }
+
+        .lead {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+        }
+
+        .hero {
+          padding-top: var(--space-64);
+        }
+
+        .hero-actions,
+        .hero-actions .button {
+          width: 100%;
+        }
+
+        .hero-product {
+          margin-top: 0;
+          padding: var(--space-8);
+          border-radius: var(--radius-xl);
+        }
+
+        .preview-frame img {
+          min-height: calc(var(--space-192) + var(--space-64));
+          object-fit: cover;
+          object-position: center;
+        }
+
+        .product-visual {
+          min-height: calc(var(--space-192) + var(--space-120));
+          aspect-ratio: auto;
+        }
+
+        .planner-shell {
+          grid-template-rows: var(--space-52) minmax(0, 1fr);
+        }
+
+        .planner-topbar {
+          gap: var(--space-12);
+          padding-inline: var(--space-12);
+        }
+
+        .planner-topbar-meta,
+        .planner-sidebar {
+          display: none;
+        }
+
+        .planner-workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .planner-stage {
+          inset: var(--space-52) 0 0;
+        }
+
+        .planner-view {
+          gap: var(--space-12);
+          padding: var(--space-12);
+        }
+
+        .planner-view-heading strong {
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+        .planner-view-heading > div > span,
+        .planner-view-chip {
+          display: none;
+        }
+
+        .board-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: var(--space-8);
+        }
+
+        .board-column {
+          padding: var(--space-8);
+        }
+
+        .board-column:last-child {
+          display: none;
+        }
+
+        .task-card {
+          gap: var(--space-8);
+          padding: var(--space-8);
+        }
+
+        .integration-map {
+          padding: var(--space-16);
+        }
+
+        .integration-sources {
+          grid-template-columns: 1fr;
+        }
+
+        .integration-node {
+          gap: var(--space-12);
+          padding: var(--space-16);
+        }
+
+        .integration-hub-head {
+          align-items: flex-start;
+          padding: var(--space-16);
+        }
+
+        .integration-hub-state {
+          display: none;
+        }
+
+        .integration-stream {
+          padding-inline: var(--space-16);
+        }
+
+        .integration-stream-row {
+          grid-template-columns: var(--space-32) minmax(0, 1fr);
+        }
+
+        .integration-stream-time {
+          display: none;
+        }
+
+        .concept-label {
+          position: static;
+          margin: var(--space-8) 0 0;
+        }
+
+        .product-story-static {
+          grid-template-columns: 1fr;
+        }
+
+        .product-story-static div + div {
+          border-top: 1px solid var(--border);
+          border-left: 0;
+        }
+
+        .preview-caption {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: var(--space-4);
+        }
+
+        .how-grid,
+        .pricing-grid,
+        .integration-categories {
+          grid-template-columns: 1fr;
+        }
+
+        .step + .step,
+        .integration-category + .integration-category {
+          border-top: 1px solid var(--border);
+          border-left: 0;
+        }
+
+        .feature-row {
+          grid-template-columns: var(--space-48) minmax(0, 1fr);
+          gap: var(--space-16);
+          padding-block: var(--space-24);
+        }
+
+        .feature-row p {
+          grid-column: 2;
+        }
+
+        .media-stack {
+          display: grid;
+          min-height: 0;
+          grid-template-columns: minmax(0, 1fr) minmax(112px, 0.45fr);
+          align-items: end;
+          gap: var(--space-12);
+        }
+
+        .media-main,
+        .media-inset {
+          position: static;
+          width: auto;
+          height: auto;
+        }
+
+        .media-main {
+          aspect-ratio: 3 / 2;
+          border-radius: var(--radius-xl);
+        }
+
+        .media-inset {
+          aspect-ratio: 4 / 5;
+          border-radius: var(--radius-lg);
+        }
+
+        .price-card {
+          min-height: 0;
+          padding: var(--space-32);
+        }
+
+        .cta-panel {
+          grid-template-columns: 1fr;
+          align-items: start;
+          padding: var(--space-40) var(--space-24);
+        }
+
+        .cta-panel .button {
+          width: 100%;
+        }
+
+        .footer-top {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .footer-bottom {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 440px) {
+        .container {
+          width: min(calc(100% - var(--space-24)), var(--container));
+        }
+
+        .footer-top {
+          grid-template-columns: 1fr;
+        }
+
+        .feature-row {
+          grid-template-columns: var(--space-48) minmax(0, 1fr);
+        }
+
+        .feature-row p {
+          grid-column: 1 / -1;
+        }
+
+        .media-stack {
+          grid-template-columns: 1fr;
+        }
+
+        .media-inset {
+          display: none;
+        }
+      }
+
+      @media (min-width: 961px) and (max-height: 720px) {
+        .hero {
+          min-height: 0;
+          padding: var(--space-64) 0 var(--space-80);
+        }
+
+        .hero-sticky {
+          position: static;
+          min-height: 0;
+          padding-block: 0;
+        }
+
+        .hero-scenes {
+          --story-progress: 1;
+        }
+
+        .hero-scene {
+          color: var(--body);
+        }
+
+        .product-events {
+          display: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .hero {
+          min-height: 0;
+          padding: var(--space-96) 0 var(--space-80);
+        }
+
+        .hero-sticky {
+          position: static;
+          min-height: 0;
+          padding-block: 0;
+        }
+
+        .hero-scenes {
+          --story-progress: 1;
+        }
+
+        .hero-scene {
+          color: var(--body);
+        }
+
+        .product-events {
+          display: none;
+        }
+
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+
+        .motion-ready .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="nav-shell">
+          <a class="brand" href="#top" aria-label="Keeplane home">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>Keeplane</span>
+          </a>
+
+          <nav class="desktop-nav" aria-label="Primary navigation">
+            <a href="#product">Product</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#resources">Resources</a>
+          </nav>
+
+          <div class="nav-actions">
+            <a class="sign-in" href="https://alpymcp.com/auth">Sign in</a>
+            <a class="button button--outline nav-cta" href="https://alpymcp.com/auth">Start planning</a>
+          </div>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open navigation"
+          >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+
+        <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile navigation" data-open="false">
+          <a href="#product">Product <span aria-hidden="true">↘</span></a>
+          <a href="#features">Features <span aria-hidden="true">↘</span></a>
+          <a href="#pricing">Pricing <span aria-hidden="true">↘</span></a>
+          <a href="#resources">Resources <span aria-hidden="true">↘</span></a>
+          <a href="https://alpymcp.com/auth">Sign in <span aria-hidden="true">→</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title" data-product-story data-story-state="0">
+        <div class="container hero-sticky">
+          <div class="hero-layout">
+            <div class="hero-copy reveal">
+              <p class="badge">Project planning, kept clear</p>
+              <h1 id="hero-title">Keep every project moving.</h1>
+              <p class="lead">
+                Keeplane gives growing product teams one calm place to plan tasks, see deadlines,
+                share updates, and keep the files that move work forward.
+              </p>
+              <div class="hero-actions">
+                <a class="button" href="https://alpymcp.com/auth">
+                  Start planning free
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+                <a class="button button--outline" href="#product">See the product</a>
+              </div>
+            </div>
+
+            <div class="hero-product-flow" data-product-flow>
+              <figure class="hero-product">
+                <div class="product-visual">
+                  <div
+                    class="planner-shell"
+                    role="img"
+                    aria-label="Conceptual Keeplane project planner switching between a task board, milestone timeline, and team updates with shared files."
+                  >
+                    <div class="planner-topbar">
+                      <span class="planner-mark">K</span>
+                      <div class="planner-project">
+                        <strong>Website launch</strong>
+                        <span>Product &amp; Marketing</span>
+                      </div>
+                      <div class="planner-topbar-meta">
+                        <span class="planner-status">On track</span>
+                        <span class="planner-avatars">
+                          <span class="planner-avatar">AM</span>
+                          <span class="planner-avatar">JL</span>
+                          <span class="planner-avatar">SK</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="planner-workspace">
+                      <aside class="planner-sidebar">
+                        <p class="planner-nav-label">Workspace</p>
+                        <ul class="planner-nav">
+                          <li>
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M5 5h6v6H5zM13 5h6v6h-6zM5 13h6v6H5zM13 13h6v6h-6z" stroke="currentColor" stroke-width="1.5" /></svg>
+                            Overview
+                          </li>
+                          <li class="planner-nav-item--board">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M5 5h4v14H5zM10 5h4v9h-4zM15 5h4v11h-4z" stroke="currentColor" stroke-width="1.5" /></svg>
+                            Project board
+                          </li>
+                          <li class="planner-nav-item--timeline">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14M7 4v6M17 4v6M5 11h14v8H5z" stroke="currentColor" stroke-width="1.5" /></svg>
+                            Timeline
+                          </li>
+                          <li class="planner-nav-item--updates">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M6 5h5l2 2h5v12H6z" stroke="currentColor" stroke-width="1.5" /></svg>
+                            Updates &amp; files
+                          </li>
+                        </ul>
+                        <div class="planner-sidebar-note">
+                          <strong>Next milestone</strong>
+                          Beta handoff · Jun 24
+                        </div>
+                      </aside>
+                    </div>
+
+                    <div class="planner-stage">
+                      <section class="planner-view planner-view--board">
+                        <div class="planner-view-heading">
+                          <div>
+                            <strong>Project board</strong>
+                            <span>12 open tasks across three stages</span>
+                          </div>
+                        </div>
+
+                        <div class="board-grid">
+                          <div class="board-column">
+                            <div class="board-column-heading"><span>Backlog</span><span class="board-count">3</span></div>
+                            <div class="task-card">
+                              <span class="task-card-title">Finalize launch checklist</span>
+                              <span class="task-card-meta"><span class="planner-avatar">SK</span><span>Jun 20</span></span>
+                            </div>
+                            <div class="task-card">
+                              <span class="task-card-title">Review analytics events</span>
+                              <span class="task-card-meta"><span class="planner-avatar">AM</span><span>Jun 21</span></span>
+                            </div>
+                          </div>
+
+                          <div class="board-column">
+                            <div class="board-column-heading"><span>In progress</span><span class="board-count">4</span></div>
+                            <div class="task-card is-active">
+                              <span class="task-card-title">Confirm onboarding copy</span>
+                              <span class="task-card-meta"><span class="planner-avatar">JL</span><span>Today</span><span class="task-priority">High</span></span>
+                            </div>
+                            <div class="task-card">
+                              <span class="task-card-title">Build pricing page</span>
+                              <span class="task-card-meta"><span class="planner-avatar">AM</span><span>Jun 22</span></span>
+                            </div>
+                          </div>
+
+                          <div class="board-column">
+                            <div class="board-column-heading"><span>Done</span><span class="board-count">5</span></div>
+                            <div class="task-card">
+                              <span class="task-card-title">Approve visual direction</span>
+                              <span class="task-card-meta"><span class="planner-avatar">SK</span><span>Completed</span></span>
+                            </div>
+                            <div class="task-card">
+                              <span class="task-card-title">Set launch milestones</span>
+                              <span class="task-card-meta"><span class="planner-avatar">JL</span><span>Completed</span></span>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="planner-view planner-view--timeline">
+                        <div class="planner-view-heading">
+                          <div>
+                            <strong>Milestone timeline</strong>
+                            <span>Every deadline in the same working view</span>
+                          </div>
+                          <span class="planner-view-chip">Beta handoff · Jun 24</span>
+                        </div>
+
+                        <div class="timeline-board">
+                          <div class="timeline-dates">
+                            <span>Workstream</span><span>Jun 17</span><span>Jun 20</span><span>Jun 24</span><span>Jun 27</span><span>Jul 01</span>
+                          </div>
+                          <div class="timeline-today"></div>
+                          <div class="timeline-row">
+                            <span>Research</span><div class="timeline-track"><span class="timeline-bar timeline-bar--research"></span></div>
+                          </div>
+                          <div class="timeline-row">
+                            <span>Build &amp; test</span><div class="timeline-track"><span class="timeline-bar timeline-bar--prototype"></span></div>
+                          </div>
+                          <div class="timeline-row">
+                            <span>Launch</span><div class="timeline-track"><span class="timeline-bar timeline-bar--launch"></span></div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="planner-view planner-view--updates">
+                        <div class="planner-view-heading">
+                          <div>
+                            <strong>Team updates</strong>
+                            <span>Discussion and files stay attached to the plan</span>
+                          </div>
+                          <span class="planner-view-chip">3 new updates</span>
+                        </div>
+
+                        <div class="updates-grid">
+                          <div class="activity-panel">
+                            <div class="panel-title">Latest activity <span>Today</span></div>
+                            <div class="activity-item">
+                              <span class="planner-avatar">AM</span>
+                              <span class="activity-copy"><strong>Ari moved “Confirm onboarding copy”</strong><span>Backlog → In progress</span></span>
+                              <span class="activity-time">9:42</span>
+                            </div>
+                            <div class="activity-item">
+                              <span class="planner-avatar">JL</span>
+                              <span class="activity-copy"><strong>Jon shared a project update</strong><span>Beta handoff remains on track for Jun 24.</span></span>
+                              <span class="activity-time">9:18</span>
+                            </div>
+                            <div class="activity-item">
+                              <span class="planner-avatar">SK</span>
+                              <span class="activity-copy"><strong>Sasha attached launch-notes.pdf</strong><span>Added to the launch milestone</span></span>
+                              <span class="activity-time">8:55</span>
+                            </div>
+                          </div>
+
+                          <div class="files-panel">
+                            <div class="panel-title">Shared files <span>6 files</span></div>
+                            <div class="file-card">
+                              <span class="file-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h7l3 3v13H7zM14 4v4h4" stroke="currentColor" stroke-width="1.5" /></svg></span>
+                              <span><strong>launch-notes.pdf</strong><span>2.4 MB · just now</span></span>
+                            </div>
+                            <div class="file-card">
+                              <span class="file-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 6h6l2 2h6v10H5z" stroke="currentColor" stroke-width="1.5" /></svg></span>
+                              <span><strong>Brand assets</strong><span>14 items · updated today</span></span>
+                            </div>
+                            <div class="file-card">
+                              <span class="file-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 17 9 11l4 4 2-2 5 4M7 8h.01M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5" /></svg></span>
+                              <span><strong>Homepage-final.png</strong><span>1.8 MB · yesterday</span></span>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                  <div class="product-events" aria-hidden="true">
+                    <span class="product-event" data-event="0">Task moved to In progress</span>
+                    <span class="product-event" data-event="1">Next milestone brought into focus</span>
+                    <span class="product-event" data-event="2">Update and files shared with the project</span>
+                  </div>
+                </div>
+                <div class="concept-label" aria-hidden="true">Concept product view</div>
+                <figcaption class="product-story-static">
+                  <div>
+                    <strong>Tasks and boards</strong>
+                    <span>Organize what moves next.</span>
+                  </div>
+                  <div>
+                    <strong>Deadlines</strong>
+                    <span>Keep milestones visible.</span>
+                  </div>
+                  <div>
+                    <strong>Updates and files</strong>
+                    <span>Keep project context together.</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section product-preview" id="product" aria-labelledby="product-title">
+        <div class="container">
+          <div class="preview-intro reveal">
+            <div>
+              <p class="section-label">Product preview</p>
+              <h2 id="product-title">See the work and the path ahead.</h2>
+            </div>
+            <p>
+              Move from daily tasks to the next deadline without rebuilding the plan. The board,
+              timeline, team context, and files stay connected in one working view.
+            </p>
+          </div>
+
+          <div class="preview-flow reveal" aria-label="Keeplane project flow">
+            <div class="preview-item"><span>01</span><strong>Tasks</strong></div>
+            <div class="preview-item"><span>02</span><strong>Project boards</strong></div>
+            <div class="preview-item"><span>03</span><strong>Deadlines</strong></div>
+            <div class="preview-item"><span>04</span><strong>Team updates</strong></div>
+            <div class="preview-item"><span>05</span><strong>File sharing</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section how" aria-labelledby="how-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-label">How it works</p>
+            <h2 id="how-title">A simple rhythm for complex work.</h2>
+            <p class="lead">Set the shape of the project, keep the team current, and move the next decision forward.</p>
+          </div>
+
+          <div class="how-grid reveal">
+            <article class="step">
+              <div class="step-number">
+                <span>01 / Shape the plan</span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 5h16v14H4zM8 9h8M8 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3>Turn outcomes into work.</h3>
+              <p>Break a project into visible tasks and organize them on the board that fits the team.</p>
+            </article>
+
+            <article class="step">
+              <div class="step-number">
+                <span>02 / Set the pace</span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5" />
+                  <path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3>Make deadlines concrete.</h3>
+              <p>Give each stage a time horizon so the next milestone stays easy to find.</p>
+            </article>
+
+            <article class="step">
+              <div class="step-number">
+                <span>03 / Keep context close</span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 6h14v9H9l-4 3V6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                  <path d="M9 10h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3>Update without the chase.</h3>
+              <p>Share progress and files beside the work, so decisions stay anchored to the project.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features" aria-labelledby="features-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-label">Core features</p>
+            <h2 id="features-title">Everything the project needs. Nothing it doesn’t.</h2>
+            <p class="lead">Five connected tools give the team a shared picture of what is moving, waiting, and next.</p>
+          </div>
+
+          <div class="features-list reveal">
+            <article class="feature-row">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M5 6h14v12H5zM8 10l2 2 4-4M8 15h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3>Tasks</h3>
+              <p>Capture the next action, keep the important context nearby, and make progress visible.</p>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 5h4v14H4zM10 5h4v9h-4zM16 5h4v11h-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3>Project boards</h3>
+              <p>Organize work into clear stages and scan the full project without opening every item.</p>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M5 7h14v12H5zM8 4v5M16 4v5M5 11h14M9 15h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3>Deadlines</h3>
+              <p>Place milestones in time and keep the project’s most important dates easy to read.</p>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 6h16v10H9l-5 4V6ZM8 10h8M8 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3>Team updates</h3>
+              <p>Keep progress, open questions, and key decisions with the work they describe.</p>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M5 6h6l2 2h6v10H5V6Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3>File sharing</h3>
+              <p>Keep source material and working files next to the plan, where the team expects to find them.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section workflow" id="workflow" aria-labelledby="workflow-title">
+        <div class="container workflow-grid">
+          <div class="media-stack reveal" aria-label="Conceptual editorial images of a product team planning together">
+            <figure class="media-main">
+              <img
+                src="assets/team-planning-session.jpg"
+                width="1536"
+                height="1024"
+                alt="Three product teammates in a focused planning session around a laptop and paper task cards."
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <figure class="media-inset">
+              <img
+                src="assets/product-lead-planning.jpg"
+                width="640"
+                height="800"
+                alt="A product lead reviewing a paper project timeline at a dark studio desk."
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </div>
+
+          <div class="workflow-copy reveal">
+            <p class="section-label">Team workflow</p>
+            <h2 id="workflow-title">Shared visibility without constant status chasing.</h2>
+            <p class="lead">Keeplane keeps the project readable for the people doing the work and the people steering it.</p>
+            <ul class="workflow-points">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <span>Use one shared board as the team’s current view of the project.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <span>Keep updates and files attached to the work that gives them meaning.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <span>Make upcoming deadlines visible before they become last-minute surprises.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section integrations" aria-labelledby="integrations-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-label">Integrations</p>
+            <h2 id="integrations-title">Connect the work around the plan.</h2>
+            <p class="lead">Bring the conversations, dates, files, and delivery tools your team already uses into a clearer project flow.</p>
+          </div>
+
+          <figure class="integration-visual reveal">
+            <div
+              class="integration-map"
+              role="img"
+              aria-label="Four integration categories—conversations, calendars, file storage, and developer tools—feeding project updates into a central Keeplane project hub."
+            >
+              <div class="integration-sources">
+                <div class="integration-node">
+                  <div class="integration-node-head">
+                    <span class="integration-node-icon">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v10H9l-5 4V6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /></svg>
+                    </span>
+                    <span><strong>Conversations</strong><span>Team updates</span></span>
+                  </div>
+                  <span class="integration-node-foot">2 updates ready</span>
+                </div>
+
+                <div class="integration-node">
+                  <div class="integration-node-head">
+                    <span class="integration-node-icon">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14v12H5zM8 4v5M16 4v5M5 11h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+                    </span>
+                    <span><strong>Calendars</strong><span>Key deadlines</span></span>
+                  </div>
+                  <span class="integration-node-foot">1 date changed</span>
+                </div>
+
+                <div class="integration-node">
+                  <div class="integration-node-head">
+                    <span class="integration-node-icon">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M5 6h6l2 2h6v10H5V6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /></svg>
+                    </span>
+                    <span><strong>File storage</strong><span>Project materials</span></span>
+                  </div>
+                  <span class="integration-node-foot">3 files attached</span>
+                </div>
+
+                <div class="integration-node">
+                  <div class="integration-node-head">
+                    <span class="integration-node-icon">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="m8 7-4 5 4 5M16 7l4 5-4 5M14 5l-4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </span>
+                    <span><strong>Developer tools</strong><span>Delivery signals</span></span>
+                  </div>
+                  <span class="integration-node-foot">Build passed</span>
+                </div>
+              </div>
+
+              <div class="integration-bridge" aria-hidden="true">
+                <span class="integration-bridge-dot"></span>
+                <span class="integration-bridge-arrow">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </span>
+              </div>
+
+              <div class="integration-hub">
+                <div class="integration-hub-head">
+                  <span class="integration-hub-mark">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M6 5h12v14H6zM9 9h6M9 13h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+                  </span>
+                  <span><strong>Keeplane project hub</strong><span>Website launch · shared project view</span></span>
+                  <span class="integration-hub-state">Connected</span>
+                </div>
+
+                <div class="integration-stream">
+                  <div class="integration-stream-row is-current">
+                    <span class="integration-stream-index">01</span>
+                    <span class="integration-stream-copy"><strong>Launch notes added to milestone</strong><span>File storage · launch-notes.pdf</span></span>
+                    <span class="integration-stream-time">Now</span>
+                  </div>
+                  <div class="integration-stream-row">
+                    <span class="integration-stream-index">02</span>
+                    <span class="integration-stream-copy"><strong>Beta handoff moved to Jun 24</strong><span>Calendar · deadline updated</span></span>
+                    <span class="integration-stream-time">2m</span>
+                  </div>
+                  <div class="integration-stream-row">
+                    <span class="integration-stream-index">03</span>
+                    <span class="integration-stream-copy"><strong>Release build passed</strong><span>Developer tools · ready for review</span></span>
+                    <span class="integration-stream-time">8m</span>
+                  </div>
+                  <div class="integration-stream-row">
+                    <span class="integration-stream-index">04</span>
+                    <span class="integration-stream-copy"><strong>Team update linked to the plan</strong><span>Conversations · status shared</span></span>
+                    <span class="integration-stream-time">12m</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </figure>
+
+          <div class="integration-categories reveal" aria-label="Integration categories">
+            <article class="integration-category">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v10H9l-5 4V6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /></svg>
+              <h3>Conversations</h3>
+              <p>Keep updates closer to project context.</p>
+            </article>
+            <article class="integration-category">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 7h14v12H5zM8 4v5M16 4v5M5 11h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+              <h3>Calendars</h3>
+              <p>Carry key dates into the team’s schedule.</p>
+            </article>
+            <article class="integration-category">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 6h6l2 2h6v10H5V6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /></svg>
+              <h3>File storage</h3>
+              <p>Keep project materials within reach.</p>
+            </article>
+            <article class="integration-category">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m8 7-4 5 4 5M16 7l4 5-4 5M14 5l-4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              <h3>Developer tools</h3>
+              <p>Connect delivery signals to the project view.</p>
+            </article>
+          </div>
+          <p class="availability-note">Connection categories are illustrative; specific integration availability depends on your setup.</p>
+        </div>
+      </section>
+
+      <section class="section pricing" id="pricing" aria-labelledby="pricing-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-label">Pricing</p>
+            <h2 id="pricing-title">Start free. Grow into the team plan.</h2>
+            <p class="lead">Begin with the essentials, then choose a shared workflow when the project needs more collaboration.</p>
+          </div>
+
+          <div class="pricing-grid reveal">
+            <article class="price-card price-card--featured">
+              <p class="badge">Start here</p>
+              <p class="plan-name">Free</p>
+              <p class="plan-price">$0 <span>to start</span></p>
+              <p class="plan-copy">A focused way to shape a project and keep the next deadline visible.</p>
+              <ul class="plan-list">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Tasks and project boards</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Deadline planning</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span>A clear place to get moving</span></li>
+              </ul>
+              <a class="button" href="https://alpymcp.com/auth">Start planning free</a>
+            </article>
+
+            <article class="price-card">
+              <p class="badge">For collaboration</p>
+              <p class="plan-name">Team</p>
+              <p class="plan-price">Flexible</p>
+              <p class="plan-copy">A shared project rhythm for teams that plan, update, and deliver together.</p>
+              <ul class="plan-list">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Shared project boards</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Team updates</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span>File sharing in the project flow</span></li>
+              </ul>
+              <a class="button button--outline" href="#workflow">Explore team workflow</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="resources" aria-labelledby="faq-title">
+        <div class="container faq-layout">
+          <div class="reveal">
+            <p class="section-label">Resources / FAQ</p>
+            <h2 id="faq-title">Questions, answered clearly.</h2>
+            <p class="lead">The essentials before you start your first plan.</p>
+          </div>
+
+          <div class="faq-list reveal">
+            <details>
+              <summary>What can I plan in Keeplane?<span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer"><p>You can organize projects with tasks, project boards, deadlines, team updates, and shared files.</p></div>
+            </details>
+            <details>
+              <summary>Does Keeplane support team workflows?<span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer"><p>Yes. Shared boards and team updates help everyone work from the same current project view.</p></div>
+            </details>
+            <details>
+              <summary>Can I keep files with the project?<span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer"><p>Yes. File sharing keeps important project material close to the tasks, decisions, and updates it supports.</p></div>
+            </details>
+            <details>
+              <summary>Does Keeplane work with other tools?<span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer"><p>Keeplane is designed to connect with the surrounding workflow. Specific connector availability depends on your setup.</p></div>
+            </details>
+            <details>
+              <summary>Can I start without a paid plan?<span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer"><p>Yes. You can start planning free and move to a team workflow when your project needs it.</p></div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="cta-panel reveal">
+            <div>
+              <p class="section-label">Move the next project forward</p>
+              <h2 id="cta-title">Make the plan the easiest part.</h2>
+              <p>Give your team one clear place to see the work, the deadline, and what comes next.</p>
+            </div>
+            <a class="button button--dark" href="https://alpymcp.com/auth">
+              Start planning free
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a class="brand" href="#top" aria-label="Keeplane home">
+              <span class="brand-mark" aria-hidden="true"></span>
+              <span>Keeplane</span>
+            </a>
+            <p>Project planning for teams that want clarity, momentum, and fewer status chases.</p>
+          </div>
+
+          <nav class="footer-column" aria-label="Product links">
+            <h3>Product</h3>
+            <a href="#product">Overview</a>
+            <a href="#features">Features</a>
+            <a href="#workflow">Team workflow</a>
+          </nav>
+
+          <nav class="footer-column" aria-label="Pricing links">
+            <h3>Pricing</h3>
+            <a href="#pricing">Free</a>
+            <a href="#pricing">Team</a>
+          </nav>
+
+          <nav class="footer-column" aria-label="Resource links">
+            <h3>Resources</h3>
+            <a href="#resources">FAQ</a>
+            <a href="#product">Product preview</a>
+          </nav>
+
+          <nav class="footer-column" aria-label="Account links">
+            <h3>Account</h3>
+            <a href="https://alpymcp.com/auth">Sign in</a>
+            <a href="https://alpymcp.com/auth">Start free</a>
+          </nav>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© <span id="year">2026</span> Keeplane.</p>
+          <p>Keep every project moving.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.documentElement.classList.add("motion-ready");
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const mobileMenu = document.querySelector("#mobile-menu");
+
+      const closeMenu = () => {
+        if (!menuToggle || !mobileMenu) return;
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        mobileMenu.dataset.open = "false";
+      };
+
+      menuToggle?.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+        mobileMenu.dataset.open = String(!isOpen);
+      });
+
+      mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
+      });
+
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealItems = document.querySelectorAll(".reveal");
+
+      if (reducedMotion || !("IntersectionObserver" in window)) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+      } else {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { rootMargin: "0px 0px -48px", threshold: 0.08 },
+        );
+
+        revealItems.forEach((item) => observer.observe(item));
+      }
+
+      const productStory = document.querySelector("[data-product-story]");
+      const productFlow = document.querySelector("[data-product-flow]");
+      const productMockup = productFlow?.querySelector(".hero-product");
+      const staticStoryLayout = window.matchMedia("(max-width: 960px), (max-height: 720px)");
+      let storyFrame = 0;
+      let currentStoryState = -1;
+
+      const setStoryState = (nextState) => {
+        if (!productStory || nextState === currentStoryState) return;
+        currentStoryState = nextState;
+        productStory.dataset.storyState = String(nextState);
+      };
+
+      const updateProductStory = () => {
+        storyFrame = 0;
+        if (!productStory || !productFlow || !productMockup) return;
+
+        if (reducedMotion || staticStoryLayout.matches) {
+          document.documentElement.classList.remove("product-flow-enabled");
+          productMockup.style.removeProperty("--product-flow-y");
+          setStoryState(0);
+          return;
+        }
+
+        document.documentElement.classList.add("product-flow-enabled");
+
+        const flowBounds = productFlow.getBoundingClientRect();
+        const stickyOffset = 96;
+        const scrollDistance = Math.max(productFlow.offsetHeight - productMockup.offsetHeight, 1);
+        const progress = Math.min(Math.max((stickyOffset - flowBounds.top) / scrollDistance, 0), 1);
+        const nextState = progress < 0.34 ? 0 : progress < 0.67 ? 1 : 2;
+        const verticalTravel = 24 - progress * 48;
+
+        productMockup.style.setProperty("--product-flow-y", `${verticalTravel.toFixed(2)}px`);
+        setStoryState(nextState);
+      };
+
+      const requestProductStoryUpdate = () => {
+        if (storyFrame) return;
+        storyFrame = window.requestAnimationFrame(updateProductStory);
+      };
+
+      if (productStory && productFlow && productMockup) {
+        updateProductStory();
+        if (!reducedMotion) {
+          window.addEventListener("scroll", requestProductStoryUpdate, { passive: true });
+          window.addEventListener("resize", requestProductStoryUpdate);
+          staticStoryLayout.addEventListener?.("change", requestProductStoryUpdate);
+        }
+      }
+
+      document.querySelector("#year").textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+</html>

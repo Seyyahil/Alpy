@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Drift North creates small-group journeys through remarkable landscapes."
+    />
+    <title>Drift North — Routes beyond the obvious</title>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const mode = params.get("mode");
+      if (mode === "wireframe" || mode === "reviewed") {
+        document.documentElement.dataset.mode = mode;
+      }
+      if (params.get("embed") === "workflow") {
+        document.documentElement.dataset.embed = "workflow";
+      }
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <img
+        class="hero__image hero__image--default"
+        src="./assets/hero-patagonia.jpg"
+        alt="A traveler overlooking a glacial river valley in Patagonia"
+      />
+      <img
+        class="hero__image hero__image--reviewed"
+        src="./assets/hero-santorini-reviewed.jpg"
+        alt="A woman overlooking the Santorini caldera at sunset"
+      />
+      <div class="hero__shade"></div>
+      <nav class="site-nav grid" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Drift North home">
+          <span class="brand__mark" aria-hidden="true">D</span>
+          <span>Drift North</span>
+        </a>
+        <div class="site-nav__links">
+          <a href="#journeys">Journeys</a>
+          <a href="#story">Our approach</a>
+          <a href="#stories">Stories</a>
+          <a href="#footer">Contact</a>
+        </div>
+        <a class="button button--glass" href="#journeys">Plan a journey</a>
+      </nav>
+
+      <div class="hero__copy">
+        <p class="eyebrow">Small groups. Remarkable places.</p>
+        <h1>Go farther.<br />Travel slower.</h1>
+        <p>
+          Thoughtful routes through landscapes that reward your attention.
+        </p>
+        <a class="button button--light" href="#journeys">Explore journeys</a>
+      </div>
+
+      <form class="route-search" aria-label="Find a journey">
+        <div class="route-search__tabs" role="tablist" aria-label="Journey type">
+          <button class="is-active" type="button" role="tab" aria-selected="true">
+            <span aria-hidden="true">⌁</span> Guided routes
+          </button>
+          <button type="button" role="tab" aria-selected="false">
+            <span aria-hidden="true">⌂</span> Cabin stays
+          </button>
+          <button type="button" role="tab" aria-selected="false">
+            <span aria-hidden="true">◌</span> Coastal passages
+          </button>
+          <button type="button" role="tab" aria-selected="false">
+            <span aria-hidden="true">✦</span> Winter light
+          </button>
+        </div>
+        <div class="route-search__fields">
+          <label>
+            <span>Region</span>
+            <span class="field"><i aria-hidden="true">⌖</i> Patagonia</span>
+          </label>
+          <label>
+            <span>Season</span>
+            <span class="field"><i aria-hidden="true">□</i> October</span>
+          </label>
+          <label>
+            <span>Duration</span>
+            <span class="field"><i aria-hidden="true">◷</i> 8–12 days</span>
+          </label>
+          <label>
+            <span>Travelers</span>
+            <span class="field"><i aria-hidden="true">♙</i> 2 people</span>
+          </label>
+          <button class="button button--accent" type="submit">Search routes</button>
+        </div>
+      </form>
+    </header>
+
+    <main>
+      <section class="journeys section grid" id="journeys">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="eyebrow eyebrow--accent">Journeys worth the distance</p>
+            <h2>Routes made for looking closer.</h2>
+          </div>
+          <p>
+            Each small-group departure balances wild landscapes, local knowledge,
+            and enough time to be fully present.
+          </p>
+        </div>
+
+        <div class="filters" aria-label="Filter journeys">
+          <button class="is-active" type="button">All routes</button>
+          <button type="button">Coastal</button>
+          <button type="button">Desert</button>
+          <button type="button">Mountain</button>
+          <button type="button">Cabin</button>
+        </div>
+
+        <div class="journey-grid">
+          <article class="journey-card" data-category="coastal">
+            <img
+              src="./assets/faroe-village.jpg"
+              alt="A coastal village beneath green cliffs in the Faroe Islands"
+            />
+            <div class="journey-card__meta">
+              <span>★ 4.9</span><span>8 days</span>
+            </div>
+            <h3>Cliffs & quiet villages</h3>
+            <p>Faroe Islands</p>
+            <div class="journey-card__price"><strong>$2,480</strong><span>per person</span></div>
+          </article>
+          <article class="journey-card" data-category="desert">
+            <img
+              src="./assets/namib-lodge.jpg"
+              alt="Two travelers approaching a lodge beneath Namibian dunes"
+            />
+            <div class="journey-card__meta">
+              <span>★ 4.8</span><span>10 days</span>
+            </div>
+            <h3>Dunes after sunrise</h3>
+            <p>Namibia</p>
+            <div class="journey-card__price"><strong>$3,160</strong><span>per person</span></div>
+          </article>
+          <article class="journey-card" data-category="cabin mountain">
+            <img
+              src="./assets/japan-lake-cabin.jpg"
+              alt="A cedar cabin beside a misty mountain lake in Japan"
+            />
+            <div class="journey-card__meta">
+              <span>★ 5.0</span><span>7 days</span>
+            </div>
+            <h3>Mist, cedar & still water</h3>
+            <p>Japanese Alps</p>
+            <div class="journey-card__price"><strong>$2,740</strong><span>per person</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="story section grid" id="story">
+        <div class="story__copy">
+          <p class="eyebrow eyebrow--accent">Why Drift North</p>
+          <h2>Travel shaped by place, not a checklist.</h2>
+          <p>
+            We build every route with people who know the landscape intimately.
+            Fewer stops and smaller groups create room for weather, conversation,
+            and the moments no itinerary can schedule.
+          </p>
+          <a class="text-link" href="#principles">How we plan every route <span>→</span></a>
+        </div>
+        <figure class="story__image story__image--large">
+          <img src="./assets/japan-lake-cabin.jpg" alt="A warm cabin beside a quiet mountain lake" />
+        </figure>
+        <figure class="story__image story__image--small">
+          <img src="./assets/faroe-village.jpg" alt="A remote village on a green Atlantic coast" />
+        </figure>
+      </section>
+
+      <section class="principles section" id="principles">
+        <div class="container">
+          <div class="section-heading section-heading--center">
+            <p class="eyebrow eyebrow--accent">What stays constant</p>
+            <h2>Designed around better travel.</h2>
+            <p>Three commitments guide every journey we make.</p>
+          </div>
+          <div class="principle-grid">
+            <article>
+              <span>01</span>
+              <h3>Local knowledge</h3>
+              <p>Routes are shaped with guides, hosts, and makers who call each place home.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Time to notice</h3>
+              <p>We leave breathing room in every day instead of racing between landmarks.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Lighter footprints</h3>
+              <p>Small groups and independent stays keep more value within local communities.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="stories section grid" id="stories">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="eyebrow eyebrow--accent">Traveler stories</p>
+            <h2>What stayed with them.</h2>
+          </div>
+          <div class="carousel-controls" aria-label="Testimonial controls">
+            <button type="button" aria-label="Previous story">←</button>
+            <button type="button" aria-label="Next story">→</button>
+          </div>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial">
+            <img src="./assets/traveler-amara.jpg" alt="Amara on a coastal hiking trail" />
+            <div>
+              <blockquote>
+                “Nothing felt rushed. We came home remembering people, weather,
+                and tiny details—not just viewpoints.”
+              </blockquote>
+              <p><strong>Amara Lewis</strong><span>Cliffs & quiet villages</span></p>
+            </div>
+          </article>
+          <article class="testimonial">
+            <img src="./assets/traveler-kenji.jpg" alt="Kenji resting beside a bicycle near a lake" />
+            <div>
+              <blockquote>
+                “The route had structure without feeling scripted. Every day left
+                room for discovery.”
+              </blockquote>
+              <p><strong>Kenji Sato</strong><span>Mist, cedar & still water</span></p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing section">
+        <div class="container closing__copy">
+          <p class="eyebrow eyebrow--accent">Your next route</p>
+          <h2>Choose a place.<br />We’ll make room for wonder.</h2>
+          <p>Talk with a route planner and find the journey that fits your pace.</p>
+          <a class="button button--accent" href="#top">Start planning</a>
+        </div>
+        <div class="mosaic" aria-hidden="true">
+          <img src="./assets/namib-lodge.jpg" alt="" />
+          <img src="./assets/hero-patagonia.jpg" alt="" />
+          <img src="./assets/faroe-village.jpg" alt="" />
+          <img src="./assets/japan-lake-cabin.jpg" alt="" />
+          <img src="./assets/traveler-kenji.jpg" alt="" />
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer grid" id="footer">
+      <div class="footer__brand">
+        <a class="brand brand--dark" href="#top">
+          <span class="brand__mark" aria-hidden="true">D</span>
+          <span>Drift North</span>
+        </a>
+        <p>Small-group journeys made for looking closer.</p>
+      </div>
+      <div>
+        <strong>Journeys</strong>
+        <a href="#journeys">Coastal routes</a>
+        <a href="#journeys">Desert routes</a>
+        <a href="#journeys">Mountain routes</a>
+      </div>
+      <div>
+        <strong>Company</strong>
+        <a href="#story">Our approach</a>
+        <a href="#principles">Travel principles</a>
+        <a href="#stories">Traveler stories</a>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <a href="mailto:hello@driftnorth.example">hello@driftnorth.example</a>
+        <span>+1 415 555 0148</span>
+        <span>Portland · Copenhagen</span>
+      </div>
+      <div class="footer__base">
+        <span>© 2026 Drift North</span>
+        <span>Privacy · Terms</span>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

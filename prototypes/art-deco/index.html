@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en" data-alpy-mode="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Art Deco Hotel is a fictional contemporary hotel concept in Midtown Manhattan."
+    />
+    <meta name="theme-color" content="#000000" />
+    <title>Art Deco Hotel — A composed stay in Manhattan</title>
+    <link rel="stylesheet" href="./alpy-product.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" id="top">
+      <div class="site-header__inner">
+        <a class="wordmark" href="#top" aria-label="Art Deco Hotel home">
+          <span class="wordmark__rule" aria-hidden="true"></span>
+          <span class="wordmark__name">Art Deco Hotel</span>
+          <span class="wordmark__place">New York</span>
+        </a>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+          <a href="#rooms">Rooms &amp; Suites</a>
+          <a href="#dining">Dining</a>
+          <a href="#experiences">Experiences</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#location">Location</a>
+        </nav>
+
+        <a class="hotel-button hotel-button--primary header-booking" href="#booking">
+          Book Your Stay
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span>Menu</span>
+          <span class="menu-toggle__lines" aria-hidden="true">
+            <i></i><i></i>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero section-frame" aria-labelledby="hero-title">
+        <div class="hero__copy content-shell">
+          <p class="eyebrow">Midtown Manhattan · New York</p>
+          <h1 id="hero-title">Art Deco, restored<br />for the modern stay.</h1>
+          <div class="hero__portal">
+            <p class="hero__helper">
+              A Midtown landmark of stepped stone, lacquered walnut, fluted glass,
+              and warm metropolitan hospitality.
+            </p>
+            <div class="action-row" aria-label="Hotel booking actions">
+              <a class="hotel-button hotel-button--primary" href="#booking">
+                Check Availability
+              </a>
+              <a class="hotel-button hotel-button--outline hotel-button--inverse" href="#introduction">
+                Discover the Hotel
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <figure class="hero__media content-shell">
+          <img
+            src="./assets/hotel-exterior.jpg"
+            alt="Symmetrical Art Deco hotel facade with fluted stone piers and a bronze canopy at blue hour"
+            width="1672"
+            height="941"
+          />
+          <figcaption>
+            The entrance · Stepped stone, bronze, and evening light
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="booking-panel" id="booking" aria-labelledby="booking-title">
+        <div class="content-shell booking-panel__inner">
+          <div class="booking-panel__heading">
+            <p class="eyebrow">Reservations</p>
+            <h2 id="booking-title">Find your stay</h2>
+          </div>
+
+          <form class="booking-form" id="booking-form">
+            <label class="hotel-field">
+              <span>Arrival</span>
+              <input id="arrival" name="arrival" type="date" required />
+            </label>
+
+            <label class="hotel-field">
+              <span>Departure</span>
+              <input id="departure" name="departure" type="date" required />
+            </label>
+
+            <label class="hotel-field">
+              <span>Guests</span>
+              <select id="guests" name="guests">
+                <option value="1">1 guest</option>
+                <option value="2" selected>2 guests</option>
+                <option value="3">3 guests</option>
+                <option value="4">4 guests</option>
+              </select>
+            </label>
+
+            <label class="hotel-field">
+              <span>Promotional code <small>(optional)</small></span>
+              <input
+                id="promo"
+                name="promo"
+                type="text"
+                autocomplete="off"
+                maxlength="24"
+              />
+            </label>
+
+            <button class="hotel-button hotel-button--primary" type="submit">
+              Find a Room
+            </button>
+          </form>
+          <p class="booking-status" id="booking-status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="hotel-intro section-frame" id="introduction" aria-labelledby="intro-title">
+        <div class="content-shell split-layout">
+          <div class="section-copy">
+            <p class="eyebrow">The hotel</p>
+            <h2 id="intro-title">Architecture with a quiet pulse.</h2>
+            <p class="lede">
+              Art Deco Hotel restores the movement’s metropolitan confidence through
+              stepped architecture, cream-and-black stone, lacquered walnut, fluted
+              glass, and sculptural brasswork.
+            </p>
+            <p>
+              From the tiered lobby lights to the stillness of each guest room, every
+              detail carries the same precise geometry and an assured, unhurried welcome.
+            </p>
+            <a class="text-link" href="#hotel-details">Discover the Hotel <span aria-hidden="true">→</span></a>
+          </div>
+          <figure class="framed-image">
+            <img
+              src="./assets/hotel-lobby.jpg"
+              alt="Grand Art Deco hotel lobby with a curved bronze stair, tiered chandeliers, marble inlay, and green velvet seating"
+              width="1536"
+              height="1024"
+              loading="lazy"
+            />
+            <figcaption>The lobby · A measured sense of arrival</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="rooms section-frame section-frame--cream" id="rooms" aria-labelledby="rooms-title">
+        <div class="content-shell">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow">Rooms &amp; suites</p>
+              <h2 id="rooms-title">Space to settle into the city.</h2>
+            </div>
+            <p>
+              Three room categories pair stepped silhouettes, fluted glass, brass
+              inlay, and lacquered walnut with quiet contemporary comfort.
+            </p>
+          </div>
+
+          <div class="room-grid">
+            <article class="room-card">
+              <img
+                src="./assets/metropolitan-king.jpg"
+                alt="Art Deco king room with a stepped teal headboard, walnut marquetry, fluted glass, and brass lighting"
+                width="1536"
+                height="1024"
+                loading="lazy"
+              />
+              <div class="room-card__body">
+                <p class="room-card__index">01</p>
+                <h3>Metropolitan King</h3>
+                <p class="room-card__meta">2 guests · 1 king bed</p>
+                <p>A city-facing room with a stepped headboard, walnut writing desk, and fluted-glass details.</p>
+                <p class="room-card__rate">Rate available with dates</p>
+              </div>
+            </article>
+
+            <article class="room-card">
+              <img
+                src="./assets/atelier-double.jpg"
+                alt="Art Deco double room with twin stepped headboards, lacquered walnut walls, teal textiles, and brass inlay"
+                width="1280"
+                height="853"
+                loading="lazy"
+              />
+              <div class="room-card__body">
+                <p class="room-card__index">02</p>
+                <h3>Atelier Double</h3>
+                <p class="room-card__meta">4 guests · 2 queen beds</p>
+                <p>A generous two-bed room framed by tall windows, geometric millwork, and a deep-green window seat.</p>
+                <p class="room-card__rate">Rate available with dates</p>
+              </div>
+            </article>
+
+            <article class="room-card">
+              <img
+                src="./assets/terrace-suite.jpg"
+                alt="Art Deco suite with a stepped navy headboard, bookmatched walnut panels, tiered lighting, and green lounge seating"
+                width="1280"
+                height="853"
+                loading="lazy"
+              />
+              <div class="room-card__body">
+                <p class="room-card__index">03</p>
+                <h3>Terrace Suite</h3>
+                <p class="room-card__meta">2 guests · 1 king bed</p>
+                <p>A spacious retreat with bookmatched walnut, tiered lighting, and a dedicated salon.</p>
+                <p class="room-card__rate">Rate available with dates</p>
+              </div>
+            </article>
+          </div>
+
+          <a class="hotel-button hotel-button--outline rooms__action" href="#booking">
+            Explore Rooms
+          </a>
+        </div>
+      </section>
+
+      <section class="signature section-frame" id="experiences" aria-labelledby="dining-title">
+        <span class="section-anchor" id="dining" aria-hidden="true"></span>
+        <div class="content-shell signature__grid">
+          <figure class="signature__media">
+            <img
+              src="./assets/signature-dining.jpg"
+              alt="Symmetrical Art Deco dining room with deep-green banquettes, fluted glass, brass inlay, and a marble floor"
+              width="1672"
+              height="941"
+              loading="lazy"
+            />
+          </figure>
+          <div class="signature__copy">
+            <p class="eyebrow">The Oriole Room</p>
+            <h2 id="dining-title">Dinner, drawn along a single line.</h2>
+            <p class="lede">
+              The hotel’s signature dining room gathers deep-green banquettes,
+              fluted glass, brass inlay, and low evening light into one poised room.
+            </p>
+            <p>
+              Seasonal menus and reservation details will be available with the
+              property’s confirmed opening information.
+            </p>
+            <a class="hotel-button hotel-button--outline hotel-button--inverse" href="#contact">
+              Dining Enquiries
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="amenities section-frame section-frame--cream" id="hotel-details" aria-labelledby="amenities-title">
+        <div class="content-shell amenities__grid">
+          <div class="section-copy">
+            <p class="eyebrow">Hotel details</p>
+            <h2 id="amenities-title">Everything considered. Nothing overstated.</h2>
+            <p>
+              A concise service program keeps the stay easy from arrival through departure.
+              Final operating details remain subject to confirmation.
+            </p>
+            <a class="text-link" href="#contact">View Hotel Details <span aria-hidden="true">→</span></a>
+          </div>
+
+          <ol class="amenity-list">
+            <li><span>01</span><div><h3>Dining</h3><p>Signature restaurant, lounge, and in-room dining program.</p></div></li>
+            <li><span>02</span><div><h3>Wellness</h3><p>Quiet fitness and restoration spaces for daily routines.</p></div></li>
+            <li><span>03</span><div><h3>Concierge</h3><p>Neighborhood guidance and reservations tailored to your stay.</p></div></li>
+            <li><span>04</span><div><h3>Private gatherings</h3><p>Composed rooms for small celebrations and business occasions.</p></div></li>
+            <li><span>05</span><div><h3>Arrival services</h3><p>Transport guidance and luggage assistance by arrangement.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="gallery section-frame" id="gallery" aria-labelledby="gallery-title">
+        <div class="content-shell">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow">Gallery</p>
+              <h2 id="gallery-title">A closer look at the atmosphere.</h2>
+            </div>
+            <a class="text-link" href="#gallery-grid">View Gallery <span aria-hidden="true">↓</span></a>
+          </div>
+
+          <div class="gallery-grid" id="gallery-grid">
+            <figure class="gallery-item gallery-item--wide">
+              <img src="./assets/rooftop-terrace.jpg" alt="Art Deco rooftop terrace with stepped stonework, green upholstery, and opaline lanterns at blue hour" width="1536" height="1024" loading="lazy" />
+              <figcaption><span>01</span> Rooftop terrace · Evening</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="./assets/hotel-lobby.jpg" alt="Art Deco lobby staircase, marble floor, and reception desk" width="1536" height="1024" loading="lazy" />
+              <figcaption><span>02</span> Lobby · Arrival</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="./assets/metropolitan-king.jpg" alt="Art Deco king guest room in morning light" width="1536" height="1024" loading="lazy" />
+              <figcaption><span>03</span> Metropolitan King · Morning</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="./assets/signature-dining.jpg" alt="Art Deco dining room set for dinner" width="1672" height="941" loading="lazy" />
+              <figcaption><span>04</span> Oriole Room · Dinner</figcaption>
+            </figure>
+            <figure class="gallery-item gallery-item--wide">
+              <img src="./assets/hotel-exterior.jpg" alt="Art Deco hotel entrance illuminated at blue hour" width="1672" height="941" loading="lazy" />
+              <figcaption><span>05</span> Deco Place · Blue hour</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="location section-frame section-frame--cream" id="location" aria-labelledby="location-title">
+        <div class="content-shell location__grid">
+          <div class="section-copy">
+            <p class="eyebrow">Midtown, New York</p>
+            <h2 id="location-title">The city, close at hand.</h2>
+            <address>
+              18 Deco Place<br />
+              New York, NY 10018
+            </address>
+            <p>
+              A fictional Midtown address places the concept near Bryant Park,
+              Grand Central Terminal, and the Theater District.
+            </p>
+            <dl class="transport-list">
+              <div><dt>Rail</dt><dd>Grand Central Terminal and Penn Station</dd></div>
+              <div><dt>Airport</dt><dd>Transfers available by arrangement</dd></div>
+              <div><dt>Nearby</dt><dd>Bryant Park · Fifth Avenue · Broadway</dd></div>
+            </dl>
+            <a
+              class="hotel-button hotel-button--outline"
+              href="https://maps.google.com/?q=Midtown+Manhattan+New+York"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Get Directions
+            </a>
+          </div>
+
+          <figure class="neighborhood-map">
+            <svg viewBox="0 0 600 600" role="img" aria-labelledby="map-title map-desc">
+              <title id="map-title">Concept map of Midtown Manhattan</title>
+              <desc id="map-desc">A simplified street grid marking Art Deco Hotel, Bryant Park, Grand Central Terminal, and the Theater District.</desc>
+              <path class="map-street map-street--major" d="M90 0V600M230 0V600M375 0V600M510 0V600" />
+              <path class="map-street" d="M0 90H600M0 190H600M0 300H600M0 415H600M0 520H600" />
+              <rect class="map-park" x="245" y="210" width="115" height="82" />
+              <rect class="map-marker" x="355" y="313" width="34" height="34" transform="rotate(45 372 330)" />
+              <rect class="map-marker__center" x="364" y="322" width="16" height="16" transform="rotate(45 372 330)" />
+              <text x="395" y="323">Art Deco Hotel</text>
+              <text x="255" y="255">Bryant Park</text>
+              <text x="395" y="140">Grand Central</text>
+              <text x="30" y="458">Theater District</text>
+            </svg>
+            <figcaption>Concept neighborhood map · Not for navigation</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="final-booking" id="reservations" aria-labelledby="final-title">
+        <div class="content-shell final-booking__inner">
+          <p class="eyebrow">Your stay in the city</p>
+          <h2 id="final-title">Stay inside the city’s<br />Deco rhythm.</h2>
+          <p>
+            Flexible reservation terms and final property details will be shared
+            when live booking opens.
+          </p>
+          <div class="action-row">
+            <a class="hotel-button hotel-button--primary" href="#booking">Book Your Stay</a>
+            <a class="hotel-button hotel-button--outline hotel-button--inverse" href="mailto:stay@artdecohotel.example">Email Reservations</a>
+          </div>
+          <p class="reservation-contact">
+            <a href="tel:+12125550192">+1 212 555 0192</a>
+            <span aria-hidden="true">·</span>
+            <a href="mailto:stay@artdecohotel.example">stay@artdecohotel.example</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="content-shell site-footer__grid">
+        <div class="site-footer__brand">
+          <a class="wordmark wordmark--inverse" href="#top" aria-label="Art Deco Hotel home">
+            <span class="wordmark__rule" aria-hidden="true"></span>
+            <span class="wordmark__name">Art Deco Hotel</span>
+            <span class="wordmark__place">New York</span>
+          </a>
+          <p>A fictional hospitality concept created for design demonstration.</p>
+        </div>
+
+        <div>
+          <p class="footer-label">Explore</p>
+          <ul>
+            <li><a href="#rooms">Rooms &amp; Suites</a></li>
+            <li><a href="#dining">Dining</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#location">Location</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-label">Contact</p>
+          <address>18 Deco Place<br />New York, NY 10018</address>
+          <p><a href="tel:+12125550192">+1 212 555 0192</a></p>
+          <p><a href="mailto:stay@artdecohotel.example">stay@artdecohotel.example</a></p>
+        </div>
+
+        <div>
+          <p class="footer-label">Follow</p>
+          <ul>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="https://www.pinterest.com/" target="_blank" rel="noreferrer">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-shell site-footer__legal">
+        <p id="accessibility">Accessibility assistance is available by phone or email.</p>
+        <nav aria-label="Policies" id="policies">
+          <a href="#accessibility">Accessibility</a>
+          <a href="#policies">Privacy</a>
+          <a href="#policies">Hotel policies</a>
+        </nav>
+        <p>© <span id="current-year"></span> Art Deco Hotel concept.</p>
+      </div>
+    </footer>
+  </body>
+</html>

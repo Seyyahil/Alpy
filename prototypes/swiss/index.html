@@ -1,0 +1,1695 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shift makes modular electric bicycles for repairable, everyday urban transport.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Shift — A bicycle you can keep</title>
+  <script>
+    if (window.self !== window.top) {
+      document.documentElement.classList.add("is-card-preview");
+    }
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --canvas: #ffffff;
+      --surface-neutral: #f1f1f1;
+      --surface-blue: #d5dce8;
+      --ink: #151515;
+      --body: #242424;
+      --subtle: #5c5c5c;
+      --rule: #cecece;
+      --rule-strong: #333333;
+      --blue: #0a4fdf;
+      --blue-hover: #0b3a9d;
+      --blue-pressed: #031643;
+      --white: #ffffff;
+      --space-4: 4px;
+      --space-8: 8px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-20: 20px;
+      --space-24: 24px;
+      --space-32: 32px;
+      --space-40: 40px;
+      --space-48: 48px;
+      --space-64: 64px;
+      --space-80: 80px;
+      --space-96: 96px;
+      --space-120: 120px;
+      --content: 1020px;
+      --header-height: 72px;
+      --radius-button: 8px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--body);
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    a:hover {
+      color: var(--blue-hover);
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 4px;
+    }
+
+    ::selection {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    figure,
+    blockquote,
+    dl,
+    dd {
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--ink);
+    }
+
+    h1 {
+      font-size: 57px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 68px;
+    }
+
+    h2 {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 48px;
+    }
+
+    h3 {
+      font-size: 23px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 28px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 1000;
+      top: var(--space-12);
+      left: var(--space-12);
+      padding: var(--space-12) var(--space-16);
+      transform: translateY(-160%);
+      border-radius: var(--radius-button);
+      background: var(--ink);
+      color: var(--white);
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(calc(100% - 48px), var(--content));
+      margin-inline: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: var(--space-24);
+    }
+
+    .section {
+      padding-block: var(--space-96);
+      scroll-margin-top: var(--header-height);
+    }
+
+    .section--neutral {
+      background: var(--surface-neutral);
+    }
+
+    .section--blue-soft {
+      background: var(--surface-blue);
+    }
+
+    .eyebrow {
+      color: var(--subtle);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-intro {
+      margin-bottom: var(--space-48);
+      padding-top: var(--space-16);
+      border-top: 1px solid var(--rule-strong);
+    }
+
+    .section .eyebrow {
+      color: var(--blue);
+    }
+
+    .section-intro .eyebrow {
+      grid-column: 1 / span 3;
+    }
+
+    .section-intro h2 {
+      grid-column: 4 / span 6;
+    }
+
+    .section-intro p:last-child {
+      grid-column: 10 / -1;
+      color: var(--subtle);
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-8);
+      padding: 0 var(--space-24);
+      border: 1px solid var(--blue);
+      border-radius: var(--radius-button);
+      background: var(--blue);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      text-decoration: none;
+      transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+
+    .button:hover {
+      border-color: var(--blue-hover);
+      background: var(--blue-hover);
+      color: var(--white);
+    }
+
+    .button:active {
+      border-color: var(--blue-pressed);
+      background: var(--blue-pressed);
+    }
+
+    .button--outline {
+      border-color: var(--ink);
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .button--outline:hover {
+      border-color: var(--blue-hover);
+      background: var(--canvas);
+      color: var(--blue-hover);
+    }
+
+    .button--inverse {
+      border-color: var(--white);
+      background: var(--white);
+      color: var(--blue-pressed);
+    }
+
+    .button--inverse:hover {
+      border-color: var(--surface-blue);
+      background: var(--surface-blue);
+      color: var(--blue-pressed);
+    }
+
+    .arrow {
+      font-size: 19px;
+      line-height: 1;
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 100;
+      top: 0;
+      height: var(--header-height);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      background: var(--blue);
+    }
+
+    .site-header :focus-visible,
+    .hero :focus-visible,
+    .test-ride :focus-visible {
+      outline-color: var(--white);
+    }
+
+    .header-inner {
+      display: grid;
+      height: 100%;
+      grid-template-columns: 2fr 8fr 2fr;
+      align-items: center;
+      gap: var(--space-24);
+    }
+
+    .wordmark {
+      color: var(--white);
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 28px;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+
+    .wordmark:hover {
+      color: var(--surface-blue);
+    }
+
+    .main-nav {
+      justify-self: center;
+    }
+
+    .main-nav ul {
+      display: flex;
+      align-items: center;
+      gap: var(--space-24);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .main-nav a {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      color: var(--white);
+      font-size: 14px;
+      line-height: 20px;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover,
+    .main-nav a[aria-current="page"] {
+      color: var(--surface-blue);
+    }
+
+    .header-action {
+      min-height: 40px;
+      padding-inline: var(--space-16);
+      border-color: var(--white);
+      background: var(--white);
+      color: var(--blue-pressed);
+      justify-self: end;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .header-action:hover {
+      border-color: var(--surface-blue);
+      background: var(--surface-blue);
+      color: var(--blue-pressed);
+    }
+
+    .menu-button {
+      display: none;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: 1px solid var(--white);
+      border-radius: var(--radius-button);
+      background: transparent;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .menu-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .hero {
+      display: flex;
+      min-height: calc(100svh - var(--header-height));
+      align-items: stretch;
+      background: var(--blue);
+      scroll-margin-top: var(--header-height);
+    }
+
+    .is-card-preview .hero {
+      min-height: 55svh;
+    }
+
+    .hero .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-block: var(--space-48) var(--space-32);
+    }
+
+    .hero-top .eyebrow {
+      grid-column: 1 / span 3;
+      color: var(--white);
+      opacity: 0.8;
+    }
+
+    .hero-note {
+      grid-column: 10 / -1;
+      color: var(--white);
+      font-size: 14px;
+      line-height: 20px;
+      opacity: 0.8;
+    }
+
+    .hero-title {
+      max-width: 860px;
+      margin-block: var(--space-64) var(--space-48);
+      color: var(--white);
+      font-size: 144px;
+      line-height: 128px;
+      letter-spacing: -0.05em;
+      text-wrap: balance;
+    }
+
+    .hero-title span {
+      display: block;
+    }
+
+    .hero-title .shift-right {
+      padding-left: 8%;
+      color: var(--surface-blue);
+    }
+
+    .hero-bottom {
+      align-items: end;
+      padding-top: var(--space-24);
+      border-top: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .hero-lede {
+      grid-column: 1 / span 5;
+      max-width: 500px;
+      color: var(--white);
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+
+    .hero .button--inverse {
+      border-color: var(--white);
+      background: var(--white);
+      color: var(--blue-pressed);
+    }
+
+    .hero .button--inverse:hover {
+      border-color: var(--surface-blue);
+      background: var(--surface-blue);
+      color: var(--blue-pressed);
+    }
+
+    .hero .button--outline {
+      border-color: var(--white);
+      color: var(--white);
+    }
+
+    .hero .button--outline:hover {
+      border-color: var(--white);
+      background: var(--white);
+      color: var(--blue-pressed);
+    }
+
+    .hero-actions {
+      display: flex;
+      grid-column: 7 / -1;
+      justify-content: flex-end;
+      gap: var(--space-12);
+    }
+
+    .feature-media {
+      grid-column: 1 / span 8;
+    }
+
+    .feature-media img {
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+
+    .caption {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-24);
+      padding-top: var(--space-12);
+      color: var(--subtle);
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .feature-copy {
+      display: flex;
+      grid-column: 9 / -1;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .feature-copy h3 {
+      margin-bottom: var(--space-24);
+      font-size: 33px;
+      font-weight: 700;
+      line-height: 40px;
+    }
+
+    .feature-copy > p {
+      margin-bottom: var(--space-32);
+    }
+
+    .spec-list {
+      width: 100%;
+      margin-bottom: var(--space-32);
+      border-top: 1px solid var(--rule-strong);
+    }
+
+    .spec-list > div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      padding-block: var(--space-12);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .spec-list dt {
+      color: var(--subtle);
+      font-size: 12px;
+      line-height: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .spec-list dd {
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 20px;
+      text-align: right;
+    }
+
+    .engineering-copy {
+      grid-column: 1 / span 5;
+    }
+
+    .engineering-copy h2 {
+      margin-block: var(--space-16) var(--space-24);
+    }
+
+    .engineering-copy > p:not(.eyebrow) {
+      max-width: 440px;
+      color: var(--subtle);
+    }
+
+    .module-list {
+      grid-column: 7 / -1;
+      border-top: 1px solid var(--rule-strong);
+    }
+
+    .module-list > div {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: var(--space-16);
+      padding-block: var(--space-24);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .module-list dt {
+      color: var(--blue);
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .module-list dd strong {
+      display: block;
+      margin-bottom: var(--space-8);
+      color: var(--ink);
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+
+    .module-list dd span {
+      color: var(--subtle);
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .engineering-detail {
+      margin-top: var(--space-48);
+    }
+
+    .engineering-detail img {
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+      object-position: center 52%;
+    }
+
+    .engineering-detail .caption {
+      max-width: var(--content);
+      margin-inline: auto;
+      padding-bottom: var(--space-24);
+    }
+
+    #technology {
+      padding-bottom: 0;
+    }
+
+    #compare {
+      padding-top: var(--space-80);
+    }
+
+    .comparison-heading {
+      grid-column: 1 / span 5;
+    }
+
+    .comparison-heading p:last-child {
+      max-width: 440px;
+      margin-top: var(--space-24);
+      color: var(--subtle);
+    }
+
+    .comparison-key {
+      grid-column: 10 / -1;
+      align-self: end;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .table-scroll {
+      margin-top: var(--space-64);
+      overflow-x: auto;
+      border-top: 1px solid var(--rule-strong);
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    caption {
+      padding-block: var(--space-12);
+      color: var(--subtle);
+      font-size: 12px;
+      line-height: 20px;
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: var(--space-20) var(--space-16);
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 0;
+    }
+
+    th:last-child,
+    td:last-child {
+      padding-right: 0;
+    }
+
+    thead th {
+      color: var(--ink);
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+
+    thead th:first-child {
+      width: 25%;
+      color: var(--subtle);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    tbody th {
+      color: var(--subtle);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+
+    tbody td {
+      color: var(--body);
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .model-highlight {
+      color: var(--blue);
+    }
+
+    .ride-story {
+      padding-top: 0;
+    }
+
+    .ride-media img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .ride-copy {
+      padding-top: var(--space-48);
+    }
+
+    .ride-copy .eyebrow {
+      grid-column: 1 / span 3;
+    }
+
+    .ride-copy h2 {
+      grid-column: 4 / span 6;
+    }
+
+    .ride-body {
+      grid-column: 10 / -1;
+      color: var(--subtle);
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .ride-body p + p {
+      margin-top: var(--space-16);
+    }
+
+    .service-photo {
+      grid-column: 1 / span 7;
+    }
+
+    .service-photo img {
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+
+    .service-copy {
+      grid-column: 9 / -1;
+    }
+
+    .service-copy h2 {
+      margin-block: var(--space-16) var(--space-24);
+    }
+
+    .service-copy > p:not(.eyebrow) {
+      margin-bottom: var(--space-32);
+      color: var(--subtle);
+    }
+
+    .service-steps {
+      border-top: 1px solid var(--rule-strong);
+    }
+
+    .service-step {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: var(--space-12);
+      padding-block: var(--space-16);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .service-step span:first-child {
+      color: var(--blue);
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .service-step strong {
+      display: block;
+      margin-bottom: var(--space-4);
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+    .service-step p {
+      color: var(--subtle);
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .data-lead {
+      grid-column: 1 / span 6;
+    }
+
+    .data-lead h2 {
+      margin-block: var(--space-16) var(--space-24);
+    }
+
+    .data-lead > p:not(.eyebrow) {
+      max-width: 500px;
+      color: var(--subtle);
+    }
+
+    .data-note {
+      grid-column: 10 / -1;
+      align-self: end;
+      padding-top: var(--space-12);
+      border-top: 1px solid var(--rule-strong);
+      color: var(--subtle);
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .data-grid {
+      margin-top: var(--space-64);
+      border-top: 1px solid var(--rule-strong);
+      border-bottom: 1px solid var(--rule-strong);
+    }
+
+    .data-item {
+      grid-column: span 4;
+      min-height: 240px;
+      padding: var(--space-24) var(--space-24) var(--space-24) 0;
+    }
+
+    .data-item + .data-item {
+      padding-left: var(--space-24);
+      border-left: 1px solid var(--rule);
+    }
+
+    .data-value {
+      display: block;
+      margin-bottom: var(--space-48);
+      color: var(--blue);
+      font-size: 57px;
+      font-weight: 700;
+      line-height: 68px;
+      letter-spacing: -0.02em;
+    }
+
+    .data-item h3 {
+      margin-bottom: var(--space-12);
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+
+    .data-item p {
+      color: var(--subtle);
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .stories-intro {
+      margin-bottom: var(--space-48);
+    }
+
+    .stories-intro .eyebrow {
+      grid-column: 1 / span 3;
+    }
+
+    .stories-intro h2 {
+      grid-column: 4 / span 7;
+    }
+
+    .story-row {
+      padding-block: var(--space-40);
+      border-top: 1px solid var(--rule-strong);
+    }
+
+    .story-row:last-child {
+      border-bottom: 1px solid var(--rule-strong);
+    }
+
+    .story-row--reverse .story-portrait {
+      grid-column: 9 / -1;
+      order: 2;
+    }
+
+    .story-row--reverse .story-quote {
+      grid-column: 2 / span 6;
+      order: 1;
+    }
+
+    .story-portrait {
+      grid-column: 1 / span 4;
+    }
+
+    .story-portrait img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .story-quote {
+      grid-column: 6 / span 7;
+      align-self: center;
+    }
+
+    .story-quote blockquote {
+      margin-bottom: var(--space-32);
+      color: var(--ink);
+      font-size: 33px;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: -0.02em;
+    }
+
+    .story-person {
+      color: var(--subtle);
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .story-person strong {
+      color: var(--body);
+      font-weight: 600;
+    }
+
+    .test-ride {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .test-ride .eyebrow,
+    .test-ride h2,
+    .test-ride p {
+      color: var(--white);
+    }
+
+    .test-ride .eyebrow {
+      grid-column: 1 / span 3;
+      opacity: 0.8;
+    }
+
+    .test-ride h2 {
+      grid-column: 4 / span 7;
+      font-size: 57px;
+      line-height: 68px;
+    }
+
+    .cta-bottom {
+      align-items: end;
+      margin-top: var(--space-64);
+      padding-top: var(--space-24);
+      border-top: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .cta-bottom p {
+      grid-column: 1 / span 5;
+      max-width: 440px;
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+
+    .cta-actions {
+      display: flex;
+      grid-column: 8 / -1;
+      justify-content: flex-end;
+      align-items: center;
+      gap: var(--space-24);
+    }
+
+    .cta-meta {
+      font-size: 12px;
+      line-height: 20px;
+      opacity: 0.8;
+    }
+
+    .site-footer {
+      padding-block: var(--space-64) var(--space-32);
+      background: var(--ink);
+      color: var(--white);
+      scroll-margin-top: var(--header-height);
+    }
+
+    .site-footer .wordmark {
+      grid-column: 1 / span 3;
+      align-self: start;
+      color: var(--white);
+    }
+
+    .footer-statement {
+      grid-column: 4 / span 5;
+      color: var(--white);
+      font-size: 23px;
+      font-weight: 500;
+      line-height: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-nav {
+      grid-column: 10 / -1;
+    }
+
+    .footer-nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-nav a {
+      display: inline-flex;
+      min-height: 32px;
+      align-items: center;
+      color: var(--white);
+      font-size: 14px;
+      line-height: 20px;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: var(--surface-blue);
+    }
+
+    .footer-bottom {
+      margin-top: var(--space-64);
+      padding-top: var(--space-16);
+      border-top: 1px solid #5c5c5c;
+      color: #cecece;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .footer-bottom p:first-child {
+      grid-column: 1 / span 8;
+    }
+
+    .footer-bottom p:last-child {
+      grid-column: 10 / -1;
+      text-align: right;
+    }
+
+    @media (max-width: 64rem) {
+      .hero-title {
+        font-size: 96px;
+        line-height: 92px;
+      }
+
+      .hero-title .shift-right {
+        padding-left: 4%;
+      }
+
+      .header-inner {
+        grid-template-columns: 1fr auto auto;
+      }
+
+      .main-nav ul {
+        gap: var(--space-12);
+      }
+
+      .section-intro h2,
+      .ride-copy h2 {
+        grid-column: 4 / span 7;
+      }
+
+      .section-intro p:last-child,
+      .ride-body {
+        grid-column: 4 / span 7;
+        margin-top: var(--space-16);
+      }
+
+      .feature-media {
+        grid-column: 1 / span 7;
+      }
+
+      .feature-copy {
+        grid-column: 8 / -1;
+      }
+
+      .service-photo {
+        grid-column: 1 / span 7;
+      }
+
+      .service-copy {
+        grid-column: 8 / -1;
+      }
+    }
+
+    @media (max-width: 48rem) {
+      :root {
+        --header-height: 64px;
+      }
+
+      h1 {
+        font-size: 48px;
+        line-height: 56px;
+      }
+
+      h2 {
+        font-size: 33px;
+        line-height: 40px;
+      }
+
+      .container {
+        width: min(calc(100% - 32px), var(--content));
+      }
+
+      .section {
+        padding-block: var(--space-64);
+      }
+
+      .grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: var(--space-16);
+      }
+
+      .main-nav {
+        position: fixed;
+        inset: var(--header-height) 0 0 0;
+        display: none;
+        width: 100%;
+        justify-self: stretch;
+        overflow-y: auto;
+        padding: var(--space-24) var(--space-16);
+        background: var(--blue);
+      }
+
+      .main-nav.is-open {
+        display: block;
+      }
+
+      .main-nav ul {
+        display: block;
+      }
+
+      .main-nav li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      .main-nav a {
+        width: 100%;
+        min-height: 56px;
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 28px;
+      }
+
+      .menu-button {
+        display: inline-flex;
+        justify-self: end;
+      }
+
+      .header-action {
+        min-height: 40px;
+        padding-inline: var(--space-12);
+      }
+
+      .hero {
+        min-height: calc(100svh - var(--header-height));
+      }
+
+      .hero .container {
+        padding-block: var(--space-40) var(--space-24);
+      }
+
+      .hero-top .eyebrow,
+      .hero-note,
+      .hero-lede,
+      .hero-actions,
+      .section-intro .eyebrow,
+      .section-intro h2,
+      .section-intro p:last-child,
+      .engineering-copy,
+      .module-list,
+      .comparison-heading,
+      .comparison-key,
+      .ride-copy .eyebrow,
+      .ride-copy h2,
+      .ride-body,
+      .service-photo,
+      .service-copy,
+      .data-lead,
+      .data-note,
+      .stories-intro .eyebrow,
+      .stories-intro h2,
+      .test-ride .eyebrow,
+      .test-ride h2,
+      .cta-bottom p,
+      .cta-actions,
+      .site-footer .wordmark,
+      .footer-statement,
+      .footer-nav,
+      .footer-bottom p:first-child,
+      .footer-bottom p:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .hero-note,
+      .section-intro h2,
+      .comparison-heading h2,
+      .ride-copy h2,
+      .data-lead h2,
+      .stories-intro h2,
+      .test-ride h2,
+      .footer-statement {
+        margin-top: var(--space-16);
+      }
+
+      .hero-title {
+        margin-block: var(--space-48) var(--space-40);
+        font-size: 54px;
+        line-height: 58px;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-title .shift-right {
+        padding-left: 0;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        margin-top: var(--space-24);
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .section-intro,
+      .stories-intro {
+        margin-bottom: var(--space-48);
+      }
+
+      .section-intro p:last-child,
+      .ride-body {
+        margin-top: 0;
+      }
+
+      .feature-media,
+      .feature-copy {
+        grid-column: 1 / -1;
+      }
+
+      .feature-copy {
+        margin-top: var(--space-24);
+      }
+
+      .engineering-copy > p:not(.eyebrow) {
+        margin-bottom: var(--space-48);
+      }
+
+      .module-list > div {
+        grid-template-columns: 40px 1fr;
+      }
+
+      .engineering-detail {
+        margin-top: var(--space-40);
+      }
+
+      .engineering-detail .caption {
+        width: calc(100% - 32px);
+        padding-bottom: var(--space-16);
+      }
+
+      #compare {
+        padding-top: var(--space-64);
+      }
+
+      .comparison-key,
+      .data-note {
+        margin-top: var(--space-32);
+      }
+
+      .table-scroll {
+        margin-top: var(--space-48);
+      }
+
+      .ride-copy {
+        padding-top: var(--space-32);
+      }
+
+      .ride-body {
+        margin-top: var(--space-24);
+      }
+
+      .service-copy {
+        margin-top: var(--space-32);
+      }
+
+      .data-grid {
+        margin-top: var(--space-48);
+      }
+
+      .data-item {
+        grid-column: 1 / -1;
+        min-height: 0;
+        padding: var(--space-32) 0;
+      }
+
+      .data-item + .data-item {
+        padding-left: 0;
+        border-top: 1px solid var(--rule);
+        border-left: 0;
+      }
+
+      .data-value {
+        margin-bottom: var(--space-32);
+        font-size: 48px;
+        line-height: 56px;
+      }
+
+      .story-row,
+      .story-row--reverse {
+        padding-block: var(--space-32);
+      }
+
+      .story-row .story-portrait,
+      .story-row--reverse .story-portrait,
+      .story-row .story-quote,
+      .story-row--reverse .story-quote {
+        grid-column: 1 / -1;
+        order: initial;
+      }
+
+      .story-quote {
+        margin-top: var(--space-32);
+      }
+
+      .story-quote blockquote {
+        font-size: 28px;
+        line-height: 32px;
+      }
+
+      .test-ride h2 {
+        font-size: 48px;
+        line-height: 56px;
+      }
+
+      .cta-bottom {
+        margin-top: var(--space-64);
+      }
+
+      .cta-actions {
+        align-items: stretch;
+        flex-direction: column-reverse;
+        margin-top: var(--space-32);
+      }
+
+      .site-footer {
+        padding-top: var(--space-48);
+      }
+
+      .footer-statement,
+      .footer-nav {
+        margin-top: var(--space-32);
+      }
+
+      .footer-bottom p:last-child {
+        margin-top: var(--space-12);
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 24rem) {
+      h1 {
+        font-size: 40px;
+        line-height: 48px;
+      }
+
+      .hero-title {
+        font-size: 48px;
+        line-height: 52px;
+      }
+
+      .test-ride h2 {
+        font-size: 40px;
+        line-height: 48px;
+      }
+
+      .header-action {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" aria-label="Primary header">
+    <div class="container header-inner">
+      <a class="wordmark" href="#home" aria-label="Shift home">SHIFT</a>
+      <nav class="main-nav" id="main-navigation" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#home" aria-current="page">Home</a></li>
+          <li><a href="#bicycles">Bicycles</a></li>
+          <li><a href="#technology">Technology</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#stories">Stories</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+      <a class="button header-action" href="#test-ride">Test ride <span class="arrow" aria-hidden="true">↗</span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation">
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M2 5.5h16M2 14.5h16" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="grid hero-top">
+          <p class="eyebrow">Modular electric bicycles / Copenhagen</p>
+          <p class="hero-note">Designed for daily movement.<br>Engineered for a long life.</p>
+        </div>
+        <h1 class="hero-title" id="hero-heading">
+          <span>A bicycle</span>
+          <span class="shift-right">you can keep.</span>
+        </h1>
+        <div class="grid hero-bottom">
+          <p class="hero-lede">Shift makes quiet, capable urban e-bikes from modules that can be opened, repaired, upgraded and replaced.</p>
+          <div class="hero-actions">
+            <a class="button button--inverse" href="#bicycles">Meet Shift One <span class="arrow" aria-hidden="true">↓</span></a>
+            <a class="button button--outline" href="#technology">See how it opens</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bicycles" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="grid section-intro">
+          <p class="eyebrow">Featured bicycle</p>
+          <h2 id="featured-heading">One frame. Every ordinary day.</h2>
+          <p>Commuter geometry, serviceable electronics and parts chosen for real city weather.</p>
+        </div>
+        <div class="grid">
+          <figure class="feature-media">
+            <img src="assets/shift-one-studio.jpg" width="1440" height="960" alt="Warm-silver Shift One electric bicycle with cobalt battery module in a bright studio" fetchpriority="high">
+            <figcaption class="caption"><span>Shift One / Urban</span><span>Warm silver / 54 cm</span></figcaption>
+          </figure>
+          <div class="feature-copy">
+            <h3>Shift One</h3>
+            <p>A balanced city bicycle with electric assistance that stays in the background. The battery, display, lights and drive module each leave the frame independently.</p>
+            <dl class="spec-list">
+              <div><dt>Range</dt><dd>Up to 75 km</dd></div>
+              <div><dt>Weight</dt><dd>17.8 kg</dd></div>
+              <div><dt>Charge</dt><dd>2 h 40 min</dd></div>
+              <div><dt>Drive</dt><dd>55 Nm / belt</dd></div>
+              <div><dt>Price</dt><dd>From €3,490</dd></div>
+            </dl>
+            <a class="button" href="#compare">Compare models <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--neutral" id="technology" aria-labelledby="engineering-heading">
+      <div class="container grid">
+        <div class="engineering-copy">
+          <p class="eyebrow">Modular engineering</p>
+          <h2 id="engineering-heading">Open by design.</h2>
+          <p>No sealed frame electronics. No proprietary mystery box. The parts most likely to wear or evolve are designed to leave the bicycle with standard workshop tools.</p>
+        </div>
+        <dl class="module-list">
+          <div>
+            <dt>01</dt>
+            <dd><strong>Battery cartridge</strong><span>Slides out in seconds; housing, cells and controller are serviced as separate parts.</span></dd>
+          </div>
+          <div>
+            <dt>02</dt>
+            <dd><strong>Drive module</strong><span>Four accessible fasteners release the motor without opening the bottom bracket.</span></dd>
+          </div>
+          <div>
+            <dt>03</dt>
+            <dd><strong>Control layer</strong><span>Display, lights and wiring loom disconnect through keyed, weather-sealed plugs.</span></dd>
+          </div>
+          <div>
+            <dt>04</dt>
+            <dd><strong>Carry system</strong><span>One frame interface accepts racks, child seats, baskets and cargo modules.</span></dd>
+          </div>
+        </dl>
+      </div>
+      <figure class="engineering-detail">
+        <img src="assets/modular-battery-detail.jpg" width="1448" height="1086" alt="Close view of a cobalt battery cartridge released from the Shift bicycle down tube beside standard workshop tools" loading="lazy">
+        <figcaption class="caption container"><span>Battery interface / keyed connector</span><span>Standard Torx access</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="section" id="compare" aria-labelledby="comparison-heading">
+      <div class="container">
+        <div class="grid">
+          <div class="comparison-heading">
+            <p class="eyebrow">Model comparison</p>
+            <h2 id="comparison-heading">Same system. Different work.</h2>
+            <p>Each model uses the same battery, control layer and service logic. Choose by riding position and what you carry.</p>
+          </div>
+          <p class="comparison-key"><span class="model-highlight">●</span> Standard configuration shown. Final range varies with rider, route, weather and assistance level.</p>
+        </div>
+        <div class="table-scroll" tabindex="0" aria-label="Scrollable comparison of Shift bicycle models">
+          <table>
+            <caption>Shift model comparison — fictional product specifications</caption>
+            <thead>
+              <tr>
+                <th scope="col">Specification</th>
+                <th scope="col"><span class="model-highlight">Shift One</span></th>
+                <th scope="col">Shift Step</th>
+                <th scope="col">Shift Carry</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Best for</th><td>Daily city distance</td><td>Frequent stops</td><td>People and cargo</td></tr>
+              <tr><th scope="row">Position</th><td>Balanced</td><td>Upright</td><td>Upright</td></tr>
+              <tr><th scope="row">Range</th><td>Up to 75 km</td><td>Up to 70 km</td><td>Up to 62 km</td></tr>
+              <tr><th scope="row">Weight</th><td>17.8 kg</td><td>18.4 kg</td><td>28.6 kg</td></tr>
+              <tr><th scope="row">Load</th><td>120 kg total</td><td>120 kg total</td><td>200 kg total</td></tr>
+              <tr><th scope="row">From</th><td>€3,490</td><td>€3,590</td><td>€4,690</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ride-story" id="stories" aria-labelledby="ride-heading">
+      <figure class="ride-media">
+        <img src="assets/urban-ride.jpg" width="1672" height="941" alt="A rider on a silver Shift bicycle crossing a damp protected bike lane in a quiet city" loading="lazy">
+        <figcaption class="caption container"><span>Nordhavn to Nørrebro / 08:12</span><span>11.4 km / light rain</span></figcaption>
+      </figure>
+      <div class="container grid ride-copy">
+        <p class="eyebrow">Urban ride story</p>
+        <h2 id="ride-heading">The city is the product test.</h2>
+        <div class="ride-body">
+          <p>Wet rails. Short lights. Two bridges and one loaded rack. Shift One is tuned for the uneven rhythm of ordinary urban travel, not a laboratory range loop.</p>
+          <p>Assistance arrives smoothly below 25 km/h, then disappears without drag when the street opens.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--blue-soft" id="service" aria-labelledby="service-heading">
+      <div class="container grid">
+        <figure class="service-photo">
+          <img src="assets/service-workshop.jpg" width="1440" height="960" alt="A bicycle mechanic servicing the removable blue battery on a silver Shift bicycle" loading="lazy">
+          <figcaption class="caption"><span>Shift Service Partner / workshop 014</span><span>Battery inspection / 18 min</span></figcaption>
+        </figure>
+        <div class="service-copy">
+          <p class="eyebrow">Repair and service</p>
+          <h2 id="service-heading">The repair manual is part of the bicycle.</h2>
+          <p>Exploded diagrams, part numbers and service intervals are public. Owners can work locally, visit a Shift partner, or send a module—not a complete bicycle.</p>
+          <div class="service-steps">
+            <div class="service-step"><span>01</span><div><strong>Diagnose openly</strong><p>On-bike codes link to the exact assembly and test.</p></div></div>
+            <div class="service-step"><span>02</span><div><strong>Replace only what failed</strong><p>Module-level parts ship within two working days.</p></div></div>
+            <div class="service-step"><span>03</span><div><strong>Return worn electronics</strong><p>Reusable housings re-enter the service pool.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--neutral" aria-labelledby="data-heading">
+      <div class="container">
+        <div class="grid">
+          <div class="data-lead">
+            <p class="eyebrow">Sustainability data</p>
+            <h2 id="data-heading">Keep the frame. Replace the part.</h2>
+            <p>Our working measure is not how little a new bicycle claims to use. It is how much of that bicycle can stay useful through years of wear and change.</p>
+          </div>
+          <p class="data-note">Illustrative Shift internal lifecycle model for this fictional product concept. Figures are not third-party verified.</p>
+        </div>
+        <div class="grid data-grid">
+          <article class="data-item">
+            <data class="data-value" value="10">10 yr</data>
+            <h3>Frame spares commitment</h3>
+            <p>Service parts planned for ten years after each frame generation leaves production.</p>
+          </article>
+          <article class="data-item">
+            <data class="data-value" value="7">7</data>
+            <h3>Individually replaceable modules</h3>
+            <p>Battery, motor, controller, display, lights, wiring loom and carry interface.</p>
+          </article>
+          <article class="data-item">
+            <data class="data-value" value="71">71%</data>
+            <h3>Less replacement mass</h3>
+            <p>Modeled versus replacing a complete e-bike at year five after a drive-system fault.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rider-stories" aria-labelledby="rider-heading">
+      <div class="container">
+        <div class="grid stories-intro">
+          <p class="eyebrow">Rider stories</p>
+          <h2 id="rider-heading">Built around lives already in motion.</h2>
+        </div>
+        <article class="grid story-row">
+          <figure class="story-portrait">
+            <img src="assets/rider-maya.jpg" width="1122" height="1402" alt="Maya standing beside her silver modular bicycle in a residential courtyard" loading="lazy">
+            <figcaption class="caption"><span>Maya / urban planner</span><span>Shift One / 2,940 km</span></figcaption>
+          </figure>
+          <div class="story-quote">
+            <blockquote>“It feels like a bicycle, not a device I’m waiting to become obsolete.”</blockquote>
+            <p class="story-person"><strong>Maya L.</strong> rides across Copenhagen for site visits, work and the trip home.</p>
+          </div>
+        </article>
+        <article class="grid story-row story-row--reverse">
+          <figure class="story-portrait">
+            <img src="assets/rider-jonas.jpg" width="1122" height="1402" alt="Jonas standing with a silver step-through cargo bicycle outside a neighborhood food hall" loading="lazy">
+            <figcaption class="caption"><span>Jonas / community chef</span><span>Shift Step / 1,870 km</span></figcaption>
+          </figure>
+          <div class="story-quote">
+            <blockquote>“When the display broke, the bike did not become waste. The display became a twenty-minute job.”</blockquote>
+            <p class="story-person"><strong>Jonas M.</strong> carries produce, tools and the occasional very tall cake.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section test-ride" id="test-ride" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="grid">
+          <p class="eyebrow">Test ride</p>
+          <h2 id="cta-heading">Ride your route, not our showroom.</h2>
+        </div>
+        <div class="grid cta-bottom">
+          <p>Book a 45-minute ride and take Shift through the streets, bridges and stops you actually use.</p>
+          <div class="cta-actions">
+            <span class="cta-meta">Copenhagen / Berlin / Amsterdam</span>
+            <a class="button button--inverse" href="mailto:ride@shift.example?subject=Shift%20test%20ride">Book a test ride <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="about">
+    <div class="container">
+      <div class="grid">
+        <a class="wordmark" href="#home" aria-label="Shift home">SHIFT</a>
+        <p class="footer-statement">Repairable urban transportation, made from parts that know how to leave.</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#bicycles">Bicycles</a></li>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#stories">Stories</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="grid footer-bottom">
+        <p>Shift is a fictional urban-mobility concept. Product specifications, rider stories and modeled data are illustrative.</p>
+        <p>© 2026 Shift Mobility</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navigation = document.querySelector('.main-nav');
+
+    function closeNavigation() {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation');
+      navigation.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
+    }
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+      navigation.classList.toggle('is-open', !isOpen);
+      document.body.classList.toggle('menu-open', !isOpen);
+    });
+
+    navigation.addEventListener('click', (event) => {
+      if (event.target.closest('a')) closeNavigation();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeNavigation();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeNavigation();
+    });
+  </script>
+</body>
+</html>

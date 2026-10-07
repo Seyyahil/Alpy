@@ -1,0 +1,3460 @@
+<!doctype html>
+<html lang="en" data-alpy-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Relay AI is a shared AI workspace that helps product, marketing, operations, and support teams turn knowledge into coordinated action."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Relay AI — Turn team knowledge into action</title>
+    <style>
+      :root {
+        color-scheme: light;
+
+        /* Canonical Alpy light bindings used by this standalone concept. */
+        --alpy-ui-color-surface-canvas: #ffffff;
+        --alpy-ui-color-text-heading: #151515;
+        --alpy-ui-color-text-body: #242424;
+        --alpy-ui-color-text-body-muted: #767676;
+        --alpy-ui-color-text-onColor: #ffffff;
+        --alpy-ui-color-border-neutral-subtle-one: #f1f1f1;
+        --alpy-ui-color-border-neutral-subtle-two: #cecece;
+        --alpy-ui-color-border-neutral-strong-one: #333333;
+        --alpy-ui-color-border-interaction-focused: #0a4fdf;
+        --alpy-ui-color-shades-neutral-subtle-one: #f1f1f1;
+        --alpy-ui-color-shades-brand-color-one-strong-one: #0a4fdf;
+        --alpy-ui-color-shades-brand-color-one-strong-two: #0b3a9d;
+        --alpy-ui-color-shades-brand-color-one-strong-three: #031643;
+        --alpy-ui-color-shades-brand-color-one-subtle-one: #d5dce8;
+        --alpy-ui-color-shades-brand-color-one-subtle-two: #b7c5e1;
+        --alpy-ui-color-shades-brand-color-two-strong-one: #058625;
+        --alpy-ui-color-shades-brand-color-two-subtle-one: #e6ede5;
+        --alpy-ui-color-shades-brand-color-three-strong-one: #fca701;
+        --alpy-ui-color-shades-brand-color-three-subtle-one: #e8e2d5;
+        --alpy-ui-font-body-fontFamily: Inter, ui-sans-serif, system-ui,
+          -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --alpy-ui-font-body-fontSize: 16px;
+        --alpy-ui-font-body-lineHeight: 24px;
+        --alpy-ui-font-body-medium-fontSize: 14px;
+        --alpy-ui-font-body-medium-lineHeight: 20px;
+        --alpy-ui-font-body-small-fontSize: 12px;
+        --alpy-ui-font-body-small-lineHeight: 20px;
+        --alpy-ui-font-body-large-fontSize: 19px;
+        --alpy-ui-font-body-large-lineHeight: 28px;
+        --alpy-ui-font-heading-xsmall-fontSize: 23px;
+        --alpy-ui-font-heading-xsmall-lineHeight: 28px;
+        --alpy-ui-font-heading-small-fontSize: 28px;
+        --alpy-ui-font-heading-small-lineHeight: 32px;
+        --alpy-ui-font-heading-medium-fontSize: 33px;
+        --alpy-ui-font-heading-medium-lineHeight: 40px;
+        --alpy-ui-font-heading-large-fontSize: 40px;
+        --alpy-ui-font-heading-large-lineHeight: 48px;
+        --alpy-ui-font-heading-xlarge-fontSize: 48px;
+        --alpy-ui-font-heading-xlarge-lineHeight: 56px;
+        --alpy-ui-font-heading-xxlarge-fontSize: 57px;
+        --alpy-ui-font-heading-xxlarge-lineHeight: 68px;
+        --alpy-ui-font-heading-letterSpacing: -0.02em;
+        --alpy-ui-size-1: 1px;
+        --alpy-ui-size-2: 2px;
+        --alpy-ui-size-4: 4px;
+        --alpy-ui-size-8: 8px;
+        --alpy-ui-size-12: 12px;
+        --alpy-ui-size-16: 16px;
+        --alpy-ui-size-20: 20px;
+        --alpy-ui-size-24: 24px;
+        --alpy-ui-size-28: 28px;
+        --alpy-ui-size-32: 32px;
+        --alpy-ui-size-36: 36px;
+        --alpy-ui-size-40: 40px;
+        --alpy-ui-size-44: 44px;
+        --alpy-ui-size-48: 48px;
+        --alpy-ui-size-56: 56px;
+        --alpy-ui-size-64: 64px;
+        --alpy-ui-size-80: 80px;
+        --alpy-ui-size-96: 96px;
+        --alpy-ui-size-120: 120px;
+        --alpy-ui-size-160: 160px;
+        --alpy-ui-size-200: 200px;
+        --alpy-ui-size-240: 240px;
+        --alpy-ui-size-9999: 9999px;
+        --alpy-ui-radius-small: var(--alpy-ui-size-4);
+        --alpy-ui-radius-medium: var(--alpy-ui-size-8);
+        --alpy-ui-radius-large: var(--alpy-ui-size-12);
+        --alpy-ui-radius-full: var(--alpy-ui-size-9999);
+
+        --canvas: var(--alpy-ui-color-surface-canvas);
+        --ink: var(--alpy-ui-color-text-heading);
+        --body: var(--alpy-ui-color-text-body);
+        --muted: var(--alpy-ui-color-text-body-muted);
+        --line: var(--alpy-ui-color-border-neutral-subtle-two);
+        --line-soft: var(--alpy-ui-color-border-neutral-subtle-one);
+        --surface: var(--alpy-ui-color-shades-neutral-subtle-one);
+        --blue: var(--alpy-ui-color-shades-brand-color-one-strong-one);
+        --blue-hover: var(--alpy-ui-color-shades-brand-color-one-strong-two);
+        --navy: var(--alpy-ui-color-shades-brand-color-one-strong-three);
+        --blue-soft: var(--alpy-ui-color-shades-brand-color-one-subtle-one);
+        --blue-mid: var(--alpy-ui-color-shades-brand-color-one-subtle-two);
+        --green: var(--alpy-ui-color-shades-brand-color-two-strong-one);
+        --green-soft: var(--alpy-ui-color-shades-brand-color-two-subtle-one);
+        --yellow: var(--alpy-ui-color-shades-brand-color-three-strong-one);
+        --yellow-soft: var(--alpy-ui-color-shades-brand-color-three-subtle-one);
+        --white: var(--alpy-ui-color-text-onColor);
+        --font: var(--alpy-ui-font-body-fontFamily);
+        --shell: min(calc(100% - 48px), 1200px);
+        --section-space: 112px;
+        --card-radius: 24px;
+        --card-pad: var(--alpy-ui-size-36);
+        --grid-gap: 16px;
+        --shadow: 0 20px 60px rgb(3 22 67 / 10%);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        background: var(--canvas);
+        color: var(--body);
+        font-family: var(--font);
+        font-size: var(--alpy-ui-font-body-fontSize);
+        line-height: var(--alpy-ui-font-body-lineHeight);
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body.nav-open {
+        overflow: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        color: inherit;
+        font: inherit;
+      }
+
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      figure,
+      blockquote,
+      ul,
+      ol,
+      dl,
+      dd {
+        margin: 0;
+      }
+
+      ul,
+      ol {
+        padding: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: var(--ink);
+        letter-spacing: var(--alpy-ui-font-heading-letterSpacing);
+      }
+
+      h1 {
+        max-width: 720px;
+        font-size: clamp(48px, 5.2vw, var(--alpy-ui-font-heading-xxlarge-fontSize));
+        font-weight: 700;
+        line-height: 1.04;
+      }
+
+      h2 {
+        max-width: 760px;
+        font-size: clamp(33px, 4vw, var(--alpy-ui-font-heading-xlarge-fontSize));
+        font-weight: 700;
+        line-height: 1.12;
+      }
+
+      h3 {
+        font-size: var(--alpy-ui-font-heading-small-fontSize);
+        font-weight: 500;
+        line-height: var(--alpy-ui-font-heading-small-lineHeight);
+      }
+
+      h4 {
+        font-size: var(--alpy-ui-font-body-large-fontSize);
+        font-weight: 600;
+        line-height: var(--alpy-ui-font-body-large-lineHeight);
+      }
+
+      section[id] {
+        scroll-margin-top: 96px;
+      }
+
+      :focus-visible {
+        outline: var(--alpy-ui-size-2) solid
+          var(--alpy-ui-color-border-interaction-focused);
+        outline-offset: var(--alpy-ui-size-4);
+      }
+
+      .skip-link {
+        position: fixed;
+        top: var(--alpy-ui-size-8);
+        left: var(--alpy-ui-size-8);
+        z-index: 1000;
+        min-height: var(--alpy-ui-size-44);
+        padding: 10px var(--alpy-ui-size-16);
+        border-radius: var(--alpy-ui-radius-medium);
+        background: var(--navy);
+        color: var(--white);
+        transform: translateY(-150%);
+        transition: transform 180ms ease;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .shell {
+        width: var(--shell);
+        margin-inline: auto;
+      }
+
+      .section {
+        padding-block: var(--section-space);
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: var(--alpy-ui-size-32);
+        margin-bottom: var(--alpy-ui-size-48);
+      }
+
+      .section-heading > div {
+        display: grid;
+        gap: var(--alpy-ui-size-12);
+      }
+
+      .section-heading > p {
+        max-width: 430px;
+        color: var(--muted);
+        font-size: var(--alpy-ui-font-body-large-fontSize);
+        line-height: var(--alpy-ui-font-body-large-lineHeight);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--alpy-ui-size-8);
+        color: var(--blue);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        line-height: var(--alpy-ui-font-body-small-lineHeight);
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: var(--alpy-ui-size-8);
+        height: var(--alpy-ui-size-8);
+        border-radius: var(--alpy-ui-radius-full);
+        background: currentColor;
+        content: "";
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: var(--alpy-ui-size-48);
+        align-items: center;
+        justify-content: center;
+        gap: var(--alpy-ui-size-8);
+        padding: 0 var(--alpy-ui-size-20);
+        border: var(--alpy-ui-size-1) solid transparent;
+        border-radius: var(--alpy-ui-radius-full);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        font-weight: 600;
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+        transition:
+          background-color 180ms ease,
+          border-color 180ms ease,
+          color 180ms ease,
+          transform 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button-primary {
+        background: var(--blue);
+        color: var(--white);
+      }
+
+      .button-primary:hover {
+        background: var(--blue-hover);
+      }
+
+      .button-secondary {
+        border-color: var(--line);
+        background: var(--white);
+        color: var(--ink);
+      }
+
+      .button-secondary:hover {
+        border-color: var(--ink);
+      }
+
+      .button-inverse {
+        background: var(--white);
+        color: var(--navy);
+      }
+
+      .button-ghost-inverse {
+        border-color: rgb(255 255 255 / 28%);
+        background: rgb(255 255 255 / 8%);
+        color: var(--white);
+      }
+
+      .button-ghost-inverse:hover {
+        border-color: rgb(255 255 255 / 60%);
+        background: rgb(255 255 255 / 14%);
+      }
+
+      .button-small {
+        min-height: var(--alpy-ui-size-40);
+        padding-inline: var(--alpy-ui-size-16);
+      }
+
+      .button svg {
+        width: var(--alpy-ui-size-16);
+        height: var(--alpy-ui-size-16);
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: var(--alpy-ui-size-1) solid rgb(206 206 206 / 64%);
+        background: rgb(255 255 255 / 90%);
+        backdrop-filter: blur(18px);
+      }
+
+      .navbar {
+        display: flex;
+        min-height: 72px;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--alpy-ui-size-24);
+      }
+
+      .brand {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        gap: 10px;
+        color: var(--ink);
+        font-size: var(--alpy-ui-font-body-large-fontSize);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: var(--alpy-ui-size-32);
+        height: var(--alpy-ui-size-32);
+        place-items: center;
+        border-radius: 10px;
+        background: var(--blue);
+        box-shadow: inset 0 0 0 1px rgb(255 255 255 / 20%);
+        color: var(--white);
+      }
+
+      .brand-mark svg {
+        width: var(--alpy-ui-size-20);
+        height: var(--alpy-ui-size-20);
+      }
+
+      .nav-panel,
+      .nav-links,
+      .nav-actions {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-panel {
+        flex: 1;
+        justify-content: flex-end;
+        gap: var(--alpy-ui-size-28);
+      }
+
+      .nav-links {
+        gap: var(--alpy-ui-size-24);
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        font-weight: 500;
+      }
+
+      .nav-links a:hover {
+        color: var(--ink);
+      }
+
+      .nav-actions {
+        gap: var(--alpy-ui-size-8);
+      }
+
+      .nav-toggle {
+        display: none;
+        width: var(--alpy-ui-size-44);
+        height: var(--alpy-ui-size-44);
+        padding: 0;
+        border: var(--alpy-ui-size-1) solid var(--line);
+        border-radius: var(--alpy-ui-radius-full);
+        background: var(--white);
+        cursor: pointer;
+      }
+
+      .nav-toggle span,
+      .nav-toggle span::before,
+      .nav-toggle span::after {
+        display: block;
+        width: var(--alpy-ui-size-20);
+        height: var(--alpy-ui-size-2);
+        margin-inline: auto;
+        border-radius: var(--alpy-ui-radius-full);
+        background: var(--ink);
+        content: "";
+        transition: transform 180ms ease;
+      }
+
+      .nav-toggle span {
+        position: relative;
+      }
+
+      .nav-toggle span::before {
+        position: absolute;
+        top: -6px;
+      }
+
+      .nav-toggle span::after {
+        position: absolute;
+        top: 6px;
+      }
+
+      .nav-toggle[aria-expanded="true"] span {
+        background: transparent;
+      }
+
+      .nav-toggle[aria-expanded="true"] span::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      .nav-toggle[aria-expanded="true"] span::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+
+      .hero {
+        padding-block: 40px 72px;
+      }
+
+      .bento-hero {
+        display: grid;
+        min-height: 730px;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-rows: minmax(390px, 1fr) minmax(190px, auto);
+        gap: var(--grid-gap);
+      }
+
+      .card {
+        position: relative;
+        overflow: hidden;
+        border: var(--alpy-ui-size-1) solid var(--line-soft);
+        border-radius: var(--card-radius);
+        background: var(--white);
+      }
+
+      .hero-message {
+        display: flex;
+        grid-column: span 7;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: clamp(32px, 5vw, 64px);
+        border-color: var(--navy);
+        background:
+          radial-gradient(circle at 86% 12%, rgb(10 79 223 / 52%), transparent 34%),
+          var(--navy);
+        color: rgb(255 255 255 / 74%);
+      }
+
+      .hero-message::after {
+        position: absolute;
+        right: -80px;
+        bottom: -130px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgb(255 255 255 / 12%);
+        border-radius: var(--alpy-ui-radius-full);
+        box-shadow:
+          0 0 0 42px rgb(255 255 255 / 4%),
+          0 0 0 84px rgb(255 255 255 / 3%);
+        content: "";
+        pointer-events: none;
+      }
+
+      .hero-message .eyebrow {
+        color: #a9c2ff;
+      }
+
+      .hero-message h1 {
+        margin-top: var(--alpy-ui-size-32);
+        color: var(--white);
+      }
+
+      .hero-lede {
+        max-width: 620px;
+        margin-top: var(--alpy-ui-size-20);
+        font-size: var(--alpy-ui-font-body-large-fontSize);
+        line-height: var(--alpy-ui-font-body-large-lineHeight);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--alpy-ui-size-12);
+        margin-top: var(--alpy-ui-size-40);
+      }
+
+      .hero-proof {
+        display: flex;
+        align-items: center;
+        gap: var(--alpy-ui-size-12);
+        margin-top: var(--alpy-ui-size-40);
+        color: rgb(255 255 255 / 66%);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+      }
+
+      .avatar-stack {
+        display: flex;
+      }
+
+      .avatar-stack span {
+        display: grid;
+        width: var(--alpy-ui-size-32);
+        height: var(--alpy-ui-size-32);
+        place-items: center;
+        margin-left: -8px;
+        border: var(--alpy-ui-size-2) solid var(--navy);
+        border-radius: var(--alpy-ui-radius-full);
+        background: var(--blue-soft);
+        color: var(--navy);
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      .avatar-stack span:first-child {
+        margin-left: 0;
+        background: var(--yellow-soft);
+      }
+
+      .avatar-stack span:last-child {
+        background: var(--green-soft);
+      }
+
+      .product-stage {
+        display: grid;
+        grid-column: span 5;
+        min-width: 0;
+        padding: var(--alpy-ui-size-20);
+        background:
+          linear-gradient(145deg, rgb(213 220 232 / 70%), rgb(241 241 241 / 36%)),
+          var(--white);
+      }
+
+      .product-window {
+        display: grid;
+        min-width: 0;
+        overflow: hidden;
+        grid-template-columns: 72px minmax(0, 1fr);
+        border: var(--alpy-ui-size-1) solid rgb(3 22 67 / 12%);
+        border-radius: var(--alpy-ui-radius-large);
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .product-sidebar {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: var(--alpy-ui-size-16);
+        padding: var(--alpy-ui-size-16) var(--alpy-ui-size-12);
+        border-right: var(--alpy-ui-size-1) solid var(--line-soft);
+        background: #fafafa;
+      }
+
+      .product-sidebar .brand-mark {
+        width: var(--alpy-ui-size-28);
+        height: var(--alpy-ui-size-28);
+        border-radius: var(--alpy-ui-radius-medium);
+      }
+
+      .side-icon {
+        display: grid;
+        width: var(--alpy-ui-size-32);
+        height: var(--alpy-ui-size-32);
+        place-items: center;
+        border-radius: var(--alpy-ui-radius-medium);
+        color: var(--muted);
+      }
+
+      .side-icon.active {
+        background: var(--blue-soft);
+        color: var(--blue);
+      }
+
+      .side-icon svg {
+        width: var(--alpy-ui-size-16);
+        height: var(--alpy-ui-size-16);
+      }
+
+      .product-main {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+      }
+
+      .product-topbar {
+        display: flex;
+        min-height: 58px;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--alpy-ui-size-12);
+        padding: 0 var(--alpy-ui-size-16);
+        border-bottom: var(--alpy-ui-size-1) solid var(--line-soft);
+      }
+
+      .product-title {
+        min-width: 0;
+      }
+
+      .product-title strong,
+      .product-title span {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .product-title strong {
+        color: var(--ink);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+      }
+
+      .product-title span {
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 16px;
+      }
+
+      .status-pill {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        gap: 6px;
+        padding: var(--alpy-ui-size-4) var(--alpy-ui-size-8);
+        border-radius: var(--alpy-ui-radius-full);
+        background: var(--green-soft);
+        color: var(--green);
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 16px;
+      }
+
+      .status-pill::before {
+        width: 6px;
+        height: 6px;
+        border-radius: var(--alpy-ui-radius-full);
+        background: currentColor;
+        content: "";
+      }
+
+      .product-content {
+        display: grid;
+        min-height: 0;
+        flex: 1;
+        grid-template-columns: minmax(0, 1.2fr) minmax(172px, 0.8fr);
+      }
+
+      .workspace-column,
+      .assistant-column {
+        min-width: 0;
+        padding: var(--alpy-ui-size-16);
+      }
+
+      .workspace-column {
+        display: grid;
+        align-content: start;
+        gap: var(--alpy-ui-size-12);
+      }
+
+      .workspace-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--alpy-ui-size-8);
+      }
+
+      .workspace-heading strong {
+        color: var(--ink);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+      }
+
+      .workspace-heading span {
+        color: var(--muted);
+        font-size: 10px;
+      }
+
+      .mini-task {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: var(--alpy-ui-size-8);
+        padding: var(--alpy-ui-size-8);
+        border: var(--alpy-ui-size-1) solid var(--line-soft);
+        border-radius: var(--alpy-ui-radius-medium);
+        background: var(--white);
+      }
+
+      .mini-task.featured {
+        border-color: var(--blue-mid);
+        background: rgb(213 220 232 / 34%);
+      }
+
+      .task-check {
+        display: grid;
+        width: var(--alpy-ui-size-20);
+        height: var(--alpy-ui-size-20);
+        place-items: center;
+        border: var(--alpy-ui-size-1) solid var(--line);
+        border-radius: 6px;
+        background: var(--white);
+        color: var(--green);
+      }
+
+      .task-check.done {
+        border-color: var(--green);
+        background: var(--green-soft);
+      }
+
+      .task-check svg {
+        width: var(--alpy-ui-size-12);
+        height: var(--alpy-ui-size-12);
+      }
+
+      .task-copy {
+        min-width: 0;
+      }
+
+      .task-copy strong,
+      .task-copy span {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .task-copy strong {
+        color: var(--ink);
+        font-size: 10px;
+        line-height: 16px;
+      }
+
+      .task-copy span {
+        color: var(--muted);
+        font-size: 9px;
+        line-height: 14px;
+      }
+
+      .task-avatar {
+        display: grid;
+        width: var(--alpy-ui-size-24);
+        height: var(--alpy-ui-size-24);
+        place-items: center;
+        border-radius: var(--alpy-ui-radius-full);
+        background: var(--yellow-soft);
+        color: var(--navy);
+        font-size: 8px;
+        font-weight: 700;
+      }
+
+      .assistant-column {
+        display: flex;
+        flex-direction: column;
+        gap: var(--alpy-ui-size-8);
+        border-left: var(--alpy-ui-size-1) solid var(--line-soft);
+        background: #fafafa;
+      }
+
+      .assistant-label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--blue);
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 16px;
+      }
+
+      .assistant-label svg {
+        width: var(--alpy-ui-size-12);
+        height: var(--alpy-ui-size-12);
+      }
+
+      .assistant-bubble {
+        padding: var(--alpy-ui-size-8);
+        border: var(--alpy-ui-size-1) solid var(--line-soft);
+        border-radius: 4px 10px 10px 10px;
+        background: var(--white);
+        color: var(--body);
+        font-size: 10px;
+        line-height: 15px;
+      }
+
+      .assistant-sources {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--alpy-ui-size-4);
+      }
+
+      .assistant-sources span {
+        padding: 2px 6px;
+        border-radius: var(--alpy-ui-radius-full);
+        background: var(--blue-soft);
+        color: var(--blue-hover);
+        font-size: 8px;
+        font-weight: 600;
+        line-height: 14px;
+      }
+
+      .assistant-input {
+        display: flex;
+        min-height: var(--alpy-ui-size-32);
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--alpy-ui-size-4);
+        margin-top: auto;
+        padding: var(--alpy-ui-size-4) var(--alpy-ui-size-4)
+          var(--alpy-ui-size-4) 6px;
+        border: var(--alpy-ui-size-1) solid var(--line);
+        border-radius: var(--alpy-ui-radius-medium);
+        background: var(--white);
+        color: var(--muted);
+        font-size: 8px;
+      }
+
+      .assistant-input > span:first-child {
+        min-width: 0;
+        overflow: hidden;
+        line-height: 14px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .assistant-input span:last-child {
+        display: grid;
+        width: var(--alpy-ui-size-20);
+        height: var(--alpy-ui-size-20);
+        flex: 0 0 var(--alpy-ui-size-20);
+        place-items: center;
+        border-radius: 6px;
+        background: var(--blue);
+        color: var(--white);
+      }
+
+      .assistant-input svg {
+        width: 10px;
+        height: 10px;
+      }
+
+      .metric-card,
+      .capability-card {
+        display: flex;
+        min-height: 190px;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: var(--alpy-ui-size-20);
+        padding: var(--alpy-ui-size-32);
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .metric-card:hover,
+      .capability-card:hover,
+      .feature-card:hover,
+      .use-case-card:hover,
+      .integration-tile:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+
+      .metric-card {
+        grid-column: span 4;
+        background: var(--yellow-soft);
+      }
+
+      .support-card-copy {
+        display: grid;
+        gap: var(--alpy-ui-size-8);
+      }
+
+      .support-card-copy strong {
+        color: var(--ink);
+        font-size: var(--alpy-ui-font-body-large-fontSize);
+        font-weight: 600;
+        line-height: var(--alpy-ui-font-body-large-lineHeight);
+      }
+
+      .support-card-copy p {
+        max-width: 260px;
+        color: var(--muted);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+      }
+
+      .metric-card .support-card-copy p {
+        color: var(--body);
+      }
+
+      .capability-card {
+        grid-column: span 4;
+        background: var(--green-soft);
+      }
+
+      .capability-icon,
+      .feature-icon,
+      .step-icon,
+      .integration-icon {
+        display: grid;
+        place-items: center;
+        border-radius: var(--alpy-ui-radius-large);
+      }
+
+      .capability-icon {
+        width: var(--alpy-ui-size-44);
+        height: var(--alpy-ui-size-44);
+        border: var(--alpy-ui-size-1) solid rgb(3 22 67 / 8%);
+        background: var(--white);
+        box-shadow: 0 8px 20px rgb(3 22 67 / 7%);
+        color: var(--blue);
+      }
+
+      .metric-card .capability-icon {
+        color: #9e6800;
+      }
+
+      .capability-card:not(.signal-card) .capability-icon {
+        color: var(--green);
+      }
+
+      .capability-icon svg,
+      .feature-icon svg,
+      .step-icon svg,
+      .integration-icon svg {
+        width: var(--alpy-ui-size-20);
+        height: var(--alpy-ui-size-20);
+      }
+
+      .signal-card {
+        grid-column: span 4;
+        background: var(--blue-soft);
+      }
+
+      .logo-band {
+        padding-block: var(--alpy-ui-size-40);
+        border-block: var(--alpy-ui-size-1) solid var(--line-soft);
+      }
+
+      .logo-band-inner {
+        display: grid;
+        grid-template-columns: max-content minmax(0, 1fr);
+        align-items: center;
+        gap: var(--alpy-ui-size-40);
+      }
+
+      .logo-band p {
+        color: var(--muted);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        font-weight: 500;
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+        white-space: nowrap;
+      }
+
+      .logo-list {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        align-items: center;
+        gap: var(--alpy-ui-size-20);
+        list-style: none;
+      }
+
+      .logo-list li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--alpy-ui-size-8);
+        color: var(--ink);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+      }
+
+      .logo-symbol {
+        display: grid;
+        width: var(--alpy-ui-size-28);
+        height: var(--alpy-ui-size-28);
+        place-items: center;
+        border: var(--alpy-ui-size-1) solid var(--line);
+        border-radius: var(--alpy-ui-radius-medium);
+        color: var(--blue);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        font-weight: 700;
+      }
+
+      .features-section {
+        background: #fafafa;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: var(--grid-gap);
+      }
+
+      .feature-card {
+        display: flex;
+        min-height: 300px;
+        flex-direction: column;
+        padding: var(--card-pad);
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .feature-card h3 {
+        margin-top: var(--alpy-ui-size-16);
+      }
+
+      .feature-card > p {
+        max-width: 500px;
+        margin-top: var(--alpy-ui-size-12);
+        color: var(--muted);
+      }
+
+      .feature-icon {
+        width: var(--alpy-ui-size-48);
+        height: var(--alpy-ui-size-48);
+        border: var(--alpy-ui-size-1) solid rgb(10 79 223 / 10%);
+        background: var(--blue-soft);
+        box-shadow: 0 6px 18px rgb(3 22 67 / 6%);
+        color: var(--blue);
+      }
+
+      .feature-assistant {
+        grid-column: span 7;
+        grid-row: span 2;
+        min-height: 620px;
+        background: var(--navy);
+      }
+
+      .feature-assistant h3,
+      .feature-assistant > p {
+        color: var(--white);
+      }
+
+      .feature-assistant > p {
+        color: rgb(255 255 255 / 68%);
+      }
+
+      .feature-assistant .feature-icon {
+        background: rgb(255 255 255 / 10%);
+        color: #a9c2ff;
+      }
+
+      .assistant-demo {
+        display: grid;
+        min-height: 390px;
+        flex: 1;
+        overflow: hidden;
+        grid-template-columns: 184px minmax(0, 1fr);
+        margin-top: var(--alpy-ui-size-32);
+        border: var(--alpy-ui-size-1) solid rgb(255 255 255 / 12%);
+        border-radius: var(--alpy-ui-radius-large);
+        background: rgb(255 255 255 / 6%);
+      }
+
+      .chat-sidebar {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        gap: var(--alpy-ui-size-8);
+        padding: var(--alpy-ui-size-16);
+        border-right: var(--alpy-ui-size-1) solid rgb(255 255 255 / 10%);
+        background: rgb(3 22 67 / 38%);
+      }
+
+      .chat-new {
+        display: flex;
+        min-height: var(--alpy-ui-size-40);
+        align-items: center;
+        justify-content: center;
+        gap: var(--alpy-ui-size-8);
+        border: var(--alpy-ui-size-1) solid rgb(255 255 255 / 16%);
+        border-radius: var(--alpy-ui-radius-medium);
+        background: rgb(255 255 255 / 8%);
+        color: var(--white);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        font-weight: 600;
+        line-height: var(--alpy-ui-font-body-small-lineHeight);
+      }
+
+      .chat-new svg {
+        width: var(--alpy-ui-size-16);
+        height: var(--alpy-ui-size-16);
+      }
+
+      .chat-sidebar-label {
+        margin: var(--alpy-ui-size-12) var(--alpy-ui-size-8) 0;
+        color: rgb(255 255 255 / 42%);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        line-height: 16px;
+        text-transform: uppercase;
+      }
+
+      .chat-history {
+        display: flex;
+        align-items: center;
+        gap: var(--alpy-ui-size-8);
+        min-height: 36px;
+        overflow: hidden;
+        padding: var(--alpy-ui-size-8);
+        border-radius: var(--alpy-ui-radius-medium);
+        color: rgb(255 255 255 / 58%);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        line-height: var(--alpy-ui-font-body-small-lineHeight);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .chat-history > span {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .chat-history.active {
+        background: rgb(255 255 255 / 10%);
+        color: var(--white);
+      }
+
+      .chat-history svg {
+        width: var(--alpy-ui-size-16);
+        height: var(--alpy-ui-size-16);
+        flex: 0 0 auto;
+      }
+
+      .chat-space {
+        display: flex;
+        align-items: center;
+        gap: var(--alpy-ui-size-8);
+        margin-top: auto;
+        padding-top: var(--alpy-ui-size-16);
+        border-top: var(--alpy-ui-size-1) solid rgb(255 255 255 / 10%);
+        color: rgb(255 255 255 / 66%);
+        font-size: 10px;
+        line-height: 16px;
+      }
+
+      .chat-space > span {
+        display: grid;
+        width: var(--alpy-ui-size-24);
+        height: var(--alpy-ui-size-24);
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: var(--alpy-ui-radius-medium);
+        background: var(--blue);
+        color: var(--white);
+      }
+
+      .chat-space svg {
+        width: var(--alpy-ui-size-12);
+        height: var(--alpy-ui-size-12);
+      }
+
+      .chat-panel {
+        display: grid;
+        min-width: 0;
+        grid-template-rows: auto minmax(0, 1fr) auto;
+        background:
+          radial-gradient(circle at 100% 0%, rgb(10 79 223 / 44%), transparent 38%),
+          rgb(3 22 67 / 20%);
+      }
+
+      .chat-toolbar {
+        display: flex;
+        min-height: var(--alpy-ui-size-56);
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--alpy-ui-size-12);
+        padding: 0 var(--alpy-ui-size-20);
+        border-bottom: var(--alpy-ui-size-1) solid rgb(255 255 255 / 10%);
+      }
+
+      .chat-toolbar-copy strong,
+      .chat-toolbar-copy span {
+        display: block;
+      }
+
+      .chat-toolbar-copy strong {
+        color: var(--white);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+      }
+
+      .chat-toolbar-copy span {
+        color: rgb(255 255 255 / 48%);
+        font-size: 10px;
+        line-height: 16px;
+      }
+
+      .chat-grounded {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: var(--alpy-ui-size-4) var(--alpy-ui-size-8);
+        border-radius: var(--alpy-ui-radius-full);
+        background: rgb(5 134 37 / 22%);
+        color: #b8e7c0;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 16px;
+      }
+
+      .chat-grounded::before {
+        width: 6px;
+        height: 6px;
+        border-radius: var(--alpy-ui-radius-full);
+        background: #75d88b;
+        content: "";
+      }
+
+      .chat-thread {
+        display: grid;
+        min-height: 0;
+        align-content: end;
+        gap: var(--alpy-ui-size-16);
+        padding: var(--alpy-ui-size-20);
+      }
+
+      .chat-date {
+        justify-self: center;
+        color: rgb(255 255 255 / 38%);
+        font-size: 10px;
+        line-height: 16px;
+      }
+
+      .chat-message-user {
+        max-width: 82%;
+        justify-self: end;
+        padding: var(--alpy-ui-size-12) var(--alpy-ui-size-16);
+        border-radius: var(--alpy-ui-radius-large) var(--alpy-ui-radius-large)
+          var(--alpy-ui-radius-small) var(--alpy-ui-radius-large);
+        background: var(--white);
+        color: var(--navy);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+      }
+
+      .chat-message-assistant {
+        display: grid;
+        max-width: 94%;
+        grid-template-columns: var(--alpy-ui-size-32) minmax(0, 1fr);
+        gap: var(--alpy-ui-size-12);
+      }
+
+      .chat-avatar {
+        display: grid;
+        width: var(--alpy-ui-size-32);
+        height: var(--alpy-ui-size-32);
+        place-items: center;
+        border-radius: var(--alpy-ui-radius-medium);
+        background: var(--blue);
+        color: var(--white);
+      }
+
+      .chat-avatar svg {
+        width: var(--alpy-ui-size-16);
+        height: var(--alpy-ui-size-16);
+      }
+
+      .chat-response {
+        display: grid;
+        gap: var(--alpy-ui-size-12);
+        padding: var(--alpy-ui-size-16);
+        border: var(--alpy-ui-size-1) solid rgb(255 255 255 / 14%);
+        border-radius: var(--alpy-ui-radius-small) var(--alpy-ui-radius-large)
+          var(--alpy-ui-radius-large) var(--alpy-ui-radius-large);
+        background: rgb(255 255 255 / 9%);
+      }
+
+      .chat-response strong {
+        color: #a9c2ff;
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        line-height: var(--alpy-ui-font-body-small-lineHeight);
+      }
+
+      .chat-response p {
+        color: rgb(255 255 255 / 78%);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+      }
+
+      .chat-sources,
+      .chat-suggestions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--alpy-ui-size-8);
+      }
+
+      .chat-sources span,
+      .chat-suggestions span {
+        padding: var(--alpy-ui-size-4) var(--alpy-ui-size-8);
+        border-radius: var(--alpy-ui-radius-full);
+        font-size: 10px;
+        line-height: 16px;
+      }
+
+      .chat-sources span {
+        background: rgb(255 255 255 / 8%);
+        color: rgb(255 255 255 / 58%);
+      }
+
+      .chat-suggestions span {
+        border: var(--alpy-ui-size-1) solid rgb(169 194 255 / 24%);
+        color: #c8d8ff;
+      }
+
+      .chat-composer {
+        display: flex;
+        min-height: var(--alpy-ui-size-48);
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--alpy-ui-size-12);
+        margin: 0 var(--alpy-ui-size-20) var(--alpy-ui-size-20);
+        padding: var(--alpy-ui-size-8) var(--alpy-ui-size-8)
+          var(--alpy-ui-size-8) var(--alpy-ui-size-16);
+        border: var(--alpy-ui-size-1) solid rgb(255 255 255 / 18%);
+        border-radius: var(--alpy-ui-radius-large);
+        background: rgb(255 255 255 / 8%);
+        color: rgb(255 255 255 / 42%);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        line-height: var(--alpy-ui-font-body-small-lineHeight);
+      }
+
+      .chat-send {
+        display: grid;
+        width: var(--alpy-ui-size-32);
+        height: var(--alpy-ui-size-32);
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: var(--alpy-ui-radius-medium);
+        background: var(--blue);
+        color: var(--white);
+      }
+
+      .chat-send svg {
+        width: var(--alpy-ui-size-16);
+        height: var(--alpy-ui-size-16);
+      }
+
+      .feature-knowledge,
+      .feature-documents {
+        grid-column: span 5;
+      }
+
+      .feature-knowledge {
+        min-height: 360px;
+        background: var(--blue-soft);
+      }
+
+      .feature-documents {
+        background: var(--blue-soft);
+      }
+
+      .knowledge-media {
+        position: relative;
+        min-height: 156px;
+        overflow: hidden;
+        margin-top: var(--alpy-ui-size-32);
+        border: var(--alpy-ui-size-1) solid rgb(3 22 67 / 10%);
+        border-radius: var(--alpy-ui-radius-large);
+        background: var(--white);
+      }
+
+      .knowledge-media img {
+        width: 100%;
+        height: 176px;
+        object-fit: cover;
+        object-position: center 58%;
+        transition: transform 360ms ease;
+      }
+
+      .feature-knowledge:hover .knowledge-media img {
+        transform: scale(1.025);
+      }
+
+      .knowledge-media figcaption {
+        position: absolute;
+        right: var(--alpy-ui-size-12);
+        bottom: var(--alpy-ui-size-12);
+        padding: var(--alpy-ui-size-4) var(--alpy-ui-size-8);
+        border: var(--alpy-ui-size-1) solid rgb(255 255 255 / 70%);
+        border-radius: var(--alpy-ui-radius-full);
+        background: rgb(255 255 255 / 86%);
+        color: var(--navy);
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 16px;
+        backdrop-filter: blur(10px);
+      }
+
+      .document-visual {
+        display: grid;
+        gap: var(--alpy-ui-size-8);
+        margin-top: var(--alpy-ui-size-32);
+        padding: var(--alpy-ui-size-16);
+        border: var(--alpy-ui-size-1) solid rgb(3 22 67 / 10%);
+        border-radius: var(--alpy-ui-radius-large);
+        background: rgb(255 255 255 / 74%);
+      }
+
+      .document-line {
+        height: 6px;
+        border-radius: var(--alpy-ui-radius-full);
+        background: rgb(3 22 67 / 12%);
+      }
+
+      .document-line.heading {
+        width: 52%;
+        height: 10px;
+        background: var(--navy);
+      }
+
+      .document-line.short {
+        width: 68%;
+      }
+
+      .document-chip-row {
+        display: flex;
+        gap: var(--alpy-ui-size-8);
+        margin-top: var(--alpy-ui-size-8);
+      }
+
+      .document-chip-row span {
+        padding: var(--alpy-ui-size-4) var(--alpy-ui-size-8);
+        border-radius: var(--alpy-ui-radius-full);
+        background: var(--blue-soft);
+        color: var(--blue-hover);
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 16px;
+      }
+
+      .feature-workflows {
+        grid-column: span 5;
+        min-height: 380px;
+        background: var(--green-soft);
+      }
+
+      .workflow-visual {
+        display: grid;
+        gap: var(--alpy-ui-size-8);
+        margin-top: auto;
+      }
+
+      .workflow-row {
+        display: grid;
+        grid-template-columns: var(--alpy-ui-size-32) minmax(0, 1fr) auto;
+        align-items: center;
+        gap: var(--alpy-ui-size-12);
+        padding: var(--alpy-ui-size-12);
+        border: var(--alpy-ui-size-1) solid rgb(5 134 37 / 14%);
+        border-radius: var(--alpy-ui-radius-large);
+        background: rgb(255 255 255 / 76%);
+      }
+
+      .workflow-index {
+        display: grid;
+        width: var(--alpy-ui-size-32);
+        height: var(--alpy-ui-size-32);
+        place-items: center;
+        border-radius: var(--alpy-ui-radius-medium);
+        background: var(--green);
+        color: var(--white);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        font-weight: 700;
+      }
+
+      .workflow-row strong,
+      .workflow-row small {
+        display: block;
+      }
+
+      .workflow-row strong {
+        color: var(--ink);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+      }
+
+      .workflow-row small {
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 16px;
+      }
+
+      .workflow-row > svg {
+        width: var(--alpy-ui-size-16);
+        height: var(--alpy-ui-size-16);
+        color: var(--green);
+      }
+
+      .feature-analytics {
+        grid-column: span 4;
+        min-height: 380px;
+        background: var(--green-soft);
+      }
+
+      .analytics-visual {
+        display: grid;
+        min-height: 140px;
+        grid-template-columns: repeat(7, 1fr);
+        align-items: end;
+        gap: var(--alpy-ui-size-8);
+        margin-top: auto;
+        padding: var(--alpy-ui-size-16);
+        border-bottom: var(--alpy-ui-size-1) solid var(--blue-mid);
+      }
+
+      .analytics-visual span {
+        min-height: 22px;
+        border-radius: var(--alpy-ui-radius-small) var(--alpy-ui-radius-small) 0 0;
+        background: var(--blue);
+        opacity: 0.32;
+      }
+
+      .analytics-visual span:nth-child(1) {
+        height: 28%;
+      }
+
+      .analytics-visual span:nth-child(2) {
+        height: 46%;
+      }
+
+      .analytics-visual span:nth-child(3) {
+        height: 38%;
+      }
+
+      .analytics-visual span:nth-child(4) {
+        height: 64%;
+      }
+
+      .analytics-visual span:nth-child(5) {
+        height: 58%;
+      }
+
+      .analytics-visual span:nth-child(6) {
+        height: 78%;
+      }
+
+      .analytics-visual span:nth-child(7) {
+        height: 94%;
+        opacity: 1;
+      }
+
+      .feature-integrations {
+        grid-column: span 3;
+        min-height: 380px;
+        background: var(--green-soft);
+      }
+
+      .workflow-section .section-heading > div {
+        min-width: 0;
+        flex: 1 1 auto;
+      }
+
+      .workflow-section .section-heading > p {
+        flex: 0 0 340px;
+      }
+
+      .workflow-section .section-heading h2 {
+        max-width: none;
+        font-size: var(--alpy-ui-font-heading-large-fontSize);
+        line-height: var(--alpy-ui-font-heading-large-lineHeight);
+        white-space: nowrap;
+      }
+
+      .integration-orbit {
+        position: relative;
+        min-height: 150px;
+        margin-top: auto;
+      }
+
+      .orbit-center,
+      .orbit-item {
+        position: absolute;
+        display: grid;
+        place-items: center;
+        border: var(--alpy-ui-size-1) solid var(--line);
+        border-radius: var(--alpy-ui-radius-large);
+        background: var(--white);
+        box-shadow: 0 8px 24px rgb(3 22 67 / 8%);
+      }
+
+      .orbit-center {
+        top: 50%;
+        left: 50%;
+        width: var(--alpy-ui-size-56);
+        height: var(--alpy-ui-size-56);
+        border-color: var(--blue);
+        background: var(--blue);
+        color: var(--white);
+        transform: translate(-50%, -50%);
+      }
+
+      .orbit-center svg {
+        width: var(--alpy-ui-size-24);
+        height: var(--alpy-ui-size-24);
+      }
+
+      .orbit-item {
+        width: var(--alpy-ui-size-40);
+        height: var(--alpy-ui-size-40);
+        color: var(--navy);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        font-weight: 700;
+      }
+
+      .orbit-item:nth-child(2) {
+        top: 6px;
+        left: 8%;
+      }
+
+      .orbit-item:nth-child(3) {
+        top: 4px;
+        right: 8%;
+      }
+
+      .orbit-item:nth-child(4) {
+        bottom: 4px;
+        left: 4%;
+      }
+
+      .orbit-item:nth-child(5) {
+        right: 4%;
+        bottom: 4px;
+      }
+
+      .workflow-section {
+        overflow: hidden;
+      }
+
+      .steps {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--alpy-ui-size-16);
+        list-style: none;
+      }
+
+      .steps::before {
+        position: absolute;
+        top: 48px;
+        right: 16%;
+        left: 16%;
+        height: var(--alpy-ui-size-1);
+        background: var(--line);
+        content: "";
+      }
+
+      .step {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        align-content: start;
+        gap: var(--alpy-ui-size-16);
+        min-height: 280px;
+        padding: var(--alpy-ui-size-32);
+        border: var(--alpy-ui-size-1) solid var(--line-soft);
+        border-radius: var(--card-radius);
+        background: var(--white);
+      }
+
+      .step-number {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .step-number > span {
+        display: grid;
+        width: var(--alpy-ui-size-32);
+        height: var(--alpy-ui-size-32);
+        place-items: center;
+        border-radius: var(--alpy-ui-radius-full);
+        background: var(--navy);
+        color: var(--white);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        font-weight: 700;
+      }
+
+      .step-icon {
+        width: var(--alpy-ui-size-48);
+        height: var(--alpy-ui-size-48);
+        background: var(--blue-soft);
+        color: var(--blue);
+      }
+
+      .step h3 {
+        margin-top: var(--alpy-ui-size-8);
+      }
+
+      .step p {
+        color: var(--muted);
+      }
+
+      .use-cases-section {
+        background: var(--navy);
+        color: rgb(255 255 255 / 72%);
+      }
+
+      .use-cases-section .eyebrow {
+        color: #a9c2ff;
+      }
+
+      .use-cases-section h2,
+      .use-cases-section .section-heading > p {
+        color: var(--white);
+      }
+
+      .use-cases-section .section-heading > p {
+        color: rgb(255 255 255 / 64%);
+      }
+
+      .use-case-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--grid-gap);
+      }
+
+      .use-case-card {
+        display: grid;
+        min-height: 260px;
+        align-content: space-between;
+        gap: var(--alpy-ui-size-32);
+        padding: var(--alpy-ui-size-36);
+        border: var(--alpy-ui-size-1) solid rgb(255 255 255 / 12%);
+        border-radius: var(--card-radius);
+        background: rgb(255 255 255 / 6%);
+        transition:
+          transform 180ms ease,
+          background-color 180ms ease;
+      }
+
+      .use-case-card:hover {
+        background: rgb(255 255 255 / 10%);
+        box-shadow: none;
+      }
+
+      .use-case-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: var(--alpy-ui-size-20);
+      }
+
+      .use-case-card h3 {
+        color: var(--white);
+      }
+
+      .use-case-card p {
+        max-width: 470px;
+        color: rgb(255 255 255 / 64%);
+      }
+
+      .use-case-arrow {
+        display: grid;
+        width: var(--alpy-ui-size-44);
+        height: var(--alpy-ui-size-44);
+        flex: 0 0 auto;
+        place-items: center;
+        border: var(--alpy-ui-size-1) solid rgb(255 255 255 / 18%);
+        border-radius: var(--alpy-ui-radius-full);
+        color: var(--white);
+      }
+
+      .use-case-arrow svg {
+        width: var(--alpy-ui-size-16);
+        height: var(--alpy-ui-size-16);
+      }
+
+      .use-case-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--alpy-ui-size-8);
+      }
+
+      .use-case-tags span {
+        padding: var(--alpy-ui-size-4) var(--alpy-ui-size-12);
+        border-radius: var(--alpy-ui-radius-full);
+        background: rgb(255 255 255 / 8%);
+        color: rgb(255 255 255 / 72%);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        line-height: var(--alpy-ui-font-body-small-lineHeight);
+      }
+
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1.35fr 0.65fr;
+        gap: var(--grid-gap);
+      }
+
+      .story-quote {
+        display: flex;
+        min-height: 540px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: clamp(32px, 5vw, 64px);
+        border-color: rgb(3 22 67 / 20%);
+        background:
+          linear-gradient(
+            90deg,
+            rgb(3 22 67 / 97%) 0%,
+            rgb(3 22 67 / 88%) 48%,
+            rgb(3 22 67 / 34%) 78%,
+            rgb(3 22 67 / 12%) 100%
+          ),
+          url("assets/relay-team-collaboration.jpg") 60% center / cover no-repeat;
+        color: rgb(255 255 255 / 72%);
+      }
+
+      .story-quote .eyebrow {
+        color: #dbe6ff;
+      }
+
+      .story-quote blockquote {
+        max-width: 610px;
+        color: var(--white);
+        font-size: clamp(28px, 3.2vw, var(--alpy-ui-font-heading-large-fontSize));
+        font-weight: 500;
+        letter-spacing: var(--alpy-ui-font-heading-letterSpacing);
+        line-height: 1.2;
+      }
+
+      .story-person {
+        display: flex;
+        align-items: center;
+        gap: var(--alpy-ui-size-12);
+      }
+
+      .story-avatar {
+        display: grid;
+        width: var(--alpy-ui-size-48);
+        height: var(--alpy-ui-size-48);
+        place-items: center;
+        border-radius: var(--alpy-ui-radius-full);
+        background: var(--yellow-soft);
+        color: var(--navy);
+        font-weight: 700;
+      }
+
+      .story-person strong,
+      .story-person span {
+        display: block;
+      }
+
+      .story-person strong {
+        color: var(--white);
+      }
+
+      .story-person span {
+        color: rgb(255 255 255 / 64%);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+      }
+
+      .story-results {
+        display: grid;
+        gap: var(--grid-gap);
+      }
+
+      .result-card,
+      .company-card {
+        display: flex;
+        min-height: 144px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: var(--alpy-ui-size-28);
+      }
+
+      .result-card,
+      .company-card {
+        background: var(--surface);
+      }
+
+      .result-value,
+      .company-lockup {
+        color: var(--ink);
+        font-size: var(--alpy-ui-font-heading-small-fontSize);
+        font-weight: 700;
+        letter-spacing: var(--alpy-ui-font-heading-letterSpacing);
+        line-height: var(--alpy-ui-font-heading-small-lineHeight);
+      }
+
+      .result-card p,
+      .company-card p {
+        color: var(--muted);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+      }
+
+      .company-lockup {
+        display: block;
+      }
+
+      .integrations-section {
+        background: #fafafa;
+      }
+
+      .integration-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: var(--alpy-ui-size-12);
+      }
+
+      .integration-tile {
+        display: flex;
+        min-height: 112px;
+        align-items: center;
+        gap: var(--alpy-ui-size-16);
+        padding: var(--alpy-ui-size-20);
+        border: var(--alpy-ui-size-1) solid var(--line-soft);
+        border-radius: var(--alpy-ui-size-20);
+        background: var(--white);
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .integration-icon {
+        width: var(--alpy-ui-size-44);
+        height: var(--alpy-ui-size-44);
+        flex: 0 0 auto;
+        border: var(--alpy-ui-size-1) solid rgb(10 79 223 / 10%);
+        background: rgb(213 220 232 / 52%);
+        box-shadow: none;
+        color: var(--blue);
+      }
+
+      .integration-icon svg {
+        width: var(--alpy-ui-size-20);
+        height: var(--alpy-ui-size-20);
+      }
+
+      .integration-tile > span:last-child strong,
+      .integration-tile > span:last-child span {
+        display: block;
+      }
+
+      .integration-tile > span:last-child strong {
+        color: var(--ink);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+      }
+
+      .integration-tile > span:last-child span {
+        margin-top: var(--alpy-ui-size-4);
+        color: var(--muted);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        line-height: var(--alpy-ui-font-body-small-lineHeight);
+      }
+
+      .integration-cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: var(--alpy-ui-size-32);
+      }
+
+      .pricing-note {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--alpy-ui-size-8);
+        color: var(--muted);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        line-height: var(--alpy-ui-font-body-small-lineHeight);
+      }
+
+      .pricing-note::before {
+        width: 6px;
+        height: 6px;
+        border-radius: var(--alpy-ui-radius-full);
+        background: var(--yellow);
+        content: "";
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--grid-gap);
+      }
+
+      .plan-card {
+        display: flex;
+        min-height: 500px;
+        flex-direction: column;
+        padding: var(--alpy-ui-size-32);
+      }
+
+      .plan-card.featured {
+        border-color: var(--blue);
+        background: var(--navy);
+        box-shadow: var(--shadow);
+      }
+
+      .plan-card.featured h3,
+      .plan-card.featured .plan-price,
+      .plan-card.featured .plan-description,
+      .plan-card.featured .plan-list,
+      .plan-card.featured .plan-label {
+        color: var(--white);
+      }
+
+      .plan-card.featured .plan-description,
+      .plan-card.featured .plan-list {
+        color: rgb(255 255 255 / 68%);
+      }
+
+      .plan-label {
+        color: var(--blue);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        line-height: var(--alpy-ui-font-body-small-lineHeight);
+        text-transform: uppercase;
+      }
+
+      .plan-card h3 {
+        margin-top: var(--alpy-ui-size-12);
+      }
+
+      .plan-price {
+        display: flex;
+        align-items: baseline;
+        gap: var(--alpy-ui-size-8);
+        margin-top: var(--alpy-ui-size-24);
+        color: var(--ink);
+      }
+
+      .plan-price strong {
+        font-size: var(--alpy-ui-font-heading-xlarge-fontSize);
+        letter-spacing: var(--alpy-ui-font-heading-letterSpacing);
+        line-height: var(--alpy-ui-font-heading-xlarge-lineHeight);
+      }
+
+      .plan-price span {
+        color: var(--muted);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+      }
+
+      .plan-card.featured .plan-price span {
+        color: rgb(255 255 255 / 56%);
+      }
+
+      .plan-description {
+        min-height: 48px;
+        margin-top: var(--alpy-ui-size-12);
+        color: var(--muted);
+      }
+
+      .plan-list {
+        display: grid;
+        gap: var(--alpy-ui-size-12);
+        margin: var(--alpy-ui-size-28) 0;
+        color: var(--body);
+        list-style: none;
+      }
+
+      .plan-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--alpy-ui-size-8);
+      }
+
+      .plan-list svg {
+        width: var(--alpy-ui-size-16);
+        height: var(--alpy-ui-size-16);
+        flex: 0 0 auto;
+        margin-top: var(--alpy-ui-size-4);
+        color: var(--green);
+      }
+
+      .plan-card .button {
+        width: 100%;
+        margin-top: auto;
+      }
+
+      .pricing-disclaimer {
+        max-width: 760px;
+        margin: var(--alpy-ui-size-20) auto 0;
+        color: var(--muted);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        line-height: var(--alpy-ui-font-body-small-lineHeight);
+        text-align: center;
+      }
+
+      .final-cta {
+        padding-block: 0 var(--section-space);
+      }
+
+      .final-cta-card {
+        display: grid;
+        min-height: 420px;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        gap: var(--alpy-ui-size-48);
+        padding: clamp(32px, 6vw, 72px);
+        border-color: var(--blue);
+        background:
+          radial-gradient(circle at 88% 20%, rgb(255 255 255 / 16%), transparent 22%),
+          linear-gradient(135deg, var(--blue), var(--blue-hover));
+        color: rgb(255 255 255 / 72%);
+      }
+
+      .final-cta-card::before,
+      .final-cta-card::after {
+        position: absolute;
+        border: var(--alpy-ui-size-1) solid rgb(255 255 255 / 14%);
+        border-radius: var(--alpy-ui-radius-full);
+        content: "";
+        pointer-events: none;
+      }
+
+      .final-cta-card::before {
+        top: -130px;
+        right: -90px;
+        width: 340px;
+        height: 340px;
+      }
+
+      .final-cta-card::after {
+        top: -72px;
+        right: -32px;
+        width: 220px;
+        height: 220px;
+      }
+
+      .final-cta-copy {
+        position: relative;
+        z-index: 1;
+      }
+
+      .final-cta-card .eyebrow {
+        color: #dbe6ff;
+      }
+
+      .final-cta-card h2 {
+        max-width: 760px;
+        margin-top: var(--alpy-ui-size-16);
+        color: var(--white);
+      }
+
+      .final-cta-card p {
+        max-width: 620px;
+        margin-top: var(--alpy-ui-size-16);
+        font-size: var(--alpy-ui-font-body-large-fontSize);
+        line-height: var(--alpy-ui-font-body-large-lineHeight);
+      }
+
+      .final-cta-actions {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--alpy-ui-size-12);
+      }
+
+      .site-footer {
+        padding-block: var(--alpy-ui-size-64) var(--alpy-ui-size-32);
+        border-top: var(--alpy-ui-size-1) solid var(--line-soft);
+        background: #fafafa;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr repeat(3, 1fr);
+        gap: var(--alpy-ui-size-48);
+      }
+
+      .footer-brand p {
+        max-width: 320px;
+        margin-top: var(--alpy-ui-size-16);
+        color: var(--muted);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+      }
+
+      .footer-column h3 {
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        font-weight: 600;
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+        letter-spacing: 0;
+      }
+
+      .footer-column ul {
+        display: grid;
+        gap: var(--alpy-ui-size-12);
+        margin-top: var(--alpy-ui-size-16);
+        list-style: none;
+      }
+
+      .footer-column a {
+        color: var(--muted);
+        font-size: var(--alpy-ui-font-body-medium-fontSize);
+        line-height: var(--alpy-ui-font-body-medium-lineHeight);
+      }
+
+      .footer-column a:hover {
+        color: var(--ink);
+      }
+
+      .footer-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--alpy-ui-size-24);
+        margin-top: var(--alpy-ui-size-64);
+        padding-top: var(--alpy-ui-size-24);
+        border-top: var(--alpy-ui-size-1) solid var(--line-soft);
+        color: var(--muted);
+        font-size: var(--alpy-ui-font-body-small-fontSize);
+        line-height: var(--alpy-ui-font-body-small-lineHeight);
+      }
+
+      .footer-status {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--alpy-ui-size-8);
+      }
+
+      .footer-status::before {
+        width: var(--alpy-ui-size-8);
+        height: var(--alpy-ui-size-8);
+        border-radius: var(--alpy-ui-radius-full);
+        background: var(--green);
+        content: "";
+      }
+
+      @media (max-width: 1024px) {
+        :root {
+          --section-space: 88px;
+          --card-pad: 32px;
+        }
+
+        .nav-links {
+          gap: var(--alpy-ui-size-16);
+        }
+
+        .bento-hero {
+          grid-template-rows: auto auto auto;
+        }
+
+        .hero-message,
+        .product-stage {
+          grid-column: span 12;
+        }
+
+        .hero-message {
+          min-height: 540px;
+        }
+
+        .product-stage {
+          min-height: 480px;
+        }
+
+        .metric-card,
+        .capability-card,
+        .signal-card {
+          grid-column: span 4;
+        }
+
+        .feature-assistant {
+          grid-column: span 12;
+          grid-row: auto;
+        }
+
+        .feature-knowledge,
+        .feature-documents {
+          grid-column: span 6;
+        }
+
+        .feature-workflows,
+        .feature-analytics,
+        .feature-integrations {
+          grid-column: span 4;
+        }
+
+        .logo-band-inner {
+          grid-template-columns: 1fr;
+          gap: var(--alpy-ui-size-24);
+        }
+
+        .workflow-section .section-heading > p {
+          flex-basis: auto;
+        }
+
+        .workflow-section .section-heading h2 {
+          white-space: normal;
+        }
+
+        .integration-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .story-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .story-results {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .final-cta-card {
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+      }
+
+      @media (max-width: 860px) {
+        :root {
+          --shell: min(calc(100% - 32px), 1200px);
+        }
+
+        .nav-toggle {
+          display: block;
+        }
+
+        .nav-panel {
+          position: fixed;
+          top: 72px;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          display: none;
+          overflow-y: auto;
+          align-items: stretch;
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: var(--alpy-ui-size-32);
+          padding: var(--alpy-ui-size-32) 16px;
+          background: var(--white);
+        }
+
+        .nav-panel[data-open="true"] {
+          display: flex;
+        }
+
+        .nav-links,
+        .nav-actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .nav-links {
+          gap: 0;
+        }
+
+        .nav-links a {
+          padding-block: var(--alpy-ui-size-16);
+          border-bottom: var(--alpy-ui-size-1) solid var(--line-soft);
+          color: var(--ink);
+          font-size: var(--alpy-ui-font-body-large-fontSize);
+          line-height: var(--alpy-ui-font-body-large-lineHeight);
+        }
+
+        .nav-actions .button {
+          width: 100%;
+        }
+
+        .section-heading {
+          align-items: start;
+          flex-direction: column;
+        }
+
+        .use-case-card {
+          padding: var(--alpy-ui-size-32);
+        }
+
+        .logo-list {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .feature-workflows,
+        .feature-analytics,
+        .feature-integrations {
+          grid-column: span 12;
+        }
+
+        .feature-workflows,
+        .feature-analytics,
+        .feature-integrations {
+          min-height: 320px;
+        }
+
+        .steps {
+          grid-template-columns: 1fr;
+        }
+
+        .steps::before {
+          top: 16%;
+          right: auto;
+          bottom: 16%;
+          left: 48px;
+          width: var(--alpy-ui-size-1);
+          height: auto;
+        }
+
+        .step {
+          min-height: auto;
+        }
+
+        .use-case-grid,
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .plan-card {
+          min-height: auto;
+        }
+
+        .plan-description {
+          min-height: 0;
+        }
+
+        .plan-card .button {
+          margin-top: var(--alpy-ui-size-16);
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .footer-brand {
+          grid-column: span 2;
+        }
+      }
+
+      @media (max-width: 640px) {
+        :root {
+          --section-space: 72px;
+          --card-pad: 24px;
+          --card-radius: 20px;
+          --grid-gap: 12px;
+        }
+
+        h1 {
+          font-size: 42px;
+          line-height: 46px;
+        }
+
+        h2 {
+          font-size: var(--alpy-ui-font-heading-medium-fontSize);
+          line-height: var(--alpy-ui-font-heading-medium-lineHeight);
+        }
+
+        h3 {
+          font-size: var(--alpy-ui-font-heading-xsmall-fontSize);
+          line-height: var(--alpy-ui-font-heading-xsmall-lineHeight);
+        }
+
+        .hero {
+          padding-block: 20px 56px;
+        }
+
+        .hero-message {
+          min-height: 600px;
+          padding: var(--alpy-ui-size-32) var(--alpy-ui-size-24);
+        }
+
+        .hero-actions,
+        .final-cta-actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .hero-actions .button,
+        .final-cta-actions .button {
+          width: 100%;
+        }
+
+        .hero-proof {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .product-stage {
+          min-height: 440px;
+          padding: var(--alpy-ui-size-12);
+        }
+
+        .product-window {
+          grid-template-columns: 48px minmax(0, 1fr);
+        }
+
+        .product-sidebar {
+          padding-inline: var(--alpy-ui-size-8);
+        }
+
+        .side-icon {
+          width: var(--alpy-ui-size-28);
+          height: var(--alpy-ui-size-28);
+        }
+
+        .product-content {
+          grid-template-columns: 1fr;
+        }
+
+        .assistant-column {
+          display: none;
+        }
+
+        .metric-card,
+        .capability-card,
+        .signal-card {
+          min-height: 170px;
+          grid-column: span 12;
+        }
+
+        .logo-list {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: var(--alpy-ui-size-20) var(--alpy-ui-size-12);
+        }
+
+        .logo-list li:last-child {
+          grid-column: span 2;
+        }
+
+        .feature-knowledge,
+        .feature-documents {
+          grid-column: span 12;
+        }
+
+        .feature-assistant {
+          min-height: 720px;
+        }
+
+        .assistant-demo {
+          min-height: 500px;
+          grid-template-columns: 1fr;
+        }
+
+        .chat-sidebar {
+          display: none;
+        }
+
+        .chat-thread {
+          padding: var(--alpy-ui-size-16);
+        }
+
+        .chat-toolbar {
+          padding-inline: var(--alpy-ui-size-16);
+        }
+
+        .chat-composer {
+          margin: 0 var(--alpy-ui-size-16) var(--alpy-ui-size-16);
+        }
+
+        .chat-message-user,
+        .chat-message-assistant {
+          max-width: 100%;
+        }
+
+        .use-case-card {
+          min-height: 240px;
+          padding: var(--alpy-ui-size-28);
+        }
+
+        .story-quote {
+          min-height: 540px;
+          padding: var(--alpy-ui-size-32) var(--alpy-ui-size-24);
+        }
+
+        .story-results,
+        .integration-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .integration-tile {
+          min-height: 112px;
+        }
+
+        .final-cta-card {
+          min-height: 520px;
+          padding: var(--alpy-ui-size-32) var(--alpy-ui-size-24);
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-brand {
+          grid-column: auto;
+        }
+
+        .footer-bottom {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <nav class="navbar shell" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Relay AI home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M5 7.5h8.5a3.5 3.5 0 1 1 0 7H9m0 0 3-3m-3 3 3 3"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          Relay AI
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation"
+        >
+          <span aria-hidden="true"></span>
+        </button>
+
+        <div class="nav-panel" id="primary-navigation" data-open="false">
+          <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#workflow">Workflow</a>
+            <a href="#use-cases">Use Cases</a>
+            <a href="#integrations">Integrations</a>
+            <a href="#pricing">Pricing</a>
+          </div>
+          <div class="nav-actions">
+            <a class="button button-primary button-small" href="#pricing">
+              Start building
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path
+                  d="m7 5 5 5-5 5"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="bento-hero">
+          <article class="card hero-message">
+            <div>
+              <p class="eyebrow">AI productivity for connected teams</p>
+              <h1 id="hero-title">Turn every team update into forward motion.</h1>
+              <p class="hero-lede">
+                Relay AI brings your knowledge, documents, decisions, and workflows
+                into one shared workspace—so everyone can find context and move the
+                work ahead.
+              </p>
+              <div class="hero-actions">
+                <a class="button button-inverse" href="#features">
+                  Explore the workspace
+                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path
+                      d="m7 5 5 5-5 5"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a class="button button-ghost-inverse" href="#workflow">
+                  See how Relay works
+                </a>
+              </div>
+            </div>
+            <div class="hero-proof">
+              <div class="avatar-stack" aria-hidden="true">
+                <span>PD</span><span>MK</span><span>OP</span>
+              </div>
+              <span>Built for product, marketing, operations, and support.</span>
+            </div>
+          </article>
+
+          <article class="card product-stage">
+            <div
+              class="product-window"
+              role="img"
+              aria-label="Illustrative Relay AI workspace showing a launch plan and assistant summary"
+            >
+              <aside class="product-sidebar" aria-hidden="true">
+                <span class="brand-mark">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M5 7.5h8.5a3.5 3.5 0 1 1 0 7H9m0 0 3-3m-3 3 3 3"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="side-icon active">
+                  <svg viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M3.5 4.5h13v11h-13zM3.5 8h13M7 4.5V8"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="side-icon">
+                  <svg viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M5 3.5h7l3 3v10H5zM12 3.5v3h3M7.5 10h5M7.5 13h4"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="side-icon">
+                  <svg viewBox="0 0 20 20" fill="none">
+                    <circle cx="6" cy="6" r="2.5" stroke="currentColor" stroke-width="1.4" />
+                    <circle cx="14" cy="14" r="2.5" stroke="currentColor" stroke-width="1.4" />
+                    <path d="m8 8 4 4" stroke="currentColor" stroke-width="1.4" />
+                  </svg>
+                </span>
+              </aside>
+              <div class="product-main">
+                <div class="product-topbar">
+                  <div class="product-title">
+                    <strong>Launch workspace</strong>
+                    <span>Project Nova · 4 teams</span>
+                  </div>
+                  <span class="status-pill">On track</span>
+                </div>
+                <div class="product-content">
+                  <div class="workspace-column">
+                    <div class="workspace-heading">
+                      <strong>This week</strong><span>3 of 5 ready</span>
+                    </div>
+                    <div class="mini-task featured">
+                      <span class="task-check done">
+                        <svg viewBox="0 0 16 16" fill="none">
+                          <path d="m4 8 2.5 2.5L12 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <span class="task-copy">
+                        <strong>Finalize launch narrative</strong>
+                        <span>Summary synced from the brief</span>
+                      </span>
+                      <span class="task-avatar">MC</span>
+                    </div>
+                    <div class="mini-task">
+                      <span class="task-check"></span>
+                      <span class="task-copy">
+                        <strong>Review support readiness</strong>
+                        <span>2 open questions</span>
+                      </span>
+                      <span class="task-avatar">JL</span>
+                    </div>
+                    <div class="mini-task">
+                      <span class="task-check"></span>
+                      <span class="task-copy">
+                        <strong>Publish campaign assets</strong>
+                        <span>Waiting on approval</span>
+                      </span>
+                      <span class="task-avatar">AK</span>
+                    </div>
+                  </div>
+                  <div class="assistant-column">
+                    <div class="assistant-label">
+                      <svg viewBox="0 0 16 16" fill="none">
+                        <path d="m8 2 1.2 3.3L12.5 6.5 9.2 7.7 8 11 6.8 7.7 3.5 6.5l3.3-1.2z" fill="currentColor" />
+                      </svg>
+                      Relay assistant
+                    </div>
+                    <div class="assistant-bubble">
+                      The launch is on track. Support readiness is the only item that needs an owner today.
+                    </div>
+                    <div class="assistant-sources">
+                      <span>Launch brief</span><span>Stand-up</span>
+                    </div>
+                    <div class="assistant-input">
+                      <span>Ask about this project</span>
+                      <span>
+                        <svg viewBox="0 0 16 16" fill="none">
+                          <path d="m5 3 6 5-6 5V3Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card metric-card">
+            <span class="capability-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="7" cy="7" r="2" fill="currentColor" />
+                <circle cx="17" cy="7" r="2" fill="currentColor" />
+                <circle cx="7" cy="17" r="2" fill="currentColor" />
+                <circle cx="17" cy="17" r="2" fill="currentColor" />
+                <path d="M9 7h6M7 9v6M17 9v6M9 17h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </span>
+            <div class="support-card-copy">
+              <strong>6 connected capabilities</strong>
+              <p>From shared knowledge to team analytics.</p>
+            </div>
+          </article>
+
+          <article class="card capability-card">
+            <span class="capability-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 5.5h12v9H9l-4 3v-12Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path d="m18 4 .7 2.3L21 7l-2.3.7L18 10l-.7-2.3L15 7l2.3-.7L18 4Z" fill="currentColor" />
+              </svg>
+            </span>
+            <div class="support-card-copy">
+              <strong>Answers with context</strong>
+              <p>Ask once. Get an answer grounded in the work your team already knows.</p>
+            </div>
+          </article>
+
+          <article class="card capability-card signal-card">
+            <span class="capability-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 6h6v5h5v7h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="5" cy="6" r="2" fill="currentColor" />
+                <circle cx="19" cy="18" r="2" fill="currentColor" />
+                <path d="m16 15 3 3-3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="support-card-copy">
+              <strong>From signal to action</strong>
+              <p>Turn briefs, notes, and conversations into clear next steps.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="logo-band" aria-label="Illustrative customer logos">
+        <div class="logo-band-inner shell">
+          <p>Made for teams moving together</p>
+          <ul class="logo-list">
+            <li><span class="logo-symbol">N</span>Northstar</li>
+            <li><span class="logo-symbol">Q</span>Quarry</li>
+            <li><span class="logo-symbol">L</span>Loomline</li>
+            <li><span class="logo-symbol">A</span>Aperture</li>
+            <li><span class="logo-symbol">P</span>Pulse</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section features-section" id="features" aria-labelledby="features-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Everything stays connected</p>
+              <h2 id="features-title">One place to think, write, decide, and deliver.</h2>
+            </div>
+            <p>
+              Relay brings the context of your work together, then helps every team turn it into useful output.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="card feature-card feature-assistant">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="m12 3 1.5 4.2L18 9l-4.5 1.8L12 15l-1.5-4.2L6 9l4.5-1.8z" fill="currentColor" />
+                  <path d="m18.5 14 .8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z" fill="currentColor" />
+                </svg>
+              </span>
+              <h3>Your AI assistant, already caught up.</h3>
+              <p>
+                Ask questions, shape a brief, summarize a project, or find the next decision without rebuilding context every time.
+              </p>
+              <div class="assistant-demo" aria-label="Illustrative Relay AI chat workspace">
+                <aside class="chat-sidebar" aria-hidden="true">
+                  <div class="chat-new">
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
+                    New chat
+                  </div>
+                  <span class="chat-sidebar-label">Recent</span>
+                  <div class="chat-history active">
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M4 4.5h12v9H8l-4 3v-12Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" /></svg>
+                    <span>Nova launch blockers</span>
+                  </div>
+                  <div class="chat-history">
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M4 4.5h12v9H8l-4 3v-12Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" /></svg>
+                    <span>Campaign brief</span>
+                  </div>
+                  <div class="chat-history">
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M4 4.5h12v9H8l-4 3v-12Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" /></svg>
+                    <span>Support themes</span>
+                  </div>
+                  <div class="chat-space">
+                    <span>
+                      <svg viewBox="0 0 16 16" fill="none"><path d="m8 2 1.2 3.3L12.5 6.5 9.2 7.7 8 11 6.8 7.7 3.5 6.5l3.3-1.2z" fill="currentColor" /></svg>
+                    </span>
+                    Team workspace
+                  </div>
+                </aside>
+                <div class="chat-panel">
+                  <div class="chat-toolbar">
+                    <div class="chat-toolbar-copy">
+                      <strong>Project Nova</strong>
+                      <span>AI assistant · 8 connected sources</span>
+                    </div>
+                    <span class="chat-grounded">Grounded</span>
+                  </div>
+                  <div class="chat-thread">
+                    <span class="chat-date">Today</span>
+                    <div class="chat-message-user">What is blocking the Nova launch?</div>
+                    <div class="chat-message-assistant">
+                      <span class="chat-avatar" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" fill="none"><path d="m8 2 1.2 3.3L12.5 6.5 9.2 7.7 8 11 6.8 7.7 3.5 6.5l3.3-1.2z" fill="currentColor" /></svg>
+                      </span>
+                      <div class="chat-response">
+                        <strong>Relay</strong>
+                        <p>Two support questions are still unassigned. Everything else in the launch plan is ready for review.</p>
+                        <div class="chat-sources">
+                          <span>Launch plan</span><span>Support notes</span><span>Campaign brief</span>
+                        </div>
+                        <div class="chat-suggestions">
+                          <span>Assign an owner</span><span>Draft a status update</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="chat-composer">
+                    <span>Ask a follow-up about Project Nova…</span>
+                    <span class="chat-send" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="none"><path d="m7 5 6 5-6 5V5Z" fill="currentColor" /></svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card feature-card feature-knowledge">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="1.8" />
+                  <circle cx="17" cy="17" r="3" stroke="currentColor" stroke-width="1.8" />
+                  <path d="m9.2 9.2 5.6 5.6M17 6v5M14.5 8.5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+              </span>
+              <h3>Shared knowledge</h3>
+              <p>Connect decisions, research, conversations, and owners in one living source of context.</p>
+              <figure class="knowledge-media">
+                <img
+                  src="assets/relay-connected-knowledge.jpg"
+                  alt="Tactile blue panels, documents, and green threads converging around one shared hub"
+                  width="1120"
+                  height="747"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>Knowledge, connected</figcaption>
+              </figure>
+            </article>
+
+            <article class="card feature-card feature-documents">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M6 3.5h8l4 4v13H6zM14 3.5v4h4M9 12h6M9 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <h3>Living documents</h3>
+              <p>Draft with AI, collaborate with the team, and keep decisions close to the work they shape.</p>
+              <div class="document-visual" aria-hidden="true">
+                <span class="document-line heading"></span>
+                <span class="document-line"></span>
+                <span class="document-line"></span>
+                <span class="document-line short"></span>
+                <span class="document-chip-row"><span>Brief</span><span>3 collaborators</span></span>
+              </div>
+            </article>
+
+            <article class="card feature-card feature-workflows">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M5 5h5v5H5zM14 14h5v5h-5zM10 7.5h4a3 3 0 0 1 3 3V14M7.5 10v4a3 3 0 0 0 3 3H14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <h3>Workflows that keep moving</h3>
+              <p>Route requests, assign owners, and carry context from intake to a finished outcome.</p>
+              <div class="workflow-visual" aria-hidden="true">
+                <div class="workflow-row">
+                  <span class="workflow-index">1</span>
+                  <span><strong>Request received</strong><small>Campaign intake</small></span>
+                  <svg viewBox="0 0 16 16" fill="none"><path d="m5 3 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </div>
+                <div class="workflow-row">
+                  <span class="workflow-index">2</span>
+                  <span><strong>Relay prepares brief</strong><small>Context included</small></span>
+                  <svg viewBox="0 0 16 16" fill="none"><path d="m5 3 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </div>
+                <div class="workflow-row">
+                  <span class="workflow-index">3</span>
+                  <span><strong>Owner takes action</strong><small>Ready to review</small></span>
+                  <svg viewBox="0 0 16 16" fill="none"><path d="m5 3 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </div>
+              </div>
+            </article>
+
+            <article class="card feature-card feature-analytics">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M5 19V9M12 19V5M19 19v-7M3 19h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+              </span>
+              <h3>Team analytics</h3>
+              <p>See where work is flowing, where it stalls, and which signals deserve attention.</p>
+              <div class="analytics-visual" aria-label="Illustrative upward activity trend">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </article>
+
+            <article class="card feature-card feature-integrations">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M8 8h8v8H8zM3 6a3 3 0 0 1 3-3h3v5H6a3 3 0 0 1-3-2ZM21 18a3 3 0 0 1-3 3h-3v-5h3a3 3 0 0 1 3 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <h3>Integrations</h3>
+              <p>Bring the tools your team uses into the same current view.</p>
+              <div class="integration-orbit" aria-hidden="true">
+                <span class="orbit-center">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M5 7.5h8.5a3.5 3.5 0 1 1 0 7H9m0 0 3-3m-3 3 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <span class="orbit-item">S</span><span class="orbit-item">N</span><span class="orbit-item">F</span><span class="orbit-item">G</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section workflow-section" id="workflow" aria-labelledby="workflow-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">How it works</p>
+              <h2 id="workflow-title">Bring context in. Move clear work out.</h2>
+            </div>
+            <p>Relay gives the team one simple loop for turning scattered information into coordinated progress.</p>
+          </div>
+
+          <ol class="steps">
+            <li class="step">
+              <div class="step-number">
+                <span>01</span>
+                <span class="step-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 4v16M4 12h16M6.5 6.5l11 11M17.5 6.5l-11 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+                </span>
+              </div>
+              <h3>Bring your context</h3>
+              <p>Connect the briefs, conversations, documents, and decisions already shaping the work.</p>
+            </li>
+            <li class="step">
+              <div class="step-number">
+                <span>02</span>
+                <span class="step-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5zM18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z" fill="currentColor" /></svg>
+                </span>
+              </div>
+              <h3>Ask Relay</h3>
+              <p>Find answers, create a useful first draft, or turn a noisy thread into a clear decision.</p>
+            </li>
+            <li class="step">
+              <div class="step-number">
+                <span>03</span>
+                <span class="step-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </span>
+              </div>
+              <h3>Move together</h3>
+              <p>Share the output, assign the next step, and keep every handoff attached to its context.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section use-cases-section" id="use-cases" aria-labelledby="use-cases-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Use cases</p>
+              <h2 id="use-cases-title">One Relay for every team around the table.</h2>
+            </div>
+            <p>Each team gets a focused way to work while the organization keeps one shared source of context.</p>
+          </div>
+
+          <div class="use-case-grid">
+            <article class="use-case-card">
+              <div class="use-case-top">
+                <div><h3>Product</h3><p>Connect research, decisions, specs, and launch readiness without losing the why behind the roadmap.</p></div>
+                <span class="use-case-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M5 15 15 5M7 5h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+              </div>
+              <div class="use-case-tags"><span>Research synthesis</span><span>Product briefs</span><span>Launch rooms</span></div>
+            </article>
+            <article class="use-case-card">
+              <div class="use-case-top">
+                <div><h3>Marketing</h3><p>Turn strategy and customer insight into campaign briefs, coordinated reviews, and reusable learnings.</p></div>
+                <span class="use-case-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M5 15 15 5M7 5h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+              </div>
+              <div class="use-case-tags"><span>Campaign planning</span><span>Content briefs</span><span>Review flows</span></div>
+            </article>
+            <article class="use-case-card">
+              <div class="use-case-top">
+                <div><h3>Operations</h3><p>Give recurring requests a clear path, keep operating knowledge current, and make ownership visible.</p></div>
+                <span class="use-case-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M5 15 15 5M7 5h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+              </div>
+              <div class="use-case-tags"><span>Intake routing</span><span>SOPs</span><span>Weekly planning</span></div>
+            </article>
+            <article class="use-case-card">
+              <div class="use-case-top">
+                <div><h3>Support</h3><p>Summarize recurring themes, keep answers consistent, and send customer insight back to the right team.</p></div>
+                <span class="use-case-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M5 15 15 5M7 5h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+              </div>
+              <div class="use-case-tags"><span>Theme analysis</span><span>Answer library</span><span>Escalations</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="story-title">
+        <div class="shell">
+          <div class="story-grid">
+            <article class="card story-quote">
+              <p class="eyebrow">Illustrative customer story</p>
+              <blockquote id="story-title">
+                “Relay gave our launch team one place to decide, assign, and move. The work finally felt connected from first brief to final handoff.”
+              </blockquote>
+              <div class="story-person">
+                <span class="story-avatar" aria-hidden="true">JL</span>
+                <span><strong>Jordan Lee</strong><span>Product Operations · Northstar</span></span>
+              </div>
+            </article>
+            <div class="story-results">
+              <article class="card result-card">
+                <span class="result-value">One launch room</span>
+                <p>Plans, decisions, questions, and owners stay together.</p>
+              </article>
+              <article class="card result-card">
+                <span class="result-value">Four teams aligned</span>
+                <p>Product, marketing, support, and operations share the same view.</p>
+              </article>
+              <article class="card company-card">
+                <h3 class="company-lockup">Northstar</h3>
+                <p>Illustrative B2B software company · 120-person team</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section integrations-section" id="integrations" aria-labelledby="integrations-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Integrations</p>
+              <h2 id="integrations-title">Bring your tools into the same conversation.</h2>
+            </div>
+            <p>Keep the team’s current stack while Relay connects the context moving between it.</p>
+          </div>
+
+          <div class="integration-grid" aria-label="Illustrative integration catalog">
+            <article class="integration-tile">
+              <span class="integration-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 5.5h14v10H9l-4 3v-13Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /><path d="M8.5 9h7M8.5 12h4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+              </span>
+              <span><strong>Slack</strong><span>Conversations</span></span>
+            </article>
+            <article class="integration-tile">
+              <span class="integration-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M6 3.5h8l4 4v13H6v-17Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /><path d="M14 3.5v4h4M9 12h6M9 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+              </span>
+              <span><strong>Notion</strong><span>Knowledge</span></span>
+            </article>
+            <article class="integration-tile">
+              <span class="integration-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 8 14H4L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /><path d="m8.6 17 3.4-6 3.4 6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /></svg>
+              </span>
+              <span><strong>Google Drive</strong><span>Files</span></span>
+            </article>
+            <article class="integration-tile">
+              <span class="integration-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="6" r="3" stroke="currentColor" stroke-width="1.8" /><circle cx="15" cy="12" r="3" stroke="currentColor" stroke-width="1.8" /><circle cx="9" cy="18" r="3" stroke="currentColor" stroke-width="1.8" /><path d="M12 6v12" stroke="currentColor" stroke-width="1.8" /></svg>
+              </span>
+              <span><strong>Figma</strong><span>Design</span></span>
+            </article>
+            <article class="integration-tile">
+              <span class="integration-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 7 7-7 11-7-11 7-7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /><path d="m8.5 10 3.5 4 3.5-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </span>
+              <span><strong>Jira</strong><span>Issues</span></span>
+            </article>
+            <article class="integration-tile">
+              <span class="integration-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="m8.5 7-5 5 5 5M15.5 7l5 5-5 5M14 4l-4 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </span>
+              <span><strong>GitHub</strong><span>Code</span></span>
+            </article>
+            <article class="integration-tile">
+              <span class="integration-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 18 18 5M8.5 20 20 8.5M5 12l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+              </span>
+              <span><strong>Linear</strong><span>Planning</span></span>
+            </article>
+            <article class="integration-tile">
+              <span class="integration-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="2.5" stroke="currentColor" stroke-width="1.8" /><circle cx="17" cy="6" r="2.5" stroke="currentColor" stroke-width="1.8" /><circle cx="17" cy="18" r="2.5" stroke="currentColor" stroke-width="1.8" /><path d="m8.2 10.8 6.6-3.6M8.2 13.2l6.6 3.6" stroke="currentColor" stroke-width="1.8" /></svg>
+              </span>
+              <span><strong>HubSpot</strong><span>Customers</span></span>
+            </article>
+          </div>
+          <div class="integration-cta">
+            <a class="button button-secondary" href="#pricing">Explore with your stack</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="pricing" aria-labelledby="pricing-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Pricing preview</p>
+              <h2 id="pricing-title">Start focused. Scale when the work does.</h2>
+            </div>
+            <p>Choose a simple starting point for your team, with room to add deeper coordination and control.</p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="card plan-card">
+              <span class="plan-label">For small teams</span>
+              <h3>Starter</h3>
+              <p class="plan-price"><strong>$0</strong><span>to explore</span></p>
+              <p class="plan-description">A shared place to try Relay on an active team project.</p>
+              <ul class="plan-list">
+                <li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>Shared workspace</li>
+                <li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>AI assistant</li>
+                <li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>Core documents</li>
+              </ul>
+              <a class="button button-secondary" href="#final-cta">Start with Starter</a>
+            </article>
+
+            <article class="card plan-card featured">
+              <span class="plan-label">Most popular</span>
+              <h3>Team</h3>
+              <p class="plan-price"><strong>$20</strong><span>per member / month</span></p>
+              <p class="plan-description">For cross-functional teams coordinating ongoing work.</p>
+              <ul class="plan-list">
+                <li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>Everything in Starter</li>
+                <li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>Connected workflows</li>
+                <li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>Team analytics</li>
+                <li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>Expanded integrations</li>
+              </ul>
+              <a class="button button-inverse" href="#final-cta">Choose Team</a>
+            </article>
+
+            <article class="card plan-card">
+              <span class="plan-label">For organizations</span>
+              <h3>Company</h3>
+              <p class="plan-price"><strong>Custom</strong></p>
+              <p class="plan-description">For multiple teams that need advanced administration and support.</p>
+              <ul class="plan-list">
+                <li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>Everything in Team</li>
+                <li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>Organization controls</li>
+                <li><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>Guided rollout</li>
+              </ul>
+              <a class="button button-secondary" href="#final-cta">Talk with Relay</a>
+            </article>
+          </div>
+          <p class="pricing-disclaimer">Illustrative pricing for this standalone landing-page concept. Replace with approved commercial terms before launch.</p>
+        </div>
+      </section>
+
+      <section class="final-cta" id="final-cta" aria-labelledby="final-cta-title">
+        <div class="shell">
+          <div class="card final-cta-card">
+            <div class="final-cta-copy">
+              <p class="eyebrow">Move the work forward</p>
+              <h2 id="final-cta-title">Give every team the context to make the next move.</h2>
+              <p>Bring one active project into Relay and see how quickly scattered knowledge becomes shared momentum.</p>
+            </div>
+            <div class="final-cta-actions">
+              <a class="button button-inverse" href="#top">Start building</a>
+              <a class="button button-ghost-inverse" href="#integrations">See integrations</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="#top" aria-label="Relay AI home">
+              <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 7.5h8.5a3.5 3.5 0 1 1 0 7H9m0 0 3-3m-3 3 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </span>
+              Relay AI
+            </a>
+            <p>A shared AI workspace that helps teams turn knowledge into coordinated action.</p>
+          </div>
+          <nav class="footer-column" aria-label="Product links">
+            <h3>Product</h3>
+            <ul><li><a href="#features">Features</a></li><li><a href="#workflow">Workflow</a></li><li><a href="#integrations">Integrations</a></li></ul>
+          </nav>
+          <nav class="footer-column" aria-label="Use case links">
+            <h3>Teams</h3>
+            <ul><li><a href="#use-cases">Product</a></li><li><a href="#use-cases">Marketing</a></li><li><a href="#use-cases">Operations</a></li><li><a href="#use-cases">Support</a></li></ul>
+          </nav>
+          <nav class="footer-column" aria-label="Get started links">
+            <h3>Get started</h3>
+            <ul><li><a href="#pricing">Pricing</a></li><li><a href="#features">Product tour</a></li><li><a href="#final-cta">Start building</a></li></ul>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span id="current-year">2026</span> Relay AI. Standalone concept.</span>
+          <span class="footer-status">Light mode · Alpy Bento Grid</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const navPanel = document.querySelector(".nav-panel");
+
+      const closeNavigation = () => {
+        if (!navToggle || !navPanel) return;
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open navigation");
+        navPanel.dataset.open = "false";
+        document.body.classList.remove("nav-open");
+      };
+
+      navToggle?.addEventListener("click", () => {
+        const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!isOpen));
+        navToggle.setAttribute(
+          "aria-label",
+          isOpen ? "Open navigation" : "Close navigation",
+        );
+        navPanel.dataset.open = String(!isOpen);
+        document.body.classList.toggle("nav-open", !isOpen);
+      });
+
+      navPanel?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeNavigation);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 860) closeNavigation();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeNavigation();
+      });
+
+      document.querySelector("#current-year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,2033 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#eee8d8" />
+    <meta
+      name="description"
+      content="Asher — modern grunge rock with blown-out guitars, bruised melodies, raw vocals, and unforgettable hooks."
+    />
+    <meta property="og:title" content="Asher — Static Heart" />
+    <meta
+      property="og:description"
+      content="Blown-out guitars. Bruised melodies. Raw vocals. Unforgettable hooks."
+    />
+    <meta property="og:image" content="assets/images/stage-hero.jpg" />
+    <title>Asher — Static Heart</title>
+
+    <script>
+      if (window.self !== window.top) {
+        document.documentElement.dataset.cardPreview = "";
+      }
+    </script>
+
+    <!--
+      Texture: D. Sharon Pruitt, CC BY 2.0.
+      Source: https://commons.wikimedia.org/wiki/File:Free_grungy_splatter_speckled_scratched_texture_for_layers_%282984280145%29.jpg
+      Changes: resized, compressed, cropped, desaturated, contrast-adjusted, and blended.
+      Rubik Dirt and Inter are self-hosted under the SIL Open Font License 1.1.
+    -->
+    <style>
+      @font-face {
+        font-family: "Rubik Dirt";
+        src: url("assets/fonts/RubikDirt-Regular.ttf") format("truetype");
+        font-display: swap;
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("assets/fonts/Inter-Variable.ttf") format("truetype");
+        font-display: swap;
+        font-style: normal;
+        font-weight: 100 900;
+      }
+
+      :root {
+        color-scheme: light;
+        --ink: #11100e;
+        --paper: #eee8d8;
+        --paper-bright: #f7f1e1;
+        --yellow: #eef42c;
+        --purple: #7250c2;
+        --white: #fffdf5;
+        --rule: 3px;
+        --header-h: 76px;
+        --hero-progress: 0;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: var(--paper);
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        overflow-x: hidden;
+        color: var(--ink);
+        background:
+          linear-gradient(90deg, rgba(17, 16, 14, 0.035) 1px, transparent 1px) 0 0 / 33.333vw 100%,
+          var(--paper);
+        font-family: "Inter", Arial, sans-serif;
+        font-synthesis: none;
+      }
+
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 100;
+        top: 10px;
+        left: 10px;
+        padding: 12px 16px;
+        transform: translateY(-180%);
+        border: var(--rule) solid var(--ink);
+        background: var(--yellow);
+        color: var(--ink);
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--ink);
+        outline-offset: 3px;
+        box-shadow: 0 0 0 6px var(--yellow);
+      }
+
+      .site-header {
+        position: fixed;
+        z-index: 50;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: var(--header-h);
+        border-bottom: var(--rule) solid var(--ink);
+        background: rgba(238, 232, 216, 0.94);
+        box-shadow: 0 4px 0 rgba(118, 84, 199, 0.65);
+        backdrop-filter: blur(8px);
+      }
+
+      .site-header::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        pointer-events: none;
+        background: url("assets/images/toner-texture.jpg") 72% 61% / 760px auto no-repeat;
+        opacity: 0.16;
+        mix-blend-mode: multiply;
+        filter: grayscale(1) contrast(2.15);
+        -webkit-mask-image: linear-gradient(90deg, #000 0 30%, transparent 76%);
+        mask-image: linear-gradient(90deg, #000 0 30%, transparent 76%);
+      }
+
+      .header-inner {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: stretch;
+        width: 100%;
+        height: 100%;
+      }
+
+      .wordmark {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        min-width: clamp(164px, 19vw, 270px);
+        padding: 0 28px;
+        overflow: hidden;
+        border-right: var(--rule) solid var(--ink);
+        font-family: "Rubik Dirt", Impact, sans-serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        line-height: 1;
+        letter-spacing: -0.05em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .issue-line {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0 20px;
+        overflow: hidden;
+        font-size: 10px;
+        font-weight: 850;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .issue-line::before {
+        width: 36px;
+        height: 9px;
+        content: "";
+        background: repeating-linear-gradient(90deg, var(--ink) 0 3px, transparent 3px 7px);
+      }
+
+      .primary-nav {
+        display: flex;
+        align-items: stretch;
+        border-left: var(--rule) solid var(--ink);
+      }
+
+      .primary-nav a {
+        display: inline-flex;
+        align-items: center;
+        padding: 0 clamp(12px, 1.4vw, 24px);
+        border-left: 1px solid rgba(17, 16, 14, 0.28);
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.09em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .primary-nav a:hover,
+      .primary-nav a:focus-visible {
+        background: var(--yellow);
+        outline-offset: -4px;
+      }
+
+      .menu-toggle {
+        display: none;
+        width: var(--header-h);
+        border: 0;
+        border-left: var(--rule) solid var(--ink);
+        border-radius: 0;
+        background: transparent;
+        color: var(--ink);
+        font: 900 12px/1 "Inter", Arial, sans-serif;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .menu-toggle[aria-expanded="true"] {
+        background: var(--yellow);
+      }
+
+      .hero {
+        position: relative;
+        height: 184svh;
+        min-height: 1000px;
+        background: var(--paper);
+      }
+
+      .hero-sticky {
+        position: sticky;
+        top: 0;
+        height: 100svh;
+        min-height: 620px;
+        overflow: hidden;
+        isolation: isolate;
+        border-bottom: var(--rule) solid var(--ink);
+        background: #171615;
+      }
+
+      .hero-photo,
+      .hero-cutout,
+      .hero-register {
+        position: absolute;
+        inset: 0;
+        background: #171615 url("assets/images/stage-hero.jpg") center 42% / cover no-repeat;
+        will-change: transform;
+      }
+
+      .hero-photo {
+        z-index: -8;
+        inset: -10vh 0;
+        transform: translate3d(0, calc(var(--hero-progress) * -8vh), 0) scale(1.1);
+        filter: grayscale(1) contrast(1.48) brightness(0.66);
+      }
+
+      .hero-register {
+        z-index: -7;
+        inset: -8vh -8px;
+        transform: translate3d(calc(-9px + var(--hero-progress) * 3px), calc(-2vh + var(--hero-progress) * -5vh), 0) scale(1.11);
+        opacity: 0.34;
+        mix-blend-mode: screen;
+        filter: grayscale(1) sepia(1) saturate(9) hue-rotate(218deg) contrast(1.7) brightness(0.72);
+        clip-path: polygon(0 17%, 100% 14%, 100% 33%, 0 39%);
+      }
+
+      .hero-cutout {
+        z-index: -5;
+        inset: -9vh 0;
+        transform: translate3d(0, calc(var(--hero-progress) * 5vh), 0) scale(1.12) rotate(-0.35deg);
+        background-position: center 42%;
+        clip-path: polygon(32% 0, 71% 0, 75% 14%, 70% 25%, 74% 39%, 69% 51%, 73% 64%, 68% 100%, 29% 100%, 33% 80%, 27% 66%, 32% 51%, 28% 35%, 33% 21%);
+        filter: grayscale(0.15) contrast(1.2) saturate(0.8) drop-shadow(11px 3px 0 var(--yellow));
+      }
+
+      .hero-halftone {
+        position: absolute;
+        z-index: -4;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(circle, rgba(238, 232, 216, 0.44) 0 1.1px, transparent 1.4px) 0 0 / 6px 6px,
+          linear-gradient(110deg, transparent 0 56%, rgba(17, 16, 14, 0.8) 72% 100%);
+        opacity: 0.42;
+        mix-blend-mode: screen;
+        mask-image: linear-gradient(100deg, black 0 22%, transparent 58% 100%);
+      }
+
+      .hero-toner {
+        position: absolute;
+        z-index: -3;
+        inset: 0;
+        pointer-events: none;
+        background: url("assets/images/toner-texture.jpg") 30% 48% / 1160px auto repeat;
+        opacity: 0.24;
+        mix-blend-mode: screen;
+        filter: grayscale(1) contrast(1.85);
+      }
+
+      .hero-paper-dropout {
+        position: absolute;
+        z-index: -2;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(94deg, rgba(238, 232, 216, 0.7) 0 5%, transparent 5.5% 9%, rgba(238, 232, 216, 0.86) 9.2% 10.1%, transparent 10.5% 100%),
+          linear-gradient(-3deg, transparent 0 20%, rgba(238, 232, 216, 0.22) 20.4% 23%, transparent 23.4% 68%, rgba(238, 232, 216, 0.34) 68.4% 74%, transparent 74.4% 100%);
+        opacity: 0.94;
+        mix-blend-mode: screen;
+        filter: contrast(1.25);
+      }
+
+      .hero-paper-dropout::before,
+      .hero-paper-dropout::after {
+        position: absolute;
+        content: "";
+        background:
+          url("assets/images/toner-texture.jpg") center / 620px auto no-repeat,
+          var(--paper);
+        background-blend-mode: screen;
+        filter: grayscale(1) contrast(1.65);
+      }
+
+      .hero-paper-dropout::before {
+        top: 23%;
+        right: 0;
+        width: 12%;
+        height: 17%;
+        opacity: 0.62;
+        clip-path: polygon(4% 12%, 19% 3%, 37% 15%, 53% 0, 71% 13%, 96% 4%, 100% 77%, 84% 91%, 65% 82%, 49% 100%, 31% 84%, 8% 96%, 0 58%);
+      }
+
+      .hero-paper-dropout::after {
+        bottom: 18%;
+        left: 2%;
+        width: 28%;
+        height: 21%;
+        opacity: 0.54;
+        clip-path: polygon(0 7%, 22% 17%, 39% 0, 58% 12%, 75% 4%, 100% 21%, 91% 47%, 100% 76%, 72% 100%, 51% 86%, 34% 97%, 14% 78%, 0 88%);
+      }
+
+      .release-stamp {
+        position: absolute;
+        z-index: 4;
+        top: calc(var(--header-h) + clamp(30px, 7vh, 72px));
+        left: clamp(18px, 4vw, 64px);
+        display: inline-grid;
+        grid-auto-flow: column;
+        align-items: center;
+        gap: 11px;
+        padding: 10px 15px 9px;
+        transform: rotate(-2.4deg);
+        border: var(--rule) solid var(--ink);
+        background: var(--yellow);
+        color: var(--ink);
+        box-shadow: 6px 6px 0 var(--purple);
+        font-size: 11px;
+        font-weight: 950;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+      }
+
+      .release-stamp::before {
+        content: "01";
+        padding-right: 10px;
+        border-right: 2px solid currentColor;
+      }
+
+      .hero-copy {
+        position: absolute;
+        z-index: 5;
+        right: clamp(18px, 4vw, 64px);
+        bottom: clamp(28px, 7vh, 74px);
+        left: clamp(18px, 4vw, 64px);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(250px, 31vw);
+        align-items: end;
+        gap: clamp(20px, 4vw, 64px);
+        transform: translate3d(0, calc(var(--hero-progress) * -2.6vh), 0);
+        will-change: transform;
+      }
+
+      .hero-title-wrap {
+        position: relative;
+        min-width: 0;
+      }
+
+      .hero-kicker {
+        display: inline-block;
+        margin: 0 0 8px 0.4vw;
+        padding: 5px 8px;
+        transform: rotate(0.8deg);
+        background: var(--paper-bright);
+        color: var(--ink);
+        font-size: clamp(10px, 1vw, 13px);
+        font-weight: 900;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .hero-title {
+        position: relative;
+        margin: 0;
+        color: var(--paper-bright);
+        font-family: "Rubik Dirt", Impact, sans-serif;
+        font-size: clamp(6rem, 18vw, 18rem);
+        font-weight: 400;
+        line-height: 0.68;
+        letter-spacing: -0.075em;
+        text-transform: uppercase;
+        text-shadow: 8px 4px 0 rgba(118, 84, 199, 0.92);
+      }
+
+      .hero-title::after {
+        position: absolute;
+        top: 50%;
+        right: -1vw;
+        left: 1vw;
+        height: clamp(8px, 1.3vw, 20px);
+        transform: rotate(-1.6deg);
+        content: "";
+        background: var(--yellow);
+        mix-blend-mode: difference;
+      }
+
+      .hero-panel {
+        position: relative;
+        padding: clamp(18px, 2.6vw, 34px);
+        border: var(--rule) solid var(--ink);
+        background: var(--paper-bright);
+        box-shadow: 8px 8px 0 var(--yellow);
+        color: var(--ink);
+        clip-path: polygon(0 0, 96% 0, 100% 13%, 99% 100%, 3% 98%);
+      }
+
+      .release-title {
+        margin: 0 0 12px;
+        font-family: "Rubik Dirt", Impact, sans-serif;
+        font-size: clamp(2.3rem, 4.4vw, 5rem);
+        font-weight: 400;
+        line-height: 0.88;
+        letter-spacing: -0.045em;
+        text-transform: uppercase;
+      }
+
+      .positioning {
+        max-width: 40ch;
+        margin: 0 0 20px;
+        font-size: clamp(0.82rem, 1vw, 1rem);
+        font-weight: 660;
+        line-height: 1.45;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 17px;
+        border: var(--rule) solid var(--ink);
+        border-radius: 0;
+        background: var(--ink);
+        color: var(--white);
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-decoration: none;
+        text-transform: uppercase;
+        clip-path: polygon(0 0, 96% 0, 100% 28%, 100% 100%, 4% 100%, 0 76%);
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        background: var(--yellow);
+        color: var(--ink);
+      }
+
+      .button:active {
+        transform: translate(3px, 3px);
+      }
+
+      .text-link {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        padding: 8px 4px 5px;
+        border-bottom: 5px solid var(--purple);
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .text-link:hover {
+        border-color: var(--yellow);
+      }
+
+      .scroll-note {
+        position: absolute;
+        z-index: 6;
+        top: 48%;
+        right: -35px;
+        padding: 8px 46px;
+        transform: rotate(90deg);
+        background: var(--yellow);
+        color: var(--ink);
+        font-size: 9px;
+        font-weight: 950;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .paper-tear {
+        position: absolute;
+        z-index: 8;
+        right: -2%;
+        bottom: -2px;
+        left: -2%;
+        height: clamp(34px, 7vh, 82px);
+        background: var(--paper);
+        clip-path: polygon(0 68%, 4% 42%, 10% 59%, 15% 28%, 21% 62%, 29% 31%, 38% 68%, 45% 35%, 54% 66%, 62% 26%, 71% 61%, 78% 37%, 86% 66%, 92% 31%, 100% 56%, 100% 100%, 0 100%);
+      }
+
+      .paper-tear::after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 22px;
+        content: "";
+        background: url("assets/images/toner-texture.jpg") center 64% / 900px auto repeat-x;
+        opacity: 0.18;
+        filter: grayscale(1) contrast(2);
+      }
+
+      .section {
+        position: relative;
+        overflow: hidden;
+        border-bottom: var(--rule) solid var(--ink);
+        scroll-margin-top: var(--header-h);
+      }
+
+      .section-inner {
+        position: relative;
+        z-index: 2;
+        width: min(100%, 1520px);
+        margin-inline: auto;
+        padding: clamp(74px, 9vw, 150px) clamp(20px, 5vw, 82px);
+      }
+
+      .section-label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 clamp(28px, 4vw, 58px);
+        font-size: 10px;
+        font-weight: 900;
+        letter-spacing: 0.19em;
+        text-transform: uppercase;
+      }
+
+      .section-label::before {
+        width: 42px;
+        height: 10px;
+        content: "";
+        background: repeating-linear-gradient(90deg, currentColor 0 3px, transparent 3px 7px);
+      }
+
+      .section-label span {
+        display: inline-grid;
+        min-width: 35px;
+        min-height: 35px;
+        place-items: center;
+        border: 2px solid currentColor;
+        border-radius: 50%;
+      }
+
+      .display-heading {
+        margin: 0;
+        font-family: "Rubik Dirt", Impact, sans-serif;
+        font-size: clamp(4.6rem, 11vw, 11rem);
+        font-weight: 400;
+        line-height: 0.78;
+        letter-spacing: -0.065em;
+        text-transform: uppercase;
+      }
+
+      .read-copy {
+        max-width: 58ch;
+        font-size: clamp(1rem, 1.3vw, 1.22rem);
+        font-weight: 560;
+        line-height: 1.65;
+      }
+
+      p {
+        text-wrap: pretty;
+      }
+
+      .quiet-paper {
+        background:
+          linear-gradient(87deg, transparent 0 68%, rgba(118, 84, 199, 0.08) 68.2% 73%, transparent 73.2%),
+          var(--paper);
+      }
+
+      .quiet-paper::before,
+      .mailing::before,
+      .site-footer::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        pointer-events: none;
+        background-image: url("assets/images/toner-texture.jpg");
+        background-repeat: no-repeat;
+        opacity: 0.16;
+        mix-blend-mode: multiply;
+        filter: grayscale(1) contrast(2.1);
+      }
+
+      #featured-track::before {
+        background-position: 8% 72%;
+        background-size: 820px auto;
+        -webkit-mask-image: radial-gradient(ellipse 48% 72% at 16% 68%, #000 24%, rgba(0, 0, 0, 0.82) 58%, transparent 92%);
+        mask-image: radial-gradient(ellipse 48% 72% at 16% 68%, #000 24%, rgba(0, 0, 0, 0.82) 58%, transparent 92%);
+      }
+
+      #story::before {
+        background-position: 91% 19%;
+        background-size: 760px auto;
+        opacity: 0.13;
+        -webkit-mask-image: radial-gradient(ellipse 44% 66% at 86% 25%, #000 18%, rgba(0, 0, 0, 0.8) 56%, transparent 92%);
+        mask-image: radial-gradient(ellipse 44% 66% at 86% 25%, #000 18%, rgba(0, 0, 0, 0.8) 56%, transparent 92%);
+      }
+
+      .quiet-paper::after {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        bottom: 0;
+        left: clamp(18px, 4vw, 64px);
+        width: 1px;
+        content: "";
+        background: rgba(17, 16, 14, 0.2);
+      }
+
+      .featured-layout {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+        align-items: end;
+        gap: clamp(46px, 8vw, 132px);
+      }
+
+      .track-intro {
+        position: relative;
+      }
+
+      .track-sheet {
+        position: relative;
+        border-top: 9px solid var(--ink);
+        border-bottom: 9px solid var(--ink);
+        background: rgba(247, 241, 225, 0.72);
+      }
+
+      .track-row {
+        display: grid;
+        grid-template-columns: 86px minmax(0, 1fr) auto;
+        min-height: 116px;
+        align-items: center;
+        gap: 24px;
+        padding: 18px 20px;
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .track-row:last-child {
+        border-bottom: 0;
+      }
+
+      .track-number {
+        font-family: "Rubik Dirt", Impact, sans-serif;
+        font-size: 3.7rem;
+        line-height: 1;
+      }
+
+      .track-name,
+      .track-note {
+        margin: 0;
+      }
+
+      .track-name {
+        font-size: clamp(1.35rem, 2.2vw, 2.25rem);
+        font-weight: 900;
+        letter-spacing: -0.045em;
+        text-transform: uppercase;
+      }
+
+      .track-note {
+        margin-top: 5px;
+        color: rgba(17, 16, 14, 0.72);
+        font-size: 0.76rem;
+        font-weight: 720;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .wave-bars {
+        display: flex;
+        height: 42px;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .wave-bars i {
+        display: block;
+        width: 4px;
+        height: var(--h, 50%);
+        background: var(--purple);
+      }
+
+      .track-availability {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 22px 20px;
+        background: var(--yellow);
+      }
+
+      .track-availability p {
+        margin: 0;
+        font-size: 0.76rem;
+        font-weight: 880;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .tour {
+        background: var(--ink);
+        color: var(--paper-bright);
+      }
+
+      .tour::before,
+      .booking::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        pointer-events: none;
+        background: url("assets/images/toner-texture.jpg") 52% 31% / 1040px auto no-repeat;
+        opacity: 0.26;
+        mix-blend-mode: screen;
+        filter: grayscale(1) contrast(2.1);
+        -webkit-mask-image: radial-gradient(ellipse 72% 78% at 56% 47%, #000 25%, rgba(0, 0, 0, 0.92) 57%, transparent 91%);
+        mask-image: radial-gradient(ellipse 72% 78% at 56% 47%, #000 25%, rgba(0, 0, 0, 0.92) 57%, transparent 91%);
+      }
+
+      .tour::after {
+        position: absolute;
+        z-index: 1;
+        top: 42%;
+        right: -5%;
+        left: -5%;
+        height: clamp(56px, 8vw, 118px);
+        transform: rotate(-1.8deg);
+        content: "";
+        background: var(--purple);
+        clip-path: polygon(0 14%, 13% 0, 26% 22%, 39% 4%, 51% 18%, 66% 0, 78% 20%, 100% 5%, 100% 86%, 83% 100%, 69% 82%, 54% 98%, 37% 78%, 20% 100%, 0 82%);
+      }
+
+      .tour-header {
+        display: grid;
+        grid-template-columns: 1fr minmax(260px, 380px);
+        align-items: end;
+        gap: 40px;
+        margin-bottom: clamp(54px, 8vw, 120px);
+      }
+
+      .tour-header .display-heading {
+        color: var(--paper-bright);
+        text-shadow: 7px 5px 0 var(--purple);
+      }
+
+      .tour-status {
+        padding: 18px 20px;
+        transform: rotate(1deg);
+        border: var(--rule) solid var(--paper-bright);
+        background: var(--yellow);
+        color: var(--ink);
+        font-weight: 860;
+        line-height: 1.45;
+        text-transform: uppercase;
+      }
+
+      .tour-board {
+        position: relative;
+        z-index: 3;
+        border-top: 8px solid var(--paper-bright);
+        border-bottom: 8px solid var(--paper-bright);
+      }
+
+      .tour-row {
+        display: grid;
+        grid-template-columns: 160px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 24px;
+        min-height: 108px;
+        padding: 20px 8px;
+        border-bottom: 2px solid var(--paper-bright);
+      }
+
+      .tour-row:last-child {
+        border-bottom: 0;
+      }
+
+      .tour-row strong {
+        font-family: "Rubik Dirt", Impact, sans-serif;
+        font-size: clamp(2rem, 4vw, 4.2rem);
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      .tour-row p {
+        margin: 0;
+        font-size: clamp(1.05rem, 2vw, 1.7rem);
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .tour-row small {
+        display: block;
+        margin-top: 5px;
+        color: rgba(247, 241, 225, 0.7);
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+      }
+
+      .live-session {
+        background: var(--paper);
+      }
+
+      .session-frame {
+        position: relative;
+        min-height: min(72vw, 920px);
+        margin-inline: calc(clamp(20px, 5vw, 82px) * -1);
+        overflow: hidden;
+        border-top: var(--rule) solid var(--ink);
+        border-bottom: var(--rule) solid var(--ink);
+        background: #1a1816;
+      }
+
+      .session-frame img {
+        width: 100%;
+        height: 100%;
+        min-height: min(72vw, 920px);
+        object-fit: cover;
+        object-position: center 42%;
+        filter: grayscale(0.88) contrast(1.34) brightness(0.82);
+      }
+
+      .session-frame::before {
+        position: absolute;
+        z-index: 2;
+        inset: 0;
+        content: "";
+        pointer-events: none;
+        background:
+          url("assets/images/toner-texture.jpg") 10% 20% / 880px auto no-repeat,
+          radial-gradient(circle, rgba(238, 232, 216, 0.35) 0 1px, transparent 1.4px) 0 0 / 7px 7px;
+        opacity: 0.3;
+        mix-blend-mode: screen;
+        filter: grayscale(1) contrast(1.8);
+      }
+
+      .session-title {
+        position: absolute;
+        z-index: 4;
+        top: 8%;
+        left: 4%;
+        max-width: 46%;
+        margin: 0;
+        padding: 8px 15px 13px;
+        transform: rotate(-1.6deg);
+        background: var(--paper-bright);
+        color: var(--ink);
+        font-family: "Rubik Dirt", Impact, sans-serif;
+        font-size: clamp(4rem, 8vw, 8rem);
+        font-weight: 400;
+        line-height: 0.76;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+        box-shadow: 10px 8px 0 var(--yellow);
+        clip-path: polygon(0 8%, 98% 0, 100% 87%, 2% 100%);
+      }
+
+      .session-caption {
+        position: absolute;
+        z-index: 4;
+        right: 4%;
+        bottom: 7%;
+        width: min(420px, 66vw);
+        padding: 20px;
+        border: var(--rule) solid var(--ink);
+        background: var(--yellow);
+        color: var(--ink);
+        box-shadow: 8px 8px 0 var(--purple);
+      }
+
+      .session-caption p {
+        margin: 0 0 18px;
+        font-weight: 760;
+        line-height: 1.45;
+      }
+
+      .story-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+        align-items: center;
+        gap: clamp(42px, 8vw, 130px);
+      }
+
+      .story-photo {
+        position: relative;
+        transform: rotate(-1.2deg);
+      }
+
+      .story-photo::before,
+      .story-photo::after {
+        position: absolute;
+        z-index: 3;
+        content: "";
+      }
+
+      .story-photo::before {
+        top: -22px;
+        left: 34%;
+        width: 132px;
+        height: 40px;
+        transform: rotate(2deg);
+        background: rgba(238, 244, 44, 0.85);
+        border: 2px solid rgba(17, 16, 14, 0.7);
+      }
+
+      .story-photo::after {
+        right: -17px;
+        bottom: -18px;
+        width: 72px;
+        height: 72px;
+        border-right: 8px solid var(--purple);
+        border-bottom: 8px solid var(--purple);
+      }
+
+      .story-photo img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        border: var(--rule) solid var(--ink);
+        filter: grayscale(0.68) contrast(1.24);
+        clip-path: polygon(1% 2%, 98% 0, 100% 96%, 3% 100%, 0 62%);
+      }
+
+      .story-photo .texture-burn {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: url("assets/images/toner-texture.jpg") 72% 43% / 690px auto no-repeat;
+        opacity: 0.23;
+        mix-blend-mode: screen;
+        filter: grayscale(1) contrast(2);
+      }
+
+      .story-copy .display-heading {
+        font-size: clamp(4rem, 8vw, 8.5rem);
+      }
+
+      .pull-quote {
+        margin: 38px 0 0;
+        padding: 17px 18px;
+        transform: rotate(0.8deg);
+        border-left: 10px solid var(--purple);
+        background: var(--yellow);
+        font-family: "Rubik Dirt", Impact, sans-serif;
+        font-size: clamp(1.9rem, 3.6vw, 3.8rem);
+        line-height: 0.95;
+        text-wrap: balance;
+        text-transform: uppercase;
+      }
+
+      .merch {
+        background: var(--purple);
+        color: var(--paper-bright);
+      }
+
+      .merch::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background: url("assets/images/toner-texture.jpg") 20% 80% / 1100px auto no-repeat;
+        opacity: 0.21;
+        mix-blend-mode: screen;
+        filter: grayscale(1) contrast(2);
+        -webkit-mask-image: radial-gradient(ellipse 74% 82% at 43% 51%, #000 27%, rgba(0, 0, 0, 0.9) 59%, transparent 92%);
+        mask-image: radial-gradient(ellipse 74% 82% at 43% 51%, #000 27%, rgba(0, 0, 0, 0.9) 59%, transparent 92%);
+      }
+
+      .merch-header {
+        display: grid;
+        grid-template-columns: 1fr minmax(240px, 390px);
+        align-items: end;
+        gap: 40px;
+      }
+
+      .merch-note {
+        margin: 0 0 14px;
+        font-weight: 720;
+        line-height: 1.5;
+      }
+
+      .poster-rail {
+        display: grid;
+        grid-template-columns: 1.1fr 0.92fr 1.05fr;
+        align-items: stretch;
+        gap: clamp(18px, 2.6vw, 40px);
+        margin-top: clamp(54px, 8vw, 110px);
+      }
+
+      .merch-poster {
+        position: relative;
+        display: flex;
+        min-height: clamp(360px, 41vw, 620px);
+        flex-direction: column;
+        justify-content: space-between;
+        padding: clamp(20px, 3vw, 42px);
+        border: var(--rule) solid var(--ink);
+        background: var(--paper-bright);
+        color: var(--ink);
+        box-shadow: 10px 10px 0 var(--ink);
+        clip-path: polygon(0 0, 94% 1%, 100% 8%, 98% 100%, 4% 98%, 0 89%);
+      }
+
+      .merch-poster:nth-child(2) {
+        transform: translateY(36px) rotate(1.4deg);
+        background: var(--yellow);
+      }
+
+      .merch-poster:nth-child(3) {
+        transform: rotate(-1deg);
+        background: var(--ink);
+        color: var(--paper-bright);
+        box-shadow: 10px 10px 0 var(--yellow);
+      }
+
+      .merch-poster .poster-index {
+        margin: 0;
+        font-size: 0.7rem;
+        font-weight: 900;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .merch-poster h3 {
+        margin: auto 0;
+        font-family: "Rubik Dirt", Impact, sans-serif;
+        font-size: clamp(3rem, 6vw, 6.7rem);
+        font-weight: 400;
+        line-height: 0.8;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+      }
+
+      .merch-poster p:last-child {
+        margin: 0;
+        padding-top: 15px;
+        border-top: 3px solid currentColor;
+        font-size: 0.72rem;
+        font-weight: 850;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .mailing {
+        position: relative;
+        background: var(--paper-bright);
+      }
+
+      .mailing::before {
+        background-position: 4% 46%;
+        background-size: 740px auto;
+        -webkit-mask-image: radial-gradient(ellipse 46% 76% at 14% 46%, #000 20%, rgba(0, 0, 0, 0.8) 58%, transparent 93%);
+        mask-image: radial-gradient(ellipse 46% 76% at 14% 46%, #000 20%, rgba(0, 0, 0, 0.8) 58%, transparent 93%);
+      }
+
+      .mailing-layout {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+        align-items: center;
+        gap: clamp(52px, 10vw, 160px);
+      }
+
+      .mailing-copy .display-heading {
+        font-size: clamp(4.4rem, 9vw, 9rem);
+      }
+
+      .signup-form {
+        position: relative;
+        padding: clamp(26px, 4vw, 54px);
+        border: 7px solid var(--ink);
+        background: var(--paper);
+        box-shadow: 11px 11px 0 var(--purple);
+        clip-path: polygon(0 0, 97% 0, 100% 8%, 99% 100%, 3% 98%, 0 91%);
+      }
+
+      .signup-form::before {
+        position: absolute;
+        top: -14px;
+        right: 17%;
+        width: 112px;
+        height: 35px;
+        transform: rotate(-2deg);
+        content: "";
+        background: var(--yellow);
+        border: 2px solid var(--ink);
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 12px;
+        font-size: 0.74rem;
+        font-weight: 900;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+      }
+
+      .form-row input {
+        min-width: 0;
+        min-height: 58px;
+        padding: 14px 16px;
+        border: var(--rule) solid var(--ink);
+        border-radius: 0;
+        background: var(--paper-bright);
+        color: var(--ink);
+        font: 700 1rem/1.2 "Inter", Arial, sans-serif;
+      }
+
+      .form-row input::placeholder {
+        color: rgba(17, 16, 14, 0.6);
+      }
+
+      .form-row input[aria-invalid="true"] {
+        border-width: 4px;
+        box-shadow: inset 0 -6px 0 var(--yellow);
+      }
+
+      .form-row button {
+        min-width: 152px;
+        border: var(--rule) solid var(--ink);
+        border-left: 0;
+        border-radius: 0;
+        background: var(--ink);
+        color: var(--paper-bright);
+        font: 900 0.7rem/1 "Inter", Arial, sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .form-row button:hover,
+      .form-row button:focus-visible {
+        background: var(--yellow);
+        color: var(--ink);
+      }
+
+      .form-help,
+      .form-status {
+        margin: 13px 0 0;
+        font-size: 0.72rem;
+        font-weight: 700;
+        line-height: 1.45;
+      }
+
+      .form-status {
+        min-height: 1.1em;
+        color: var(--purple);
+        font-weight: 850;
+      }
+
+      .booking {
+        min-height: 86svh;
+        display: flex;
+        align-items: center;
+        background: var(--ink);
+        color: var(--paper-bright);
+      }
+
+      .booking::before {
+        background-position: 72% 50%;
+        background-size: 1160px auto;
+        opacity: 0.34;
+      }
+
+      .booking-inner {
+        width: 100%;
+      }
+
+      .booking-title {
+        position: relative;
+        z-index: 2;
+        max-width: 8ch;
+        margin: 0;
+        font-family: "Rubik Dirt", Impact, sans-serif;
+        font-size: clamp(5.8rem, 17vw, 18rem);
+        font-weight: 400;
+        line-height: 0.68;
+        letter-spacing: -0.075em;
+        text-transform: uppercase;
+        text-shadow: 10px 6px 0 var(--purple);
+      }
+
+      .booking-title::after {
+        position: absolute;
+        top: 51%;
+        right: -5%;
+        left: 2%;
+        height: clamp(12px, 2vw, 28px);
+        transform: rotate(-2deg);
+        content: "";
+        background: var(--yellow);
+        mix-blend-mode: difference;
+      }
+
+      .booking-strip {
+        position: relative;
+        z-index: 3;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 28px;
+        max-width: 920px;
+        margin: clamp(38px, 6vw, 78px) 0 0 auto;
+        padding: 24px;
+        transform: rotate(-1deg);
+        border: var(--rule) solid var(--ink);
+        background: var(--paper-bright);
+        color: var(--ink);
+        box-shadow: 9px 9px 0 var(--yellow);
+      }
+
+      .booking-strip p {
+        margin: 0;
+        font-weight: 750;
+        line-height: 1.5;
+      }
+
+      .site-footer {
+        position: relative;
+        border-top: 9px solid var(--ink);
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      .site-footer::before {
+        background-position: 92% 58%;
+        background-size: 680px auto;
+        opacity: 0.14;
+        -webkit-mask-image: linear-gradient(90deg, transparent 24%, #000 78% 100%);
+        mask-image: linear-gradient(90deg, transparent 24%, #000 78% 100%);
+      }
+
+      .footer-inner {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(190px, 0.75fr) minmax(0, 1.25fr);
+        gap: 44px;
+        padding-top: 58px;
+        padding-bottom: 58px;
+      }
+
+      .footer-mark {
+        margin: 0;
+        font-family: "Rubik Dirt", Impact, sans-serif;
+        font-size: clamp(3.6rem, 8vw, 8rem);
+        line-height: 0.8;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .footer-colophon {
+        display: grid;
+        gap: 16px;
+        align-content: end;
+        font-size: 0.68rem;
+        font-weight: 650;
+        line-height: 1.5;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .footer-links a,
+      .credit-link {
+        font-weight: 850;
+        text-decoration: none;
+      }
+
+      .footer-links a {
+        display: inline-flex;
+        min-width: 28px;
+        min-height: 32px;
+        align-items: center;
+        padding-inline: 4px;
+      }
+
+      .footer-links a:hover,
+      .credit-link:hover {
+        background: var(--yellow);
+      }
+
+      @media (max-width: 940px) {
+        :root {
+          --header-h: 68px;
+        }
+
+        .issue-line,
+        .primary-nav {
+          display: none;
+        }
+
+        .header-inner {
+          grid-template-columns: 1fr auto;
+        }
+
+        .wordmark {
+          min-width: 0;
+          border-right: 0;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .primary-nav.is-open {
+          position: fixed;
+          top: var(--header-h);
+          right: 0;
+          display: grid;
+          width: min(330px, 88vw);
+          border: var(--rule) solid var(--ink);
+          border-top: 0;
+          background: var(--paper-bright);
+          box-shadow: -8px 8px 0 var(--purple);
+        }
+
+        .primary-nav.is-open a {
+          min-height: 58px;
+          border: 0;
+          border-bottom: 2px solid var(--ink);
+        }
+
+        .hero-copy {
+          grid-template-columns: 1fr;
+          gap: 22px;
+        }
+
+        .hero-title {
+          font-size: clamp(6.8rem, 25vw, 13rem);
+        }
+
+        .hero-panel {
+          justify-self: end;
+          width: min(480px, 78vw);
+        }
+
+        .featured-layout,
+        .story-layout,
+        .mailing-layout,
+        .merch-header,
+        .tour-header {
+          grid-template-columns: 1fr;
+        }
+
+        .track-intro {
+          max-width: 690px;
+        }
+
+        .tour-header {
+          align-items: start;
+        }
+
+        .tour-status {
+          width: min(100%, 470px);
+        }
+
+        .story-photo {
+          order: 2;
+        }
+
+        .story-copy {
+          order: 1;
+        }
+
+        .poster-rail {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .merch-poster:nth-child(3) {
+          grid-column: 1 / -1;
+          min-height: 360px;
+        }
+
+        .booking-title {
+          max-width: 9ch;
+        }
+      }
+
+      @media (max-width: 580px) {
+        .hero {
+          height: 176svh;
+          min-height: 1060px;
+        }
+
+        .hero-sticky {
+          min-height: 660px;
+        }
+
+        .wordmark {
+          padding-inline: 18px;
+          font-size: 2.15rem;
+        }
+
+        .release-stamp {
+          top: calc(var(--header-h) + 24px);
+          left: 15px;
+          font-size: 9px;
+        }
+
+        .hero-photo,
+        .hero-register,
+        .hero-cutout {
+          background-position: 51% 45%;
+        }
+
+        .hero-cutout {
+          clip-path: polygon(21% 0, 84% 0, 88% 18%, 80% 32%, 85% 48%, 78% 64%, 84% 100%, 19% 100%, 24% 78%, 16% 63%, 23% 46%, 17% 28%);
+          filter: grayscale(0.2) contrast(1.25) saturate(0.78) drop-shadow(7px 2px 0 var(--yellow));
+        }
+
+        .hero-copy {
+          right: 15px;
+          bottom: 44px;
+          left: 15px;
+          gap: 16px;
+        }
+
+        .hero-kicker {
+          margin-left: 3px;
+          font-size: 9px;
+        }
+
+        .hero-title {
+          font-size: clamp(5.8rem, 30vw, 9.5rem);
+          line-height: 0.7;
+          text-shadow: 5px 3px 0 rgba(118, 84, 199, 0.95);
+        }
+
+        .hero-panel {
+          width: min(94vw, 430px);
+          padding: 17px;
+          box-shadow: 6px 6px 0 var(--yellow);
+        }
+
+        .release-title {
+          font-size: clamp(2.2rem, 12vw, 3.6rem);
+        }
+
+        .positioning {
+          max-width: 33ch;
+          margin-bottom: 14px;
+          font-size: 0.78rem;
+        }
+
+        .scroll-note {
+          display: none;
+        }
+
+        .section-inner {
+          padding: 68px 15px;
+        }
+
+        .display-heading {
+          font-size: clamp(4.15rem, 22vw, 6.8rem);
+        }
+
+        .section-label {
+          margin-bottom: 30px;
+        }
+
+        .featured-layout,
+        .story-layout,
+        .mailing-layout {
+          gap: 44px;
+        }
+
+        .track-intro::after {
+          right: 2%;
+          bottom: -22px;
+        }
+
+        .track-row {
+          grid-template-columns: 52px minmax(0, 1fr);
+          min-height: 98px;
+          gap: 12px;
+          padding-inline: 10px;
+        }
+
+        .track-number {
+          font-size: 2.8rem;
+        }
+
+        .wave-bars {
+          grid-column: 1 / -1;
+          height: 24px;
+          padding-left: 64px;
+        }
+
+        .track-availability {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .tour::after {
+          top: 38%;
+        }
+
+        .tour-row {
+          grid-template-columns: 90px minmax(0, 1fr);
+          min-height: 100px;
+          gap: 12px;
+        }
+
+        .tour-row .button {
+          grid-column: 1 / -1;
+          justify-self: start;
+        }
+
+        .session-frame,
+        .session-frame img {
+          min-height: 690px;
+        }
+
+        .session-frame {
+          margin-inline: -15px;
+        }
+
+        .session-frame img {
+          object-position: 52% center;
+        }
+
+        .session-title {
+          top: 6%;
+          left: 15px;
+          max-width: 74%;
+          font-size: clamp(3.4rem, 17vw, 5.3rem);
+        }
+
+        .session-caption {
+          right: 15px;
+          bottom: 5%;
+          width: calc(100% - 30px);
+        }
+
+        .story-photo::before {
+          left: 28%;
+          width: 104px;
+        }
+
+        .story-copy .display-heading,
+        .mailing-copy .display-heading {
+          font-size: clamp(4rem, 20vw, 6.3rem);
+        }
+
+        .poster-rail {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .merch-poster,
+        .merch-poster:nth-child(2),
+        .merch-poster:nth-child(3) {
+          grid-column: auto;
+          min-height: 420px;
+          transform: none;
+        }
+
+        .merch-poster h3 {
+          font-size: clamp(4.2rem, 20vw, 6.7rem);
+        }
+
+        .signup-form {
+          padding: 28px 18px;
+          box-shadow: 7px 7px 0 var(--purple);
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+          gap: 9px;
+        }
+
+        .form-row button {
+          min-height: 54px;
+          border-left: var(--rule) solid var(--ink);
+        }
+
+        .booking {
+          min-height: 760px;
+        }
+
+        .booking-title {
+          font-size: clamp(5rem, 29vw, 8.8rem);
+        }
+
+        .booking-strip {
+          grid-template-columns: 1fr;
+          padding: 20px;
+          box-shadow: 7px 7px 0 var(--yellow);
+        }
+
+        .booking-strip .button {
+          justify-self: start;
+        }
+
+        .footer-inner {
+          grid-template-columns: 1fr;
+          gap: 36px;
+          padding-top: 44px;
+          padding-bottom: 44px;
+        }
+      }
+
+      /* Gallery cards show the same top-of-page window as the other live
+         website previews. Compress only the embedded parallax runway so the
+         complete hero and the opening of the next section share that crop. */
+      :root[data-card-preview] .hero,
+      :root[data-card-preview] .hero-sticky {
+        height: 1250px;
+        min-height: 1250px;
+      }
+
+      :root[data-card-preview] .hero-sticky {
+        position: relative;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+
+        .hero-photo,
+        .hero-register,
+        .hero-cutout,
+        .hero-copy {
+          transform: none !important;
+          will-change: auto;
+        }
+
+        .merch-poster,
+        .story-photo,
+        .session-title,
+        .booking-strip {
+          transform: none !important;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="#top" aria-label="Asher home">Asher</a>
+        <div class="issue-line" aria-hidden="true">Modern grunge / loud issue no. 01</div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          Menu
+        </button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+          <a href="#featured-track">Music</a>
+          <a href="#tour">Tour</a>
+          <a href="#story">Story</a>
+          <a href="#booking">Booking</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-sticky">
+          <div class="hero-photo" aria-hidden="true"></div>
+          <div class="hero-register" aria-hidden="true"></div>
+          <div class="hero-cutout" aria-hidden="true"></div>
+          <div class="hero-halftone" aria-hidden="true"></div>
+          <div class="hero-toner" aria-hidden="true"></div>
+          <div class="hero-paper-dropout" aria-hidden="true"></div>
+
+          <div class="release-stamp">New release</div>
+
+          <div class="hero-copy">
+            <div class="hero-title-wrap">
+              <p class="hero-kicker">Blown-out guitars / bruised melodies</p>
+              <h1 class="hero-title" id="hero-title">Asher</h1>
+            </div>
+
+            <div class="hero-panel">
+              <p class="hero-kicker">The new single</p>
+              <p class="release-title">Static<br /> Heart</p>
+              <p class="positioning">
+                Modern grunge rock with blown-out guitars, bruised melodies, raw vocals, and unforgettable hooks.
+              </p>
+              <div class="hero-actions">
+                <a class="button" href="#featured-track">Meet the track</a>
+                <a class="text-link" href="#tour">Tour notice</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-note" aria-hidden="true">Drag the needle / scroll</div>
+          <div class="paper-tear" aria-hidden="true"></div>
+        </div>
+
+      </section>
+
+      <section class="section quiet-paper" id="featured-track" aria-labelledby="featured-title">
+        <div class="section-inner">
+          <p class="section-label"><span>02</span> Featured track / signal one</p>
+          <div class="featured-layout">
+            <div class="track-intro">
+              <h2 class="display-heading" id="featured-title" aria-label="Static Heart">Static<br />Heart</h2>
+              <p class="read-copy">
+                A bruised melody pushed through blown-out guitars, raw-throat vocals, and a hook that refuses to
+                leave quietly.
+              </p>
+            </div>
+
+            <div class="track-sheet" aria-label="Static Heart track information">
+              <div class="track-row">
+                <span class="track-number" aria-hidden="true">A</span>
+                <div>
+                  <p class="track-name">Static Heart</p>
+                  <p class="track-note">Featured track / Asher</p>
+                </div>
+                <div class="wave-bars" aria-hidden="true">
+                  <i style="--h: 32%"></i><i style="--h: 78%"></i><i style="--h: 48%"></i>
+                  <i style="--h: 94%"></i><i style="--h: 56%"></i><i style="--h: 72%"></i>
+                  <i style="--h: 38%"></i><i style="--h: 88%"></i><i style="--h: 62%"></i>
+                  <i style="--h: 98%"></i><i style="--h: 44%"></i><i style="--h: 69%"></i>
+                  <i style="--h: 52%"></i><i style="--h: 84%"></i><i style="--h: 34%"></i>
+                </div>
+              </div>
+              <div class="track-availability">
+                <p>Audio source pending / release notice ready</p>
+                <a class="button" href="#mailing-list">Get the first listen</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tour" id="tour" aria-labelledby="tour-title">
+        <div class="section-inner">
+          <p class="section-label"><span>03</span> Tour dates / wall map</p>
+          <div class="tour-header">
+            <h2 class="display-heading" id="tour-title" aria-label="No map marks yet">No map<br />marks yet</h2>
+            <p class="tour-status">No dates have been announced. Join the list and get the first signal when the route is set.</p>
+          </div>
+
+          <div class="tour-board" aria-label="Tour announcement status">
+            <div class="tour-row">
+              <strong>TBA</strong>
+              <p>Next room, next wall, next city <small>Dates and venues will appear here when confirmed</small></p>
+              <a class="button" href="#mailing-list">Get tour notice</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section live-session" id="live-session" aria-labelledby="session-title">
+        <div class="section-inner">
+          <p class="section-label"><span>04</span> Live session / room noise</p>
+          <div class="session-frame">
+            <img
+              src="assets/images/live-session.jpg"
+              width="1536"
+              height="1024"
+              loading="lazy"
+              alt="Asher performing together in a worn rehearsal room, surrounded by amplifiers and cables"
+            />
+            <h2 class="session-title" id="session-title" aria-label="Live Session">Live<br />Session</h2>
+            <div class="session-caption">
+              <p>Four players in one room: guitar scrape, drum air, cable hum, and the raw edge between the notes.</p>
+              <a class="button" href="#mailing-list">Get session drop</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section quiet-paper" id="story" aria-labelledby="story-title">
+        <div class="section-inner">
+          <p class="section-label"><span>05</span> Band story / after the lights</p>
+          <div class="story-layout">
+            <div class="story-photo">
+              <img
+                src="assets/images/backstage.jpg"
+                width="1536"
+                height="1024"
+                loading="lazy"
+                alt="The four members of Asher catching their breath together in a cramped backstage room"
+              />
+              <span class="texture-burn" aria-hidden="true"></span>
+            </div>
+
+            <div class="story-copy">
+              <h2 class="display-heading" id="story-title" aria-label="Melody meets damage">Melody<br />meets damage</h2>
+              <p class="read-copy">
+                Asher lives in the collision: blown-out guitars against bruised melodies, raw vocals against hooks
+                built to survive the noise. The songs keep the seams visible and the feeling louder than the finish.
+              </p>
+              <blockquote class="pull-quote">Pretty enough to hurt. Loud enough to stay.</blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section merch" id="merch" aria-labelledby="merch-title">
+        <div class="section-inner">
+          <p class="section-label"><span>06</span> Merch / preview objects</p>
+          <div class="merch-header">
+            <h2 class="display-heading" id="merch-title" aria-label="Wear the feedback">Wear the<br />feedback</h2>
+            <p class="merch-note">
+              Three early merch directions. Availability, specifications, and checkout stay unclaimed until the drop is confirmed.
+            </p>
+          </div>
+
+          <div class="poster-rail" aria-label="Merchandise concept previews">
+            <article class="merch-poster">
+              <p class="poster-index">Concept 01 / textile</p>
+              <h3 aria-label="Asher Tee">Asher<br />Tee</h3>
+              <p>Front mark / back noise</p>
+            </article>
+            <article class="merch-poster">
+              <p class="poster-index">Concept 02 / record</p>
+              <h3 aria-label="Static Heart">Static<br />Heart</h3>
+              <p>Vinyl direction / details TBA</p>
+            </article>
+            <article class="merch-poster">
+              <p class="poster-index">Concept 03 / heavyweight</p>
+              <h3 aria-label="Noise Hood">Noise<br />Hood</h3>
+              <p>Oversized mark / worn black field</p>
+            </article>
+          </div>
+
+          <div style="margin-top: 76px">
+            <a class="button" href="#mailing-list">Get drop alerts</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section mailing" id="mailing-list" aria-labelledby="mailing-title">
+        <div class="section-inner">
+          <p class="section-label"><span>07</span> Mailing list / first signal</p>
+          <div class="mailing-layout">
+            <div class="mailing-copy">
+              <h2 class="display-heading" id="mailing-title" aria-label="Stay in the noise">Stay in<br />the noise</h2>
+              <p class="read-copy">Release notes, confirmed dates, session drops, and merch notices—only when there is something worth sending.</p>
+            </div>
+
+            <form class="signup-form" id="signup-form" novalidate>
+              <label class="form-label" for="email">Email address</label>
+              <div class="form-row">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  inputmode="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  aria-describedby="form-help form-status"
+                  required
+                />
+                <button type="submit">Join the list</button>
+              </div>
+              <p class="form-help" id="form-help">No spam. This standalone preview does not transmit or store your address.</p>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section booking" id="booking" aria-labelledby="booking-title">
+        <div class="section-inner booking-inner">
+          <p class="section-label"><span>08</span> Booking / direct line</p>
+          <h2 class="booking-title" id="booking-title" aria-label="Book Asher">Book<br />Asher</h2>
+          <div class="booking-strip">
+            <p>For venue, festival, press, or session inquiries, send the essential details and the right contact can take it from there.</p>
+            <a class="button" href="mailto:booking@asher.example?subject=Asher%20booking%20inquiry">Send booking brief</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-inner footer-inner">
+        <p class="footer-mark">Asher</p>
+        <div class="footer-colophon">
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="#top">Top</a>
+            <a href="#featured-track">Music</a>
+            <a href="#tour">Tour</a>
+            <a href="#story">Story</a>
+            <a href="#merch">Merch</a>
+            <a href="#booking">Booking</a>
+          </nav>
+          <p>
+            Texture by
+            <a
+              class="credit-link"
+              href="https://commons.wikimedia.org/wiki/File:Free_grungy_splatter_speckled_scratched_texture_for_layers_%282984280145%29.jpg"
+              target="_blank"
+              rel="noreferrer"
+              >D. Sharon Pruitt</a
+            >,
+            <a class="credit-link" href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noreferrer">CC BY 2.0</a>.
+            Resized, compressed, cropped, desaturated, contrast-adjusted, and blended for this page.
+          </p>
+          <p>Asher landing-page concept / light stock / Punk-Zine issue 01.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const hero = document.querySelector(".hero");
+        const menuButton = document.querySelector(".menu-toggle");
+        const nav = document.querySelector(".primary-nav");
+        const signupForm = document.querySelector("#signup-form");
+        const emailInput = document.querySelector("#email");
+        const formStatus = document.querySelector("#form-status");
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let scheduled = false;
+
+        const updateParallax = () => {
+          scheduled = false;
+          if (reduceMotion.matches || !hero) {
+            root.style.setProperty("--hero-progress", "0");
+            return;
+          }
+
+          const rect = hero.getBoundingClientRect();
+          const distance = Math.max(1, hero.offsetHeight - window.innerHeight);
+          const progress = Math.min(1, Math.max(0, -rect.top / distance));
+          root.style.setProperty("--hero-progress", progress.toFixed(4));
+        };
+
+        const requestParallax = () => {
+          if (!scheduled) {
+            scheduled = true;
+            window.requestAnimationFrame(updateParallax);
+          }
+        };
+
+        window.addEventListener("scroll", requestParallax, { passive: true });
+        window.addEventListener("resize", requestParallax);
+        reduceMotion.addEventListener?.("change", updateParallax);
+        updateParallax();
+
+        menuButton?.addEventListener("click", () => {
+          const open = menuButton.getAttribute("aria-expanded") === "true";
+          menuButton.setAttribute("aria-expanded", String(!open));
+          nav?.classList.toggle("is-open", !open);
+        });
+
+        nav?.addEventListener("click", (event) => {
+          if (event.target instanceof HTMLAnchorElement) {
+            menuButton?.setAttribute("aria-expanded", "false");
+            nav.classList.remove("is-open");
+          }
+        });
+
+        signupForm?.addEventListener("submit", (event) => {
+          event.preventDefault();
+          if (!(emailInput instanceof HTMLInputElement) || !(formStatus instanceof HTMLElement)) return;
+
+          if (!emailInput.validity.valid) {
+            emailInput.setAttribute("aria-invalid", "true");
+            formStatus.textContent = "Enter a valid email address to test the signup state.";
+            emailInput.focus();
+            return;
+          }
+
+          emailInput.removeAttribute("aria-invalid");
+          formStatus.textContent = "Signup state ready. Connect Asher’s mailing provider before publishing.";
+        });
+      })();
+    </script>
+  </body>
+</html>
