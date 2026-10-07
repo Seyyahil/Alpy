@@ -1,6 +1,6 @@
 <a href="https://alpymcp.com/"><img src="assets/alpy-logo.svg" alt="Alpy MCP" width="137"></a>
 
-# Build with your AI agents,<br>add taste with Alpy MCP.
+# Build with your AI agents, add taste with Alpy MCP.
 
 Connect Alpy MCP and put a creative director behind every AI build.<br>
 You get a complete design system and 37 design skills for consistent and intentional UI and UX designs.
