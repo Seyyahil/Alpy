@@ -31,8 +31,3 @@ Connect Alpy MCP and select light or dark mode before using these starter prompt
 - [Swiss](styles/swiss.md)
 - [Terminal](styles/terminal.md)
 - [Vaporwave](styles/vaporwave.md)
-
-## Image prompts
-
-- [Cyberpunk — placeholder](images/cyberpunk.md)
-- [Neumorphism](images/neumorphism.md)
