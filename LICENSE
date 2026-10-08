@@ -1,3 +1,12 @@
+Alpy MCP — License and notices
+=============================
+
+1. Example code and prompts
+--------------------------
+
+Original example code and prompt text are licensed under the MIT License below.
+Alpy-owned media and third-party materials are covered by sections 2 and 3.
+
 MIT License
 
 Copyright (c) 2026 Alpy MCP
@@ -19,3 +28,24 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+2. Media and branding terms
+--------------------------
+
+Alpy-owned logos, videos, and images are excluded from the MIT license. All rights are reserved by their copyright owners. This includes preview images and media within prototype folders or linked from the README.
+
+Reuse, modification, or redistribution requires prior written permission, except where applicable law or a separate license permits it. For permission, contact info@alpymcp.com.
+
+Third-party logos, fonts, images, and other assets retain their respective owners' licenses and terms. These terms do not replace them. See the third-party notices below.
+
+3. Third-party notices
+----------------------
+
+- Bundled font licenses remain beside the fonts in Cyberpunk and Grunge.
+- Grunge credits its texture to D. Sharon Pruitt under CC BY 2.0. Its HTML retains the source, license link, and modification notes.
+- Parallax includes React, React DOM, Scheduler, and Three.js. Notices remain in app.js; license texts are in prototypes/Parallax/licenses/.
+- Some examples request fonts from Google Fonts.
+
+Third-party logos remain subject to their respective owners' terms.
+
+These licenses and credits remain in effect.
