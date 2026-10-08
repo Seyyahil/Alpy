@@ -319,7 +319,3 @@ Bring tokens and components into [Figma](https://alpymcp.com/ai-taste?client=fig
 > Use Alpy MCP to show the full library index, no summary.
 
 ---
-
-### License
-
-Original example code and prompts are MIT licensed. Alpy-owned logos, videos, and images require permission to reuse. Third-party code and assets retain their existing licenses. See [LICENSE](LICENSE) for all terms and notices.
