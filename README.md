@@ -11,14 +11,16 @@ Alpy MCP brings your Alpy Library’s components, tokens, design skills, and web
 
 ## Contents
 
-- [UI Design](#ui-design)
-- [Website Design](#website-design)
-- [User Experience](#user-experience)
-- [Run the examples](#run-the-examples)
 - [Inside Alpy MCP](#inside-alpy-mcp)
+  - [Website Design](#website-design)
+  - [UI Design](#ui-design)
+  - [User Experience](#user-experience)
+- [Run the examples](#run-the-examples)
 - [Design System](#design-system)
 
-## Website Design
+## Inside Alpy MCP
+
+### Website Design
 
 Turn an idea or existing site into a responsive website around your audience, content, and goals.
 
@@ -126,8 +128,6 @@ Explore 13 website prototypes from Alpy Taste. Open a preview to see the full we
 </table>
 
 [Explore all web design styles on Alpy Taste](https://alpymcp.com/ai-taste#ai-taste-gallery-title)
-
-## Inside Alpy MCP
 
 ### UI Design
 
