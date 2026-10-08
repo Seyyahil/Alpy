@@ -7,8 +7,6 @@ You get a complete design system and 37 design skills for consistent and intenti
 
 Alpy MCP brings your Alpy Library’s components, tokens, design skills, and web design styles into Claude, Codex, Cursor, Gemini, and Figma. Your AI works with your connected Library while you choose the direction and review the result.
 
-[Explore Alpy](https://alpymcp.com/) · [Browse AI Taste](https://alpymcp.com/ai-taste) · [Connect Alpy MCP](https://alpymcp.com/ai-taste#ai-taste-install-title)
-
 **Connect Alpy MCP to your AI**
 
 <p>
@@ -29,6 +27,9 @@ https://www.alpymcp.com/alpy-mcp
 
 - [Design system](#design-system)
 - [Taste and design skills](#taste-and-design-skills)
+  - [Website Design](#website-design)
+  - [UI Design](#ui-design)
+  - [User Experience](#user-experience)
 - [Ready to build](#ready-to-build)
 
 ## Inside Alpy MCP
@@ -36,6 +37,69 @@ https://www.alpymcp.com/alpy-mcp
 ### Design system
 
 Customize typography, colors, tokens, and components in one Alpy Library. Bring those design decisions into your AI workflow across Light and Dark modes.
+
+<details>
+<summary><strong>Typography</strong></summary>
+
+The type scale generator stays synced with your heading and body text styles.
+
+- Font sizes
+- Font weights
+- Line heights
+- Letter spacing
+
+</details>
+
+<details>
+<summary><strong>Color</strong></summary>
+
+The color generator keeps your palette synced with the colors used across your Library.
+
+- Color shades
+- System colors
+- Surface colors
+- Functional colors
+- Border colors
+- Text colors
+- Icon colors
+- Shadow colors
+
+</details>
+
+<details>
+<summary><strong>Tokens</strong></summary>
+
+Foundation and semantic tokens define the shared values used across your design system.
+
+**Foundation tokens:**
+
+- Size
+- Typography: headings, body text, and font weights
+
+**Semantic tokens:**
+
+- Color
+- Spacing
+- Border
+- Icon
+- Shadow
+
+</details>
+
+<details>
+<summary><strong>Components</strong></summary>
+
+Foundation tokens → Semantic tokens → Component tokens
+
+- Sizes
+- Variants
+- Interaction states
+- Component Markdown files
+- Production-ready React components
+- Production-ready Vue components
+- Light & Dark modes
+
+</details>
 
 [Explore the Alpy design system](https://alpymcp.com/library)
 
