@@ -105,7 +105,7 @@ Foundation tokens → Semantic tokens → Component tokens
 
 ### Taste and design skills
 
-#### Website Design
+### Website Design
 
 Turn an idea or existing site into a responsive website around your audience, content, and goals.
 
@@ -135,19 +135,19 @@ Turn an idea or existing site into a responsive website around your audience, co
 <a href="https://alpymcp.com/websites/academia/index.html"><img src="assets/academia.webp" alt="Academia website preview" width="100%"></a><br>
 <strong>Academia</strong><br>
 <sub>Research institute</sub><br>
-<a href="https://alpymcp.com/websites/academia/index.html">Open prototype</a> · <a href="prototypes/academia/">Source</a> · <a href="https://alpymcp.com/ai-taste#ai-taste-website-design">Design guidance</a>
+<a href="https://alpymcp.com/websites/academia/index.html">Open prototype</a> · <a href="prototypes/academia/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/art-deco/index.html"><img src="assets/art-deco.webp" alt="Art Deco website preview" width="100%"></a><br>
 <strong>Art Deco</strong><br>
 <sub>Hotel and hospitality</sub><br>
-<a href="https://alpymcp.com/websites/art-deco/index.html">Open prototype</a> · <a href="prototypes/art-deco/">Source</a> · <a href="https://alpymcp.com/ai-taste#ai-taste-website-design">Design guidance</a>
+<a href="https://alpymcp.com/websites/art-deco/index.html">Open prototype</a> · <a href="prototypes/art-deco/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/bauhaus/index.html"><img src="assets/bauhaus.webp" alt="Bauhaus website preview" width="100%"></a><br>
 <strong>Bauhaus</strong><br>
 <sub>Architecture collective</sub><br>
-<a href="https://alpymcp.com/websites/bauhaus/index.html">Open prototype</a> · <a href="prototypes/bauhaus/">Source</a> · <a href="https://alpymcp.com/ai-taste#ai-taste-website-design">Design guidance</a>
+<a href="https://alpymcp.com/websites/bauhaus/index.html">Open prototype</a> · <a href="prototypes/bauhaus/starter-prompt.md">Prompt</a>
 </td>
 </tr>
 <tr>
@@ -155,19 +155,19 @@ Turn an idea or existing site into a responsive website around your audience, co
 <a href="https://alpymcp.com/websites/bento-grid/index.html"><img src="assets/bento-grid.webp" alt="Bento Grid website preview" width="100%"></a><br>
 <strong>Bento Grid</strong><br>
 <sub>AI collaboration</sub><br>
-<a href="https://alpymcp.com/websites/bento-grid/index.html">Open prototype</a> · <a href="prototypes/bento-grid/">Source</a> · <a href="https://alpymcp.com/ai-taste#ai-taste-website-design">Design guidance</a>
+<a href="https://alpymcp.com/websites/bento-grid/index.html">Open prototype</a> · <a href="prototypes/bento-grid/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/bold-typography/index.html"><img src="assets/bold-typography.webp" alt="Bold Typography website preview" width="100%"></a><br>
 <strong>Bold Typography</strong><br>
 <sub>Music and culture</sub><br>
-<a href="https://alpymcp.com/websites/bold-typography/index.html">Open prototype</a> · <a href="prototypes/bold-typography/">Source</a> · <a href="https://alpymcp.com/ai-taste#ai-taste-website-design">Design guidance</a>
+<a href="https://alpymcp.com/websites/bold-typography/index.html">Open prototype</a> · <a href="prototypes/bold-typography/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Cyberpunk/index.html"><img src="assets/cyberpunk.webp" alt="Cyberpunk website preview" width="100%"></a><br>
 <strong>Cyberpunk</strong><br>
 <sub>Automotive</sub><br>
-<a href="https://alpymcp.com/websites/Cyberpunk/index.html">Open prototype</a> · <a href="prototypes/Cyberpunk/">Source</a> · <a href="https://alpymcp.com/ai-taste#ai-taste-website-design">Design guidance</a>
+<a href="https://alpymcp.com/websites/Cyberpunk/index.html">Open prototype</a> · <a href="prototypes/Cyberpunk/starter-prompt.md">Prompt</a>
 </td>
 </tr>
 <tr>
@@ -175,19 +175,36 @@ Turn an idea or existing site into a responsive website around your audience, co
 <a href="https://alpymcp.com/websites/flat-design/index.html"><img src="assets/flat-design.webp" alt="Flat Design website preview" width="100%"></a><br>
 <strong>Flat Design</strong><br>
 <sub>Travel and journeys</sub><br>
-<a href="https://alpymcp.com/websites/flat-design/index.html">Open prototype</a> · <a href="prototypes/flat-design/">Source</a> · <a href="https://alpymcp.com/ai-taste#ai-taste-website-design">Design guidance</a>
+<a href="https://alpymcp.com/websites/flat-design/index.html">Open prototype</a> · <a href="prototypes/flat-design/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Grunge/index.html"><img src="assets/grunge-punk.webp" alt="Grunge / Punk website preview" width="100%"></a><br>
 <strong>Grunge / Punk</strong><br>
 <sub>Artist and music</sub><br>
-<a href="https://alpymcp.com/websites/Grunge/index.html">Open prototype</a> · <a href="prototypes/Grunge/">Source</a> · <a href="https://alpymcp.com/ai-taste#ai-taste-website-design">Design guidance</a>
+<a href="https://alpymcp.com/websites/Grunge/index.html">Open prototype</a> · <a href="prototypes/Grunge/starter-prompt.md">Prompt</a>
 </td>
+<td width="33%" valign="top">
+<img src="assets/prototype-in-progress.svg" alt="Luxury prototype in progress" width="100%"><br>
+<strong>Luxury</strong><br>
+<a href="prompts/styles/luxury.md">Prompt</a>
+</td>
+</tr>
+<tr>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Modern-dark/index.html"><img src="assets/modern-dark.webp" alt="Modern Dark website preview" width="100%"></a><br>
 <strong>Modern Dark</strong><br>
 <sub>Project management</sub><br>
-<a href="https://alpymcp.com/websites/Modern-dark/index.html">Open prototype</a> · <a href="prototypes/Modern-dark/">Source</a> · <a href="https://alpymcp.com/ai-taste#ai-taste-website-design">Design guidance</a>
+<a href="https://alpymcp.com/websites/Modern-dark/index.html">Open prototype</a> · <a href="prototypes/Modern-dark/starter-prompt.md">Prompt</a>
+</td>
+<td width="33%" valign="top">
+<img src="assets/prototype-in-progress.svg" alt="Monochrome prototype in progress" width="100%"><br>
+<strong>Monochrome</strong><br>
+<a href="prompts/styles/monochrome.md">Prompt</a>
+</td>
+<td width="33%" valign="top">
+<img src="assets/prototype-in-progress.svg" alt="Neo Brutalism prototype in progress" width="100%"><br>
+<strong>Neo Brutalism</strong><br>
+<a href="prompts/styles/neo-brutalism.md">Prompt</a>
 </td>
 </tr>
 <tr>
@@ -195,36 +212,55 @@ Turn an idea or existing site into a responsive website around your audience, co
 <a href="https://alpymcp.com/websites/neumorphism/index.html"><img src="assets/neumorphism.webp" alt="Neumorphism website preview" width="100%"></a><br>
 <strong>Neumorphism</strong><br>
 <sub>Focus and audio</sub><br>
-<a href="https://alpymcp.com/websites/neumorphism/index.html">Open prototype</a> · <a href="prototypes/neumorphism/">Source</a> · <a href="https://alpymcp.com/ai-taste#ai-taste-website-design">Design guidance</a>
+<a href="https://alpymcp.com/websites/neumorphism/index.html">Open prototype</a> · <a href="prototypes/neumorphism/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Parallax/index.html"><img src="assets/parallax.webp" alt="Parallax website preview" width="100%"></a><br>
 <strong>Parallax</strong><br>
 <sub>Beverage brand</sub><br>
-<a href="https://alpymcp.com/websites/Parallax/index.html">Open prototype</a> · <a href="prototypes/Parallax/">Source</a> · <a href="https://alpymcp.com/ai-taste#ai-taste-website-design">Design guidance</a>
+<a href="https://alpymcp.com/websites/Parallax/index.html">Open prototype</a> · <a href="prototypes/Parallax/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Playful-geometric/index.html"><img src="assets/playful-geometric.webp" alt="Playful Geometric website preview" width="100%"></a><br>
 <strong>Playful Geometric</strong><br>
 <sub>Podcast and media</sub><br>
-<a href="https://alpymcp.com/websites/Playful-geometric/index.html">Open prototype</a> · <a href="prototypes/Playful-geometric/">Source</a> · <a href="https://alpymcp.com/ai-taste#ai-taste-website-design">Design guidance</a>
+<a href="https://alpymcp.com/websites/Playful-geometric/index.html">Open prototype</a> · <a href="prototypes/Playful-geometric/starter-prompt.md">Prompt</a>
 </td>
 </tr>
 <tr>
 <td width="33%" valign="top">
+<img src="assets/prototype-in-progress.svg" alt="Retro prototype in progress" width="100%"><br>
+<strong>Retro</strong><br>
+<a href="prompts/styles/retro.md">Prompt</a>
+</td>
+<td width="33%" valign="top">
+<img src="assets/prototype-in-progress.svg" alt="Sketch prototype in progress" width="100%"><br>
+<strong>Sketch</strong><br>
+<a href="prompts/styles/sketch.md">Prompt</a>
+</td>
+<td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/swiss/index.html"><img src="assets/swiss.webp" alt="Swiss website preview" width="100%"></a><br>
 <strong>Swiss</strong><br>
 <sub>Urban mobility</sub><br>
-<a href="https://alpymcp.com/websites/swiss/index.html">Open prototype</a> · <a href="prototypes/swiss/">Source</a> · <a href="https://alpymcp.com/ai-taste#ai-taste-website-design">Design guidance</a>
+<a href="https://alpymcp.com/websites/swiss/index.html">Open prototype</a> · <a href="prototypes/swiss/starter-prompt.md">Prompt</a>
 </td>
-<td width="33%"></td>
+</tr>
+<tr>
+<td width="33%" valign="top">
+<img src="assets/prototype-in-progress.svg" alt="Terminal prototype in progress" width="100%"><br>
+<strong>Terminal</strong><br>
+<a href="prompts/styles/terminal.md">Prompt</a>
+</td>
+<td width="33%" valign="top">
+<img src="assets/prototype-in-progress.svg" alt="Vaporwave prototype in progress" width="100%"><br>
+<strong>Vaporwave</strong><br>
+<a href="prompts/styles/vaporwave.md">Prompt</a>
+</td>
 <td width="33%"></td>
 </tr>
 </table>
 
-[Explore all web design styles on Alpy Taste](https://alpymcp.com/ai-taste#ai-taste-gallery-title)
-
-#### UI Design
+### UI Design
 
 Shape clear, consistent interfaces through 12 visual principles.
 
@@ -245,7 +281,7 @@ Shape clear, consistent interfaces through 12 visual principles.
 
 [UI Design guidance](https://alpymcp.com/ai-taste#ai-taste-ui-design) · [Starter prompt](prompts/refine-ui.md)
 
-#### User Experience
+### User Experience
 
 Design around real user needs, clear tasks, and predictable behavior.
 
