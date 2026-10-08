@@ -18,7 +18,17 @@ Alpy MCP brings your Alpy Library’s components, tokens, design skills, and web
 - [Inside Alpy MCP](#inside-alpy-mcp)
 - [Design System](#design-system)
 
-## Web design style skills
+## Website Design
+
+Turn an idea or existing site into a responsive website around your audience, content, and goals.
+
+1. **Share your idea.** Describe what to create or redesign.
+2. **Choose a style.** Review prototypes and select a direction.
+3. **Choose a hero.** Set the opening message, visual, and action.
+4. **Approve the brief.** Confirm the goals, content, style, and hero.
+5. **Review and refine.** Build with your Library, then request focused revisions.
+
+[Website Design guidance](https://alpymcp.com/ai-taste#ai-taste-website-design) · [Starter prompt](prompts/build-website.md)
 
 Explore 13 website prototypes from Alpy Taste. Open a preview to see the full website, then explore the Website Design guidance to shape your own project.
 
@@ -119,16 +129,6 @@ Explore 13 website prototypes from Alpy Taste. Open a preview to see the full we
 
 ## Inside Alpy MCP
 
-Create, explore, and refine interfaces with your Alpy Library.
-
-<table>
-<tr>
-<td width="33%" valign="top"><a href="#ui-design"><img src="assets/ui-design.svg" alt="UI Design" width="100%"></a><br><strong>UI Design</strong><br><a href="#ui-design">12 visual principles</a></td>
-<td width="33%" valign="top"><a href="#website-design"><img src="assets/website-design.svg" alt="Website Design" width="100%"></a><br><strong>Website Design</strong><br><a href="#website-design">From brief to website</a></td>
-<td width="33%" valign="top"><a href="#user-experience"><img src="assets/user-experience.svg" alt="User Experience" width="100%"></a><br><strong>User Experience</strong><br><a href="#user-experience">12 UX principles</a></td>
-</tr>
-</table>
-
 ### UI Design
 
 Shape clear, consistent interfaces through 12 visual principles.
@@ -149,18 +149,6 @@ Shape clear, consistent interfaces through 12 visual principles.
 | Elevation | Separate floating controls from background content. |
 
 [UI Design guidance](https://alpymcp.com/ai-taste#ai-taste-ui-design) · [Starter prompt](prompts/refine-ui.md)
-
-### Website Design
-
-Turn an idea or existing site into a responsive website around your audience, content, and goals.
-
-1. **Share your idea.** Describe what to create or redesign.
-2. **Choose a style.** Review prototypes and select a direction.
-3. **Choose a hero.** Set the opening message, visual, and action.
-4. **Approve the brief.** Confirm the goals, content, style, and hero.
-5. **Review and refine.** Build with your Library, then request focused revisions.
-
-[Website Design guidance](https://alpymcp.com/ai-taste#ai-taste-website-design) · [Starter prompt](prompts/build-website.md)
 
 ### User Experience
 
@@ -197,12 +185,6 @@ Customize typography, colors, tokens, and components in one Alpy Library. Bring 
 
 [Explore the Alpy design system](https://alpymcp.com/library)
 
-### Taste and design skills
-
-Give your AI a visual direction with web design styles, UI principles, and UX guidance. Review and refine your work with responsive, accessibility, and design system guidance.
-
-[Explore Alpy Taste](https://alpymcp.com/ai-taste)
-
 ### Ready to build
 
 Use React and Vue components from your connected Alpy Library through Alpy MCP, or bring your design system into a connected Figma workflow.
@@ -213,21 +195,16 @@ Use React and Vue components from your connected Alpy Library through Alpy MCP, 
 
 1. **Set up your Alpy Library.** Customize the typography, colors, and components you want your AI to use.
 2. **Connect your AI tool.** Follow its setup guide, sign in to Alpy, and choose your Library.
-3. **Describe your project.** Share your goal, audience, content, and constraints. Choose a direction, approve the brief, then review and refine the result.
-
-[Claude](https://alpymcp.com/ai-taste?client=claude#ai-taste-install-title) · [Codex](https://alpymcp.com/ai-taste?client=codex#ai-taste-install-title) · [Cursor](https://alpymcp.com/ai-taste?client=cursor#ai-taste-install-title) · [Gemini](https://alpymcp.com/ai-taste?client=gemini#ai-taste-install-title) · [Figma](https://alpymcp.com/ai-taste?client=figma#ai-taste-install-title)
-
-An Alpy account and an eligible plan are required to connect. [See current plans](https://alpymcp.com/pricing).
-
-## Discover Alpy with your AI
-
-After connecting Alpy MCP, ask your AI to show what your Library contains. Select light or dark mode in your chat before requesting library content.
+3. **Explore your Library.** Select light or dark mode in your chat, then ask your AI to show the skills, components, and tokens available through Alpy MCP.
+4. **Describe your project.** Share your goal, audience, content, and constraints. Choose a direction, approve the brief, then review and refine the result.
 
 > Use Alpy MCP to show the full library index, no summary.
 
 [Read the Alpy MCP Overview](https://alpymcp.com/alpy-mcp-overview/) · [More discovery prompts](prompts/discover-alpy.md)
 
-Explore styles, UI and UX guidance, hero structures, components, tokens, responsive design, and accessibility with your connected AI.
+[Claude](https://alpymcp.com/ai-taste?client=claude#ai-taste-install-title) · [Codex](https://alpymcp.com/ai-taste?client=codex#ai-taste-install-title) · [Cursor](https://alpymcp.com/ai-taste?client=cursor#ai-taste-install-title) · [Gemini](https://alpymcp.com/ai-taste?client=gemini#ai-taste-install-title) · [Figma](https://alpymcp.com/ai-taste?client=figma#ai-taste-install-title)
+
+An Alpy account and an eligible plan are required to connect. [See current plans](https://alpymcp.com/pricing).
 
 [Website](https://alpymcp.com/) · [AI Taste](https://alpymcp.com/ai-taste) · [Pricing](https://alpymcp.com/pricing) · [Support](mailto:info@alpymcp.com) · [X](https://x.com/alpymcp) · [LinkedIn](https://www.linkedin.com/company/alpymcp)
 
