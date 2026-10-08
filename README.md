@@ -11,18 +11,12 @@ Alpy MCP brings your Alpy Library’s components, tokens, design skills, and web
 
 ## Contents
 
-- [Web design style skills](#web-design-style-skills)
-- [Design Skills](#design-skills)
-  - [UI Design](#ui-design)
-  - [Website Design](#website-design)
-  - [User Experience](#user-experience)
+- [UI Design](#ui-design)
+- [Website Design](#website-design)
+- [User Experience](#user-experience)
 - [Run the examples](#run-the-examples)
 - [Inside Alpy MCP](#inside-alpy-mcp)
-  - [Your Alpy design system](#your-alpy-design-system)
-  - [Taste and design skills](#taste-and-design-skills)
-  - [Ready to build](#ready-to-build)
-- [Get started](#get-started)
-- [Discover Alpy with your AI](#discover-alpy-with-your-ai)
+- [Design System](#design-system)
 
 ## Web design style skills
 
@@ -123,7 +117,7 @@ Explore 13 website prototypes from Alpy Taste. Open a preview to see the full we
 
 [Explore all web design styles on Alpy Taste](https://alpymcp.com/ai-taste#ai-taste-gallery-title)
 
-## Design Skills
+## Inside Alpy MCP
 
 Create, explore, and refine interfaces with your Alpy Library.
 
@@ -195,7 +189,7 @@ Each prototype includes its HTML, styles, scripts, assets, and a starter prompt.
 
 [Local preview guide](docs/local-preview.md) · [Prototype files](prototypes/)
 
-## Inside Alpy MCP
+## Design System
 
 ### Your Alpy design system
 
