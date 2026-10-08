@@ -34,7 +34,7 @@ https://www.alpymcp.com/alpy-mcp
 
 ## Inside Alpy MCP
 
-### Design system
+## Design system
 
 Customize typography, colors, tokens, and components in one Alpy Library. Bring those design decisions into your AI workflow across Light and Dark modes.
 
@@ -103,7 +103,7 @@ Foundation tokens → Semantic tokens → Component tokens
 
 [Explore the Alpy design system](https://alpymcp.com/library)
 
-### Taste and design skills
+## Taste and design skills
 
 ### Website Design
 
@@ -134,19 +134,16 @@ Turn an idea or existing site into a responsive website around your audience, co
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/academia/index.html"><img src="assets/academia.webp" alt="Academia website preview" width="100%"></a><br>
 <strong>Academia</strong><br>
-<sub>Research institute</sub><br>
 <a href="https://alpymcp.com/websites/academia/index.html">Open prototype</a> · <a href="prototypes/academia/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/art-deco/index.html"><img src="assets/art-deco.webp" alt="Art Deco website preview" width="100%"></a><br>
 <strong>Art Deco</strong><br>
-<sub>Hotel and hospitality</sub><br>
 <a href="https://alpymcp.com/websites/art-deco/index.html">Open prototype</a> · <a href="prototypes/art-deco/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/bauhaus/index.html"><img src="assets/bauhaus.webp" alt="Bauhaus website preview" width="100%"></a><br>
 <strong>Bauhaus</strong><br>
-<sub>Architecture collective</sub><br>
 <a href="https://alpymcp.com/websites/bauhaus/index.html">Open prototype</a> · <a href="prototypes/bauhaus/starter-prompt.md">Prompt</a>
 </td>
 </tr>
@@ -154,19 +151,16 @@ Turn an idea or existing site into a responsive website around your audience, co
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/bento-grid/index.html"><img src="assets/bento-grid.webp" alt="Bento Grid website preview" width="100%"></a><br>
 <strong>Bento Grid</strong><br>
-<sub>AI collaboration</sub><br>
 <a href="https://alpymcp.com/websites/bento-grid/index.html">Open prototype</a> · <a href="prototypes/bento-grid/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/bold-typography/index.html"><img src="assets/bold-typography.webp" alt="Bold Typography website preview" width="100%"></a><br>
 <strong>Bold Typography</strong><br>
-<sub>Music and culture</sub><br>
 <a href="https://alpymcp.com/websites/bold-typography/index.html">Open prototype</a> · <a href="prototypes/bold-typography/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Cyberpunk/index.html"><img src="assets/cyberpunk.webp" alt="Cyberpunk website preview" width="100%"></a><br>
 <strong>Cyberpunk</strong><br>
-<sub>Automotive</sub><br>
 <a href="https://alpymcp.com/websites/Cyberpunk/index.html">Open prototype</a> · <a href="prototypes/Cyberpunk/starter-prompt.md">Prompt</a>
 </td>
 </tr>
@@ -174,13 +168,11 @@ Turn an idea or existing site into a responsive website around your audience, co
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/flat-design/index.html"><img src="assets/flat-design.webp" alt="Flat Design website preview" width="100%"></a><br>
 <strong>Flat Design</strong><br>
-<sub>Travel and journeys</sub><br>
 <a href="https://alpymcp.com/websites/flat-design/index.html">Open prototype</a> · <a href="prototypes/flat-design/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Grunge/index.html"><img src="assets/grunge-punk.webp" alt="Grunge / Punk website preview" width="100%"></a><br>
 <strong>Grunge / Punk</strong><br>
-<sub>Artist and music</sub><br>
 <a href="https://alpymcp.com/websites/Grunge/index.html">Open prototype</a> · <a href="prototypes/Grunge/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
@@ -193,7 +185,6 @@ Turn an idea or existing site into a responsive website around your audience, co
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Modern-dark/index.html"><img src="assets/modern-dark.webp" alt="Modern Dark website preview" width="100%"></a><br>
 <strong>Modern Dark</strong><br>
-<sub>Project management</sub><br>
 <a href="https://alpymcp.com/websites/Modern-dark/index.html">Open prototype</a> · <a href="prototypes/Modern-dark/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
@@ -211,19 +202,16 @@ Turn an idea or existing site into a responsive website around your audience, co
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/neumorphism/index.html"><img src="assets/neumorphism.webp" alt="Neumorphism website preview" width="100%"></a><br>
 <strong>Neumorphism</strong><br>
-<sub>Focus and audio</sub><br>
 <a href="https://alpymcp.com/websites/neumorphism/index.html">Open prototype</a> · <a href="prototypes/neumorphism/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Parallax/index.html"><img src="assets/parallax.webp" alt="Parallax website preview" width="100%"></a><br>
 <strong>Parallax</strong><br>
-<sub>Beverage brand</sub><br>
 <a href="https://alpymcp.com/websites/Parallax/index.html">Open prototype</a> · <a href="prototypes/Parallax/starter-prompt.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Playful-geometric/index.html"><img src="assets/playful-geometric.webp" alt="Playful Geometric website preview" width="100%"></a><br>
 <strong>Playful Geometric</strong><br>
-<sub>Podcast and media</sub><br>
 <a href="https://alpymcp.com/websites/Playful-geometric/index.html">Open prototype</a> · <a href="prototypes/Playful-geometric/starter-prompt.md">Prompt</a>
 </td>
 </tr>
@@ -241,7 +229,6 @@ Turn an idea or existing site into a responsive website around your audience, co
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/swiss/index.html"><img src="assets/swiss.webp" alt="Swiss website preview" width="100%"></a><br>
 <strong>Swiss</strong><br>
-<sub>Urban mobility</sub><br>
 <a href="https://alpymcp.com/websites/swiss/index.html">Open prototype</a> · <a href="prototypes/swiss/starter-prompt.md">Prompt</a>
 </td>
 </tr>
@@ -302,7 +289,7 @@ Design around real user needs, clear tasks, and predictable behavior.
 
 [User Experience guidance](https://alpymcp.com/ai-taste#ai-taste-user-experience) · [Starter prompt](prompts/review-ux.md)
 
-### Ready to build
+## Ready to build
 
 Bring tokens and components into [Figma](https://alpymcp.com/ai-taste?client=figma#ai-taste-install-title) through Figma Connector, build with [React](https://alpymcp.com/ai-taste#ai-taste-components-react) or [Vue](https://alpymcp.com/ai-taste#ai-taste-components-vue) components, or use CSS variables, CSS Modules, and token or component JSON in your project.
 
