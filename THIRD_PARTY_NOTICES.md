@@ -5,4 +5,6 @@
 - Parallax includes React, React DOM, Scheduler, and Three.js. Notices remain in `app.js`; license texts are in `prototypes/Parallax/licenses/`.
 - Some examples request fonts from Google Fonts.
 
-These notices describe included dependencies and credits. They do not set a license for Alpy's example code or imagery.
+Third-party logos remain subject to their respective owners' terms.
+
+These licenses and credits remain in effect. Original example code and prompts are covered by [MIT](LICENSE); Alpy-owned media is covered by the [media and branding terms](MEDIA_LICENSE.md).
