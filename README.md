@@ -9,18 +9,39 @@ Alpy MCP brings your Alpy Library’s components, tokens, design skills, and web
 
 [Explore Alpy](https://alpymcp.com/) · [Browse AI Taste](https://alpymcp.com/ai-taste) · [Connect Alpy MCP](https://alpymcp.com/ai-taste#ai-taste-install-title)
 
+**Connect Alpy MCP to your AI**
+
+<p>
+<a href="https://alpymcp.com/ai-taste?client=cursor#ai-taste-install-title"><img src="assets/connect/cursor.svg" alt="Connect Alpy MCP to Cursor" width="174"></a>
+<a href="https://alpymcp.com/ai-taste?client=codex#ai-taste-install-title"><img src="assets/connect/codex.svg" alt="Connect Alpy MCP to Codex" width="174"></a>
+<a href="https://alpymcp.com/ai-taste?client=claude#ai-taste-install-title"><img src="assets/connect/claude.svg" alt="Connect Alpy MCP to Claude" width="174"></a>
+<a href="https://alpymcp.com/ai-taste?client=gemini#ai-taste-install-title"><img src="assets/connect/gemini.svg" alt="Connect Alpy MCP to Gemini" width="174"></a>
+<a href="https://alpymcp.com/ai-taste?client=figma#ai-taste-install-title"><img src="assets/connect/figma.svg" alt="Connect Alpy MCP to Figma" width="174"></a>
+</p>
+
+**Alpy MCP endpoint**
+
+```text
+https://www.alpymcp.com/alpy-mcp
+```
+
 ## Contents
 
-- [Inside Alpy MCP](#inside-alpy-mcp)
-  - [Website Design](#website-design)
-  - [UI Design](#ui-design)
-  - [User Experience](#user-experience)
-- [Run the examples](#run-the-examples)
-- [Design System](#design-system)
+- [Design system](#design-system)
+- [Taste and design skills](#taste-and-design-skills)
+- [Ready to build](#ready-to-build)
 
 ## Inside Alpy MCP
 
-### Website Design
+### Design system
+
+Customize typography, colors, tokens, and components in one Alpy Library. Bring those design decisions into your AI workflow across Light and Dark modes.
+
+[Explore the Alpy design system](https://alpymcp.com/library)
+
+### Taste and design skills
+
+#### Website Design
 
 Turn an idea or existing site into a responsive website around your audience, content, and goals.
 
@@ -129,7 +150,7 @@ Explore 13 website prototypes from Alpy Taste. Open a preview to see the full we
 
 [Explore all web design styles on Alpy Taste](https://alpymcp.com/ai-taste#ai-taste-gallery-title)
 
-### UI Design
+#### UI Design
 
 Shape clear, consistent interfaces through 12 visual principles.
 
@@ -150,7 +171,7 @@ Shape clear, consistent interfaces through 12 visual principles.
 
 [UI Design guidance](https://alpymcp.com/ai-taste#ai-taste-ui-design) · [Starter prompt](prompts/refine-ui.md)
 
-### User Experience
+#### User Experience
 
 Design around real user needs, clear tasks, and predictable behavior.
 
@@ -171,27 +192,15 @@ Design around real user needs, clear tasks, and predictable behavior.
 
 [User Experience guidance](https://alpymcp.com/ai-taste#ai-taste-user-experience) · [Starter prompt](prompts/review-ux.md)
 
-## Run the examples
-
-Each prototype includes its HTML, styles, scripts, assets, and a starter prompt. Preview the collection with a simple local server. Two examples also include source and optional build scripts.
-
-[Local preview guide](docs/local-preview.md) · [Prototype files](prototypes/)
-
-## Design System
-
-### Your Alpy design system
-
-Customize typography, colors, tokens, and components in one Alpy Library. Bring those design decisions into your AI workflow across Light and Dark modes.
-
-[Explore the Alpy design system](https://alpymcp.com/library)
-
 ### Ready to build
 
-Use React and Vue components from your connected Alpy Library through Alpy MCP, or bring your design system into a connected Figma workflow.
+Bring tokens and components into [Figma](https://alpymcp.com/ai-taste?client=figma#ai-taste-install-title) through Figma Connector, build with [React](https://alpymcp.com/ai-taste#ai-taste-components-react) or [Vue](https://alpymcp.com/ai-taste#ai-taste-components-vue) components, or use CSS variables, CSS Modules, and token or component JSON in your project.
 
-[React components](https://alpymcp.com/ai-taste#ai-taste-components-react) · [Vue components](https://alpymcp.com/ai-taste#ai-taste-components-vue) · [Figma connection guide](https://alpymcp.com/ai-taste?client=figma#ai-taste-install-title)
+<table>
+<tr><td align="center"><img src="assets/tech-stacks/react.svg" alt="" width="48"><br>React</td><td align="center"><img src="assets/tech-stacks/vue.svg" alt="" width="48"><br>Vue</td><td align="center"><img src="assets/tech-stacks/figma.svg" alt="" width="48"><br>Figma</td><td align="center"><img src="assets/tech-stacks/json.svg" alt="" width="48"><br>JSON</td><td align="center"><img src="assets/tech-stacks/css.svg" alt="" width="48"><br>CSS</td><td align="center"><img src="assets/tech-stacks/code.svg" alt="" width="48"><br>Code</td></tr>
+</table>
 
-## Get started
+#### Get started
 
 1. **Set up your Alpy Library.** Customize the typography, colors, and components you want your AI to use.
 2. **Connect your AI tool.** Follow its setup guide, sign in to Alpy, and choose your Library.
@@ -199,13 +208,3 @@ Use React and Vue components from your connected Alpy Library through Alpy MCP, 
 4. **Describe your project.** Share your goal, audience, content, and constraints. Choose a direction, approve the brief, then review and refine the result.
 
 > Use Alpy MCP to show the full library index, no summary.
-
-[Read the Alpy MCP Overview](https://alpymcp.com/alpy-mcp-overview/) · [More discovery prompts](prompts/discover-alpy.md)
-
-[Claude](https://alpymcp.com/ai-taste?client=claude#ai-taste-install-title) · [Codex](https://alpymcp.com/ai-taste?client=codex#ai-taste-install-title) · [Cursor](https://alpymcp.com/ai-taste?client=cursor#ai-taste-install-title) · [Gemini](https://alpymcp.com/ai-taste?client=gemini#ai-taste-install-title) · [Figma](https://alpymcp.com/ai-taste?client=figma#ai-taste-install-title)
-
-An Alpy account and an eligible plan are required to connect. [See current plans](https://alpymcp.com/pricing).
-
-[Website](https://alpymcp.com/) · [AI Taste](https://alpymcp.com/ai-taste) · [Pricing](https://alpymcp.com/pricing) · [Support](mailto:info@alpymcp.com) · [X](https://x.com/alpymcp) · [LinkedIn](https://www.linkedin.com/company/alpymcp)
-
-Examples and previews are published by Alpy. [Terms](https://alpymcp.com/terms) · [Privacy](https://alpymcp.com/privacy)

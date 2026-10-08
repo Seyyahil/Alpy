@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="58" viewBox="0 0 192 58" role="img" aria-labelledby="title">
+<title id="title">Connect Alpy MCP to Gemini</title>
+<rect x="0.75" y="0.75" width="190.5" height="56.5" rx="12" fill="#F8FAFC" stroke="#CBD2DD" stroke-width="1.5"/>
+<svg x="14" y="14" width="30" height="30" viewBox="0 0 24 24" fill="none"><defs xmlns="http://www.w3.org/2000/svg">
+    <linearGradient id="gemini-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1C7CFB" />
+      <stop offset="55%" stop-color="#9168E1" />
+      <stop offset="100%" stop-color="#EC679E" />
+    </linearGradient>
+  </defs>
+  <path xmlns="http://www.w3.org/2000/svg" d="M12 0 C12.7 6.4 17.6 11.3 24 12 C17.6 12.7 12.7 17.6 12 24 C11.3 17.6 6.4 12.7 0 12 C6.4 11.3 11.3 6.4 12 0 Z" fill="url(#gemini-gradient)" />
+</svg>
+<text x="58" y="36" font-family="Arial, Helvetica, sans-serif" font-size="20" letter-spacing="0.2" fill="#161B22">Gemini</text>
+<path d="M160 29h17m-7-7 7 7-7 7" fill="none" stroke="#606871" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

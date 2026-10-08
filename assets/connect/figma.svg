@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="58" viewBox="0 0 192 58" role="img" aria-labelledby="title">
+<title id="title">Connect Alpy MCP to Figma</title>
+<rect x="0.75" y="0.75" width="190.5" height="56.5" rx="12" fill="#F8FAFC" stroke="#CBD2DD" stroke-width="1.5"/>
+<svg x="14" y="14" width="30" height="30" viewBox="0 0 356 534" fill="none"><path xmlns="http://www.w3.org/2000/svg" d="M88.9998 533.999C138.128 533.999 178 494.127 178 444.999V355.999H88.9998C39.8719 355.999 0 395.871 0 444.999C0 494.127 39.8719 533.999 88.9998 533.999Z" fill="#0ACF83" />
+<path xmlns="http://www.w3.org/2000/svg" d="M0 266.999C0 217.872 39.8719 178 88.9998 178H178V355.999H88.9998C39.8719 355.999 0 316.127 0 266.999Z" fill="#A259FF" />
+<path xmlns="http://www.w3.org/2000/svg" d="M0 88.9998C0 39.8719 39.8719 0 88.9998 0H178V178H88.9998C39.8719 178 0 138.128 0 88.9998Z" fill="#F24E1E" />
+<path xmlns="http://www.w3.org/2000/svg" d="M178 0H267C316.128 0 356 39.8719 356 88.9998C356 138.128 316.128 178 267 178H178V0Z" fill="#FF7262" />
+<path xmlns="http://www.w3.org/2000/svg" d="M356 266.999C356 316.127 316.128 355.999 267 355.999C217.872 355.999 178 316.127 178 266.999C178 217.872 217.872 178 267 178C316.128 178 356 217.872 356 266.999Z" fill="#1ABCFE" />
+</svg>
+<text x="58" y="36" font-family="Arial, Helvetica, sans-serif" font-size="20" letter-spacing="0.2" fill="#161B22">Figma</text>
+<path d="M160 29h17m-7-7 7 7-7 7" fill="none" stroke="#606871" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
