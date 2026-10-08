@@ -23,7 +23,7 @@ Alpy MCP brings your Alpy Library’s components, tokens, design skills, and web
 https://www.alpymcp.com/alpy-mcp
 ```
 
-## Contents
+### Contents
 
 - [Design system](#design-system)
 - [Taste and design skills](#taste-and-design-skills)
@@ -32,9 +32,11 @@ https://www.alpymcp.com/alpy-mcp
   - [User Experience](#user-experience)
 - [Ready to build](#ready-to-build)
 
-## Inside Alpy MCP
+---
 
-## Design system
+### Inside Alpy MCP
+
+### Design system
 
 Customize typography, colors, tokens, and components in one Alpy Library. Bring those design decisions into your AI workflow across Light and Dark modes.
 
@@ -103,7 +105,9 @@ Foundation tokens → Semantic tokens → Component tokens
 
 [Explore the Alpy design system](https://alpymcp.com/library)
 
-## Taste and design skills
+---
+
+### Taste and design skills
 
 ### Website Design
 
@@ -295,7 +299,7 @@ Design around real user needs, clear tasks, and predictable behavior.
 
 ---
 
-## Ready to build
+### Ready to build
 
 Bring tokens and components into [Figma](https://alpymcp.com/ai-taste?client=figma#ai-taste-install-title) through Figma Connector, build with [React](https://alpymcp.com/ai-taste#ai-taste-components-react) or [Vue](https://alpymcp.com/ai-taste#ai-taste-components-vue) components, or use CSS variables, CSS Modules, and token or component JSON in your project.
 
@@ -311,3 +315,5 @@ Bring tokens and components into [Figma](https://alpymcp.com/ai-taste?client=fig
 4. **Describe your project.** Share your goal, audience, content, and constraints. Choose a direction, approve the brief, then review and refine the result.
 
 > Use Alpy MCP to show the full library index, no summary.
+
+---
