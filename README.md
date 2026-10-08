@@ -1,6 +1,6 @@
-<a href="https://alpymcp.com/"><img src="assets/alpy-logo.svg" alt="Alpy MCP" width="137"></a>
-
 # Build with your AI agents, add taste with Alpy MCP.
+
+https://github.com/user-attachments/assets/6e7765aa-0c62-4097-b63e-058951fc2829
 
 Connect Alpy MCP and put a creative director behind every AI build.<br>
 You get a complete design system and 37 design skills for consistent and intentional UI and UX designs.
@@ -9,14 +9,18 @@ Alpy MCP brings your Alpy Library’s components, tokens, design skills, and web
 
 [Explore Alpy](https://alpymcp.com/) · [Browse AI Taste](https://alpymcp.com/ai-taste) · [Connect Alpy MCP](https://alpymcp.com/ai-taste#ai-taste-install-title)
 
-https://github.com/user-attachments/assets/6e7765aa-0c62-4097-b63e-058951fc2829
-
 ## Contents
 
 - [Web design style skills](#web-design-style-skills)
 - [Design Skills](#design-skills)
+  - [UI Design](#ui-design)
+  - [Website Design](#website-design)
+  - [User Experience](#user-experience)
 - [Run the examples](#run-the-examples)
 - [Inside Alpy MCP](#inside-alpy-mcp)
+  - [Your Alpy design system](#your-alpy-design-system)
+  - [Taste and design skills](#taste-and-design-skills)
+  - [Ready to build](#ready-to-build)
 - [Get started](#get-started)
 - [Discover Alpy with your AI](#discover-alpy-with-your-ai)
 
