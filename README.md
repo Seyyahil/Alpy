@@ -9,9 +9,7 @@ Alpy MCP brings your Alpy Library’s components, tokens, design skills, and web
 
 [Explore Alpy](https://alpymcp.com/) · [Browse AI Taste](https://alpymcp.com/ai-taste) · [Connect Alpy MCP](https://alpymcp.com/ai-taste#ai-taste-install-title)
 
-[![Watch Alpy MCP in action](assets/alpy-mcp-poster.webp)](https://alpymcp.com/assets/alpy-mcp-compressed-BV9fM5n8.mp4)
-
-[▶ Watch Alpy MCP in action](https://alpymcp.com/assets/alpy-mcp-compressed-BV9fM5n8.mp4)
+https://github.com/user-attachments/assets/6e7765aa-0c62-4097-b63e-058951fc2829
 
 ## Contents
 
