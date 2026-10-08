@@ -278,6 +278,8 @@ Shape clear, consistent interfaces through 12 visual principles.
 
 ### User Experience
 
+https://github.com/user-attachments/assets/c3be3c91-573c-4b99-a1b2-6f48c85c3910
+
 Design around real user needs, clear tasks, and predictable behavior.
 
 | Principle | What it guides |
