@@ -138,46 +138,46 @@ Turn an idea or existing site into a responsive website around your audience, co
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/academia/index.html"><img src="assets/academia.webp" alt="Academia website preview" width="100%"></a><br>
 <strong>Academia</strong><br>
-<a href="https://alpymcp.com/websites/academia/index.html">Open prototype</a> · <a href="prototypes/academia/starter-prompt.md">Prompt</a>
+<a href="https://alpymcp.com/websites/academia/index.html">Open prototype</a> · <a href="prompts/styles/academia.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/art-deco/index.html"><img src="assets/art-deco.webp" alt="Art Deco website preview" width="100%"></a><br>
 <strong>Art Deco</strong><br>
-<a href="https://alpymcp.com/websites/art-deco/index.html">Open prototype</a> · <a href="prototypes/art-deco/starter-prompt.md">Prompt</a>
+<a href="https://alpymcp.com/websites/art-deco/index.html">Open prototype</a> · <a href="prompts/styles/art-deco.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/bauhaus/index.html"><img src="assets/bauhaus.webp" alt="Bauhaus website preview" width="100%"></a><br>
 <strong>Bauhaus</strong><br>
-<a href="https://alpymcp.com/websites/bauhaus/index.html">Open prototype</a> · <a href="prototypes/bauhaus/starter-prompt.md">Prompt</a>
+<a href="https://alpymcp.com/websites/bauhaus/index.html">Open prototype</a> · <a href="prompts/styles/bauhaus.md">Prompt</a>
 </td>
 </tr>
 <tr>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/bento-grid/index.html"><img src="assets/bento-grid.webp" alt="Bento Grid website preview" width="100%"></a><br>
 <strong>Bento Grid</strong><br>
-<a href="https://alpymcp.com/websites/bento-grid/index.html">Open prototype</a> · <a href="prototypes/bento-grid/starter-prompt.md">Prompt</a>
+<a href="https://alpymcp.com/websites/bento-grid/index.html">Open prototype</a> · <a href="prompts/styles/bento-grid.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/bold-typography/index.html"><img src="assets/bold-typography.webp" alt="Bold Typography website preview" width="100%"></a><br>
 <strong>Bold Typography</strong><br>
-<a href="https://alpymcp.com/websites/bold-typography/index.html">Open prototype</a> · <a href="prototypes/bold-typography/starter-prompt.md">Prompt</a>
+<a href="https://alpymcp.com/websites/bold-typography/index.html">Open prototype</a> · <a href="prompts/styles/bold-typography.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Cyberpunk/index.html"><img src="assets/cyberpunk.webp" alt="Cyberpunk website preview" width="100%"></a><br>
 <strong>Cyberpunk</strong><br>
-<a href="https://alpymcp.com/websites/Cyberpunk/index.html">Open prototype</a> · <a href="prototypes/Cyberpunk/starter-prompt.md">Prompt</a>
+<a href="https://alpymcp.com/websites/Cyberpunk/index.html">Open prototype</a> · <a href="prompts/styles/cyberpunk.md">Prompt</a>
 </td>
 </tr>
 <tr>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/flat-design/index.html"><img src="assets/flat-design.webp" alt="Flat Design website preview" width="100%"></a><br>
 <strong>Flat Design</strong><br>
-<a href="https://alpymcp.com/websites/flat-design/index.html">Open prototype</a> · <a href="prototypes/flat-design/starter-prompt.md">Prompt</a>
+<a href="https://alpymcp.com/websites/flat-design/index.html">Open prototype</a> · <a href="prompts/styles/flat-design.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Grunge/index.html"><img src="assets/grunge-punk.webp" alt="Grunge / Punk website preview" width="100%"></a><br>
 <strong>Grunge / Punk</strong><br>
-<a href="https://alpymcp.com/websites/Grunge/index.html">Open prototype</a> · <a href="prototypes/Grunge/starter-prompt.md">Prompt</a>
+<a href="https://alpymcp.com/websites/Grunge/index.html">Open prototype</a> · <a href="prompts/styles/grunge.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <img src="assets/prototype-in-progress.svg" alt="Luxury prototype in progress" width="100%"><br>
@@ -189,7 +189,7 @@ Turn an idea or existing site into a responsive website around your audience, co
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Modern-dark/index.html"><img src="assets/modern-dark.webp" alt="Modern Dark website preview" width="100%"></a><br>
 <strong>Modern Dark</strong><br>
-<a href="https://alpymcp.com/websites/Modern-dark/index.html">Open prototype</a> · <a href="prototypes/Modern-dark/starter-prompt.md">Prompt</a>
+<a href="https://alpymcp.com/websites/Modern-dark/index.html">Open prototype</a> · <a href="prompts/styles/modern-dark.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <img src="assets/prototype-in-progress.svg" alt="Monochrome prototype in progress" width="100%"><br>
@@ -206,17 +206,17 @@ Turn an idea or existing site into a responsive website around your audience, co
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/neumorphism/index.html"><img src="assets/neumorphism.webp" alt="Neumorphism website preview" width="100%"></a><br>
 <strong>Neumorphism</strong><br>
-<a href="https://alpymcp.com/websites/neumorphism/index.html">Open prototype</a> · <a href="prototypes/neumorphism/starter-prompt.md">Prompt</a>
+<a href="https://alpymcp.com/websites/neumorphism/index.html">Open prototype</a> · <a href="prompts/styles/neumorphism.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Parallax/index.html"><img src="assets/parallax.webp" alt="Parallax website preview" width="100%"></a><br>
 <strong>Parallax</strong><br>
-<a href="https://alpymcp.com/websites/Parallax/index.html">Open prototype</a> · <a href="prototypes/Parallax/starter-prompt.md">Prompt</a>
+<a href="https://alpymcp.com/websites/Parallax/index.html">Open prototype</a> · <a href="prompts/styles/parallax.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Playful-geometric/index.html"><img src="assets/playful-geometric.webp" alt="Playful Geometric website preview" width="100%"></a><br>
 <strong>Playful Geometric</strong><br>
-<a href="https://alpymcp.com/websites/Playful-geometric/index.html">Open prototype</a> · <a href="prototypes/Playful-geometric/starter-prompt.md">Prompt</a>
+<a href="https://alpymcp.com/websites/Playful-geometric/index.html">Open prototype</a> · <a href="prompts/styles/playful-geometric.md">Prompt</a>
 </td>
 </tr>
 <tr>
@@ -233,7 +233,7 @@ Turn an idea or existing site into a responsive website around your audience, co
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/swiss/index.html"><img src="assets/swiss.webp" alt="Swiss website preview" width="100%"></a><br>
 <strong>Swiss</strong><br>
-<a href="https://alpymcp.com/websites/swiss/index.html">Open prototype</a> · <a href="prototypes/swiss/starter-prompt.md">Prompt</a>
+<a href="https://alpymcp.com/websites/swiss/index.html">Open prototype</a> · <a href="prompts/styles/swiss.md">Prompt</a>
 </td>
 </tr>
 <tr>

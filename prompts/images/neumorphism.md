@@ -2,7 +2,7 @@
 
 ## Product image
 
-Saved at `assets/adaptive-soundscape-product.jpg`.
+Saved at [assets/adaptive-soundscape-product.jpg](../../prototypes/neumorphism/assets/adaptive-soundscape-product.jpg).
 
 Final prompt:
 
@@ -10,7 +10,7 @@ Final prompt:
 
 ## Team image
 
-Saved at `assets/focused-team-studio.jpg`.
+Saved at [assets/focused-team-studio.jpg](../../prototypes/neumorphism/assets/focused-team-studio.jpg).
 
 Final prompt:
 
