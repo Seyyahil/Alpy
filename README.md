@@ -247,6 +247,8 @@ Turn an idea or existing site into a responsive website around your audience, co
 </tr>
 </table>
 
+---
+
 ### UI Design
 
 Shape clear, consistent interfaces through 12 visual principles.
@@ -268,6 +270,8 @@ Shape clear, consistent interfaces through 12 visual principles.
 
 [UI Design guidance](https://alpymcp.com/ai-taste#ai-taste-ui-design) · [Starter prompt](prompts/refine-ui.md)
 
+---
+
 ### User Experience
 
 Design around real user needs, clear tasks, and predictable behavior.
@@ -288,6 +292,8 @@ Design around real user needs, clear tasks, and predictable behavior.
 | Readability and scannability | Use plain language and descriptive headings. |
 
 [User Experience guidance](https://alpymcp.com/ai-taste#ai-taste-user-experience) · [Starter prompt](prompts/review-ux.md)
+
+---
 
 ## Ready to build
 
