@@ -7,6 +7,8 @@ You get a complete design system and 37 design skills for consistent and intenti
 
 Alpy MCP brings your Alpy Library’s components, tokens, design skills, and web design styles into Claude, Codex, Cursor, Gemini, and Figma. Your AI works with your connected Library while you choose the direction and review the result.
 
+**[Alpy MCP Overview](alpy-overview.md)**
+
 **Connect Alpy MCP to your AI**
 
 <p>
