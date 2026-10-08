@@ -10,11 +10,11 @@ Alpy MCP brings your Alpy Library’s components, tokens, design skills, and web
 **Connect Alpy MCP to your AI**
 
 <p>
-<a href="https://alpymcp.com/ai-taste?client=cursor#ai-taste-install-title"><img src="assets/connect/cursor.svg" alt="Connect Alpy MCP to Cursor" width="174"></a>
-<a href="https://alpymcp.com/ai-taste?client=codex#ai-taste-install-title"><img src="assets/connect/codex.svg" alt="Connect Alpy MCP to Codex" width="174"></a>
-<a href="https://alpymcp.com/ai-taste?client=claude#ai-taste-install-title"><img src="assets/connect/claude.svg" alt="Connect Alpy MCP to Claude" width="174"></a>
-<a href="https://alpymcp.com/ai-taste?client=gemini#ai-taste-install-title"><img src="assets/connect/gemini.svg" alt="Connect Alpy MCP to Gemini" width="174"></a>
-<a href="https://alpymcp.com/ai-taste?client=figma#ai-taste-install-title"><img src="assets/connect/figma.svg" alt="Connect Alpy MCP to Figma" width="174"></a>
+<a href="https://alpymcp.com/ai-taste?client=cursor#ai-taste-install-title"><img src="assets/connect/cursor.svg" alt="Connect Alpy MCP to Cursor" width="136"></a>
+<a href="https://alpymcp.com/ai-taste?client=codex#ai-taste-install-title"><img src="assets/connect/codex.svg" alt="Connect Alpy MCP to Codex" width="136"></a>
+<a href="https://alpymcp.com/ai-taste?client=claude#ai-taste-install-title"><img src="assets/connect/claude.svg" alt="Connect Alpy MCP to Claude" width="136"></a>
+<a href="https://alpymcp.com/ai-taste?client=gemini#ai-taste-install-title"><img src="assets/connect/gemini.svg" alt="Connect Alpy MCP to Gemini" width="136"></a>
+<a href="https://alpymcp.com/ai-taste?client=figma#ai-taste-install-title"><img src="assets/connect/figma.svg" alt="Connect Alpy MCP to Figma" width="136"></a>
 </p>
 
 **Alpy MCP endpoint**
