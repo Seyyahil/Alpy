@@ -109,15 +109,25 @@ Foundation tokens → Semantic tokens → Component tokens
 
 Turn an idea or existing site into a responsive website around your audience, content, and goals.
 
-1. **Share your idea.** Describe what to create or redesign.
-2. **Choose a style.** Review prototypes and select a direction.
-3. **Choose a hero.** Set the opening message, visual, and action.
-4. **Approve the brief.** Confirm the goals, content, style, and hero.
-5. **Review and refine.** Build with your Library, then request focused revisions.
+1. **Your prompt**
 
-[Website Design guidance](https://alpymcp.com/ai-taste#ai-taste-website-design) · [Starter prompt](prompts/build-website.md)
+   Share a new idea, an existing website, or one focused page, and describe what you want AI to create or redesign.
 
-Explore 13 website prototypes from Alpy Taste. Open a preview to see the full website, then explore the Website Design guidance to shape your own project.
+2. **Select a style**
+
+   AI presents a prototype for each Alpy website style that fits the audience, goals, content, and brand, so you can review every direction before selecting one by name.
+
+3. **Select a hero**
+
+   AI presents hero directions that fit the selected style, key message, content, and primary action, then you choose how the website opens.
+
+4. **Confirm the brief**
+
+   AI clarifies your goals, audience, and requirements, then summarizes the brief, style, and hero for your approval.
+
+5. **Review the output**
+
+   AI builds the responsive website with your Alpy components, tokens, content, and assets, then you review the result and request focused revisions.
 
 <table>
 <tr>
