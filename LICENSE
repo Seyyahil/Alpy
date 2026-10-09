@@ -43,7 +43,7 @@ Third-party logos, fonts, images, and other assets retain their respective owner
 
 - Bundled font licenses remain beside the fonts in Cyberpunk and Grunge.
 - Grunge credits its texture to D. Sharon Pruitt under CC BY 2.0. Its HTML retains the source, license link, and modification notes.
-- Parallax includes React, React DOM, Scheduler, and Three.js. Notices remain in app.js; license texts are in prototypes/Parallax/licenses/.
+- Parallax includes React, React DOM, Scheduler, and Three.js. Notices remain in app.js. React, React DOM, and Scheduler share prototypes/Parallax/licenses/react-LICENSE.txt; Three.js uses prototypes/Parallax/licenses/three-LICENSE.txt.
 - Some examples request fonts from Google Fonts.
 
 Third-party logos remain subject to their respective owners' terms.
