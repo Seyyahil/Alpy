@@ -115,6 +115,8 @@ Foundation tokens → Semantic tokens → Component tokens
 
 ### Website Design
 
+https://github.com/user-attachments/assets/d7a01304-ea67-4ede-b684-3806b0ae067e
+
 Turn an idea or existing site into a responsive website around your audience, content, and goals.
 
 1. **Your prompt**
@@ -239,8 +241,6 @@ Turn an idea or existing site into a responsive website around your audience, co
 ### UI Design
 
 https://github.com/user-attachments/assets/33285fa3-613c-4460-a65d-f911ccb45287
-
-https://github.com/user-attachments/assets/a09d9d8b-c7f3-4a44-8ba6-2cd977ad568a
 
 Shape clear, consistent interfaces through 12 visual principles.
 
