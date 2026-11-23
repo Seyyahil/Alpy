@@ -25,6 +25,8 @@ Alpy MCP brings your Alpy Library’s components, tokens, design skills, and web
 https://www.alpymcp.com/alpy-mcp
 ```
 
+Works in any MCP client that supports remote servers with OAuth sign-in. Listed in the official MCP Registry as `com.alpymcp/alpy-mcp`.
+
 ### Contents
 
 - [Design system](#design-system)
