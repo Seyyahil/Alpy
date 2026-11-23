@@ -1,36 +1,413 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-alpy-mode="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Bauhaus Architecture is a fictional studio shaping civic, cultural, and residential spaces around shared life."
+      content="Neue Habitat is a fictional residential design practice creating timeless, functional homes for contemporary living."
     />
-    <meta name="theme-color" content="#f2efe6" />
-    <title>Bauhaus Architecture — Architecture for shared life</title>
+    <meta name="theme-color" content="#151515" />
+    <title>Neue Habitat — Modern homes, clear ideas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Canonical Alpy light tokens: body slots use the canonical typeface (Inter), heading slots keep Jost -->
+    <style>
+      :root,
+      [data-alpy-mode="light"] {
+        --border-width-0: 0px;
+        --border-width-1: 1px;
+        --border-width-1-5: 1.5px;
+        --border-width-2: 2px;
+        --border-width-4: 4px;
+        --border-width-hairline: 0.5px;
+        --color-border-brand-color-one-strong-one: #0051FF;
+        --color-border-brand-color-one-strong-three: #010d28;
+        --color-border-brand-color-one-strong-two: #012F93;
+        --color-border-brand-color-one-subtle-one: #EBF1FF;
+        --color-border-brand-color-one-subtle-three: #5F92FE;
+        --color-border-brand-color-one-subtle-two: #BDD2FE;
+        --color-border-brand-color-three-strong-one: #FCA701;
+        --color-border-brand-color-three-strong-three: #3F2A00;
+        --color-border-brand-color-three-strong-two: #9E6800;
+        --color-border-brand-color-three-subtle-one: #E8E2D5;
+        --color-border-brand-color-three-subtle-three: #E5BA65;
+        --color-border-brand-color-three-subtle-two: #E2D3B5;
+        --color-border-brand-color-two-strong-one: #058625;
+        --color-border-brand-color-two-strong-three: #0D2E10;
+        --color-border-brand-color-two-strong-two: #156221;
+        --color-border-brand-color-two-subtle-one: #E6EDE5;
+        --color-border-brand-color-two-subtle-three: #7FB581;
+        --color-border-brand-color-two-subtle-two: #C7DAC8;
+        --color-border-functional-danger: #B80808;
+        --color-border-functional-info: #0449BA;
+        --color-border-functional-success: #166534;
+        --color-border-functional-warning: #AE6D00;
+        --color-border-input: #767676;
+        --color-border-interaction-disabled: #A1A1A1;
+        --color-border-interaction-focused: #0051FF;
+        --color-border-interaction-hover: #012F93;
+        --color-border-interaction-pressed: #010d28;
+        --color-border-interaction-selected: #0140C9;
+        --color-border-neutral-strong-one: #333333;
+        --color-border-neutral-strong-three: #151515;
+        --color-border-neutral-strong-two: #242424;
+        --color-border-neutral-subtle-one: #F1F1F1;
+        --color-border-neutral-subtle-three: #767676;
+        --color-border-neutral-subtle-two: #CECECE;
+        --color-border-oncolor: #FFFFFF;
+        --color-functional-danger: #B80808;
+        --color-functional-danger-soft: #EF4444;
+        --color-functional-danger-strong: #4D0000;
+        --color-functional-danger-subtle: #ECDFDF;
+        --color-functional-info: #0449BA;
+        --color-functional-info-soft: #3B82F6;
+        --color-functional-info-strong: #001D4C;
+        --color-functional-info-subtle: #DEE4EC;
+        --color-functional-success: #22C55E;
+        --color-functional-success-soft: #86EFAC;
+        --color-functional-success-strong: #166534;
+        --color-functional-success-subtle: #DCFCE7;
+        --color-functional-warning: #AE6D00;
+        --color-functional-warning-soft: #FFBD4F;
+        --color-functional-warning-strong: #402800;
+        --color-functional-warning-subtle: #E8E2D6;
+        --color-icon-accent: #0051FF;
+        --color-icon-brand-color-one-strong-one: #0051FF;
+        --color-icon-brand-color-one-strong-three: #010d28;
+        --color-icon-brand-color-one-strong-two: #012F93;
+        --color-icon-brand-color-one-subtle-one: #EBF1FF;
+        --color-icon-brand-color-one-subtle-three: #5F92FE;
+        --color-icon-brand-color-one-subtle-two: #BDD2FE;
+        --color-icon-brand-color-three-strong-one: #FCA701;
+        --color-icon-brand-color-three-strong-three: #3F2A00;
+        --color-icon-brand-color-three-strong-two: #9E6800;
+        --color-icon-brand-color-three-subtle-one: #E8E2D5;
+        --color-icon-brand-color-three-subtle-three: #E5BA65;
+        --color-icon-brand-color-three-subtle-two: #E2D3B5;
+        --color-icon-brand-color-two-strong-one: #058625;
+        --color-icon-brand-color-two-strong-three: #0D2E10;
+        --color-icon-brand-color-two-strong-two: #156221;
+        --color-icon-brand-color-two-subtle-one: #E6EDE5;
+        --color-icon-brand-color-two-subtle-three: #7FB581;
+        --color-icon-brand-color-two-subtle-two: #C7DAC8;
+        --color-icon-danger: #B80808;
+        --color-icon-default: #151515;
+        --color-icon-disabled: #A1A1A1;
+        --color-icon-info: #0449BA;
+        --color-icon-interaction-disabled: #8EB2FD;
+        --color-icon-interaction-focused: #0051FF;
+        --color-icon-interaction-hover: #012F93;
+        --color-icon-interaction-pressed: #010d28;
+        --color-icon-interaction-selected: #0140C9;
+        --color-icon-inverse: #FFFFFF;
+        --color-icon-oncolor: #FFFFFF;
+        --color-icon-subtle: #5C5C5C;
+        --color-icon-subtlest: #767676;
+        --color-icon-success: #22C55E;
+        --color-icon-warning: #AE6D00;
+        --color-shades-brand-color-one-strong-one: #0051FF;
+        --color-shades-brand-color-one-strong-three: #010d28;
+        --color-shades-brand-color-one-strong-two: #012F93;
+        --color-shades-brand-color-one-subtle-one: #EBF1FF;
+        --color-shades-brand-color-one-subtle-three: #5F92FE;
+        --color-shades-brand-color-one-subtle-two: #BDD2FE;
+        --color-shades-brand-color-three-strong-one: #FCA701;
+        --color-shades-brand-color-three-strong-three: #3F2A00;
+        --color-shades-brand-color-three-strong-two: #9E6800;
+        --color-shades-brand-color-three-subtle-one: #E8E2D5;
+        --color-shades-brand-color-three-subtle-three: #E5BA65;
+        --color-shades-brand-color-three-subtle-two: #E2D3B5;
+        --color-shades-brand-color-two-strong-one: #058625;
+        --color-shades-brand-color-two-strong-three: #0D2E10;
+        --color-shades-brand-color-two-strong-two: #156221;
+        --color-shades-brand-color-two-subtle-one: #E6EDE5;
+        --color-shades-brand-color-two-subtle-three: #7FB581;
+        --color-shades-brand-color-two-subtle-two: #C7DAC8;
+        --color-shades-neutral-strong-one: #333333;
+        --color-shades-neutral-strong-three: #151515;
+        --color-shades-neutral-strong-two: #242424;
+        --color-shades-neutral-subtle-one: #F1F1F1;
+        --color-shades-neutral-subtle-three: #767676;
+        --color-shades-neutral-subtle-two: #CECECE;
+        --color-shadow-deep: #151515;
+        --color-shadow-medium: #5C5C5C;
+        --color-shadow-soft: #A1A1A1;
+        --color-shadow-strong: #000000;
+        --color-surface-canvas: #FFFFFF;
+        --color-surface-interaction-disabled: #F1F1F1;
+        --color-surface-interaction-focused: #CECECE;
+        --color-surface-interaction-hover: #CECECE;
+        --color-surface-interaction-pressed: #010d28;
+        --color-surface-interaction-selected: #A1A1A1;
+        --color-system-black: #000000;
+        --color-system-transparent: #00000000;
+        --color-system-white: #FFFFFF;
+        --color-text-body: #242424;
+        --color-text-body-muted: #767676;
+        --color-text-body-subtle: #5C5C5C;
+        --color-text-brand-color-one-accent: #0051FF;
+        --color-text-brand-color-one-accent-strong: #012F93;
+        --color-text-brand-color-one-accent-subtle: #3071FE;
+        --color-text-brand-color-three-accent: #FCA701;
+        --color-text-brand-color-three-accent-strong: #9E6800;
+        --color-text-brand-color-three-accent-subtle: #EFB035;
+        --color-text-brand-color-two-accent: #058625;
+        --color-text-brand-color-two-accent-strong: #156221;
+        --color-text-brand-color-two-accent-subtle: #52A457;
+        --color-text-functional-danger: #B80808;
+        --color-text-functional-danger-strong: #4D0000;
+        --color-text-functional-info: #0449BA;
+        --color-text-functional-info-strong: #001D4C;
+        --color-text-functional-success: #22C55E;
+        --color-text-functional-success-strong: #166534;
+        --color-text-functional-warning: #AE6D00;
+        --color-text-functional-warning-strong: #402800;
+        --color-text-heading: #151515;
+        --color-text-heading-oncolor: #FFFFFF;
+        --color-text-inverse: #FFFFFF;
+        --color-text-link: #0051FF;
+        --color-text-link-disabled: #8EB2FD;
+        --color-text-link-hover: #012F93;
+        --color-text-link-inverse: #FFFFFF;
+        --color-text-link-pressed: #010d28;
+        --color-text-link-visited: #156221;
+        --color-text-oncolor: #FFFFFF;
+        --color-text-subheading: #242424;
+        --font-body-font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-body-font-size: 16px;
+        --font-body-font-weight: 400;
+        --font-body-large-font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-body-large-font-size: 19px;
+        --font-body-large-font-weight: 600;
+        --font-body-large-letter-spacing: 0px;
+        --font-body-large-line-height: 28px;
+        --font-body-letter-spacing: 0px;
+        --font-body-line-height: 24px;
+        --font-body-medium-font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-body-medium-font-size: 14px;
+        --font-body-medium-font-weight: 400;
+        --font-body-medium-letter-spacing: 0px;
+        --font-body-medium-line-height: 20px;
+        --font-body-small-font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-body-small-font-size: 12px;
+        --font-body-small-font-weight: 400;
+        --font-body-small-letter-spacing: 0px;
+        --font-body-small-line-height: 20px;
+        --font-body-xsmall-font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-body-xsmall-font-size: 10px;
+        --font-body-xsmall-font-weight: 400;
+        --font-body-xsmall-letter-spacing: 0px;
+        --font-body-xsmall-line-height: 16px;
+        --font-heading-large-font-family: Jost, ui-sans-serif, system-ui, sans-serif;
+        --font-heading-large-font-size: 40px;
+        --font-heading-large-font-weight: 700;
+        --font-heading-large-letter-spacing: -0.02px;
+        --font-heading-large-line-height: 48px;
+        --font-heading-medium-font-family: Jost, ui-sans-serif, system-ui, sans-serif;
+        --font-heading-medium-font-size: 33px;
+        --font-heading-medium-font-weight: 700;
+        --font-heading-medium-letter-spacing: -0.02px;
+        --font-heading-medium-line-height: 40px;
+        --font-heading-small-font-family: Jost, ui-sans-serif, system-ui, sans-serif;
+        --font-heading-small-font-size: 28px;
+        --font-heading-small-font-weight: 500;
+        --font-heading-small-letter-spacing: -0.02px;
+        --font-heading-small-line-height: 32px;
+        --font-heading-xlarge-font-family: Jost, ui-sans-serif, system-ui, sans-serif;
+        --font-heading-xlarge-font-size: 48px;
+        --font-heading-xlarge-font-weight: 700;
+        --font-heading-xlarge-letter-spacing: -0.02px;
+        --font-heading-xlarge-line-height: 56px;
+        --font-heading-xsmall-font-family: Jost, ui-sans-serif, system-ui, sans-serif;
+        --font-heading-xsmall-font-size: 23px;
+        --font-heading-xsmall-font-weight: 500;
+        --font-heading-xsmall-letter-spacing: -0.02px;
+        --font-heading-xsmall-line-height: 28px;
+        --font-heading-xxlarge-font-family: Jost, ui-sans-serif, system-ui, sans-serif;
+        --font-heading-xxlarge-font-size: 57px;
+        --font-heading-xxlarge-font-weight: 700;
+        --font-heading-xxlarge-letter-spacing: -0.02px;
+        --font-heading-xxlarge-line-height: 68px;
+        --font-weight-medium: 500;
+        --font-weight-regular: 400;
+        --icon-gap-lg: 16px;
+        --icon-gap-md: 12px;
+        --icon-gap-sm: 8px;
+        --icon-gap-xl: 20px;
+        --icon-gap-xs: 4px;
+        --icon-gap-xxl: 24px;
+        --icon-size-12: 12px;
+        --icon-size-128: 128px;
+        --icon-size-16: 16px;
+        --icon-size-20: 20px;
+        --icon-size-24: 24px;
+        --icon-size-32: 32px;
+        --icon-size-48: 48px;
+        --icon-size-56: 56px;
+        --icon-size-64: 64px;
+        --icon-size-8: 8px;
+        --palette-black-and-white-black: #000000;
+        --palette-black-and-white-transparent: #00000000;
+        --palette-black-and-white-white: #FFFFFF;
+        --palette-danger-100: #EF4444;
+        --palette-danger-200: #B80808;
+        --palette-danger-300: #4D0000;
+        --palette-danger-50: #ECDFDF;
+        --palette-info-100: #3B82F6;
+        --palette-info-200: #0449BA;
+        --palette-info-300: #001D4C;
+        --palette-info-50: #DEE4EC;
+        --palette-neutral-100: #CECECE;
+        --palette-neutral-200: #A1A1A1;
+        --palette-neutral-300: #767676;
+        --palette-neutral-400: #5C5C5C;
+        --palette-neutral-50: #F1F1F1;
+        --palette-neutral-500: #333333;
+        --palette-neutral-600: #2E2E2E;
+        --palette-neutral-700: #242424;
+        --palette-neutral-800: #1C1C1C;
+        --palette-neutral-900: #151515;
+        --palette-primary-100: #BDD2FE;
+        --palette-primary-200: #8EB2FD;
+        --palette-primary-300: #5F92FE;
+        --palette-primary-400: #3071FE;
+        --palette-primary-50: #EBF1FF;
+        --palette-primary-500: #0051FF;
+        --palette-primary-600: #0140C9;
+        --palette-primary-700: #012F93;
+        --palette-primary-800: #011e5d;
+        --palette-primary-900: #010d28;
+        --palette-secondary-100: #C7DAC8;
+        --palette-secondary-200: #A6C6A5;
+        --palette-secondary-300: #7FB581;
+        --palette-secondary-400: #52A457;
+        --palette-secondary-50: #E6EDE5;
+        --palette-secondary-500: #058625;
+        --palette-secondary-600: #197C2A;
+        --palette-secondary-700: #156221;
+        --palette-secondary-800: #0F4817;
+        --palette-secondary-900: #0D2E10;
+        --palette-success-100: #86EFAC;
+        --palette-success-200: #22C55E;
+        --palette-success-300: #166534;
+        --palette-success-50: #DCFCE7;
+        --palette-tertiary-100: #E2D3B5;
+        --palette-tertiary-200: #E1C590;
+        --palette-tertiary-300: #E5BA65;
+        --palette-tertiary-400: #EFB035;
+        --palette-tertiary-50: #E8E2D5;
+        --palette-tertiary-500: #FCA701;
+        --palette-tertiary-600: #CD8801;
+        --palette-tertiary-700: #9E6800;
+        --palette-tertiary-800: #6F4900;
+        --palette-tertiary-900: #3F2A00;
+        --palette-warning-100: #FFBD4F;
+        --palette-warning-200: #AE6D00;
+        --palette-warning-300: #402800;
+        --palette-warning-50: #E8E2D6;
+        --radius-full: 9999px;
+        --radius-large: 12px;
+        --radius-medium: 8px;
+        --radius-none: 0px;
+        --radius-small: 4px;
+        --radius-tile: 12px;
+        --radius-xlarge: 16px;
+        --radius-xsmall: 2px;
+        --radius-xxlarge: 24px;
+        --size-0: 0px;
+        --size-0-5: 0.5px;
+        --size-1: 1px;
+        --size-1-5: 1.5px;
+        --size-100: 100px;
+        --size-1020: 1020px;
+        --size-104: 104px;
+        --size-108: 108px;
+        --size-112: 112px;
+        --size-116: 116px;
+        --size-12: 12px;
+        --size-120: 120px;
+        --size-124: 124px;
+        --size-128: 128px;
+        --size-16: 16px;
+        --size-192: 192px;
+        --size-2: 2px;
+        --size-20: 20px;
+        --size-200: 200px;
+        --size-24: 24px;
+        --size-28: 28px;
+        --size-32: 32px;
+        --size-36: 36px;
+        --size-4: 4px;
+        --size-40: 40px;
+        --size-44: 44px;
+        --size-48: 48px;
+        --size-52: 52px;
+        --size-56: 56px;
+        --size-60: 60px;
+        --size-64: 64px;
+        --size-68: 68px;
+        --size-72: 72px;
+        --size-750: 750px;
+        --size-76: 76px;
+        --size-8: 8px;
+        --size-80: 80px;
+        --size-84: 84px;
+        --size-88: 88px;
+        --size-92: 92px;
+        --size-96: 96px;
+        --size-9999: 9999px;
+        --space-0: 0px;
+        --space-1: 1px;
+        --space-100: 100px;
+        --space-104: 104px;
+        --space-108: 108px;
+        --space-112: 112px;
+        --space-116: 116px;
+        --space-12: 12px;
+        --space-120: 120px;
+        --space-124: 124px;
+        --space-128: 128px;
+        --space-16: 16px;
+        --space-192: 192px;
+        --space-2: 2px;
+        --space-20: 20px;
+        --space-24: 24px;
+        --space-28: 28px;
+        --space-32: 32px;
+        --space-36: 36px;
+        --space-4: 4px;
+        --space-40: 40px;
+        --space-48: 48px;
+        --space-52: 52px;
+        --space-56: 56px;
+        --space-60: 60px;
+        --space-64: 64px;
+        --space-68: 68px;
+        --space-72: 72px;
+        --space-76: 76px;
+        --space-8: 8px;
+        --space-80: 80px;
+        --space-84: 84px;
+        --space-88: 88px;
+        --space-92: 92px;
+        --space-96: 96px;
+        --shadow-2xl: 0px 7px 29px 0px color-mix(in srgb, var(--color-shadow-medium) 20%, transparent);
+        --shadow-2xs: 1.95px 1.95px 2.6px 0px color-mix(in srgb, var(--color-shadow-strong) 15%, transparent);
+        --shadow-3xl: 0px 48px 100px 0px color-mix(in srgb, var(--color-shadow-deep) 15%, transparent);
+        --shadow-lg: 0px 5px 15px 0px color-mix(in srgb, var(--color-shadow-strong) 35%, transparent);
+        --shadow-md: 0px 3px 8px 0px color-mix(in srgb, var(--color-shadow-strong) 24%, transparent);
+        --shadow-none: none;
+        --shadow-sm: 0px 2px 8px 0px color-mix(in srgb, var(--color-shadow-medium) 20%, transparent);
+        --shadow-xl: 0px 8px 24px 0px color-mix(in srgb, var(--color-shadow-soft) 20%, transparent);
+        --shadow-xs: 0px 1px 4px 0px color-mix(in srgb, var(--color-shadow-strong) 16%, transparent);
+      }
+    </style>
     <style>
       :root {
-        color-scheme: light;
-        --paper: #f2efe6;
-        --paper-soft: #e6e1d5;
-        --ink: #151515;
-        --ink-soft: #474640;
-        --rule: #151515;
-        --accent: #cb482d;
-        --accent-dark: #a93420;
-        --white: #fffdf6;
+        color-scheme: dark;
         --container: 1440px;
-        --gutter: clamp(20px, 4vw, 64px);
-        --section-open: clamp(80px, 8vw, 112px);
-        --section-standard: clamp(64px, 6vw, 88px);
-        --section-compact: clamp(48px, 4vw, 64px);
-        --section-space: var(--section-standard);
-        --cluster: clamp(24px, 2.2vw, 32px);
-        --display: clamp(4.25rem, 8.4vw, 8.75rem);
-        --heading: clamp(2.75rem, 5.2vw, 5.75rem);
-        --subheading: clamp(1.75rem, 3vw, 3.25rem);
-        --body: clamp(1rem, 1vw, 1.125rem);
         --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
       }
 
@@ -45,11 +422,14 @@
       }
 
       body {
-        background: var(--paper);
-        color: var(--ink);
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         margin: 0;
         overflow-x: hidden;
+        background: var(--bh-ink);
+        color: var(--bh-white);
+        font-family: var(--font-body-font-family);
+        font-size: var(--font-body-font-size);
+        line-height: var(--font-body-line-height);
+        -webkit-font-smoothing: antialiased;
       }
 
       body.menu-open {
@@ -78,1481 +458,1428 @@
       }
 
       :focus-visible {
-        outline: 3px solid var(--accent);
-        outline-offset: 4px;
-      }
-
-      ::selection {
-        background: var(--accent);
-        color: var(--white);
+        outline: var(--border-width-2) solid currentColor;
+        outline-offset: var(--space-4);
       }
 
       .skip-link {
-        background: var(--ink);
-        color: var(--white);
-        left: 16px;
-        padding: 12px 18px;
         position: fixed;
-        top: 16px;
+        top: var(--space-16);
+        left: var(--space-16);
+        z-index: 100;
+        padding: var(--space-12) var(--space-16);
+        background: var(--bh-white);
+        color: var(--bh-ink);
         transform: translateY(-160%);
         transition: transform 180ms ease;
-        z-index: 100;
       }
 
       .skip-link:focus {
         transform: translateY(0);
       }
 
-      .shell {
+      .visually-hidden {
+        position: absolute;
+        width: var(--size-1);
+        height: var(--size-1);
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+
+      /* Header and hero: the approved 1440 × 900 composition on one modular grid.
+         Tracks and rows are proportions of that frame, so the composition scales as one piece. */
+      /* Canonical light-mode tokens: neutrals for the dark ground, brand colours for accents.
+         Red is the one accent outside the canonical tokens, kept by request. */
+      :root {
+        --bh-ink: var(--color-shades-neutral-strong-three);
+        --bh-ink-raised: var(--color-shades-neutral-strong-two);
+        --bh-white: var(--color-text-inverse);
+        --bh-grey: var(--color-shades-neutral-subtle-two);
+        --bh-rule: var(--color-border-neutral-strong-one);
+        --bh-red: #d2413e;
+        --bh-yellow: var(--color-shades-brand-color-three-strong-one);
+        --bh-green: var(--color-shades-brand-color-two-strong-one);
+        --bh-hairline: var(--border-width-1) solid var(--bh-rule);
+      }
+
+      .bh-frame {
+        container-type: inline-size;
         margin-inline: auto;
         max-width: var(--container);
-        padding-inline: var(--gutter);
+        font-family: var(--font-body-font-family);
       }
 
-      .site-header {
-        align-items: stretch;
-        border-bottom: 1px solid var(--rule);
+      .bh-grid {
         display: grid;
-        grid-template-columns: 4fr 8fr;
-        min-height: 92px;
-        position: relative;
-        z-index: 30;
+        grid-template-columns: [a] 184fr [b] 191fr [c] 45fr [d] 77fr [e] 238fr [f] 334fr [g] 229fr [h] 142fr [i];
       }
 
-      .brand {
-        align-items: center;
-        border-right: 1px solid var(--rule);
+      .bh-header {
+        position: relative;
+        min-height: max(var(--space-80), calc(100cqw * 136 / 1440));
+        border-bottom: var(--bh-hairline);
+        color: var(--bh-white);
+      }
+
+      .bh-brand {
+        grid-column: a / d;
         display: flex;
-        font-size: 0.82rem;
-        font-weight: 800;
-        gap: 14px;
-        letter-spacing: 0.06em;
-        line-height: 1;
+        align-items: center;
+        padding: var(--space-0) var(--space-40);
+        border-right: var(--bh-hairline);
+      }
+
+      /* Logo artwork: the mark and the wordmark scale together from one height */
+      .bh-logo {
+        display: block;
+        height: var(--size-40);
+        width: auto;
+        overflow: visible;
+        fill: var(--bh-white);
+      }
+
+      .bh-logo text {
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        letter-spacing: var(--font-body-large-letter-spacing);
+      }
+
+      .bh-logo__window {
+        fill: var(--color-shades-brand-color-one-strong-one);
+      }
+
+      .bh-logo__ground {
+        fill: var(--bh-red);
+      }
+
+      .bh-nav {
+        grid-column: d / h;
+        display: flex;
+        align-items: center;
+        gap: var(--space-64);
+        padding: var(--space-0) var(--space-84);
+      }
+
+      .bh-nav a {
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+        letter-spacing: var(--font-body-large-letter-spacing);
+      }
+
+      .bh-nav a:hover,
+      .bh-nav a[aria-current="location"] {
+        text-decoration: underline;
+        text-underline-offset: var(--space-4);
+      }
+
+      .bh-tools {
+        grid-column: h / i;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-left: var(--bh-hairline);
+      }
+
+      .bh-hero {
+        grid-template-rows:
+          calc(100cqw * 389 / 1440)
+          calc(100cqw * 83 / 1440)
+          calc(100cqw * 224 / 1440)
+          calc(100cqw * 68 / 1440);
+        color: var(--bh-white);
+      }
+
+      .bh-title {
+        grid-column: a / e;
+        grid-row: 1;
+        display: flex;
+        align-items: center;
+        padding: var(--space-0) var(--space-24) var(--space-0) var(--space-40);
+      }
+
+      /* Display size is the declared override; line height keeps the canonical heading ratio */
+      .bh-title h1 {
+        margin: 0;
+        font-family: var(--font-heading-xxlarge-font-family);
+        font-size: calc(100cqw * 64 / 1440);
+        font-weight: var(--font-heading-xxlarge-font-weight);
+        line-height: var(--font-heading-xxlarge-line-height);
+        letter-spacing: var(--font-heading-xxlarge-letter-spacing);
         text-transform: uppercase;
       }
 
-      .brand__axis {
-        background: var(--accent);
-        display: inline-block;
-        height: 34px;
+      /* The plane fills the module; the cut-out building rises past its top edge and over the header rule */
+      .bh-media {
+        grid-column: e / i;
+        grid-row: 1 / 3;
         position: relative;
-        width: 34px;
+        z-index: 1;
+        margin: 0;
+        overflow-x: clip;
+        background: var(--bh-red);
+        clip-path: inset(calc(100cqw * -24 / 1440) 0 0 0);
       }
 
-      .brand__axis::after {
-        background: var(--paper);
-        content: "";
-        height: 1px;
-        left: 7px;
+      .bh-media img {
         position: absolute;
-        top: 16px;
-        width: 20px;
-      }
-
-      .brand__name {
-        display: inline-grid;
-        gap: 4px;
-      }
-
-      .site-nav {
-        align-items: center;
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      .site-nav__links {
-        align-items: center;
-        display: flex;
-        height: 100%;
-      }
-
-      .site-nav__links a {
-        align-items: center;
-        border-left: 1px solid var(--rule);
-        display: flex;
-        font-size: 0.75rem;
-        font-weight: 700;
-        height: 100%;
-        letter-spacing: 0.06em;
-        padding: 0 clamp(18px, 2.4vw, 38px);
-        position: relative;
-        text-transform: uppercase;
-      }
-
-      .site-nav__links a::after {
-        background: var(--accent);
-        bottom: 0;
-        content: "";
-        height: 5px;
         left: 0;
-        position: absolute;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 200ms var(--ease);
+        top: calc(100cqw * -24 / 1440);
         width: 100%;
-      }
-
-      .site-nav__links a:hover::after,
-      .site-nav__links a[aria-current="location"]::after {
-        transform: scaleX(1);
-      }
-
-      .menu-toggle {
-        align-items: center;
-        background: transparent;
-        border: 0;
-        cursor: pointer;
-        display: none;
-        font-size: 0.76rem;
-        font-weight: 800;
-        gap: 12px;
-        letter-spacing: 0.06em;
-        padding: 18px 0 18px 22px;
-        text-transform: uppercase;
-      }
-
-      .menu-toggle__lines,
-      .menu-toggle__lines::before {
-        background: currentColor;
-        content: "";
-        display: block;
-        height: 2px;
-        transition: transform 180ms ease;
-        width: 24px;
-      }
-
-      .menu-toggle__lines::before {
-        transform: translateY(7px);
-      }
-
-      .menu-toggle[aria-expanded="true"] .menu-toggle__lines {
-        transform: rotate(45deg) translateY(3px);
-      }
-
-      .menu-toggle[aria-expanded="true"] .menu-toggle__lines::before {
-        transform: rotate(-90deg);
-      }
-
-      .hero {
-        border-bottom: 1px solid var(--rule);
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        min-height: clamp(640px, 68svh, 800px);
-      }
-
-      .hero__heading {
-        align-content: start;
-        border-right: 1px solid var(--rule);
-        display: grid;
-        grid-column: 1 / span 8;
-        grid-template-rows: auto auto;
-        padding: var(--section-compact) var(--cluster) var(--section-compact) 0;
-        position: relative;
-        row-gap: 120px;
-      }
-
-      .hero__kicker,
-      .section-label,
-      .project__index,
-      .project__meta,
-      .process__index,
-      .footer-label {
-        font-size: 0.75rem;
-        font-weight: 750;
-        letter-spacing: 0.08em;
-        line-height: 1.5;
-        margin: 0;
-        text-transform: uppercase;
-      }
-
-      .hero__title {
-        font-size: var(--display);
-        font-weight: 750;
-        letter-spacing: -0.045em;
-        line-height: 0.86;
-        margin: 0;
-        max-width: 9ch;
-      }
-
-      .hero__title span {
-        display: block;
-      }
-
-      .hero__title .hero__title-offset {
-        color: var(--accent);
-        margin-left: clamp(0px, 6vw, 96px);
-      }
-
-      .hero__aside {
-        align-content: end;
-        display: grid;
-        gap: var(--cluster);
-        grid-column: 9 / -1;
-        padding: var(--section-compact) 0 var(--section-compact) var(--cluster);
-      }
-
-      .hero__aside::before {
-        background: var(--accent);
-        content: "";
-        height: clamp(96px, 8vw, 112px);
-        justify-self: end;
-        width: min(100%, 144px);
-      }
-
-      .hero__deck {
-        font-size: clamp(1.25rem, 1.7vw, 1.75rem);
-        font-weight: 500;
-        letter-spacing: -0.025em;
-        line-height: 1.22;
-        margin: 0;
-        max-width: 23ch;
-      }
-
-      .hero__actions {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px;
-      }
-
-      .button {
-        align-items: center;
-        background: var(--ink);
-        border: 1px solid var(--ink);
-        color: var(--white);
-        display: inline-flex;
-        font-size: 0.75rem;
-        font-weight: 800;
-        gap: 28px;
-        justify-content: space-between;
-        letter-spacing: 0.06em;
-        min-height: 56px;
-        min-width: 210px;
-        padding: 16px 20px;
-        text-transform: uppercase;
-        transition: background 180ms ease, color 180ms ease;
-      }
-
-      .button:hover {
-        background: var(--accent);
-        border-color: var(--accent);
-      }
-
-      .button--light {
-        background: var(--paper);
-        color: var(--ink);
-      }
-
-      .button--light:hover {
-        background: var(--white);
-        border-color: var(--white);
-      }
-
-      .text-link {
-        align-items: center;
-        border-bottom: 1px solid var(--ink);
-        display: inline-flex;
-        font-size: 0.78rem;
-        font-weight: 800;
-        gap: 24px;
-        letter-spacing: 0.06em;
-        padding-block: 10px;
-        text-transform: uppercase;
-      }
-
-      .text-link span {
-        transition: transform 180ms ease;
-      }
-
-      .text-link:hover span {
-        transform: translateX(6px);
-      }
-
-      .hero-media {
-        background: var(--ink);
-        border-bottom: 1px solid var(--rule);
-        display: grid;
-        grid-template-columns: 8fr 4fr;
-      }
-
-      .hero-media__figure {
-        margin: 0;
-        min-height: clamp(420px, 48vw, 640px);
-        overflow: hidden;
-        position: relative;
-      }
-
-      .hero-media__figure img {
-        height: 100%;
-        object-fit: cover;
-        transition: transform 900ms var(--ease);
-        width: 100%;
-      }
-
-      .hero-media__figure:hover img {
-        transform: scale(1.02);
-      }
-
-      .hero-media__caption {
-        align-content: space-between;
-        background: var(--ink);
-        color: var(--white);
-        display: grid;
-        padding: var(--cluster);
-      }
-
-      .hero-media__caption strong {
-        font-size: clamp(2rem, 4.2vw, 5rem);
-        font-weight: 650;
-        letter-spacing: -0.04em;
-        line-height: 1.05;
-        max-width: 9ch;
-      }
-
-      .hero-media__caption dl {
-        border-top: 1px solid #4d4d4d;
-        display: grid;
-        gap: 0;
-        margin: 40px 0 0;
-      }
-
-      .hero-media__caption dl div {
-        border-bottom: 1px solid #4d4d4d;
-        display: grid;
-        gap: 8px;
-        grid-template-columns: 1fr 1fr;
-        padding-block: 14px;
-      }
-
-      .hero-media__caption dt,
-      .hero-media__caption dd {
-        font-size: 0.75rem;
-        letter-spacing: 0.06em;
-        margin: 0;
-        text-transform: uppercase;
-      }
-
-      .hero-media__caption dt {
-        color: #a9a9a4;
-      }
-
-      .statement {
-        border-bottom: 1px solid var(--rule);
-        display: grid;
-        grid-template-columns: 4fr 8fr;
-      }
-
-      .statement__label {
-        border-right: 1px solid var(--rule);
-        padding: var(--section-space) var(--cluster) var(--section-space) 0;
-      }
-
-      .statement__copy {
-        padding: var(--section-space) 0 var(--section-space) var(--cluster);
-      }
-
-      .statement__copy p {
-        font-size: clamp(2rem, 3.8vw, 4.5rem);
-        font-weight: 500;
-        letter-spacing: -0.035em;
-        line-height: 1.1;
-        margin: 0;
-        max-width: 18ch;
-      }
-
-      .statement__copy em {
-        color: var(--accent);
-        font-style: normal;
-      }
-
-      .section-heading {
-        align-items: end;
-        display: grid;
-        gap: var(--cluster);
-        grid-template-columns: 4fr 8fr;
-        padding-bottom: var(--section-compact);
-      }
-
-      .section-heading h2 {
-        font-size: var(--heading);
-        font-weight: 700;
-        grid-column: 2;
-        letter-spacing: -0.045em;
-        line-height: 0.98;
-        margin: 0;
-        max-width: 11ch;
-      }
-
-      .work {
-        padding-block: var(--section-space);
-      }
-
-      .work-controls {
-        border-block: 1px solid var(--rule);
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: var(--section-compact);
-      }
-
-      .work-controls button {
-        background: transparent;
-        border: 0;
-        border-right: 1px solid var(--rule);
-        cursor: pointer;
-        font-size: 0.74rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        min-height: 52px;
-        padding: 14px 26px;
-        text-transform: uppercase;
-        transition: background 160ms ease, color 160ms ease;
-      }
-
-      .work-controls button:hover,
-      .work-controls button[aria-pressed="true"] {
-        background: var(--ink);
-        color: var(--white);
-      }
-
-      .filter-status {
-        align-self: center;
-        color: var(--ink-soft);
-        font-size: 0.76rem;
-        margin-left: auto;
-        padding: 14px 0 14px 22px;
-      }
-
-      .projects {
-        display: grid;
-        gap: clamp(64px, 7vw, 96px);
-      }
-
-      .project {
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        opacity: 1;
-        transition: opacity 180ms ease;
-      }
-
-      .project[hidden] {
-        display: none;
-      }
-
-      .project__image {
-        grid-column: 1 / span 8;
-        margin: 0;
-        min-height: clamp(340px, 42vw, 620px);
-        overflow: hidden;
-      }
-
-      .project__image img {
-        height: 100%;
-        object-fit: cover;
-        transition: transform 700ms var(--ease);
-        width: 100%;
-      }
-
-      .project:hover .project__image img {
-        transform: scale(1.018);
-      }
-
-      .project__info {
-        align-content: start;
-        border-bottom: 1px solid var(--rule);
-        border-top: 1px solid var(--rule);
-        display: grid;
-        gap: 24px;
-        grid-column: 9 / -1;
-        padding: var(--cluster) 0 var(--cluster) var(--cluster);
-      }
-
-      .project__info h3 {
-        font-size: var(--subheading);
-        font-weight: 650;
-        letter-spacing: -0.04em;
-        line-height: 1.08;
-        margin: auto 0 0;
-        max-width: 10ch;
-      }
-
-      .project__meta {
-        color: var(--ink-soft);
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px 18px;
-      }
-
-      .project--reverse .project__image {
-        grid-column: 5 / -1;
-        order: 2;
-      }
-
-      .project--reverse .project__info {
-        border-left: 0;
-        grid-column: 1 / span 4;
-        order: 1;
-        padding-left: 0;
-        padding-right: var(--cluster);
-      }
-
-      .project--compact .project__image {
-        grid-column: 3 / span 7;
-      }
-
-      .project--compact .project__info {
-        grid-column: 10 / -1;
-      }
-
-      .project__summary {
-        color: var(--ink-soft);
-        font-size: var(--body);
-        line-height: 1.55;
-        margin: 0;
-        max-width: 34ch;
-      }
-
-      .method {
-        background: var(--ink);
-        color: var(--white);
-        padding-block: var(--section-space);
-      }
-
-      .method .section-heading {
-        border-bottom: 1px solid #4d4d4d;
-      }
-
-      .method .section-heading h2 {
-        line-height: 0.88;
         max-width: none;
+        height: auto;
       }
 
-      .method .section-heading h2 span {
-        display: block;
+      /* Detail: a red block with a second photograph overlapping it */
+      .bh-detail {
+        grid-column: a / c;
+        grid-row: 2 / 5;
+        position: relative;
+        overflow: hidden;
+        border-top: var(--bh-hairline);
       }
 
-      .method .section-label {
-        color: #aaa9a4;
+      .bh-block {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: calc(100% * 184 / 375);
+        height: calc(100% * 225 / 375);
+        background: var(--bh-red);
       }
 
-      .process {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+      .bh-detail .bh-block {
+        background: var(--bh-green);
       }
 
-      .process article {
-        border-right: 1px solid #4d4d4d;
-        display: grid;
-        gap: 32px;
-        min-height: 320px;
-        padding: 24px;
+      .bh-detail .alpy-image {
+        position: absolute;
+        left: calc(100% * 53 / 375);
+        top: calc(100% * 83 / 375);
+        width: calc(100% * 322 / 375);
       }
 
-      .process article:first-child {
-        padding-left: 0;
+      .bh-cell {
+        grid-column: c / e;
+        border-top: var(--bh-hairline);
+        border-left: var(--bh-hairline);
       }
 
-      .process article:last-child {
-        border-right: 0;
-        padding-right: 0;
+      .bh-cell--upper {
+        grid-row: 2;
       }
 
-      .process__index {
-        color: var(--accent);
+      .bh-cell--lower {
+        grid-row: 3;
       }
 
-      .process h3 {
-        font-size: clamp(1.7rem, 2.6vw, 3rem);
-        font-weight: 600;
-        letter-spacing: -0.03em;
-        line-height: 1.1;
-        margin: auto 0 0;
-      }
-
-      .process p {
-        color: #c2c1bb;
-        font-size: 0.98rem;
-        line-height: 1.55;
-        margin: 0;
-      }
-
-      .practice {
-        border-bottom: 1px solid var(--rule);
-        padding-block: var(--section-space);
-      }
-
-      .practice-grid {
-        border-top: 1px solid var(--rule);
-        display: grid;
-        grid-template-columns: 4fr 4fr 4fr;
-      }
-
-      .practice-grid article {
-        border-right: 1px solid var(--rule);
-        min-height: 280px;
-        padding: var(--cluster);
-      }
-
-      .practice-grid article:first-child {
-        padding-left: 0;
-      }
-
-      .practice-grid article:last-child {
-        border-right: 0;
-        padding-right: 0;
-      }
-
-      .practice-grid h3 {
-        font-size: clamp(1.6rem, 2.8vw, 3.25rem);
-        font-weight: 600;
-        letter-spacing: -0.035em;
-        line-height: 1.08;
-        margin: 0 0 48px;
-      }
-
-      .practice-grid p {
-        color: var(--ink-soft);
-        font-size: var(--body);
-        line-height: 1.55;
-        margin: 0;
-        max-width: 30ch;
-      }
-
-      .studio {
-        border-bottom: 1px solid var(--rule);
-        display: grid;
-        grid-template-columns: 5fr 7fr;
-      }
-
-      .studio__title {
-        border-right: 1px solid var(--rule);
-        padding: var(--section-space) var(--cluster) var(--section-space) 0;
-      }
-
-      .studio__title h2 {
-        font-size: var(--heading);
-        font-weight: 700;
-        letter-spacing: -0.045em;
-        line-height: 0.98;
-        margin: 32px 0 0;
-        max-width: 8ch;
-      }
-
-      .studio__content {
-        display: grid;
-        gap: 56px;
-        padding: var(--section-space) 0 var(--section-space) var(--cluster);
-      }
-
-      .studio__content > p {
-        font-size: clamp(1.55rem, 3vw, 3.35rem);
-        letter-spacing: -0.025em;
-        line-height: 1.18;
-        margin: 0;
-        max-width: 22ch;
-      }
-
-      .studio__facts {
-        border-top: 1px solid var(--rule);
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .studio__facts div {
-        border-right: 1px solid var(--rule);
-        padding: 20px;
-      }
-
-      .studio__facts div:first-child {
-        padding-left: 0;
-      }
-
-      .studio__facts div:last-child {
-        border-right: 0;
-        padding-right: 0;
-      }
-
-      .studio__facts dt {
-        color: var(--ink-soft);
-        font-size: 0.72rem;
-        letter-spacing: 0.07em;
-        margin-bottom: 18px;
-        text-transform: uppercase;
-      }
-
-      .studio__facts dd {
-        font-size: clamp(1.4rem, 2.2vw, 2.4rem);
-        letter-spacing: -0.025em;
-        line-height: 1.15;
-        margin: 0;
-      }
-
-      .contact {
-        background: var(--accent);
-        color: var(--white);
-        display: grid;
-        grid-template-columns: 8fr 4fr;
-        min-height: 560px;
-      }
-
-      .contact__message {
-        align-content: space-between;
-        border-right: 1px solid rgba(255, 253, 246, 0.6);
-        display: grid;
-        padding: var(--section-space) var(--cluster) var(--section-space) 0;
-      }
-
-      .contact__message h2 {
-        font-size: var(--heading);
-        font-weight: 700;
-        letter-spacing: -0.045em;
-        line-height: 0.98;
-        margin: 32px 0 64px;
-        max-width: 10ch;
-      }
-
-      .contact__details {
-        align-content: end;
-        display: grid;
-        gap: 32px;
-        padding: var(--section-space) 0 var(--section-space) var(--cluster);
-      }
-
-      .contact__details p {
-        font-size: 1.05rem;
-        line-height: 1.5;
-        margin: 0;
-        max-width: 26ch;
-      }
-
-      .site-footer {
-        background: var(--ink);
-        color: var(--white);
-        padding-block: 48px 32px;
-      }
-
-      .footer-grid {
-        display: grid;
-        gap: 48px var(--cluster);
-        grid-template-columns: 4fr 3fr 3fr 2fr;
-      }
-
-      .footer-brand {
-        font-size: clamp(2rem, 3.4vw, 4rem);
-        font-weight: 650;
-        letter-spacing: -0.04em;
-        line-height: 1;
-        max-width: 7ch;
-      }
-
-      .footer-group {
-        display: grid;
-        gap: 16px;
-        align-content: start;
-      }
-
-      .footer-label {
-        color: #9d9c97;
-        margin-bottom: 10px;
-      }
-
-      .footer-group a,
-      .footer-group address,
-      .footer-group span {
-        font-size: 0.92rem;
-        font-style: normal;
-        line-height: 1.55;
-      }
-
-      .footer-group a:hover {
-        color: var(--accent);
-      }
-
-      .footer-bottom {
-        border-top: 1px solid #4d4d4d;
-        color: #9d9c97;
+      .bh-lead {
+        grid-column: e / g;
+        grid-row: 3;
         display: flex;
-        font-size: 0.72rem;
-        justify-content: space-between;
-        letter-spacing: 0.08em;
-        margin-top: 64px;
-        padding-top: 24px;
-        text-transform: uppercase;
+        align-items: center;
+        padding: var(--space-0) var(--space-56);
+        border-left: var(--bh-hairline);
       }
 
-      [data-reveal] {
-        opacity: 0;
-        transform: translateY(28px);
-        transition: opacity 620ms var(--ease), transform 620ms var(--ease);
+      .bh-lead p {
+        margin: 0;
+        max-width: 16em;
+        font-family: var(--font-body-font-family);
+        font-size: var(--font-heading-small-font-size);
+        font-weight: var(--font-weight-regular);
+        line-height: var(--font-heading-small-line-height);
+        letter-spacing: var(--font-heading-small-letter-spacing);
+        text-wrap: pretty;
       }
 
-      [data-reveal].is-visible {
-        opacity: 1;
-        transform: none;
+      .bh-action {
+        grid-column: g / i;
+        grid-row: 3;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: var(--space-0) var(--space-72);
       }
 
-      @media (max-width: 1050px) {
-        .site-header {
-          grid-template-columns: 1fr auto;
-          min-height: 78px;
-        }
-
-        .brand {
-          border-right: 0;
-        }
-
-        .menu-toggle {
-          display: flex;
-        }
-
-        .site-nav {
-          background: var(--paper);
-          border-bottom: 1px solid var(--rule);
-          inset: 78px 0 auto;
-          max-height: 0;
-          overflow: hidden;
-          position: fixed;
-          transition: max-height 260ms var(--ease);
-        }
-
-        .site-nav.is-open {
-          max-height: calc(100svh - 78px);
-        }
-
-        .site-nav__links {
-          align-items: stretch;
-          display: grid;
-          width: 100%;
-        }
-
-        .site-nav__links a {
-          border-left: 0;
-          border-top: 1px solid var(--rule);
-          font-size: 1.3rem;
-          min-height: 82px;
-          padding-inline: var(--gutter);
-        }
-
-        .hero {
-          min-height: auto;
-        }
-
-        .hero__heading {
-          grid-column: 1 / span 8;
-          min-height: 620px;
-        }
-
-        .hero__aside {
-          grid-column: 9 / -1;
-        }
-
-        .hero-media {
-          grid-template-columns: 1fr;
-        }
-
-        .hero-media__caption {
-          gap: 56px;
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .project__image,
-        .project--compact .project__image {
-          grid-column: 1 / span 8;
-        }
-
-        .project__info,
-        .project--compact .project__info {
-          grid-column: 9 / -1;
-        }
-
-        .project--reverse .project__image {
-          grid-column: 5 / -1;
-        }
-
-        .project--reverse .project__info {
-          grid-column: 1 / span 4;
-        }
-
-        .process {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .process article:nth-child(2) {
-          border-right: 0;
-          padding-right: 0;
-        }
-
-        .process article:nth-child(3) {
-          border-top: 1px solid #4d4d4d;
-          padding-left: 0;
-        }
-
-        .process article:nth-child(4) {
-          border-top: 1px solid #4d4d4d;
-        }
+      .bh-action::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: calc(100% * 67 / 224);
+        height: calc(100% * 96 / 224);
+        border-left: var(--bh-hairline);
       }
 
-      @media (max-width: 760px) {
-        :root {
-          --section-open: 80px;
-          --section-standard: 64px;
-          --section-compact: 48px;
-          --section-space: var(--section-standard);
+      .bh-strip {
+        grid-column: c / f;
+        grid-row: 4;
+        background: var(--bh-yellow);
+      }
+
+      .bh-base {
+        grid-column: f / i;
+        grid-row: 4;
+        border-top: var(--bh-hairline);
+      }
+
+      /* Canonical Image: radius none, placeholder on the surface role, ratio from the variant */
+      .alpy-image {
+        position: relative;
+        display: block;
+        width: 100%;
+        margin: 0;
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        border-radius: var(--radius-none);
+        background: var(--bh-ink-raised);
+      }
+
+      .alpy-image[data-alpy-variant="1:1"] { aspect-ratio: 1 / 1; }
+      .alpy-image[data-alpy-variant="2:1"] { aspect-ratio: 2 / 1; }
+      .alpy-image[data-alpy-variant="3:2"] { aspect-ratio: 3 / 2; }
+
+      .alpy-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Canonical Button: anatomy, sizes, gap, and type stay canonical; radius none is the declared override */
+      .alpy-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-8);
+        border-width: var(--border-width-1);
+        border-style: solid;
+        border-radius: var(--radius-none);
+        cursor: pointer;
+      }
+
+      .alpy-button[data-alpy-size="lg"] {
+        min-height: var(--space-52);
+        padding: var(--space-0) var(--space-24);
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+        letter-spacing: var(--font-body-large-letter-spacing);
+      }
+
+      .alpy-button[data-alpy-icon-mode="only"] {
+        gap: var(--space-0);
+        padding: var(--space-0);
+      }
+
+      .alpy-button[data-alpy-icon-mode="only"][data-alpy-size="lg"] {
+        width: var(--space-52);
+        height: var(--space-52);
+      }
+
+      .alpy-button [data-alpy-slot^="Icon"] {
+        display: inline-flex;
+        transition: transform 180ms var(--ease);
+      }
+
+      .alpy-button[data-alpy-size="lg"] [data-alpy-slot^="Icon"] svg {
+        width: var(--size-20);
+        height: var(--size-20);
+      }
+
+      /* Link Button: text and icon slots take the canonical inverse roles so they read on the dark design */
+      .alpy-button[data-alpy-variant="link"] {
+        border-color: var(--color-system-transparent);
+        background: var(--color-system-transparent);
+        color: var(--color-text-inverse);
+      }
+
+      .alpy-button[data-alpy-variant="link"] [data-alpy-slot^="Icon"] {
+        color: var(--color-icon-inverse);
+      }
+
+      .alpy-button:focus-visible {
+        outline-color: var(--color-border-interaction-focused);
+      }
+
+      .alpy-button.bh-menu {
+        display: none;
+      }
+
+      /* Tablet: the title and the photograph take the full width; detail and text share the lower rows */
+      @media (max-width: 1023px) {
+        .bh-brand {
+          grid-column: a / e;
         }
 
-        html {
-          scroll-padding-top: 0;
+        .bh-nav {
+          grid-column: e / h;
+          gap: var(--space-32);
+          padding: var(--space-0) var(--space-32);
         }
 
-        .hero {
-          display: block;
+        .bh-hero {
+          grid-template-rows: auto calc(100cqw * 0.56) auto auto var(--space-40);
         }
 
-        .hero__heading {
-          border-right: 0;
-          min-height: 520px;
-          padding-right: 0;
+        .bh-title {
+          grid-column: a / i;
+          grid-row: 1;
+          padding: var(--space-48) var(--space-40);
         }
 
-        .hero__title {
-          font-size: clamp(3.25rem, 14vw, 5rem);
-          line-height: 1;
+        .bh-title h1 {
+          font-size: var(--font-heading-xxlarge-font-size);
+          line-height: var(--font-heading-xxlarge-line-height);
         }
 
-        .hero__title span {
-          white-space: nowrap;
+        .bh-media {
+          grid-column: a / i;
+          grid-row: 2;
         }
 
-        .hero__title .hero__title-offset {
-          margin-left: 0;
-        }
-
-        .hero__aside {
-          border-top: 1px solid var(--rule);
-          padding-left: 0;
-        }
-
-        .hero__aside::before {
-          height: 76px;
-          justify-self: start;
-          width: 76px;
-        }
-
-        .hero-media__figure {
-          min-height: 320px;
-        }
-
-        .hero-media__caption {
-          grid-template-columns: 1fr;
-        }
-
-        .statement,
-        .section-heading,
-        .studio,
-        .contact {
-          grid-template-columns: 1fr;
-        }
-
-        .statement__label,
-        .studio__title,
-        .contact__message {
-          border-bottom: 1px solid var(--rule);
-          border-right: 0;
-          padding-right: 0;
-        }
-
-        .statement__label {
-          padding-bottom: 32px;
-        }
-
-        .statement__copy,
-        .studio__content,
-        .contact__details {
-          padding-left: 0;
-          padding-top: 56px;
-        }
-
-        .section-heading h2 {
-          grid-column: 1;
-        }
-
-        .work-controls {
-          align-items: stretch;
-        }
-
-        .work-controls button {
-          border-bottom: 1px solid var(--rule);
-          flex: 1 1 50%;
-        }
-
-        .filter-status {
-          flex: 1 0 100%;
-          margin-left: 0;
-          padding-left: 0;
-        }
-
-        .project,
-        .project--reverse {
-          display: grid;
-          grid-template-columns: 1fr;
-        }
-
-        .project__image,
-        .project--compact .project__image,
-        .project--reverse .project__image {
-          grid-column: 1;
-          min-height: 320px;
-          order: 1;
-        }
-
-        .project__info,
-        .project--compact .project__info,
-        .project--reverse .project__info {
+        .bh-detail {
+          grid-column: a / e;
+          grid-row: 3 / 6;
+          min-height: calc(100cqw * 0.44);
           border-top: 0;
-          grid-column: 1;
-          order: 2;
-          padding: 28px 0;
         }
 
-        .project__info h3 {
-          margin-top: 36px;
-          max-width: 12ch;
-        }
-
-        .process,
-        .practice-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .process article,
-        .process article:first-child,
-        .process article:nth-child(2),
-        .process article:nth-child(3),
-        .process article:nth-child(4),
-        .process article:last-child {
-          border-bottom: 1px solid #4d4d4d;
-          border-right: 0;
-          border-top: 0;
-          min-height: auto;
-          padding: 32px 0;
-        }
-
-        .process article:last-child {
-          border-bottom: 0;
-        }
-
-        .process h3 {
-          margin-top: 32px;
-        }
-
-        .practice-grid article,
-        .practice-grid article:first-child,
-        .practice-grid article:last-child {
-          border-bottom: 1px solid var(--rule);
-          border-right: 0;
-          min-height: auto;
-          padding: 32px 0;
-        }
-
-        .practice-grid article:last-child {
-          border-bottom: 0;
-        }
-
-        .practice-grid h3 {
-          margin-bottom: 24px;
-        }
-
-        .studio__facts {
-          grid-template-columns: 1fr;
-        }
-
-        .studio__facts div,
-        .studio__facts div:first-child,
-        .studio__facts div:last-child {
-          border-bottom: 1px solid var(--rule);
-          border-right: 0;
-          padding: 22px 0;
-        }
-
-        .studio__facts div:last-child {
-          border-bottom: 0;
-        }
-
-        .contact {
-          min-height: 0;
-        }
-
-        .contact > .contact__message {
-          grid-template-columns: 1fr !important;
-        }
-
-        .contact > .contact__message > .contact__message,
-        .contact > .contact__message > .contact__details {
-          grid-column: 1 !important;
-        }
-
-        .contact__message {
-          border-color: rgba(255, 253, 246, 0.55);
-        }
-
-        .footer-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .footer-brand {
-          grid-column: 1 / -1;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .brand__name span:last-child {
+        .bh-cell,
+        .bh-base,
+        .bh-action::before {
           display: none;
         }
 
-        .hero__heading {
-          min-height: 460px;
+        .bh-lead {
+          grid-column: e / i;
+          grid-row: 3;
+          padding: var(--space-40);
         }
 
-        .hero__actions,
-        .button {
-          width: 100%;
+        .bh-action {
+          grid-column: e / i;
+          grid-row: 4;
+          align-items: flex-start;
+          padding: var(--space-0) var(--space-40) var(--space-40);
         }
 
-        .hero-media__caption {
-          padding: 28px 20px;
+        .bh-strip {
+          grid-column: e / g;
+          grid-row: 5;
+        }
+      }
+
+      /* Phone: one column; the menu replaces the links, and the secondary detail drops first */
+      @media (max-width: 767px) {
+        .bh-header {
+          grid-template-columns: 1fr auto;
+          min-height: var(--space-72);
         }
 
-        .footer-grid {
+        .bh-brand {
+          grid-column: 1;
+          padding: var(--space-0) var(--space-24);
+          border-right: 0;
+        }
+
+        .bh-logo {
+          height: var(--size-32);
+        }
+
+        .bh-nav {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          z-index: 3;
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: var(--space-0);
+          padding: var(--space-8) var(--space-24) var(--space-24);
+          border-bottom: var(--bh-hairline);
+          background: var(--bh-ink);
+        }
+
+        .bh-nav.is-open {
+          display: flex;
+        }
+
+        .bh-nav a {
+          padding: var(--space-12) var(--space-0);
+          font-family: var(--font-heading-small-font-family);
+          font-size: var(--font-heading-small-font-size);
+          font-weight: var(--font-heading-small-font-weight);
+          line-height: var(--font-heading-small-line-height);
+        }
+
+        .bh-tools {
+          grid-column: 2;
+          gap: var(--space-4);
+          padding-right: var(--space-8);
+          border-left: 0;
+        }
+
+        .alpy-button.bh-menu {
+          display: inline-flex;
+        }
+
+        .bh-hero {
           grid-template-columns: 1fr;
+          grid-template-rows: auto calc(100cqw * 0.8) auto auto var(--space-24);
         }
 
-        .footer-brand {
+        .bh-title {
+          grid-column: 1;
+          padding: var(--space-32) var(--space-24);
+        }
+
+        .bh-title h1 {
+          font-size: var(--font-heading-xlarge-font-size);
+          line-height: var(--font-heading-xlarge-line-height);
+        }
+
+        .bh-media {
           grid-column: 1;
         }
 
-        .footer-bottom {
-          align-items: flex-start;
-          flex-direction: column;
-          gap: 12px;
+        .bh-media img {
+          left: -25%;
+          width: 130%;
+        }
+
+        .bh-detail {
+          display: none;
+        }
+
+        .bh-lead {
+          grid-column: 1;
+          border-left: 0;
+          padding: var(--space-32) var(--space-24) var(--space-24);
+        }
+
+        .bh-action {
+          grid-column: 1;
+          padding: var(--space-0) var(--space-24) var(--space-32);
+        }
+
+        .bh-strip {
+          grid-column: 1;
         }
       }
 
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
+
+      /* Sections below the hero: modular cells on a 12-column grid, divided by horizontal hairlines only */
+      .bh-band {
+        border-top: var(--bh-hairline);
+        color: var(--bh-white);
+      }
+
+      .bh-band--raised {
+        background: var(--bh-ink-raised);
+      }
+
+      .bh-modules {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: var(--border-width-1) var(--space-0);
+        background: var(--bh-rule);
+      }
+
+      .bh-modules > * {
+        min-width: 0;
+        margin: 0;
+        background: var(--bh-ink);
+      }
+
+      .bh-band--raised .bh-modules > * {
+        background: var(--bh-ink-raised);
+      }
+
+      .bh-band--black,
+      .bh-band--black .bh-modules > * {
+        background: var(--color-system-black);
+      }
+
+      .bh-span-3 { grid-column: span 3; }
+      .bh-span-4 { grid-column: span 4; }
+      .bh-span-5 { grid-column: span 5; }
+      .bh-span-6 { grid-column: span 6; }
+      .bh-span-7 { grid-column: span 7; }
+      .bh-span-8 { grid-column: span 8; }
+      .bh-span-12 { grid-column: span 12; }
+
+      .bh-pad {
+        padding: var(--space-64) var(--space-40);
+      }
+
+      .bh-pad--wide {
+        padding: var(--space-96) var(--space-56);
+      }
+
+      .bh-stack {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-24);
+      }
+
+      .bh-h2 {
+        margin: 0;
+        font-family: var(--font-heading-xlarge-font-family);
+        font-size: var(--font-heading-xlarge-font-size);
+        font-weight: var(--font-heading-xlarge-font-weight);
+        line-height: var(--font-heading-xlarge-line-height);
+        letter-spacing: var(--font-heading-xlarge-letter-spacing);
+        text-wrap: balance;
+      }
+
+      .bh-intro {
+        margin: 0;
+        max-width: 30em;
+        font-family: var(--font-body-font-family);
+        font-size: var(--font-heading-xsmall-font-size);
+        font-weight: var(--font-weight-regular);
+        line-height: var(--font-heading-xsmall-line-height);
+        letter-spacing: var(--font-heading-xsmall-letter-spacing);
+        text-wrap: pretty;
+      }
+
+      .bh-text {
+        margin: 0;
+        max-width: 36em;
+        font-family: var(--font-body-font-family);
+        font-size: var(--font-body-font-size);
+        font-weight: var(--font-body-font-weight);
+        line-height: var(--font-body-line-height);
+        text-wrap: pretty;
+      }
+
+      .bh-band--raised .bh-text {
+        color: var(--bh-grey);
+      }
+
+      .bh-figure figcaption {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-4) var(--space-8);
+        padding: var(--space-16) var(--space-40) var(--space-24);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        line-height: var(--font-body-medium-line-height);
+      }
+
+      .bh-figure figcaption span {
+        color: var(--bh-grey);
+      }
+
+      /* Approach: one statement balanced by a photograph cut to a circle */
+      .bh-statement {
+        margin: 0;
+        max-width: 22em;
+        font-family: var(--font-body-font-family);
+        font-size: var(--font-heading-large-font-size);
+        font-weight: var(--font-weight-medium);
+        line-height: var(--font-heading-large-line-height);
+        letter-spacing: var(--font-heading-large-letter-spacing);
+        text-wrap: pretty;
+      }
+
+      .bh-statement-cell {
+        align-content: center;
+      }
+
+      .bh-circle-cell {
+        display: grid;
+        place-items: center;
+        padding: var(--space-48) var(--space-40);
+      }
+
+      .bh-circle {
+        border-radius: var(--radius-full);
+      }
+
+      /* Balance of form: a yellow plane holds the heading beside the largest photograph */
+      .bh-plane-cell {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: var(--space-24);
+        padding: var(--space-64) var(--space-40);
+      }
+
+      .bh-modules > .bh-plane-cell--yellow {
+        background: var(--bh-yellow);
+        color: var(--color-text-heading);
+      }
+
+
+      /* Services: four modules, each marked by one primitive */
+      .bh-service {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+        padding: var(--space-40) var(--space-40) var(--space-56);
+      }
+
+      .bh-service svg {
+        width: var(--size-56);
+        height: var(--size-56);
+        margin-bottom: var(--space-24);
+      }
+
+      .bh-service h3 {
+        margin: 0;
+        font-family: var(--font-heading-small-font-family);
+        font-size: var(--font-heading-small-font-size);
+        font-weight: var(--font-heading-small-font-weight);
+        line-height: var(--font-heading-small-line-height);
+        letter-spacing: var(--font-heading-small-letter-spacing);
+      }
+
+      .bh-shape--red { fill: var(--bh-red); }
+      .bh-shape--yellow { fill: var(--bh-yellow); }
+      .bh-shape--blue { fill: var(--color-shades-brand-color-one-strong-one); }
+      .bh-shape--green { fill: var(--bh-green); }
+
+      /* Studio: a red block with the studio photograph overlapping it */
+      .bh-studio-media {
+        position: relative;
+        padding: 16% 0 0 12%;
+      }
+
+      .bh-studio-media .bh-block {
+        width: 46%;
+        height: 58%;
+      }
+
+
+
+      .bh-person {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
+
+      .bh-person strong {
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+      }
+
+      .bh-person span {
+        color: var(--bh-grey);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        line-height: var(--font-body-medium-line-height);
+      }
+
+      .bh-link-cell {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+
+      /* Projects: canonical Cards, square and flat, mapped to the Bauhaus colour roles */
+      .bh-cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-24);
+        padding: var(--space-40);
+      }
+
+      .alpy-card {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        overflow: hidden;
+        border: var(--border-width-1) solid var(--bh-rule);
+        border-radius: var(--radius-none);
+        background: var(--bh-ink-raised);
+        color: var(--bh-white);
+      }
+
+      .alpy-card-image {
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        border-radius: var(--radius-none);
+      }
+
+      .alpy-card-content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-12);
+        padding: var(--space-16);
+      }
+
+      .alpy-card-header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+      }
+
+      .alpy-card-title-row {
+        display: flex;
+        align-items: center;
+        gap: var(--space-8);
+      }
+
+      .alpy-card-title-row h3 {
+        margin: 0;
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+        letter-spacing: var(--font-body-large-letter-spacing);
+      }
+
+      .alpy-card-body p {
+        margin: 0;
+        color: var(--bh-grey);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+      }
+
+      /* Journal: articles as ruled rows of real metadata */
+      .bh-articles {
+        margin: 0;
+        padding: var(--space-40) var(--space-40) var(--space-56);
+        list-style: none;
+      }
+
+      .bh-articles li + li {
+        border-top: var(--bh-hairline);
+      }
+
+      .bh-articles a {
+        display: grid;
+        grid-template-columns: var(--size-128) minmax(0, 1fr) auto;
+        align-items: baseline;
+        gap: var(--space-24);
+        padding: var(--space-24) var(--space-0);
+      }
+
+      .bh-articles time {
+        color: var(--bh-grey);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        line-height: var(--font-body-medium-line-height);
+      }
+
+      .bh-articles strong {
+        font-family: var(--font-heading-xsmall-font-family);
+        font-size: var(--font-heading-xsmall-font-size);
+        font-weight: var(--font-heading-xsmall-font-weight);
+        line-height: var(--font-heading-xsmall-line-height);
+      }
+
+      .bh-articles svg {
+        width: var(--size-20);
+        height: var(--size-20);
+        align-self: center;
+        transition: transform 180ms var(--ease);
+      }
+
+      .bh-articles a:hover strong {
+        text-decoration: underline;
+        text-underline-offset: var(--space-4);
+      }
+
+      .bh-articles a:hover svg {
+        transform: translateX(var(--space-4));
+      }
+
+      /* Contact: the closing plane carries the heading and the black primary button */
+      .bh-contact-plane {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-32);
+        padding: var(--space-96) var(--space-40);
+      }
+
+      .bh-modules > .bh-contact-plane {
+        background: var(--bh-yellow);
+        color: var(--color-text-heading);
+      }
+
+      .bh-display {
+        margin: 0;
+        font-family: var(--font-heading-xxlarge-font-family);
+        font-size: var(--font-heading-xxlarge-font-size);
+        font-weight: var(--font-heading-xxlarge-font-weight);
+        line-height: var(--font-heading-xxlarge-line-height);
+        letter-spacing: var(--font-heading-xxlarge-letter-spacing);
+      }
+
+      .bh-details {
+        display: grid;
+        align-content: center;
+        gap: var(--space-24);
+        margin: 0;
+        padding: var(--space-96) var(--space-56);
+      }
+
+      .bh-details dt {
+        color: var(--bh-grey);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        line-height: var(--font-body-medium-line-height);
+      }
+
+      .bh-details dd {
+        margin: 0;
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+      }
+
+      /* Canonical primary Button: light-mode colour bindings; radius none is the declared override */
+      .alpy-button[data-alpy-variant="primary"] {
+        border-color: var(--color-border-brand-color-one-strong-one);
+        background: var(--color-shades-brand-color-one-strong-one);
+        color: var(--color-text-oncolor);
+      }
+
+      .alpy-button[data-alpy-variant="primary"] [data-alpy-slot^="Icon"] {
+        color: var(--color-icon-oncolor);
+      }
+
+      .alpy-button[data-alpy-variant="primary"]:hover {
+        border-color: var(--color-border-brand-color-one-strong-two);
+        background: var(--color-shades-brand-color-one-strong-two);
+      }
+
+      .alpy-button[data-alpy-variant="primary"]:active {
+        border-color: var(--color-border-brand-color-one-strong-three);
+        background: var(--color-shades-brand-color-one-strong-three);
+      }
+
+      /* Footer */
+      .bh-footer-cell {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-16);
+        padding: var(--space-56) var(--space-40);
+      }
+
+      .bh-logo--inverse {
+        fill: var(--bh-white);
+      }
+
+      .bh-footer-cell p,
+      .bh-footer-legal {
+        margin: 0;
+        color: var(--bh-grey);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        line-height: var(--font-body-medium-line-height);
+      }
+
+      .bh-footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .bh-footer-links a {
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+      }
+
+      .bh-footer-links a:hover {
+        text-decoration: underline;
+        text-underline-offset: var(--space-4);
+      }
+
+      .bh-footer-legal {
+        padding: var(--space-24) var(--space-40);
+      }
+
+      /* Viewport reveal: each item plays once, completely, when it enters the screen.
+         Text rises, planes slide along their axis, media wipes up inside its frame, and circle crops open. */
+      @media (prefers-reduced-motion: no-preference) {
+        .has-reveal [data-reveal] {
+          transition:
+            opacity 600ms var(--ease),
+            transform 600ms var(--ease),
+            clip-path 600ms var(--ease);
+          transition-delay: calc(var(--reveal-order, 0) * 60ms);
         }
 
-        *,
-        *::before,
-        *::after {
-          scroll-behavior: auto !important;
-          transition-duration: 0.01ms !important;
+        .has-reveal [data-reveal="rise"]:not(.is-visible) {
+          opacity: 0;
+          transform: translateY(var(--space-24));
         }
 
-        [data-reveal] {
-          opacity: 1;
-          transform: none;
+        .has-reveal [data-reveal="slide"] {
+          clip-path: inset(0 0 0 0);
+        }
+
+        .has-reveal [data-reveal="slide"]:not(.is-visible) {
+          clip-path: inset(0 100% 0 0);
+        }
+
+        .has-reveal [data-reveal="wipe"] {
+          clip-path: inset(0 0 0 0);
+        }
+
+        .has-reveal [data-reveal="wipe"]:not(.is-visible) {
+          clip-path: inset(100% 0 0 0);
+        }
+
+        .has-reveal [data-reveal="open"] {
+          clip-path: circle(50% at 50% 50%);
+        }
+
+        .has-reveal [data-reveal="open"]:not(.is-visible) {
+          clip-path: circle(0% at 50% 50%);
+        }
+      }
+
+      @media (max-width: 1023px) {
+        .bh-t-6 { grid-column: span 6; }
+        .bh-t-12 { grid-column: span 12; }
+
+        .bh-cards {
+          gap: var(--space-16);
+        }
+
+        .bh-studio-media .alpy-image {
+          width: 60%;
+        }
+
+        .bh-circle {
+          width: 50%;
+        }
+
+        .bh-pad--wide,
+        .bh-contact-plane,
+        .bh-details {
+          padding: var(--space-64) var(--space-40);
+        }
+      }
+
+      @media (max-width: 767px) {
+        .bh-modules > * {
+          grid-column: span 12;
+        }
+
+        .bh-pad,
+        .bh-pad--wide,
+        .bh-plane-cell,
+        .bh-contact-plane,
+        .bh-details,
+        .bh-footer-cell,
+        .bh-service,
+        .bh-circle-cell {
+          padding: var(--space-32) var(--space-24);
+        }
+
+        .bh-circle {
+          width: 100%;
+        }
+
+        .bh-figure figcaption {
+          padding-inline: var(--space-24);
+        }
+
+        .bh-footer-legal {
+          padding: var(--space-32) var(--space-24);
+        }
+
+        /* Section headings fill each line before they break */
+        .bh-h2 {
+          font-size: var(--font-heading-large-font-size);
+          line-height: var(--font-heading-large-line-height);
+          text-wrap: pretty;
+        }
+
+        .bh-statement {
+          font-size: var(--font-heading-small-font-size);
+          line-height: var(--font-heading-small-line-height);
+        }
+
+        .bh-display {
+          font-size: var(--font-heading-xlarge-font-size);
+          line-height: var(--font-heading-xlarge-line-height);
+        }
+
+        .bh-cards {
+          grid-template-columns: 1fr;
+          padding: var(--space-32) var(--space-24);
+        }
+
+        /* Each article row keeps 24px above and below its rule; with the list's 8px the cell ends at 32px */
+        .bh-articles {
+          padding: var(--space-8) var(--space-24);
+        }
+
+        .bh-articles a {
+          grid-template-columns: minmax(0, 1fr) auto;
+          gap: var(--space-4) var(--space-16);
+        }
+
+        .bh-articles time {
+          grid-column: 1 / -1;
         }
       }
     </style>
+    <script>
+      if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches && "IntersectionObserver" in window) {
+        document.documentElement.classList.add("has-reveal");
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="shell">
-      <header class="site-header" id="top">
-        <a class="brand" href="#top" aria-label="Bauhaus Architecture home">
-          <span class="brand__axis" aria-hidden="true"></span>
-          <span class="brand__name">
-            <span>Bauhaus</span>
-            <span>Architecture</span>
-          </span>
+    <div class="bh-frame">
+      <header class="bh-header bh-grid" id="top">
+        <a class="bh-brand" href="#top" aria-label="Neue Habitat home">
+          <!-- Logo: a cantilevered roof slab over a house volume, a round window, and a red ground square -->
+          <svg class="bh-logo" viewBox="0 0 184 40" aria-hidden="true">
+            <rect x="0" y="4" width="40" height="7" />
+            <rect x="15" y="11" width="25" height="29" />
+            <circle class="bh-logo__window" cx="27.5" cy="24" r="6" />
+            <rect class="bh-logo__ground" x="0" y="29" width="11" height="11" />
+            <text x="52" y="27">NEUE HABITAT</text>
+          </svg>
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
-          <span class="menu-toggle__lines" aria-hidden="true"></span>
-          <span class="menu-toggle__label">Menu</span>
-        </button>
-        <nav class="site-nav" id="primary-menu" aria-label="Primary navigation">
-          <div class="site-nav__links">
-            <a href="#work">Work</a>
-            <a href="#method">Method</a>
-            <a href="#studio">Studio</a>
-            <a href="#contact">Contact</a>
-          </div>
+        <nav class="bh-nav" id="primary-menu" aria-label="Primary navigation">
+          <a href="#projects">Projects</a>
+          <a href="#studio">Studio</a>
+          <a href="#services">Services</a>
+          <a href="#journal">Journal</a>
         </nav>
+        <div class="bh-tools">
+          <button class="alpy-button" type="button" data-alpy-component="button" data-alpy-variant="link" data-alpy-size="lg" data-alpy-icon-mode="only" aria-label="Search">
+            <span data-alpy-slot="IconLeft" data-alpy-icon-id="search" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4444 22L13.4444 15C12.8889 15.4444 12.25 15.7963 11.5278 16.0556C10.8056 16.3148 10.037 16.4444 9.22222 16.4444C7.2037 16.4444 5.49537 15.7454 4.09722 14.3472C2.69907 12.9491 2 11.2407 2 9.22222C2 7.2037 2.69907 5.49537 4.09722 4.09722C5.49537 2.69907 7.2037 2 9.22222 2C11.2407 2 12.9491 2.69907 14.3472 4.09722C15.7454 5.49537 16.4444 7.2037 16.4444 9.22222C16.4444 10.037 16.3148 10.8056 16.0556 11.5278C15.7963 12.25 15.4444 12.8889 15 13.4444L22 20.4444L20.4444 22ZM9.22222 14.2222C10.6111 14.2222 11.7917 13.7361 12.7639 12.7639C13.7361 11.7917 14.2222 10.6111 14.2222 9.22222C14.2222 7.83333 13.7361 6.65278 12.7639 5.68056C11.7917 4.70833 10.6111 4.22222 9.22222 4.22222C7.83333 4.22222 6.65278 4.70833 5.68056 5.68056C4.70833 6.65278 4.22222 7.83333 4.22222 9.22222C4.22222 10.6111 4.70833 11.7917 5.68056 12.7639C6.65278 13.7361 7.83333 14.2222 9.22222 14.2222Z" /></svg>
+            </span>
+          </button>
+          <button class="alpy-button bh-menu" type="button" data-alpy-component="button" data-alpy-variant="link" data-alpy-size="lg" data-alpy-icon-mode="only" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+            <span data-alpy-slot="IconLeft" data-alpy-icon-id="menu" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z" /></svg>
+            </span>
+          </button>
+        </div>
       </header>
+    </div>
 
-      <main id="main">
-        <section class="hero" aria-labelledby="hero-title">
-          <div class="hero__heading">
-            <p class="hero__kicker">Architecture for shared life / New York + Copenhagen</p>
-            <h1 class="hero__title" id="hero-title">
-              <span>Space is</span>
-              <span>a common</span>
-              <span class="hero__title-offset">material.</span>
-            </h1>
+    <main id="main">
+      <div class="bh-frame">
+        <section class="bh-hero bh-grid" aria-labelledby="hero-title">
+          <div class="bh-title">
+            <h1 data-reveal="rise" id="hero-title">Modern<br />homes,<br />clear ideas</h1>
           </div>
-          <div class="hero__aside">
-            <p class="hero__deck">
-              We design civic, cultural, and residential places that make room for how people gather,
-              learn, and live.
-            </p>
-            <div class="hero__actions">
-              <a class="button" href="#work">View selected work <span aria-hidden="true">→</span></a>
-            </div>
-          </div>
-        </section>
-
-        <section class="hero-media" aria-labelledby="featured-project-title">
-          <figure class="hero-media__figure">
-            <img
-              src="./assets/atrium-arts-center.jpg"
+          <figure class="bh-media">
+            <img data-reveal="rise"
+              src="./assets/neue-habitat-villa.webp"
               width="1536"
               height="1024"
-              alt="Atrium Arts Center, a fictional contemporary cultural pavilion with concrete volumes, glass walls, and a burnt-orange facade"
+              alt="A white modernist villa with a cantilevered roof, a terrace railing, large black-framed windows, and a round window"
               fetchpriority="high"
             />
           </figure>
-          <div class="hero-media__caption">
-            <p class="section-label">Selected project / 01</p>
-            <strong id="featured-project-title">Atrium Arts Center</strong>
-            <dl>
-              <div><dt>Place</dt><dd>Richmond, US</dd></div>
-              <div><dt>Type</dt><dd>Cultural</dd></div>
-              <div><dt>Status</dt><dd>Concept / 2026</dd></div>
+          <div class="bh-detail">
+            <div class="bh-block" data-reveal="slide" aria-hidden="true"></div>
+            <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="1:1" data-reveal="wipe">
+              <img
+                data-alpy-image
+                src="./assets/neue-habitat-balcony.jpg"
+                width="800"
+                height="800"
+                alt="A curved white balcony with a black steel railing on a modernist facade"
+              />
+            </figure>
+          </div>
+          <div class="bh-cell bh-cell--upper" aria-hidden="true"></div>
+          <div class="bh-cell bh-cell--lower" aria-hidden="true"></div>
+          <div class="bh-lead">
+            <p data-reveal="rise">A residential design practice creating timeless, functional homes for contemporary living.</p>
+          </div>
+          <div class="bh-action">
+            <a class="alpy-button" data-reveal="rise" href="#projects" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg" data-alpy-icon-mode="right">
+              <span data-alpy-slot="Label">See projects</span>
+              <span data-alpy-slot="IconRight" data-alpy-icon-id="arrow_forward" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg>
+              </span>
+            </a>
+          </div>
+          <div class="bh-strip" data-reveal="slide" aria-hidden="true"></div>
+          <div class="bh-base" aria-hidden="true"></div>
+        </section>
+      </div>
+
+      <section class="bh-band" aria-labelledby="approach-title">
+        <div class="bh-frame">
+          <div class="bh-modules">
+            <div class="bh-span-8 bh-t-12 bh-pad--wide bh-statement-cell">
+              <h2 class="visually-hidden" id="approach-title">Approach</h2>
+              <p class="bh-statement" data-reveal="rise">A home is more than a floor plan. It is daylight, routine, and the people who live in it. We shape every room around how you live, so form and function work as one.</p>
+            </div>
+            <div class="bh-span-4 bh-t-12 bh-circle-cell">
+              <figure class="alpy-image bh-circle" data-alpy-component="image" data-alpy-variant="1:1" data-reveal="open"><img data-alpy-image src="./assets/neue-habitat-stair.jpg" width="760" height="504" alt="A white cantilevered concrete staircase against a white wall, cut to a circle" loading="lazy" /></figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bh-band" aria-labelledby="details-title">
+        <div class="bh-frame">
+          <div class="bh-modules">
+            <div class="bh-span-4 bh-t-12 bh-plane-cell bh-plane-cell--yellow" data-reveal="slide">
+              <h2 class="bh-h2" data-reveal="rise" id="details-title">Balance of form</h2>
+              <p class="bh-intro" data-reveal="rise">Proportion, light, and material decide how a room feels. We draw every detail until it does its job.</p>
+            </div>
+            <figure class="bh-span-8 bh-t-12 bh-figure">
+              <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="2:1" data-reveal="wipe"><img data-alpy-image src="./assets/neue-habitat-living.jpg" width="760" height="504" alt="A bright living room with white walls, a low sofa, and a full-height window" loading="lazy" /></figure>
+              <figcaption data-reveal="rise"><strong>Lakeside Pavilion</strong> <span>Living room with a full-height window</span></figcaption>
+            </figure>
+            <figure class="bh-span-6 bh-t-6 bh-figure">
+              <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="3:2" data-reveal="wipe"><img data-alpy-image src="./assets/neue-habitat-ribbon.jpg" width="760" height="504" alt="A white facade with a long horizontal ribbon window in a thin black frame" loading="lazy" /></figure>
+              <figcaption data-reveal="rise"><strong>Hillside House</strong> <span>Ribbon window on the upper floor</span></figcaption>
+            </figure>
+            <figure class="bh-span-6 bh-t-6 bh-figure">
+              <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="3:2" data-reveal="wipe"><img data-alpy-image src="./assets/neue-habitat-kitchen.jpg" width="760" height="504" alt="A white kitchen island with a pendant light in front of a large window" loading="lazy" /></figure>
+              <figcaption data-reveal="rise"><strong>Courtyard House</strong> <span>Kitchen island facing the garden</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="bh-band bh-band--black" id="services" aria-labelledby="services-title">
+        <div class="bh-frame">
+          <div class="bh-modules">
+            <div class="bh-span-6 bh-t-12 bh-pad">
+              <h2 class="bh-h2" data-reveal="rise" id="services-title">One team from first sketch to handover</h2>
+            </div>
+            <div class="bh-span-6 bh-t-12 bh-pad bh-stack">
+              <p class="bh-text" data-reveal="rise">You work with one point of contact who coordinates every step, from the first site visit to the day you move in.</p>
+              <p class="bh-text" data-reveal="rise">We run each project turnkey and keep design, quality, schedule, and budget in view at every stage.</p>
+            </div>
+            <div class="bh-span-3 bh-t-6 bh-service">
+              <svg data-reveal="rise" viewBox="0 0 56 56" aria-hidden="true"><circle class="bh-shape--red" cx="28" cy="28" r="28" /></svg>
+              <h3 data-reveal="rise">Design</h3>
+              <p class="bh-text" data-reveal="rise">Plans, sections, and details drawn around how you live.</p>
+            </div>
+            <div class="bh-span-3 bh-t-6 bh-service">
+              <svg data-reveal="rise" viewBox="0 0 56 56" aria-hidden="true"><rect class="bh-shape--yellow" width="56" height="56" /></svg>
+              <h3 data-reveal="rise">Build</h3>
+              <p class="bh-text" data-reveal="rise">Construction run with trusted builders, on schedule and on site.</p>
+            </div>
+            <div class="bh-span-3 bh-t-6 bh-service">
+              <svg data-reveal="rise" viewBox="0 0 56 56" aria-hidden="true"><polygon class="bh-shape--blue" points="0,56 28,0 56,56" /></svg>
+              <h3 data-reveal="rise">Renovate</h3>
+              <p class="bh-text" data-reveal="rise">Existing homes reworked for more light, more space, and less energy.</p>
+            </div>
+            <div class="bh-span-3 bh-t-6 bh-service">
+              <svg data-reveal="rise" viewBox="0 0 56 56" aria-hidden="true"><path class="bh-shape--green" d="M0 56A28 28 0 0 1 56 56Z" /></svg>
+              <h3 data-reveal="rise">Furnish</h3>
+              <p class="bh-text" data-reveal="rise">Interiors, joinery, and furniture that finish the house.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bh-band" id="studio" aria-labelledby="studio-title">
+        <div class="bh-frame">
+          <div class="bh-modules">
+            <div class="bh-span-5 bh-t-12 bh-studio-media">
+              <div class="bh-block" data-reveal="slide" aria-hidden="true"></div>
+              <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="1:1" data-reveal="wipe"><img data-alpy-image src="./assets/neue-habitat-studio.jpg" width="760" height="504" alt="A white cardboard model of a modernist house on an architect's desk with drawings and a ruler" loading="lazy" /></figure>
+            </div>
+            <div class="bh-span-7 bh-t-12 bh-pad--wide bh-stack">
+              <h2 class="bh-h2" data-reveal="rise" id="studio-title">From first idea to a home that works</h2>
+              <p class="bh-intro" data-reveal="rise">Neue Habitat brings architecture, construction, and interiors into one studio, so the technical work and the craft stay connected.</p>
+              <p class="bh-text" data-reveal="rise">Every detail carries our name: we draw it, we build it, and we stand behind it after you move in.</p>
+              <p class="bh-person" data-reveal="rise"><strong>Lena Hartmann</strong> <span>Founding architect</span></p>
+              <a class="alpy-button" data-reveal="rise" href="#contact" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg" data-alpy-icon-mode="right">
+                <span data-alpy-slot="Label">Talk to the studio</span>
+                <span data-alpy-slot="IconRight" data-alpy-icon-id="arrow_forward" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bh-band" id="projects" aria-labelledby="projects-title">
+        <div class="bh-frame">
+          <div class="bh-modules">
+            <div class="bh-span-8 bh-t-12 bh-pad bh-stack">
+              <h2 class="bh-h2" data-reveal="rise" id="projects-title">Selected projects</h2>
+              <p class="bh-intro" data-reveal="rise">Creative in concept, precise in detail.</p>
+            </div>
+            <div class="bh-span-4 bh-t-12 bh-pad bh-link-cell">
+              <a class="alpy-button" data-reveal="rise" href="#projects" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg" data-alpy-icon-mode="right">
+                <span data-alpy-slot="Label">See all projects</span>
+                <span data-alpy-slot="IconRight" data-alpy-icon-id="arrow_forward" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg>
+                </span>
+              </a>
+            </div>
+            <div class="bh-span-12 bh-cards">
+            <article class="alpy-card" data-reveal="rise" data-alpy-component="card" data-alpy-component-id="component.card" data-alpy-variant="default.noCta.top">
+              <div class="alpy-card-image" data-alpy-slot="image">
+                <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="16:9">
+                  <img data-alpy-image src="./assets/neue-habitat-hillside.jpg" width="760" height="504" alt="A white house with stacked flat-roof volumes on a grassy hillside" loading="lazy" />
+                </figure>
+              </div>
+              <div class="alpy-card-content" data-alpy-slot="content">
+                <header class="alpy-card-header" data-alpy-slot="header">
+                  <span class="alpy-card-title-row"><h3 data-alpy-slot="title">Hillside House</h3></span>
+                </header>
+                <div class="alpy-card-body"><p data-alpy-slot="description">Zurich · 2025 · New build</p></div>
+              </div>
+            </article>
+            <article class="alpy-card" data-reveal="rise" data-alpy-component="card" data-alpy-component-id="component.card" data-alpy-variant="default.noCta.top">
+              <div class="alpy-card-image" data-alpy-slot="image">
+                <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="16:9">
+                  <img data-alpy-image src="./assets/neue-habitat-courtyard.jpg" width="760" height="504" alt="A white courtyard house with a long rectangular pool and a cantilevered roof" loading="lazy" />
+                </figure>
+              </div>
+              <div class="alpy-card-content" data-alpy-slot="content">
+                <header class="alpy-card-header" data-alpy-slot="header">
+                  <span class="alpy-card-title-row"><h3 data-alpy-slot="title">Courtyard House</h3></span>
+                </header>
+                <div class="alpy-card-body"><p data-alpy-slot="description">Basel · 2024 · New build</p></div>
+              </div>
+            </article>
+            <article class="alpy-card" data-reveal="rise" data-alpy-component="card" data-alpy-component-id="component.card" data-alpy-variant="default.noCta.top">
+              <div class="alpy-card-image" data-alpy-slot="image">
+                <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="16:9">
+                  <img data-alpy-image src="./assets/neue-habitat-lakeside.jpg" width="760" height="504" alt="A white single-storey pavilion with floor-to-ceiling glass beside a lake" loading="lazy" />
+                </figure>
+              </div>
+              <div class="alpy-card-content" data-alpy-slot="content">
+                <header class="alpy-card-header" data-alpy-slot="header">
+                  <span class="alpy-card-title-row"><h3 data-alpy-slot="title">Lakeside Pavilion</h3></span>
+                </header>
+                <div class="alpy-card-body"><p data-alpy-slot="description">Lucerne · 2023 · Renovation</p></div>
+              </div>
+            </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bh-band" id="journal" aria-labelledby="journal-title">
+        <div class="bh-frame">
+          <div class="bh-modules">
+            <div class="bh-span-4 bh-t-12 bh-pad bh-stack">
+              <h2 class="bh-h2" data-reveal="rise" id="journal-title">Journal</h2>
+              <p class="bh-intro" data-reveal="rise">Notes on light, material, and how homes are made.</p>
+            </div>
+            <ul class="bh-span-8 bh-t-12 bh-articles">
+              <li data-reveal="rise">
+                <a href="#journal">
+                  <time datetime="2026-10-14">14 October 2026</time>
+                  <strong>Why flat roofs work in a wet climate</strong>
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg>
+                </a>
+              </li>
+              <li data-reveal="rise">
+                <a href="#journal">
+                  <time datetime="2026-09-02">2 September 2026</time>
+                  <strong>Designing a kitchen around daylight</strong>
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg>
+                </a>
+              </li>
+              <li data-reveal="rise">
+                <a href="#journal">
+                  <time datetime="2026-07-21">21 July 2026</time>
+                  <strong>What a turnkey project really includes</strong>
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="bh-band" id="contact" aria-labelledby="contact-title">
+        <div class="bh-frame">
+          <div class="bh-modules">
+            <div class="bh-span-7 bh-t-12 bh-contact-plane" data-reveal="slide">
+              <h2 class="bh-display" data-reveal="rise" id="contact-title">Planning a new home?</h2>
+              <p class="bh-intro" data-reveal="rise">Tell us about your site, your plans, and your timeline. We reply within two working days.</p>
+              <a class="alpy-button" data-reveal="rise" href="mailto:studio@neue-habitat.example" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg" data-alpy-icon-mode="right">
+                <span data-alpy-slot="Label">Book a consultation</span>
+                <span data-alpy-slot="IconRight" data-alpy-icon-id="arrow_forward" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg>
+                </span>
+              </a>
+            </div>
+            <dl class="bh-span-5 bh-t-12 bh-details" data-reveal="rise">
+              <div><dt>Studio</dt><dd>Lindenstrasse 12, 8008 Zurich</dd></div>
+              <div><dt>Phone</dt><dd>+41 44 555 01 20</dd></div>
+              <div><dt>Email</dt><dd>studio@neue-habitat.example</dd></div>
             </dl>
           </div>
-        </section>
-
-        <section class="statement" aria-labelledby="statement-title">
-          <div class="statement__label">
-            <p class="section-label">Position / 00</p>
-          </div>
-          <div class="statement__copy" data-reveal>
-            <p id="statement-title">
-              Buildings become useful when their structure is clear, their edges are generous, and
-              <em>people can make them their own.</em>
-            </p>
-          </div>
-        </section>
-
-        <section class="work" id="work" aria-labelledby="work-title">
-          <div class="section-heading" data-reveal>
-            <p class="section-label">Selected work / 01—03</p>
-            <h2 id="work-title">Three ways to belong.</h2>
-          </div>
-
-          <div class="work-controls" aria-label="Filter selected work">
-            <button type="button" data-filter="all" aria-pressed="true">All work</button>
-            <button type="button" data-filter="cultural" aria-pressed="false">Cultural</button>
-            <button type="button" data-filter="residential" aria-pressed="false">Residential</button>
-            <button type="button" data-filter="civic" aria-pressed="false">Civic</button>
-            <span class="filter-status" aria-live="polite">Showing 3 projects</span>
-          </div>
-
-          <div class="projects">
-            <article class="project" data-category="cultural" data-reveal>
-              <figure class="project__image">
-                <img
-                  src="./assets/atrium-arts-center.jpg"
-                  width="1536"
-                  height="1024"
-                  alt="Wide view of the fictional Atrium Arts Center and its shaded colonnade"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div class="project__info">
-                <p class="project__index">01 / Cultural</p>
-                <h3>Atrium Arts Center</h3>
-                <p class="project__summary">
-                  A civic room built around a shaded edge: galleries, workshops, and a public court
-                  meet beneath one legible structural frame.
-                </p>
-                <p class="project__meta"><span>Richmond, US</span><span>Concept / 2026</span></p>
-              </div>
-            </article>
-
-            <article class="project project--reverse" data-category="residential" data-reveal>
-              <figure class="project__image">
-                <img
-                  src="./assets/tidal-house.jpg"
-                  width="1536"
-                  height="1024"
-                  alt="Fictional low coastal residence organized around a sheltered planted courtyard"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div class="project__info">
-                <p class="project__index">02 / Residential</p>
-                <h3>Tidal House</h3>
-                <p class="project__summary">
-                  A compact home divided into low volumes so daily life can move between shelter,
-                  wind, courtyard, and horizon.
-                </p>
-                <p class="project__meta"><span>Montauk, US</span><span>Concept / 2025</span></p>
-              </div>
-            </article>
-
-            <article class="project project--compact" data-category="civic" data-reveal>
-              <figure class="project__image">
-                <img
-                  src="./assets/commons-library.jpg"
-                  width="1536"
-                  height="1024"
-                  alt="Fictional public library reading hall with repeated concrete bays, timber shelving, and skylights"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div class="project__info">
-                <p class="project__index">03 / Civic</p>
-                <h3>Commons Library</h3>
-                <p class="project__summary">
-                  A daylit reading hall where the structural rhythm gives every table, window seat,
-                  and shelf a clear place.
-                </p>
-                <p class="project__meta"><span>Queens, US</span><span>Concept / 2024</span></p>
-              </div>
-            </article>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <section class="method" id="method" aria-labelledby="method-title">
-      <div class="shell">
-        <div class="section-heading" data-reveal>
-          <p class="section-label">How we work / 04 moves</p>
-          <h2 id="method-title"><span>From question to</span><span>common ground.</span></h2>
-        </div>
-        <div class="process">
-          <article data-reveal>
-            <p class="process__index">01 / Listen</p>
-            <h3>Find the real brief.</h3>
-            <p>We begin with people, use, climate, budget, and the daily patterns a project must hold.</p>
-          </article>
-          <article data-reveal>
-            <p class="process__index">02 / Order</p>
-            <h3>Make the system visible.</h3>
-            <p>Structure, circulation, light, and material are developed as one clear construction.</p>
-          </article>
-          <article data-reveal>
-            <p class="process__index">03 / Test</p>
-            <h3>Work at every scale.</h3>
-            <p>Models and prototypes test the distance between the urban idea and the handrail.</p>
-          </article>
-          <article data-reveal>
-            <p class="process__index">04 / Build</p>
-            <h3>Carry intent to site.</h3>
-            <p>We stay close to fabrication and construction so the finished place keeps its logic.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <div class="shell">
-      <section class="practice" aria-labelledby="practice-title">
-        <div class="section-heading" data-reveal>
-          <p class="section-label">Practice / What we do</p>
-          <h2 id="practice-title">One practice, three fields.</h2>
-        </div>
-        <div class="practice-grid">
-          <article data-reveal>
-            <h3>Architecture</h3>
-            <p>Buildings and interiors shaped from use, structure, climate, and material economy.</p>
-          </article>
-          <article data-reveal>
-            <h3>Public space</h3>
-            <p>Shared landscapes and civic rooms that support informal meeting and everyday access.</p>
-          </article>
-          <article data-reveal>
-            <h3>Adaptive reuse</h3>
-            <p>Careful transformations that keep what works, reveal what matters, and add only what is needed.</p>
-          </article>
         </div>
       </section>
+    </main>
 
-      <section class="studio" id="studio" aria-labelledby="studio-title">
-        <div class="studio__title">
-          <p class="section-label">Studio / Since 2013</p>
-          <h2 id="studio-title">A collective way of making.</h2>
-        </div>
-        <div class="studio__content" data-reveal>
-          <p>
-            Bauhaus Architecture is a fictional practice working between buildings, interiors, and the
-            public realm. Our teams are small by design and connected from first sketch to site.
-          </p>
-          <dl class="studio__facts">
-            <div><dt>Studios</dt><dd>New York<br />Copenhagen</dd></div>
-            <div><dt>Scale</dt><dd>Object<br />to district</dd></div>
-            <div><dt>Focus</dt><dd>Civic<br />everyday life</dd></div>
-          </dl>
-          <a class="text-link" href="#contact">Start a conversation <span aria-hidden="true">→</span></a>
-        </div>
-      </section>
-    </div>
-
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="contact__message shell" style="grid-column: 1 / -1; display: grid; grid-template-columns: 8fr 4fr; padding-block: 0;">
-        <div class="contact__message" style="grid-column: 1;">
-          <p class="section-label">New projects / Collaborations / Research</p>
-          <h2 id="contact-title">What space do you want to make possible?</h2>
-          <a class="button button--light" href="mailto:hello@spancommon.example">
-            Tell us about it <span aria-hidden="true">→</span>
-          </a>
-        </div>
-        <div class="contact__details" style="grid-column: 2;">
-          <p>For new commissions and collaborations, write to:</p>
-          <a class="text-link" href="mailto:hello@spancommon.example">
-            hello@spancommon.example <span aria-hidden="true">→</span>
-          </a>
-          <p>We read every inquiry and respond with the right next conversation for the project.</p>
-        </div>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="shell">
-        <div class="footer-grid">
-          <a class="footer-brand" href="#top">Bauhaus Architecture</a>
-          <div class="footer-group">
-            <p class="footer-label">New York</p>
-            <address>120 Walker Street<br />New York, NY 10013</address>
+    <footer class="bh-band bh-band--raised">
+      <div class="bh-frame">
+        <div class="bh-modules">
+          <div class="bh-span-6 bh-t-12 bh-footer-cell">
+            <svg class="bh-logo bh-logo--inverse" viewBox="0 0 184 40" role="img" aria-label="Neue Habitat">
+              <rect x="0" y="4" width="40" height="7" />
+              <rect x="15" y="11" width="25" height="29" />
+              <circle class="bh-logo__window" cx="27.5" cy="24" r="6" />
+              <rect class="bh-logo__ground" x="0" y="29" width="11" height="11" />
+              <text x="52" y="27">NEUE HABITAT</text>
+            </svg>
+            <p>A residential design practice creating timeless, functional homes for contemporary living.</p>
           </div>
-          <div class="footer-group">
-            <p class="footer-label">Copenhagen</p>
-            <address>42 Havnegade<br />1058 Copenhagen K</address>
+          <nav class="bh-span-3 bh-t-6 bh-footer-cell" aria-label="Footer navigation">
+            <ul class="bh-footer-links">
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#studio">Studio</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#journal">Journal</a></li>
+            </ul>
+          </nav>
+          <div class="bh-span-3 bh-t-6 bh-footer-cell">
+            <ul class="bh-footer-links">
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="mailto:studio@neue-habitat.example">Email</a></li>
+            </ul>
           </div>
-          <div class="footer-group">
-            <p class="footer-label">Navigate</p>
-            <a href="#work">Work</a>
-            <a href="#method">Method</a>
-            <a href="#studio">Studio</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <span>Fictional studio concept</span>
-          <span>© <span id="year">2026</span> Bauhaus Architecture</span>
+          <p class="bh-span-12 bh-footer-legal">© <span id="year">2026</span> Neue Habitat. A fictional practice; all projects shown are illustrations.</p>
         </div>
       </div>
     </footer>
 
     <script>
       (() => {
-        const menuButton = document.querySelector(".menu-toggle");
-        const menu = document.querySelector(".site-nav");
-        const menuLabel = document.querySelector(".menu-toggle__label");
-        const navLinks = [...document.querySelectorAll(".site-nav__links a")];
-        const filterButtons = [...document.querySelectorAll("[data-filter]")];
-        const projects = [...document.querySelectorAll(".project[data-category]")];
-        const filterStatus = document.querySelector(".filter-status");
-        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const menuButton = document.querySelector(".bh-menu");
+        const menu = document.querySelector(".bh-nav");
+        const navLinks = [...document.querySelectorAll(".bh-nav a")];
 
         const closeMenu = () => {
           menuButton.setAttribute("aria-expanded", "false");
-          menuLabel.textContent = "Menu";
+          menuButton.setAttribute("aria-label", "Menu");
           menu.classList.remove("is-open");
           document.body.classList.remove("menu-open");
         };
@@ -1560,7 +1887,7 @@
         menuButton.addEventListener("click", () => {
           const willOpen = menuButton.getAttribute("aria-expanded") !== "true";
           menuButton.setAttribute("aria-expanded", String(willOpen));
-          menuLabel.textContent = willOpen ? "Close" : "Menu";
+          menuButton.setAttribute("aria-label", willOpen ? "Close menu" : "Menu");
           menu.classList.toggle("is-open", willOpen);
           document.body.classList.toggle("menu-open", willOpen);
         });
@@ -1568,45 +1895,12 @@
         navLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
         window.addEventListener("resize", () => {
-          if (window.innerWidth > 1050) closeMenu();
+          if (window.innerWidth > 767) closeMenu();
         });
-
-        filterButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const filter = button.dataset.filter;
-            let visibleCount = 0;
-
-            filterButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
-            projects.forEach((project) => {
-              const isVisible = filter === "all" || project.dataset.category === filter;
-              project.hidden = !isVisible;
-              if (isVisible) visibleCount += 1;
-            });
-
-            filterStatus.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? "project" : "projects"}`;
-          });
-        });
-
-        const revealItems = [...document.querySelectorAll("[data-reveal]")];
-        if (reduceMotion || !("IntersectionObserver" in window)) {
-          revealItems.forEach((item) => item.classList.add("is-visible"));
-        } else {
-          const revealObserver = new IntersectionObserver(
-            (entries, observer) => {
-              entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target);
-              });
-            },
-            { threshold: 0.12 }
-          );
-          revealItems.forEach((item) => revealObserver.observe(item));
-        }
 
         if ("IntersectionObserver" in window) {
-          const sections = ["work", "method", "studio", "contact"]
-            .map((id) => document.getElementById(id))
+          const sections = navLinks
+            .map((link) => document.getElementById(link.hash.slice(1)))
             .filter(Boolean);
           const navObserver = new IntersectionObserver(
             (entries) => {
@@ -1623,6 +1917,35 @@
             { rootMargin: "-20% 0px -65%", threshold: [0.05, 0.25] }
           );
           sections.forEach((section) => navObserver.observe(section));
+        }
+
+        if (document.documentElement.classList.contains("has-reveal")) {
+          const revealItems = [...document.querySelectorAll("[data-reveal]")];
+          revealItems.forEach((item) => {
+            const group = item.closest(".bh-cards, .bh-articles, .bh-service, .bh-hero, .bh-modules");
+            const peers = [...group.querySelectorAll("[data-reveal]")];
+            item.style.setProperty("--reveal-order", String(Math.min(peers.indexOf(item), 6)));
+          });
+          // A clipped item has no visible area until it plays, so its parent decides when it enters
+          const clipped = '[data-reveal="slide"], [data-reveal="wipe"], [data-reveal="open"]';
+          const triggers = new Map();
+          revealItems.forEach((item) => {
+            const clippedAncestor = item.closest(clipped);
+            const trigger = clippedAncestor ? clippedAncestor.parentElement : item;
+            if (!triggers.has(trigger)) triggers.set(trigger, []);
+            triggers.get(trigger).push(item);
+          });
+          const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                triggers.get(entry.target).forEach((item) => item.classList.add("is-visible"));
+                observer.unobserve(entry.target);
+              });
+            },
+            { threshold: 0.15 }
+          );
+          triggers.forEach((items, trigger) => revealObserver.observe(trigger));
         }
 
         document.getElementById("year").textContent = String(new Date().getFullYear());

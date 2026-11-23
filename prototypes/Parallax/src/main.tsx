@@ -1,5 +1,7 @@
 import { createRoot } from "react-dom/client";
 
+import "@alpy/alpy-ds/product.css";
+import "./standalone.css";
 import { HeroPlaygroundPage } from "./HeroPlaygroundPage";
 
 const root = document.getElementById("root");

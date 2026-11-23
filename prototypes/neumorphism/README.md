@@ -1,6 +1,6 @@
 # Neumorphism
 
-Focus and audio website prototype.
+Smart thermostat website prototype.
 
 [Live preview](https://alpymcp.com/websites/neumorphism/index.html) · [Alpy guidance](https://alpymcp.com/ai-taste#ai-taste-website-design) · [Starter prompt](../../prompts/styles/neumorphism.md)
 

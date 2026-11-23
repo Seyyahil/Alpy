@@ -3,7 +3,7 @@
 https://github.com/user-attachments/assets/6e7765aa-0c62-4097-b63e-058951fc2829
 
 Connect Alpy MCP and put a creative director behind every AI build.<br>
-You get a complete design system and 37 design skills for consistent and intentional UI and UX designs.
+You get a complete design system and 34 design skills for consistent and intentional UI and UX designs.
 
 Alpy MCP brings your Alpy Library’s components, tokens, design skills, and web design styles into Claude, Codex, Cursor, Gemini, and Figma. Your AI works with your connected Library while you choose the direction and review the result.
 
@@ -179,34 +179,22 @@ Turn an idea or existing site into a responsive website around your audience, co
 <a href="https://alpymcp.com/websites/flat-design/index.html">Open prototype</a> · <a href="prompts/styles/flat-design.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
-<a href="https://alpymcp.com/websites/Grunge/index.html"><img src="assets/grunge-punk.webp" alt="Grunge / Punk website preview" width="100%"></a><br>
-<strong>Grunge / Punk</strong><br>
+<a href="https://alpymcp.com/websites/Grunge/index.html"><img src="assets/grunge-punk.webp" alt="Grunge website preview" width="100%"></a><br>
+<strong>Grunge</strong><br>
 <a href="https://alpymcp.com/websites/Grunge/index.html">Open prototype</a> · <a href="prompts/styles/grunge.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
-<img src="assets/prototype-in-progress.svg" alt="Luxury prototype in progress" width="100%"><br>
-<strong>Luxury</strong><br>
-<a href="prompts/styles/luxury.md">Prompt</a>
-</td>
-</tr>
-<tr>
-<td width="33%" valign="top">
-<a href="https://alpymcp.com/websites/Modern-dark/index.html"><img src="assets/modern-dark.webp" alt="Modern Dark website preview" width="100%"></a><br>
-<strong>Modern Dark</strong><br>
-<a href="https://alpymcp.com/websites/Modern-dark/index.html">Open prototype</a> · <a href="prompts/styles/modern-dark.md">Prompt</a>
-</td>
-<td width="33%" valign="top">
-<img src="assets/prototype-in-progress.svg" alt="Monochrome prototype in progress" width="100%"><br>
+<a href="https://alpymcp.com/websites/monochrome/index.html"><img src="assets/monochrome.webp" alt="Monochrome website preview" width="100%"></a><br>
 <strong>Monochrome</strong><br>
-<a href="prompts/styles/monochrome.md">Prompt</a>
-</td>
-<td width="33%" valign="top">
-<img src="assets/prototype-in-progress.svg" alt="Neo Brutalism prototype in progress" width="100%"><br>
-<strong>Neo Brutalism</strong><br>
-<a href="prompts/styles/neo-brutalism.md">Prompt</a>
+<a href="https://alpymcp.com/websites/monochrome/index.html">Open prototype</a> · <a href="prompts/styles/monochrome.md">Prompt</a>
 </td>
 </tr>
 <tr>
+<td width="33%" valign="top">
+<a href="https://alpymcp.com/websites/neo-brutalism/index.html"><img src="assets/neo-brutalism.webp" alt="Neo Brutalism website preview" width="100%"></a><br>
+<strong>Neo Brutalism</strong><br>
+<a href="https://alpymcp.com/websites/neo-brutalism/index.html">Open prototype</a> · <a href="prompts/styles/neo-brutalism.md">Prompt</a>
+</td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/neumorphism/index.html"><img src="assets/neumorphism.webp" alt="Neumorphism website preview" width="100%"></a><br>
 <strong>Neumorphism</strong><br>
@@ -217,22 +205,17 @@ Turn an idea or existing site into a responsive website around your audience, co
 <strong>Parallax</strong><br>
 <a href="https://alpymcp.com/websites/Parallax/index.html">Open prototype</a> · <a href="prompts/styles/parallax.md">Prompt</a>
 </td>
+</tr>
+<tr>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/Playful-geometric/index.html"><img src="assets/playful-geometric.webp" alt="Playful Geometric website preview" width="100%"></a><br>
 <strong>Playful Geometric</strong><br>
 <a href="https://alpymcp.com/websites/Playful-geometric/index.html">Open prototype</a> · <a href="prompts/styles/playful-geometric.md">Prompt</a>
 </td>
-</tr>
-<tr>
 <td width="33%" valign="top">
-<img src="assets/prototype-in-progress.svg" alt="Retro prototype in progress" width="100%"><br>
-<strong>Retro</strong><br>
-<a href="prompts/styles/retro.md">Prompt</a>
-</td>
-<td width="33%" valign="top">
-<img src="assets/prototype-in-progress.svg" alt="Sketch prototype in progress" width="100%"><br>
-<strong>Sketch</strong><br>
-<a href="prompts/styles/sketch.md">Prompt</a>
+<a href="https://alpymcp.com/websites/saas-dark/index.html"><img src="assets/saas-dark.webp" alt="SaaS Dark website preview" width="100%"></a><br>
+<strong>SaaS Dark</strong><br>
+<a href="https://alpymcp.com/websites/saas-dark/index.html">Open prototype</a> · <a href="prompts/styles/saas-dark.md">Prompt</a>
 </td>
 <td width="33%" valign="top">
 <a href="https://alpymcp.com/websites/swiss/index.html"><img src="assets/swiss.webp" alt="Swiss website preview" width="100%"></a><br>
@@ -242,15 +225,11 @@ Turn an idea or existing site into a responsive website around your audience, co
 </tr>
 <tr>
 <td width="33%" valign="top">
-<img src="assets/prototype-in-progress.svg" alt="Terminal prototype in progress" width="100%"><br>
+<a href="https://alpymcp.com/websites/terminal/index.html"><img src="assets/terminal.webp" alt="Terminal website preview" width="100%"></a><br>
 <strong>Terminal</strong><br>
-<a href="prompts/styles/terminal.md">Prompt</a>
+<a href="https://alpymcp.com/websites/terminal/index.html">Open prototype</a> · <a href="prompts/styles/terminal.md">Prompt</a>
 </td>
-<td width="33%" valign="top">
-<img src="assets/prototype-in-progress.svg" alt="Vaporwave prototype in progress" width="100%"><br>
-<strong>Vaporwave</strong><br>
-<a href="prompts/styles/vaporwave.md">Prompt</a>
-</td>
+<td width="33%"></td>
 <td width="33%"></td>
 </tr>
 </table>

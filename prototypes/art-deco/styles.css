@@ -1,5 +1,6 @@
 :root {
   color-scheme: dark;
+  --hotel-display-family: "Limelight", var(--alpy-ui-font-heading-xxlarge-fontFamily);
   --hotel-canvas: var(--alpy-ui-color-surface-canvas);
   --hotel-panel: var(--hotel-canvas);
   --hotel-panel-soft: var(--alpy-ui-color-border-neutral-subtle-three);
@@ -179,9 +180,9 @@ a {
 }
 
 .wordmark__name {
-  font-family: var(--alpy-ui-font-heading-small-fontFamily);
+  font-family: var(--hotel-display-family);
   font-size: var(--alpy-ui-font-heading-small-fontSize);
-  font-weight: var(--alpy-ui-font-weight-bold);
+  font-weight: var(--alpy-ui-font-weight-regular);
   letter-spacing: var(--alpy-ui-font-heading-small-letterSpacing);
   line-height: var(--alpy-ui-font-heading-small-lineHeight);
   white-space: nowrap;
@@ -333,9 +334,9 @@ h3 {
 }
 
 h1 {
-  font-family: var(--alpy-ui-font-heading-xxlarge-fontFamily);
+  font-family: var(--hotel-display-family);
   font-size: var(--alpy-ui-font-heading-xxlarge-fontSize);
-  font-weight: var(--alpy-ui-font-weight-extraBold);
+  font-weight: var(--alpy-ui-font-weight-regular);
   letter-spacing: var(--alpy-ui-font-heading-xxlarge-letterSpacing);
   line-height: var(--alpy-ui-font-heading-xxlarge-lineHeight);
   margin-bottom: var(--alpy-ui-space-24);
@@ -343,9 +344,9 @@ h1 {
 }
 
 h2 {
-  font-family: var(--alpy-ui-font-heading-xlarge-fontFamily);
+  font-family: var(--hotel-display-family);
   font-size: var(--alpy-ui-font-heading-xlarge-fontSize);
-  font-weight: var(--alpy-ui-font-weight-bold);
+  font-weight: var(--alpy-ui-font-weight-regular);
   letter-spacing: var(--alpy-ui-font-heading-xlarge-letterSpacing);
   line-height: var(--alpy-ui-font-heading-xlarge-lineHeight);
   margin-bottom: var(--alpy-ui-space-24);

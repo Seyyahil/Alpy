@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-alpy-mode="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,19 +18,22 @@
         document.documentElement.dataset.embed = "workflow";
       }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="hero" id="top">
       <img
         class="hero__image hero__image--default"
-        src="./assets/hero-patagonia.jpg"
-        alt="A traveler overlooking a glacial river valley in Patagonia"
+        src="./assets/hero-fjord.jpg"
+        alt="A small wooden boat crossing a still Norwegian fjord between green cliffs"
       />
       <img
         class="hero__image hero__image--reviewed"
-        src="./assets/hero-santorini-reviewed.jpg"
-        alt="A woman overlooking the Santorini caldera at sunset"
+        src="./assets/hero-fjord.jpg"
+        alt="A small wooden boat crossing a still Norwegian fjord between green cliffs"
       />
       <div class="hero__shade"></div>
       <nav class="site-nav grid" aria-label="Primary navigation">
@@ -38,57 +41,88 @@
           <span class="brand__mark" aria-hidden="true">D</span>
           <span>Drift North</span>
         </a>
-        <div class="site-nav__links">
+        <div class="site-nav__links" id="primary-menu">
           <a href="#journeys">Journeys</a>
           <a href="#story">Our approach</a>
           <a href="#stories">Stories</a>
           <a href="#footer">Contact</a>
         </div>
         <a class="button button--glass" href="#journeys">Plan a journey</a>
+        <button class="site-nav__menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z" /></svg>
+        </button>
       </nav>
 
       <div class="hero__copy">
-        <p class="eyebrow">Small groups. Remarkable places.</p>
-        <h1>Go farther.<br />Travel slower.</h1>
+        <h1>Go farther. Travel slower.</h1>
         <p>
-          Thoughtful routes through landscapes that reward your attention.
+          Thoughtful routes through landscapes that reward&nbsp;your&nbsp;attention.
         </p>
         <a class="button button--light" href="#journeys">Explore journeys</a>
       </div>
 
-      <form class="route-search" aria-label="Find a journey">
-        <div class="route-search__tabs" role="tablist" aria-label="Journey type">
-          <button class="is-active" type="button" role="tab" aria-selected="true">
-            <span aria-hidden="true">⌁</span> Guided routes
-          </button>
-          <button type="button" role="tab" aria-selected="false">
-            <span aria-hidden="true">⌂</span> Cabin stays
-          </button>
-          <button type="button" role="tab" aria-selected="false">
-            <span aria-hidden="true">◌</span> Coastal passages
-          </button>
-          <button type="button" role="tab" aria-selected="false">
-            <span aria-hidden="true">✦</span> Winter light
-          </button>
+      <form class="route-search" role="search" aria-label="Find a journey">
+        <!-- Tab icons: Material Symbols Outlined (hiking, cabin, waves, ac_unit), Apache License 2.0 -->
+        <div class="route-search__tabs" role="group" aria-label="Journey type">
+          <button class="is-active" type="button" aria-pressed="true"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="m280-40 123-622q6-29 27-43.5t44-14.5q23 0 42.5 10t31.5 30l40 64q18 29 46.5 52.5T700-529v-71h60v560h-60v-406q-48-11-89-35t-71-59l-24 120 84 80v300h-80v-240l-84-80-72 320h-84Zm17-395-85-16q-16-3-25-16.5t-6-30.5l30-157q6-32 34-50.5t60-12.5l46 9-54 274Zm186.5-328.5Q460-787 460-820t23.5-56.5Q507-900 540-900t56.5 23.5Q620-853 620-820t-23.5 56.5Q573-740 540-740t-56.5-23.5Z" /></svg>Guided routes</button>
+          <button type="button" aria-pressed="false"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M240-200h480v-80H240v80Zm0-160h480v-80H240v80Zm0-160h480v-36l-58-44H298l-58 44v36Zm162-160h156l-78-59-78 59ZM160-120v-375l-72 55-48-64 120-92v-124h80v63l240-183 440 336-48 63-72-54v375H160Zm0-640q0-50 35-85t85-35q17 0 28.5-11.5T320-920h80q0 50-35 85t-85 35q-17 0-28.5 11.5T240-760h-80Z" /></svg>Cabin stays</button>
+          <button type="button" aria-pressed="false"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M80-146v-78q29 0 49.5-9t41.5-19.5q21-10.5 46.5-19t63-8.5q37.5 0 62 8.5t45.5 19q21 10.5 42 19.5t50 9q29 0 50-9t42-19.5q21-10.5 46-19t62.5-8.5q37.5 0 62.5 8.5t46 19q21 10.5 42 19.5t49 9v78q-38 0-63.5-9T770-174.5q-21-10.5-41-19t-49-8.5q-28 0-48.5 8.5t-41 19Q570-164 544.5-155t-64.5 9q-39 0-64.5-9t-46-19.5Q349-185 329-193.5t-48.5-8.5q-28.5 0-49 8.5t-41.5 19Q169-164 143.5-155T80-146Zm0-178v-78q29 0 49.5-9t41.5-19.5q21-10.5 46.5-19t63-8.5q37.5 0 62 8.5t45.5 19q21 10.5 42 19.5t50 9q29 0 50-9t42-19.5q21-10.5 46-19t62-8.5q38 0 63 8.5t46 19q21 10.5 42 19.5t49 9v78q-38 0-63.5-9T770-352.5q-21-10.5-41-19t-49-8.5q-29 0-49.5 8.5t-41 19Q569-342 544-333t-64 9q-39 0-64.5-9t-46-19.5Q349-363 329-371.5t-48.5-8.5q-28.5 0-49 8.5t-41.5 19Q169-342 143.5-333T80-324Zm0-178v-78q29 0 49.5-9t41.5-19.5q21-10.5 46.5-19t63-8.5q37.5 0 62 8.5t45.5 19q21 10.5 42 19.5t50 9q29 0 50-9t42-19.5q21-10.5 46-19t62-8.5q38 0 63 8.5t46 19q21 10.5 42 19.5t49 9v78q-38 0-63.5-9T770-530.5q-21-10.5-41-19t-49-8.5q-28 0-48.5 8.5t-41 19Q570-520 544.5-511t-64.5 9q-39 0-64.5-9t-46-19.5Q349-541 329-549.5t-48.5-8.5q-28.5 0-49 8.5t-41.5 19Q169-520 143.5-511T80-502Zm0-178v-78q29 0 49.5-9t41.5-19.5q21-10.5 46.5-19t63-8.5q37.5 0 62 8.5t45.5 19q21 10.5 42 19.5t50 9q29 0 50-9t42-19.5q21-10.5 46-19t62-8.5q38 0 63 8.5t46 19q21 10.5 42 19.5t49 9v78q-38 0-63.5-9T770-708.5q-21-10.5-41-19t-49-8.5q-28 0-48.5 8.5t-41 19Q570-698 544.5-689t-64.5 9q-39 0-64.5-9t-46-19.5Q349-719 329-727.5t-48.5-8.5q-28.5 0-49 8.5t-41.5 19Q169-698 143.5-689T80-680Z" /></svg>Coastal passages</button>
+          <button type="button" aria-pressed="false"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M440-80v-166L310-118l-56-56 186-186v-80h-80L174-254l-56-56 128-130H80v-80h166L118-650l56-56 186 186h80v-80L254-786l56-56 130 128v-166h80v166l130-128 56 56-186 186v80h80l186-186 56 56-128 130h166v80H714l128 130-56 56-186-186h-80v80l186 186-56 56-130-128v166h-80Z" /></svg>Winter light</button>
         </div>
         <div class="route-search__fields">
           <label>
             <span>Region</span>
-            <span class="field"><i aria-hidden="true">⌖</i> Patagonia</span>
+            <span class="field">
+              <select name="region">
+                <option>Patagonia</option>
+                <option>Faroe Islands</option>
+                <option>Namibia</option>
+                <option>Japanese Alps</option>
+              </select>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8.0001L3.775 6.2251L12 14.4501L20.225 6.2251L22 8.0001L12 18.0001L2 8.0001Z" /></svg>
+            </span>
           </label>
           <label>
             <span>Season</span>
-            <span class="field"><i aria-hidden="true">□</i> October</span>
+            <span class="field">
+              <select name="season">
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+                <option>January</option>
+              </select>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8.0001L3.775 6.2251L12 14.4501L20.225 6.2251L22 8.0001L12 18.0001L2 8.0001Z" /></svg>
+            </span>
           </label>
           <label>
             <span>Duration</span>
-            <span class="field"><i aria-hidden="true">◷</i> 8–12 days</span>
+            <span class="field">
+              <select name="duration">
+                <option>8–12 days</option>
+                <option>5–7 days</option>
+                <option>13 days or more</option>
+              </select>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8.0001L3.775 6.2251L12 14.4501L20.225 6.2251L22 8.0001L12 18.0001L2 8.0001Z" /></svg>
+            </span>
           </label>
           <label>
             <span>Travelers</span>
-            <span class="field"><i aria-hidden="true">♙</i> 2 people</span>
+            <span class="field">
+              <select name="travelers">
+                <option>1 person</option>
+                <option selected>2 people</option>
+                <option>3 people</option>
+                <option>4 people</option>
+                <option>5 people</option>
+                <option>6 people</option>
+              </select>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8.0001L3.775 6.2251L12 14.4501L20.225 6.2251L22 8.0001L12 18.0001L2 8.0001Z" /></svg>
+            </span>
           </label>
-          <button class="button button--accent" type="submit">Search routes</button>
+          <button class="button button--accent" type="submit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4444 22L13.4444 15C12.8889 15.4444 12.25 15.7963 11.5278 16.0556C10.8056 16.3148 10.037 16.4444 9.22222 16.4444C7.2037 16.4444 5.49537 15.7454 4.09722 14.3472C2.69907 12.9491 2 11.2407 2 9.22222C2 7.2037 2.69907 5.49537 4.09722 4.09722C5.49537 2.69907 7.2037 2 9.22222 2C11.2407 2 12.9491 2.69907 14.3472 4.09722C15.7454 5.49537 16.4444 7.2037 16.4444 9.22222C16.4444 10.037 16.3148 10.8056 16.0556 11.5278C15.7963 12.25 15.4444 12.8889 15 13.4444L22 20.4444L20.4444 22ZM9.22222 14.2222C10.6111 14.2222 11.7917 13.7361 12.7639 12.7639C13.7361 11.7917 14.2222 10.6111 14.2222 9.22222C14.2222 7.83333 13.7361 6.65278 12.7639 5.68056C11.7917 4.70833 10.6111 4.22222 9.22222 4.22222C7.83333 4.22222 6.65278 4.70833 5.68056 5.68056C4.70833 6.65278 4.22222 7.83333 4.22222 9.22222C4.22222 10.6111 4.70833 11.7917 5.68056 12.7639C6.65278 13.7361 7.83333 14.2222 9.22222 14.2222Z" /></svg>
+            Search routes
+          </button>
         </div>
       </form>
     </header>
@@ -97,12 +131,11 @@
       <section class="journeys section grid" id="journeys">
         <div class="section-heading section-heading--split">
           <div>
-            <p class="eyebrow eyebrow--accent">Journeys worth the distance</p>
             <h2>Routes made for looking closer.</h2>
           </div>
           <p>
             Each small-group departure balances wild landscapes, local knowledge,
-            and enough time to be fully present.
+            and enough time to be&nbsp;fully&nbsp;present.
           </p>
         </div>
 
@@ -156,12 +189,11 @@
 
       <section class="story section grid" id="story">
         <div class="story__copy">
-          <p class="eyebrow eyebrow--accent">Why Drift North</p>
           <h2>Travel shaped by place, not a checklist.</h2>
           <p>
             We build every route with people who know the landscape intimately.
             Fewer stops and smaller groups create room for weather, conversation,
-            and the moments no itinerary can schedule.
+            and the moments no itinerary&nbsp;can&nbsp;schedule.
           </p>
           <a class="text-link" href="#principles">How we plan every route <span>→</span></a>
         </div>
@@ -175,27 +207,30 @@
 
       <section class="principles section" id="principles">
         <div class="container">
-          <div class="section-heading section-heading--center">
-            <p class="eyebrow eyebrow--accent">What stays constant</p>
+          <div class="section-heading">
             <h2>Designed around better travel.</h2>
-            <p>Three commitments guide every journey we make.</p>
           </div>
-          <div class="principle-grid">
-            <article>
-              <span>01</span>
-              <h3>Local knowledge</h3>
-              <p>Routes are shaped with guides, hosts, and makers who call each place home.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>Time to notice</h3>
-              <p>We leave breathing room in every day instead of racing between landmarks.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>Lighter footprints</h3>
-              <p>Small groups and independent stays keep more value within local communities.</p>
-            </article>
+          <div class="principles__layout">
+            <figure class="principles__image">
+              <img src="./assets/hero-patagonia-reviewed.jpg" alt="A traveler on a ridge above a braided glacial river in Patagonia" />
+            </figure>
+            <ul class="principles__list">
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12C10.9 12 9.95833 11.6083 9.175 10.825C8.39167 10.0417 8 9.1 8 8C8 6.9 8.39167 5.95833 9.175 5.175C9.95833 4.39167 10.9 4 12 4C13.1 4 14.0417 4.39167 14.825 5.175C15.6083 5.95833 16 6.9 16 8C16 9.1 15.6083 10.0417 14.825 10.825C14.0417 11.6083 13.1 12 12 12ZM4 20V17.2C4 16.6333 4.14583 16.1125 4.4375 15.6375C4.72917 15.1625 5.11667 14.8 5.6 14.55C6.63333 14.0333 7.68333 13.6458 8.75 13.3875C9.81667 13.1292 10.9 13 12 13C13.1 13 14.1833 13.1292 15.25 13.3875C16.3167 13.6458 17.3667 14.0333 18.4 14.55C18.8833 14.8 19.2708 15.1625 19.5625 15.6375C19.8542 16.1125 20 16.6333 20 17.2V20H4ZM6 18H18V17.2C18 17.0167 17.9542 16.85 17.8625 16.7C17.7708 16.55 17.65 16.4333 17.5 16.35C16.6 15.9 15.6917 15.5625 14.775 15.3375C13.8583 15.1125 12.9333 15 12 15C11.0667 15 10.1417 15.1125 9.225 15.3375C8.30833 15.5625 7.4 15.9 6.5 16.35C6.35 16.4333 6.22917 16.55 6.1375 16.7C6.04583 16.85 6 17.0167 6 17.2V18ZM12 10C12.55 10 13.0208 9.80417 13.4125 9.4125C13.8042 9.02083 14 8.55 14 8C14 7.45 13.8042 6.97917 13.4125 6.5875C13.0208 6.19583 12.55 6 12 6C11.45 6 10.9792 6.19583 10.5875 6.5875C10.1958 6.97917 10 7.45 10 8C10 8.55 10.1958 9.02083 10.5875 9.4125C10.9792 9.80417 11.45 10 12 10Z" /></svg>
+                <h3>Local knowledge</h3>
+                <p>Shaped by guides and hosts who&nbsp;live&nbsp;there.</p>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.3 16.7L16.7 15.3L13 11.6V7H11V12.4L15.3 16.7ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22ZM12 20C14.2167 20 16.1042 19.2208 17.6625 17.6625C19.2208 16.1042 20 14.2167 20 12C20 9.78333 19.2208 7.89583 17.6625 6.3375C16.1042 4.77917 14.2167 4 12 4C9.78333 4 7.89583 4.77917 6.3375 6.3375C4.77917 7.89583 4 9.78333 4 12C4 14.2167 4.77917 16.1042 6.3375 17.6625C7.89583 19.2208 9.78333 20 12 20Z" /></svg>
+                <h3>Time to notice</h3>
+                <p>Breathing room in&nbsp;every&nbsp;day.</p>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 20.5556H8.25V13.2222H15.75V20.5556H19.5V9.55556L12 4.05556L4.5 9.55556V20.5556ZM2 23V8.33333L12 1L22 8.33333V23H13.25V15.6667H10.75V23H2Z" /></svg>
+                <h3>Lighter footprints</h3>
+                <p>Small groups and independent&nbsp;local&nbsp;stays.</p>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -203,12 +238,7 @@
       <section class="stories section grid" id="stories">
         <div class="section-heading section-heading--split">
           <div>
-            <p class="eyebrow eyebrow--accent">Traveler stories</p>
             <h2>What stayed with them.</h2>
-          </div>
-          <div class="carousel-controls" aria-label="Testimonial controls">
-            <button type="button" aria-label="Previous story">←</button>
-            <button type="button" aria-label="Next story">→</button>
           </div>
         </div>
         <div class="testimonial-grid">
@@ -217,7 +247,7 @@
             <div>
               <blockquote>
                 “Nothing felt rushed. We came home remembering people, weather,
-                and tiny details—not just viewpoints.”
+                and tiny details&#8288;—&#8288;not&nbsp;just&nbsp;viewpoints.”
               </blockquote>
               <p><strong>Amara Lewis</strong><span>Cliffs & quiet villages</span></p>
             </div>
@@ -227,7 +257,7 @@
             <div>
               <blockquote>
                 “The route had structure without feeling scripted. Every day left
-                room for discovery.”
+                room&nbsp;for&nbsp;discovery.”
               </blockquote>
               <p><strong>Kenji Sato</strong><span>Mist, cedar & still water</span></p>
             </div>
@@ -237,9 +267,8 @@
 
       <section class="closing section">
         <div class="container closing__copy">
-          <p class="eyebrow eyebrow--accent">Your next route</p>
-          <h2>Choose a place.<br />We’ll make room for wonder.</h2>
-          <p>Talk with a route planner and find the journey that fits your pace.</p>
+          <h2>Choose a place. <br />We’ll make room for wonder.</h2>
+          <p>Talk with a route planner and find the journey that fits&nbsp;your&nbsp;pace.</p>
           <a class="button button--accent" href="#top">Start planning</a>
         </div>
         <div class="mosaic" aria-hidden="true">
@@ -258,7 +287,7 @@
           <span class="brand__mark" aria-hidden="true">D</span>
           <span>Drift North</span>
         </a>
-        <p>Small-group journeys made for looking closer.</p>
+        <p>Small-group journeys made for&nbsp;looking&nbsp;closer.</p>
       </div>
       <div>
         <strong>Journeys</strong>

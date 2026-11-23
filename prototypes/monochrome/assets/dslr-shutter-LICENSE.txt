@@ -1,0 +1,10 @@
+dslr-shutter.wav by benjohansen
+
+Description: The shutter of a Canon Digital Rebel SLR.
+Source: https://freesound.org/people/benjohansen/sounds/87149/
+Asset used: Freesound high-quality MP3 preview (87149_1409877-hq.mp3)
+License: Creative Commons CC0 1.0 Universal
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+
+The source author waived copyright and related rights to the extent allowed by law.
+Attribution is not required; these details are retained for provenance.

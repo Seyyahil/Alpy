@@ -24,20 +24,15 @@ Explore the published prototypes from [AI Taste](https://alpymcp.com/ai-taste).
 | Bold Typography | [Open prototype](https://alpymcp.com/websites/bold-typography/index.html) |
 | Cyberpunk | [Open prototype](https://alpymcp.com/websites/Cyberpunk/index.html) |
 | Flat Design | [Open prototype](https://alpymcp.com/websites/flat-design/index.html) |
-| Grunge / Punk | [Open prototype](https://alpymcp.com/websites/Grunge/index.html) |
-| Luxury | In progress |
-| Modern Dark | [Open prototype](https://alpymcp.com/websites/Modern-dark/index.html) |
-| Monochrome | In progress |
-| Neo Brutalism | In progress |
+| Grunge | [Open prototype](https://alpymcp.com/websites/Grunge/index.html) |
+| Monochrome | [Open prototype](https://alpymcp.com/websites/monochrome/index.html) |
+| Neo Brutalism | [Open prototype](https://alpymcp.com/websites/neo-brutalism/index.html) |
 | Neumorphism | [Open prototype](https://alpymcp.com/websites/neumorphism/index.html) |
 | Parallax | [Open prototype](https://alpymcp.com/websites/Parallax/index.html) |
 | Playful Geometric | [Open prototype](https://alpymcp.com/websites/Playful-geometric/index.html) |
-| Retro | In progress |
-| SaaS | No prototype listed |
-| Sketch | In progress |
+| SaaS Dark | [Open prototype](https://alpymcp.com/websites/saas-dark/index.html) |
 | Swiss | [Open prototype](https://alpymcp.com/websites/swiss/index.html) |
-| Terminal | In progress |
-| Vaporwave | In progress |
+| Terminal | [Open prototype](https://alpymcp.com/websites/terminal/index.html) |
 
 ### UI design skills
 

@@ -1,0 +1,2131 @@
+<!doctype html>
+<html lang="en" data-alpy-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tarn is a fictional command-line tool that restores a Postgres database to any second from continuous snapshots."
+    />
+    <meta name="theme-color" content="#151515" />
+    <title>Tarn — Restore any Postgres database to any second</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="assets/DepartureMono-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Canonical Alpy light tokens; the pairing puts Departure Mono in heading slots and JetBrains Mono in body slots -->
+    <style>
+      :root,
+      [data-alpy-mode="light"] {
+        --border-width-0: 0px;
+        --border-width-1: 1px;
+        --border-width-1-5: 1.5px;
+        --border-width-2: 2px;
+        --border-width-4: 4px;
+        --border-width-hairline: 0.5px;
+        --color-border-brand-color-one-strong-one: #0051FF;
+        --color-border-brand-color-one-strong-three: #010d28;
+        --color-border-brand-color-one-strong-two: #012F93;
+        --color-border-brand-color-one-subtle-one: #EBF1FF;
+        --color-border-brand-color-one-subtle-three: #5F92FE;
+        --color-border-brand-color-one-subtle-two: #BDD2FE;
+        --color-border-brand-color-three-strong-one: #FCA701;
+        --color-border-brand-color-three-strong-three: #3F2A00;
+        --color-border-brand-color-three-strong-two: #9E6800;
+        --color-border-brand-color-three-subtle-one: #E8E2D5;
+        --color-border-brand-color-three-subtle-three: #E5BA65;
+        --color-border-brand-color-three-subtle-two: #E2D3B5;
+        --color-border-brand-color-two-strong-one: #058625;
+        --color-border-brand-color-two-strong-three: #0D2E10;
+        --color-border-brand-color-two-strong-two: #156221;
+        --color-border-brand-color-two-subtle-one: #E6EDE5;
+        --color-border-brand-color-two-subtle-three: #7FB581;
+        --color-border-brand-color-two-subtle-two: #C7DAC8;
+        --color-border-functional-danger: #B80808;
+        --color-border-functional-info: #0449BA;
+        --color-border-functional-success: #166534;
+        --color-border-functional-warning: #AE6D00;
+        --color-border-input: #767676;
+        --color-border-interaction-disabled: #A1A1A1;
+        --color-border-interaction-focused: #0051FF;
+        --color-border-interaction-hover: #012F93;
+        --color-border-interaction-pressed: #010d28;
+        --color-border-interaction-selected: #0140C9;
+        --color-border-neutral-strong-one: #333333;
+        --color-border-neutral-strong-three: #151515;
+        --color-border-neutral-strong-two: #242424;
+        --color-border-neutral-subtle-one: #F1F1F1;
+        --color-border-neutral-subtle-three: #767676;
+        --color-border-neutral-subtle-two: #CECECE;
+        --color-border-oncolor: #FFFFFF;
+        --color-functional-danger: #B80808;
+        --color-functional-danger-soft: #EF4444;
+        --color-functional-danger-strong: #4D0000;
+        --color-functional-danger-subtle: #ECDFDF;
+        --color-functional-info: #0449BA;
+        --color-functional-info-soft: #3B82F6;
+        --color-functional-info-strong: #001D4C;
+        --color-functional-info-subtle: #DEE4EC;
+        --color-functional-success: #22C55E;
+        --color-functional-success-soft: #86EFAC;
+        --color-functional-success-strong: #166534;
+        --color-functional-success-subtle: #DCFCE7;
+        --color-functional-warning: #AE6D00;
+        --color-functional-warning-soft: #FFBD4F;
+        --color-functional-warning-strong: #402800;
+        --color-functional-warning-subtle: #E8E2D6;
+        --color-icon-accent: #0051FF;
+        --color-icon-brand-color-one-strong-one: #0051FF;
+        --color-icon-brand-color-one-strong-three: #010d28;
+        --color-icon-brand-color-one-strong-two: #012F93;
+        --color-icon-brand-color-one-subtle-one: #EBF1FF;
+        --color-icon-brand-color-one-subtle-three: #5F92FE;
+        --color-icon-brand-color-one-subtle-two: #BDD2FE;
+        --color-icon-brand-color-three-strong-one: #FCA701;
+        --color-icon-brand-color-three-strong-three: #3F2A00;
+        --color-icon-brand-color-three-strong-two: #9E6800;
+        --color-icon-brand-color-three-subtle-one: #E8E2D5;
+        --color-icon-brand-color-three-subtle-three: #E5BA65;
+        --color-icon-brand-color-three-subtle-two: #E2D3B5;
+        --color-icon-brand-color-two-strong-one: #058625;
+        --color-icon-brand-color-two-strong-three: #0D2E10;
+        --color-icon-brand-color-two-strong-two: #156221;
+        --color-icon-brand-color-two-subtle-one: #E6EDE5;
+        --color-icon-brand-color-two-subtle-three: #7FB581;
+        --color-icon-brand-color-two-subtle-two: #C7DAC8;
+        --color-icon-danger: #B80808;
+        --color-icon-default: #151515;
+        --color-icon-disabled: #A1A1A1;
+        --color-icon-info: #0449BA;
+        --color-icon-interaction-disabled: #8EB2FD;
+        --color-icon-interaction-focused: #0051FF;
+        --color-icon-interaction-hover: #012F93;
+        --color-icon-interaction-pressed: #010d28;
+        --color-icon-interaction-selected: #0140C9;
+        --color-icon-inverse: #FFFFFF;
+        --color-icon-oncolor: #FFFFFF;
+        --color-icon-subtle: #5C5C5C;
+        --color-icon-subtlest: #767676;
+        --color-icon-success: #22C55E;
+        --color-icon-warning: #AE6D00;
+        --color-shades-brand-color-one-strong-one: #0051FF;
+        --color-shades-brand-color-one-strong-three: #010d28;
+        --color-shades-brand-color-one-strong-two: #012F93;
+        --color-shades-brand-color-one-subtle-one: #EBF1FF;
+        --color-shades-brand-color-one-subtle-three: #5F92FE;
+        --color-shades-brand-color-one-subtle-two: #BDD2FE;
+        --color-shades-brand-color-three-strong-one: #FCA701;
+        --color-shades-brand-color-three-strong-three: #3F2A00;
+        --color-shades-brand-color-three-strong-two: #9E6800;
+        --color-shades-brand-color-three-subtle-one: #E8E2D5;
+        --color-shades-brand-color-three-subtle-three: #E5BA65;
+        --color-shades-brand-color-three-subtle-two: #E2D3B5;
+        --color-shades-brand-color-two-strong-one: #058625;
+        --color-shades-brand-color-two-strong-three: #0D2E10;
+        --color-shades-brand-color-two-strong-two: #156221;
+        --color-shades-brand-color-two-subtle-one: #E6EDE5;
+        --color-shades-brand-color-two-subtle-three: #7FB581;
+        --color-shades-brand-color-two-subtle-two: #C7DAC8;
+        --color-shades-neutral-strong-one: #333333;
+        --color-shades-neutral-strong-three: #151515;
+        --color-shades-neutral-strong-two: #242424;
+        --color-shades-neutral-subtle-one: #F1F1F1;
+        --color-shades-neutral-subtle-three: #767676;
+        --color-shades-neutral-subtle-two: #CECECE;
+        --color-shadow-deep: #151515;
+        --color-shadow-medium: #5C5C5C;
+        --color-shadow-soft: #A1A1A1;
+        --color-shadow-strong: #000000;
+        --color-surface-canvas: #FFFFFF;
+        --color-surface-interaction-disabled: #F1F1F1;
+        --color-surface-interaction-focused: #CECECE;
+        --color-surface-interaction-hover: #CECECE;
+        --color-surface-interaction-pressed: #010d28;
+        --color-surface-interaction-selected: #A1A1A1;
+        --color-system-black: #000000;
+        --color-system-transparent: #00000000;
+        --color-system-white: #FFFFFF;
+        --color-text-body: #242424;
+        --color-text-body-muted: #767676;
+        --color-text-body-subtle: #5C5C5C;
+        --color-text-brand-color-one-accent: #0051FF;
+        --color-text-brand-color-one-accent-strong: #012F93;
+        --color-text-brand-color-one-accent-subtle: #3071FE;
+        --color-text-brand-color-three-accent: #FCA701;
+        --color-text-brand-color-three-accent-strong: #9E6800;
+        --color-text-brand-color-three-accent-subtle: #EFB035;
+        --color-text-brand-color-two-accent: #058625;
+        --color-text-brand-color-two-accent-strong: #156221;
+        --color-text-brand-color-two-accent-subtle: #52A457;
+        --color-text-functional-danger: #B80808;
+        --color-text-functional-danger-strong: #4D0000;
+        --color-text-functional-info: #0449BA;
+        --color-text-functional-info-strong: #001D4C;
+        --color-text-functional-success: #22C55E;
+        --color-text-functional-success-strong: #166534;
+        --color-text-functional-warning: #AE6D00;
+        --color-text-functional-warning-strong: #402800;
+        --color-text-heading: #151515;
+        --color-text-heading-oncolor: #FFFFFF;
+        --color-text-inverse: #FFFFFF;
+        --color-text-link: #0051FF;
+        --color-text-link-disabled: #8EB2FD;
+        --color-text-link-hover: #012F93;
+        --color-text-link-inverse: #FFFFFF;
+        --color-text-link-pressed: #010d28;
+        --color-text-link-visited: #156221;
+        --color-text-oncolor: #FFFFFF;
+        --color-text-subheading: #242424;
+        --font-body-font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --font-body-font-size: 16px;
+        --font-body-font-weight: 400;
+        --font-body-large-font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --font-body-large-font-size: 19px;
+        --font-body-large-font-weight: 600;
+        --font-body-large-letter-spacing: 0px;
+        --font-body-large-line-height: 28px;
+        --font-body-letter-spacing: 0px;
+        --font-body-line-height: 24px;
+        --font-body-medium-font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --font-body-medium-font-size: 14px;
+        --font-body-medium-font-weight: 400;
+        --font-body-medium-letter-spacing: 0px;
+        --font-body-medium-line-height: 20px;
+        --font-body-small-font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --font-body-small-font-size: 12px;
+        --font-body-small-font-weight: 400;
+        --font-body-small-letter-spacing: 0px;
+        --font-body-small-line-height: 20px;
+        --font-body-xsmall-font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --font-body-xsmall-font-size: 10px;
+        --font-body-xsmall-font-weight: 400;
+        --font-body-xsmall-letter-spacing: 0px;
+        --font-body-xsmall-line-height: 16px;
+        --font-heading-large-font-family: "Departure Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --font-heading-large-font-size: 40px;
+        --font-heading-large-font-weight: 400;
+        --font-heading-large-letter-spacing: -0.02px;
+        --font-heading-large-line-height: 48px;
+        --font-heading-medium-font-family: "Departure Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --font-heading-medium-font-size: 33px;
+        --font-heading-medium-font-weight: 400;
+        --font-heading-medium-letter-spacing: -0.02px;
+        --font-heading-medium-line-height: 40px;
+        --font-heading-small-font-family: "Departure Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --font-heading-small-font-size: 28px;
+        --font-heading-small-font-weight: 400;
+        --font-heading-small-letter-spacing: -0.02px;
+        --font-heading-small-line-height: 32px;
+        --font-heading-xlarge-font-family: "Departure Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --font-heading-xlarge-font-size: 48px;
+        --font-heading-xlarge-font-weight: 400;
+        --font-heading-xlarge-letter-spacing: -0.02px;
+        --font-heading-xlarge-line-height: 56px;
+        --font-heading-xsmall-font-family: "Departure Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --font-heading-xsmall-font-size: 23px;
+        --font-heading-xsmall-font-weight: 400;
+        --font-heading-xsmall-letter-spacing: -0.02px;
+        --font-heading-xsmall-line-height: 28px;
+        --font-heading-xxlarge-font-family: "Departure Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --font-heading-xxlarge-font-size: 57px;
+        --font-heading-xxlarge-font-weight: 400;
+        --font-heading-xxlarge-letter-spacing: -0.02px;
+        --font-heading-xxlarge-line-height: 68px;
+        --icon-gap-lg: 16px;
+        --icon-gap-md: 12px;
+        --icon-gap-sm: 8px;
+        --icon-gap-xl: 20px;
+        --icon-gap-xs: 4px;
+        --icon-gap-xxl: 24px;
+        --icon-size-12: 12px;
+        --icon-size-128: 128px;
+        --icon-size-16: 16px;
+        --icon-size-20: 20px;
+        --icon-size-24: 24px;
+        --icon-size-32: 32px;
+        --icon-size-48: 48px;
+        --icon-size-56: 56px;
+        --icon-size-64: 64px;
+        --icon-size-8: 8px;
+        --palette-black-and-white-black: #000000;
+        --palette-black-and-white-transparent: #00000000;
+        --palette-black-and-white-white: #FFFFFF;
+        --palette-danger-100: #EF4444;
+        --palette-danger-200: #B80808;
+        --palette-danger-300: #4D0000;
+        --palette-danger-50: #ECDFDF;
+        --palette-info-100: #3B82F6;
+        --palette-info-200: #0449BA;
+        --palette-info-300: #001D4C;
+        --palette-info-50: #DEE4EC;
+        --palette-neutral-100: #CECECE;
+        --palette-neutral-200: #A1A1A1;
+        --palette-neutral-300: #767676;
+        --palette-neutral-400: #5C5C5C;
+        --palette-neutral-50: #F1F1F1;
+        --palette-neutral-500: #333333;
+        --palette-neutral-600: #2E2E2E;
+        --palette-neutral-700: #242424;
+        --palette-neutral-800: #1C1C1C;
+        --palette-neutral-900: #151515;
+        --palette-primary-100: #BDD2FE;
+        --palette-primary-200: #8EB2FD;
+        --palette-primary-300: #5F92FE;
+        --palette-primary-400: #3071FE;
+        --palette-primary-50: #EBF1FF;
+        --palette-primary-500: #0051FF;
+        --palette-primary-600: #0140C9;
+        --palette-primary-700: #012F93;
+        --palette-primary-800: #011e5d;
+        --palette-primary-900: #010d28;
+        --palette-secondary-100: #C7DAC8;
+        --palette-secondary-200: #A6C6A5;
+        --palette-secondary-300: #7FB581;
+        --palette-secondary-400: #52A457;
+        --palette-secondary-50: #E6EDE5;
+        --palette-secondary-500: #058625;
+        --palette-secondary-600: #197C2A;
+        --palette-secondary-700: #156221;
+        --palette-secondary-800: #0F4817;
+        --palette-secondary-900: #0D2E10;
+        --palette-success-100: #86EFAC;
+        --palette-success-200: #22C55E;
+        --palette-success-300: #166534;
+        --palette-success-50: #DCFCE7;
+        --palette-tertiary-100: #E2D3B5;
+        --palette-tertiary-200: #E1C590;
+        --palette-tertiary-300: #E5BA65;
+        --palette-tertiary-400: #EFB035;
+        --palette-tertiary-50: #E8E2D5;
+        --palette-tertiary-500: #FCA701;
+        --palette-tertiary-600: #CD8801;
+        --palette-tertiary-700: #9E6800;
+        --palette-tertiary-800: #6F4900;
+        --palette-tertiary-900: #3F2A00;
+        --palette-warning-100: #FFBD4F;
+        --palette-warning-200: #AE6D00;
+        --palette-warning-300: #402800;
+        --palette-warning-50: #E8E2D6;
+        --radius-full: 9999px;
+        --radius-large: 12px;
+        --radius-medium: 8px;
+        --radius-none: 0px;
+        --radius-small: 4px;
+        --radius-tile: 12px;
+        --radius-xlarge: 16px;
+        --radius-xsmall: 2px;
+        --radius-xxlarge: 24px;
+        --size-0: 0px;
+        --size-0-5: 0.5px;
+        --size-1: 1px;
+        --size-1-5: 1.5px;
+        --size-100: 100px;
+        --size-1020: 1020px;
+        --size-104: 104px;
+        --size-108: 108px;
+        --size-112: 112px;
+        --size-116: 116px;
+        --size-12: 12px;
+        --size-120: 120px;
+        --size-124: 124px;
+        --size-128: 128px;
+        --size-16: 16px;
+        --size-192: 192px;
+        --size-2: 2px;
+        --size-20: 20px;
+        --size-200: 200px;
+        --size-24: 24px;
+        --size-28: 28px;
+        --size-32: 32px;
+        --size-36: 36px;
+        --size-4: 4px;
+        --size-40: 40px;
+        --size-44: 44px;
+        --size-48: 48px;
+        --size-52: 52px;
+        --size-56: 56px;
+        --size-60: 60px;
+        --size-64: 64px;
+        --size-68: 68px;
+        --size-72: 72px;
+        --size-750: 750px;
+        --size-76: 76px;
+        --size-8: 8px;
+        --size-80: 80px;
+        --size-84: 84px;
+        --size-88: 88px;
+        --size-92: 92px;
+        --size-96: 96px;
+        --size-9999: 9999px;
+        --space-0: 0px;
+        --space-1: 1px;
+        --space-100: 100px;
+        --space-104: 104px;
+        --space-108: 108px;
+        --space-112: 112px;
+        --space-116: 116px;
+        --space-12: 12px;
+        --space-120: 120px;
+        --space-124: 124px;
+        --space-128: 128px;
+        --space-16: 16px;
+        --space-192: 192px;
+        --space-2: 2px;
+        --space-20: 20px;
+        --space-24: 24px;
+        --space-28: 28px;
+        --space-32: 32px;
+        --space-36: 36px;
+        --space-4: 4px;
+        --space-40: 40px;
+        --space-48: 48px;
+        --space-52: 52px;
+        --space-56: 56px;
+        --space-60: 60px;
+        --space-64: 64px;
+        --space-68: 68px;
+        --space-72: 72px;
+        --space-76: 76px;
+        --space-8: 8px;
+        --space-80: 80px;
+        --space-84: 84px;
+        --space-88: 88px;
+        --space-92: 92px;
+        --space-96: 96px;
+        --shadow-2xl: 0px 7px 29px 0px color-mix(in srgb, var(--color-shadow-medium) 20%, transparent);
+        --shadow-2xs: 1.95px 1.95px 2.6px 0px color-mix(in srgb, var(--color-shadow-strong) 15%, transparent);
+        --shadow-3xl: 0px 48px 100px 0px color-mix(in srgb, var(--color-shadow-deep) 15%, transparent);
+        --shadow-lg: 0px 5px 15px 0px color-mix(in srgb, var(--color-shadow-strong) 35%, transparent);
+        --shadow-md: 0px 3px 8px 0px color-mix(in srgb, var(--color-shadow-strong) 24%, transparent);
+        --shadow-none: none;
+        --shadow-sm: 0px 2px 8px 0px color-mix(in srgb, var(--color-shadow-medium) 20%, transparent);
+        --shadow-xl: 0px 8px 24px 0px color-mix(in srgb, var(--color-shadow-soft) 20%, transparent);
+        --shadow-xs: 0px 1px 4px 0px color-mix(in srgb, var(--color-shadow-strong) 16%, transparent);
+      }
+    </style>
+    <style>
+      /* Departure Mono by Helena Zhang, SIL Open Font License (assets/DepartureMono-LICENSE.txt) */
+      @font-face {
+        font-family: "Departure Mono";
+        src: url("assets/DepartureMono-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        color-scheme: dark;
+        --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+        --tn-gutter: var(--space-48);
+        --tn-container: 1440px;
+        --tn-edge: max(var(--tn-gutter), calc((100% - var(--tn-container)) / 2 + var(--tn-gutter)));
+        --tn-header-h: calc(var(--space-12) * 2 + var(--space-40));
+
+        /* Dark ground on the light-mode tokens: the darkest neutral, one raised step, inverse text, a light neutral for secondary text */
+        --tn-ground: var(--color-shades-neutral-strong-three);
+        --tn-raised: var(--color-shades-neutral-strong-two);
+        --tn-text: var(--color-text-inverse);
+        --tn-quiet: var(--color-shades-neutral-subtle-two);
+        --tn-dim: var(--color-shades-neutral-subtle-three);
+        --tn-rule: var(--color-border-neutral-strong-one);
+        --tn-hairline: var(--border-width-1) solid var(--tn-rule);
+        --tn-amber: var(--color-shades-brand-color-three-strong-one);
+        --tn-amber-soft: var(--color-shades-brand-color-three-subtle-three);
+        --tn-data: var(--color-shades-brand-color-one-subtle-three);
+        --tn-data-deep: var(--color-shades-brand-color-one-strong-one);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--tn-ground);
+        color: var(--tn-text);
+        font-family: var(--font-body-font-family);
+        font-size: var(--font-body-font-size);
+        font-weight: var(--font-body-font-weight);
+        line-height: var(--font-body-line-height);
+        letter-spacing: var(--font-body-letter-spacing);
+        /* Commands show the characters a visitor would type, so ligatures stay off */
+        font-variant-ligatures: none;
+        font-feature-settings: "liga" 0, "calt" 0;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      :focus-visible {
+        outline: var(--border-width-2) solid var(--color-border-oncolor);
+        outline-offset: var(--space-4);
+      }
+
+      .tn-skip {
+        position: absolute;
+        left: var(--tn-gutter);
+        top: var(--space-8);
+        z-index: 10;
+        padding: var(--space-8) var(--space-16);
+        background: var(--tn-raised);
+        transform: translateY(-200%);
+      }
+
+      .tn-skip:focus-visible {
+        transform: none;
+      }
+
+      .tn-sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+
+      /* Canonical Button: anatomy, size, type, and radius stay canonical */
+      .alpy-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-8);
+        border-width: var(--border-width-1);
+        border-style: solid;
+        border-radius: var(--radius-medium);
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+        transition:
+          background-color 150ms var(--ease),
+          border-color 150ms var(--ease),
+          color 150ms var(--ease);
+      }
+
+      .alpy-button[data-alpy-size="lg"] {
+        min-height: var(--space-52);
+        padding: var(--space-0) var(--space-24);
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+        letter-spacing: var(--font-body-large-letter-spacing);
+      }
+
+      .alpy-button[data-alpy-size="md"] {
+        min-height: var(--space-40);
+        padding: var(--space-0) var(--space-16);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+      }
+
+      .alpy-button [data-alpy-slot^="Icon"] {
+        display: inline-flex;
+      }
+
+      .alpy-button[data-alpy-size="lg"] [data-alpy-slot^="Icon"] svg {
+        width: var(--size-20);
+        height: var(--size-20);
+      }
+
+      .alpy-button[data-alpy-size="md"] [data-alpy-slot^="Icon"] svg {
+        width: var(--icon-size-16);
+        height: var(--icon-size-16);
+      }
+
+      .alpy-button[data-alpy-variant="primary"] {
+        border-color: var(--color-border-brand-color-one-strong-one);
+        background: var(--color-shades-brand-color-one-strong-one);
+        color: var(--color-text-oncolor);
+      }
+
+      .alpy-button[data-alpy-variant="primary"] [data-alpy-slot^="Icon"] {
+        color: var(--color-icon-oncolor);
+      }
+
+      .alpy-button[data-alpy-variant="primary"]:hover {
+        border-color: var(--color-border-brand-color-one-strong-two);
+        background: var(--color-shades-brand-color-one-strong-two);
+      }
+
+      .alpy-button[data-alpy-variant="primary"]:active {
+        border-color: var(--color-border-brand-color-one-strong-three);
+        background: var(--color-shades-brand-color-one-strong-three);
+      }
+
+      /* Outline on the dark ground: the text and border slots take inverse and quiet neutral roles for contrast */
+      .alpy-button[data-alpy-variant="outline"] {
+        border-color: var(--color-border-neutral-subtle-three);
+        background: var(--color-system-transparent);
+        color: var(--color-text-inverse);
+      }
+
+      .alpy-button[data-alpy-variant="outline"] [data-alpy-slot^="Icon"] {
+        color: var(--color-icon-inverse);
+      }
+
+      .alpy-button[data-alpy-variant="outline"]:hover {
+        border-color: var(--color-border-neutral-subtle-two);
+      }
+
+      .alpy-button[data-alpy-variant="outline"]:active {
+        border-color: var(--color-border-oncolor);
+      }
+
+      .alpy-button[data-alpy-variant="link"] {
+        border-color: var(--color-system-transparent);
+        background: var(--color-system-transparent);
+        color: var(--color-text-inverse);
+      }
+
+      .alpy-button[data-alpy-variant="link"] [data-alpy-slot^="Icon"] {
+        color: var(--color-icon-inverse);
+      }
+
+      .alpy-button[data-alpy-variant="link"]:hover,
+      .alpy-button[data-alpy-variant="link"]:hover [data-alpy-slot^="Icon"] {
+        color: var(--tn-quiet);
+      }
+
+      .alpy-button[data-alpy-icon-mode="only"][data-alpy-size="md"] {
+        width: var(--space-40);
+        height: var(--space-40);
+        padding: var(--space-0);
+      }
+
+      .alpy-button[data-alpy-icon-mode="only"][data-alpy-size="lg"] {
+        width: var(--space-52);
+        height: var(--space-52);
+        padding: var(--space-0);
+      }
+
+      /* Header: the wordmark, five plain links, and the two account actions */
+      .tn-header {
+        display: flex;
+        align-items: center;
+        gap: var(--space-32);
+        height: var(--tn-header-h);
+        padding-inline: var(--tn-edge);
+        border-bottom: var(--tn-hairline);
+      }
+
+      .tn-wordmark {
+        margin-right: auto;
+        font-family: var(--font-heading-xsmall-font-family);
+        font-size: var(--font-heading-xsmall-font-size);
+        font-weight: var(--font-heading-xsmall-font-weight);
+        line-height: var(--font-heading-xsmall-line-height);
+        letter-spacing: var(--font-heading-xsmall-letter-spacing);
+        text-decoration: none;
+      }
+
+      .tn-wordmark span {
+        color: var(--tn-amber);
+      }
+
+      .tn-nav ul {
+        display: flex;
+        gap: var(--space-24);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .tn-nav a {
+        color: var(--tn-quiet);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+        text-decoration: none;
+        transition: color 150ms var(--ease);
+      }
+
+      .tn-nav-signin {
+        display: none;
+      }
+
+      .tn-nav a:hover {
+        color: var(--tn-text);
+      }
+
+      .tn-header-actions {
+        display: flex;
+        align-items: center;
+        gap: var(--space-8);
+      }
+
+      .tn-menu {
+        display: none;
+      }
+
+      /* Hero: the statement, a short lead, and two actions on the left; a dinosaur drawn in characters fills the right */
+      .tn-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+        column-gap: var(--space-48);
+        min-height: calc(100svh - var(--tn-header-h));
+        padding-inline: var(--tn-edge);
+      }
+
+      .tn-hero-text {
+        position: relative;
+        z-index: 1;
+        grid-area: 1 / 1;
+        display: grid;
+        align-content: center;
+        justify-items: start;
+        gap: var(--space-16);
+        padding-block: var(--space-64);
+      }
+
+      .tn-hero h1 {
+        max-width: 18em;
+        margin: 0;
+        font-family: var(--font-heading-xlarge-font-family);
+        font-size: var(--font-heading-xlarge-font-size);
+        font-weight: var(--font-heading-xlarge-font-weight);
+        line-height: var(--font-heading-xlarge-line-height);
+        letter-spacing: var(--font-heading-xlarge-letter-spacing);
+        text-wrap: balance;
+      }
+
+      .tn-lead {
+        max-width: 40em;
+        margin: 0 0 var(--space-16);
+        color: var(--tn-quiet);
+        text-wrap: balance;
+      }
+
+      .tn-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-12);
+      }
+
+      /* The drawing never sizes its own box: the box spans the hero behind the text, takes its height, and the drawing
+         scales to fit; the dinosaur starts just past the statement and walks right */
+      .tn-art {
+        grid-area: 1 / 1 / 2 / -1;
+        position: relative;
+        min-height: 0;
+        overflow: hidden;
+      }
+
+      /* The art is drawn in character cells: a fixed 0.6em advance and a 1.2 line, so the grid stays square to the font */
+      .tn-art pre {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        color: var(--tn-dim);
+        font-family: var(--font-body-font-family);
+        line-height: 1.2;
+        letter-spacing: 0;
+        white-space: pre;
+        user-select: none;
+      }
+
+      .tn-art .s { color: var(--tn-text); }
+      .tn-art .l { color: var(--tn-quiet); }
+      .tn-art .d { color: var(--tn-dim); }
+      .tn-art .m { color: var(--tn-amber); }
+      .tn-art .h { color: var(--tn-amber-soft); }
+      .tn-art .w { color: var(--tn-data); }
+      .tn-art .b { color: var(--tn-data-deep); }
+
+      /* Sections: a full-width hairline opens each one; content sits in one framed column, like a pane in a split terminal */
+      .tn-section {
+        border-top: var(--tn-hairline);
+      }
+
+      .tn-col {
+        width: min(calc(100% - var(--tn-gutter) * 2), 78rem);
+        margin-inline: auto;
+        padding: var(--space-96) var(--space-48);
+        border-inline: var(--tn-hairline);
+      }
+
+      .tn-head {
+        display: grid;
+        gap: var(--space-16);
+        max-width: 46rem;
+        margin-bottom: var(--space-48);
+      }
+
+      .tn-h2 {
+        margin: 0;
+        font-family: var(--font-heading-medium-font-family);
+        font-size: var(--font-heading-medium-font-size);
+        font-weight: var(--font-heading-medium-font-weight);
+        line-height: var(--font-heading-medium-line-height);
+        letter-spacing: var(--font-heading-medium-letter-spacing);
+        text-wrap: balance;
+      }
+
+      .tn-h3 {
+        margin: 0;
+        font-family: var(--font-heading-xsmall-font-family);
+        font-size: var(--font-heading-xsmall-font-size);
+        font-weight: var(--font-heading-xsmall-font-weight);
+        line-height: var(--font-heading-xsmall-line-height);
+        letter-spacing: var(--font-heading-xsmall-letter-spacing);
+      }
+
+      .tn-text {
+        margin: 0;
+        color: var(--tn-quiet);
+        text-wrap: balance;
+      }
+
+      /* Pane: a real command and its output on the raised step, never a fake window */
+      .tn-pane {
+        overflow: hidden;
+        border: var(--tn-hairline);
+        border-radius: var(--radius-large);
+        background: var(--tn-raised);
+      }
+
+      .tn-pane-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-16);
+        min-height: var(--space-48);
+        padding-inline: var(--space-16) var(--space-4);
+        border-bottom: var(--tn-hairline);
+        color: var(--tn-quiet);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+      }
+
+      .tn-cmd {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: start;
+        column-gap: var(--space-12);
+        padding: var(--space-8) var(--space-4) var(--space-4) var(--space-16);
+      }
+
+      .tn-prompt,
+      .tn-cmd code {
+        padding-block: var(--space-8);
+      }
+
+      .tn-prompt {
+        color: var(--color-text-brand-color-three-accent);
+      }
+
+      .tn-cmd code {
+        color: var(--tn-text);
+        font: inherit;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+
+      .tn-out {
+        display: block;
+        margin: 0;
+        padding: 0 var(--space-16) var(--space-16);
+        color: var(--tn-text);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+
+      .tn-out .tn-line {
+        display: block;
+      }
+
+      .tn-ok {
+        color: var(--color-text-functional-success);
+      }
+
+      .tn-mute {
+        color: var(--tn-quiet);
+      }
+
+      /* Canonical Tabs, line variant, on the dark ground: the divider and indicator take the rule and the amber accent,
+         the labels take inverse text and the amber text role when selected */
+      .alpy-tabs-root {
+        display: flex;
+        gap: var(--space-24);
+        align-self: stretch;
+      }
+
+      .alpy-tab {
+        display: flex;
+        align-items: center;
+        margin-bottom: calc(var(--border-width-1) * -1);
+        padding: var(--space-8) var(--space-0);
+        border: 0;
+        border-bottom: var(--border-width-2) solid var(--color-system-transparent);
+        background: var(--color-system-transparent);
+        color: var(--color-text-inverse);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+        appearance: none;
+        cursor: pointer;
+      }
+
+      .alpy-tab:hover {
+        color: var(--color-text-brand-color-three-accent-subtle);
+      }
+
+      .alpy-tab[aria-selected="true"] {
+        border-bottom-color: var(--color-border-brand-color-three-strong-one);
+        color: var(--color-text-brand-color-three-accent);
+      }
+
+      /* How it works: three numbered steps, each a plain explanation beside the command and what it prints */
+      .tn-steps {
+        display: grid;
+        gap: var(--space-64);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .tn-step {
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        align-items: start;
+        gap: var(--space-48);
+      }
+
+      .tn-step-text {
+        display: grid;
+        grid-template-columns: var(--space-32) minmax(0, 1fr);
+        column-gap: var(--space-16);
+        row-gap: var(--space-8);
+        padding-top: var(--space-12);
+      }
+
+      .tn-step-n {
+        grid-row: span 2;
+        color: var(--color-text-brand-color-three-accent);
+        font-family: var(--font-heading-xsmall-font-family);
+        font-size: var(--font-heading-xsmall-font-size);
+        font-weight: var(--font-heading-xsmall-font-weight);
+        line-height: var(--font-heading-xsmall-line-height);
+        letter-spacing: var(--font-heading-xsmall-letter-spacing);
+      }
+
+      /* Commands: the help screen itself, names in one aligned column and their jobs beside them */
+      .tn-help {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: var(--space-48);
+        row-gap: var(--space-12);
+        margin: 0;
+        padding: var(--space-8) var(--space-16) var(--space-24);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+      }
+
+      .tn-help div {
+        display: grid;
+        grid-template-columns: 9ch minmax(0, 1fr);
+        column-gap: var(--space-24);
+      }
+
+      .tn-help dt {
+        color: var(--tn-text);
+      }
+
+      .tn-help dd {
+        margin: 0;
+        color: var(--tn-quiet);
+        text-wrap: balance;
+      }
+
+      .tn-usage {
+        margin: 0;
+        padding: 0 var(--space-16) var(--space-8);
+        color: var(--tn-quiet);
+      }
+
+      /* Benchmarks: a table on the hairline grid, each time drawn as a bar of character cells */
+      .tn-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .tn-table th,
+      .tn-table td {
+        padding: var(--space-16) var(--space-16) var(--space-16) var(--space-0);
+        border-bottom: var(--tn-hairline);
+        text-align: left;
+        vertical-align: baseline;
+      }
+
+      .tn-table thead th {
+        padding-block: var(--space-8);
+        border-bottom-color: var(--tn-quiet);
+        color: var(--tn-quiet);
+        font-weight: var(--font-body-font-weight);
+      }
+
+      .tn-table th[scope="row"] {
+        width: 8rem;
+        font-weight: var(--font-body-font-weight);
+      }
+
+      .tn-table .tn-time {
+        width: 9rem;
+        white-space: nowrap;
+      }
+
+      .tn-bar {
+        color: var(--tn-data);
+        letter-spacing: 0;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .tn-caption {
+        margin: var(--space-16) 0 0;
+        text-wrap: balance;
+        color: var(--tn-quiet);
+        font-family: var(--font-body-small-font-family);
+        font-size: var(--font-body-small-font-size);
+        font-weight: var(--font-body-small-font-weight);
+        line-height: var(--font-body-small-line-height);
+        letter-spacing: var(--font-body-small-letter-spacing);
+      }
+
+      /* Configuration: what three keys do, beside the file they live in */
+      .tn-config {
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        align-items: start;
+        gap: var(--space-48);
+      }
+
+      .tn-notes {
+        display: grid;
+        gap: var(--space-24);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .tn-notes li {
+        display: grid;
+        gap: var(--space-4);
+      }
+
+      .tn-notes code {
+        color: var(--tn-text);
+        font: inherit;
+      }
+
+      .tn-file {
+        margin: 0;
+        padding: var(--space-16) 0;
+        counter-reset: line;
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+
+      /* Each line carries its number in a hanging gutter, so a wrapped value stays clear of it */
+      .tn-file > span {
+        display: block;
+        min-height: var(--font-body-medium-line-height);
+        padding-inline: calc(var(--space-16) * 2 + 4ch) var(--space-16);
+        text-indent: calc((var(--space-16) + 4ch) * -1);
+        counter-increment: line;
+      }
+
+      .tn-file > span::before {
+        content: counter(line);
+        display: inline-block;
+        width: 4ch;
+        margin-right: var(--space-16);
+        color: var(--tn-dim);
+        text-align: right;
+        text-indent: 0;
+      }
+
+      .tn-file > span.is-noted {
+        background: var(--tn-ground);
+      }
+
+      .tn-file > span.is-noted::before {
+        color: var(--color-text-brand-color-three-accent);
+      }
+
+      .tn-key {
+        color: var(--tn-text);
+      }
+
+      .tn-val {
+        color: var(--tn-data);
+      }
+
+      .tn-sect {
+        color: var(--color-text-brand-color-three-accent);
+      }
+
+      /* Changelog: one line per release, as the log prints it */
+      .tn-log {
+        display: grid;
+        gap: var(--space-12);
+        margin: 0 0 var(--space-32);
+        padding: 0;
+        list-style: none;
+      }
+
+      .tn-log li {
+        display: grid;
+        grid-template-columns: 8ch 11ch minmax(0, 1fr);
+        column-gap: var(--space-24);
+      }
+
+      .tn-log .tn-version {
+        color: var(--color-text-brand-color-three-accent);
+      }
+
+      .tn-log time {
+        color: var(--tn-quiet);
+      }
+
+      .tn-log span:last-child {
+        text-wrap: balance;
+      }
+
+      /* Closing: one line to install, centred, with the docs beside it */
+      .tn-closing {
+        display: grid;
+        justify-items: center;
+        gap: var(--space-24);
+        text-align: center;
+      }
+
+      .tn-closing .tn-pane {
+        width: min(100%, 40rem);
+        text-align: left;
+      }
+
+      /* Footer: a status line along the foot of the page */
+      .tn-status {
+        border-top: var(--tn-hairline);
+        background: var(--tn-raised);
+      }
+
+      .tn-status-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-8) var(--space-32);
+        padding: var(--space-12) var(--tn-edge);
+        color: var(--tn-quiet);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+      }
+
+      .tn-status-id {
+        color: var(--tn-text);
+      }
+
+      .tn-status-id span {
+        color: var(--color-text-brand-color-three-accent);
+      }
+
+      .tn-status ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-8) var(--space-24);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .tn-status a {
+        text-decoration: none;
+      }
+
+      .tn-status a:hover {
+        color: var(--tn-text);
+        text-decoration: underline;
+        text-underline-offset: var(--space-4);
+      }
+
+      .tn-status p {
+        margin: 0;
+      }
+
+      /* Motion, only when it is allowed: blocks rise once into view, and each output prints line by line */
+      @media (prefers-reduced-motion: no-preference) {
+        .tn-motion [data-reveal] {
+          transition:
+            opacity 500ms var(--ease),
+            transform 600ms var(--ease);
+          transition-delay: var(--tn-delay, 0ms);
+        }
+
+        .tn-motion [data-reveal]:not(.is-in) {
+          opacity: 0;
+          transform: translateY(var(--space-16));
+        }
+
+        .tn-motion [data-reveal] .tn-out .tn-line {
+          opacity: 0;
+        }
+
+        .tn-motion [data-reveal].is-in .tn-out .tn-line {
+          animation: tn-print 1ms steps(1) forwards;
+          animation-delay: calc(var(--tn-delay, 0ms) + 450ms + var(--i, 0) * 160ms);
+        }
+      }
+
+      @keyframes tn-print {
+        to { opacity: 1; }
+      }
+
+      @media (max-width: 1279px) {
+        .tn-help {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
+      /* The statement shares the screen with the drawing, so it steps down sooner and holds two lines */
+      @media (max-width: 1359px) {
+        .tn-hero h1 {
+          font-family: var(--font-heading-large-font-family);
+          font-size: var(--font-heading-large-font-size);
+          font-weight: var(--font-heading-large-font-weight);
+          line-height: var(--font-heading-large-line-height);
+          letter-spacing: var(--font-heading-large-letter-spacing);
+        }
+      }
+
+      @media (max-width: 1150px) {
+        .tn-hero h1 {
+          font-family: var(--font-heading-medium-font-family);
+          font-size: var(--font-heading-medium-font-size);
+          font-weight: var(--font-heading-medium-font-weight);
+          line-height: var(--font-heading-medium-line-height);
+          letter-spacing: var(--font-heading-medium-letter-spacing);
+        }
+      }
+
+      @media (max-width: 1019px) {
+        :root {
+          --tn-gutter: var(--space-32);
+        }
+
+        .tn-nav,
+        .tn-signin {
+          display: none;
+        }
+
+        .tn-menu {
+          display: inline-flex;
+        }
+
+        .tn-nav.is-open {
+          position: absolute;
+          top: var(--tn-header-h);
+          inset-inline: 0;
+          z-index: 5;
+          display: block;
+          padding: var(--space-16) var(--tn-gutter) var(--space-24);
+          background: var(--tn-ground);
+          border-bottom: var(--tn-hairline);
+        }
+
+        .tn-nav.is-open ul {
+          flex-direction: column;
+          gap: var(--space-16);
+        }
+
+        .tn-nav-signin {
+          display: block;
+        }
+
+        .tn-hero {
+          grid-template-columns: minmax(0, 1fr);
+          min-height: 0;
+        }
+
+        .tn-hero-text {
+          grid-area: auto;
+          padding-bottom: var(--space-32);
+        }
+
+        .tn-art {
+          grid-area: auto;
+          height: 40rem;
+        }
+
+        .tn-hero h1 {
+          font-family: var(--font-heading-large-font-family);
+          font-size: var(--font-heading-large-font-size);
+          font-weight: var(--font-heading-large-font-weight);
+          line-height: var(--font-heading-large-line-height);
+          letter-spacing: var(--font-heading-large-letter-spacing);
+        }
+
+        .tn-col {
+          padding: var(--space-80) var(--space-32);
+        }
+
+        .tn-step,
+        .tn-config {
+          grid-template-columns: minmax(0, 1fr);
+          gap: var(--space-24);
+        }
+      }
+
+      /* Phone: a 24px margin, 32px above and below every section, 24px between the blocks inside it; everything reads from the left */
+      @media (max-width: 749px) {
+        :root {
+          --tn-gutter: var(--space-24);
+        }
+
+        .tn-header {
+          gap: var(--space-8);
+        }
+
+        .tn-hero-text {
+          gap: var(--space-24);
+          padding-block: var(--space-32) var(--space-24);
+        }
+
+        .tn-lead {
+          margin-bottom: 0;
+        }
+
+        .tn-head {
+          gap: var(--space-24);
+          margin-bottom: var(--space-24);
+        }
+
+        .tn-steps {
+          gap: var(--space-24);
+        }
+
+        .tn-log {
+          margin-bottom: var(--space-24);
+        }
+
+        .tn-closing {
+          justify-items: start;
+          text-align: left;
+        }
+
+        .tn-art {
+          height: 30rem;
+        }
+
+        .tn-hero h1 {
+          font-family: var(--font-heading-xsmall-font-family);
+          font-size: var(--font-heading-xsmall-font-size);
+          font-weight: var(--font-heading-xsmall-font-weight);
+          line-height: var(--font-heading-xsmall-line-height);
+          letter-spacing: var(--font-heading-xsmall-letter-spacing);
+        }
+
+        .tn-col {
+          width: 100%;
+          padding: var(--space-32) var(--space-24);
+          border-inline: 0;
+        }
+
+        .tn-h2 {
+          font-family: var(--font-heading-xsmall-font-family);
+          font-size: var(--font-heading-xsmall-font-size);
+          font-weight: var(--font-heading-xsmall-font-weight);
+          line-height: var(--font-heading-xsmall-line-height);
+          letter-spacing: var(--font-heading-xsmall-letter-spacing);
+        }
+
+        .tn-help div {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        /* The bars need more width than a phone has; the times carry the comparison */
+        .tn-table th:nth-child(3),
+        .tn-table td:nth-child(3) {
+          display: none;
+        }
+
+        .tn-log li {
+          grid-template-columns: 8ch minmax(0, 1fr);
+        }
+
+        .tn-log span:last-child {
+          grid-column: 1 / -1;
+        }
+
+        /* On a phone the status line wraps into a footer, so it takes the section padding */
+        .tn-status-bar {
+          justify-content: flex-start;
+          row-gap: var(--space-24);
+          padding-block: var(--space-32);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="tn-skip" href="#main">Skip to content</a>
+
+    <header class="tn-header">
+      <a class="tn-wordmark" href="#top">tarn<span aria-hidden="true">_</span></a>
+      <nav class="tn-nav" id="primary-nav" aria-label="Main">
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#commands">Commands</a></li>
+          <li><a href="#benchmarks">Benchmarks</a></li>
+          <li><a href="#changelog">Changelog</a></li>
+          <li><a href="#docs">Docs</a></li>
+          <li class="tn-nav-signin"><a href="#signin">Sign in</a></li>
+        </ul>
+      </nav>
+      <div class="tn-header-actions">
+        <a class="alpy-button tn-signin" href="#signin" data-alpy-component="button" data-alpy-variant="link" data-alpy-size="md">
+          <span data-alpy-slot="Label">Sign in</span>
+        </a>
+        <a class="alpy-button" href="#install" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="md">
+          <span data-alpy-slot="Label">Get started</span>
+        </a>
+        <button
+          class="alpy-button tn-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          data-alpy-component="button"
+          data-alpy-variant="link"
+          data-alpy-size="lg"
+          data-alpy-icon-mode="only"
+        >
+          <span class="tn-sr">Menu</span>
+          <span data-alpy-slot="IconOnly" data-alpy-icon-id="menu" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z" /></svg>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="tn-hero" id="top" aria-labelledby="hero-title">
+        <div class="tn-hero-text">
+          <h1 id="hero-title">Restore any Postgres database to any second.</h1>
+          <p class="tn-lead">Tarn keeps continuous snapshots of your database in your own storage and brings it back to the exact second you name, with one command.</p>
+          <div class="tn-actions">
+            <a class="alpy-button" href="#install" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg">
+              <span data-alpy-slot="Label">Get started</span>
+            </a>
+            <a class="alpy-button" href="#docs" data-alpy-component="button" data-alpy-variant="outline" data-alpy-size="lg">
+              <span data-alpy-slot="Label">Read the docs</span>
+            </a>
+          </div>
+        </div>
+        <div class="tn-art" aria-hidden="true"><pre></pre></div>
+      </section>
+
+      <section class="tn-section" id="how" aria-labelledby="how-title">
+        <div class="tn-col">
+          <div class="tn-head" data-reveal>
+            <h2 class="tn-h2" id="how-title">Install to restore in three commands</h2>
+            <p class="tn-text">Tarn runs beside your database, streams its write-ahead log to your bucket, and rebuilds any moment on demand.</p>
+          </div>
+          <ol class="tn-steps">
+            <li class="tn-step" id="install">
+              <div class="tn-step-text" data-reveal>
+                <span class="tn-step-n" aria-hidden="true">1</span>
+                <h3 class="tn-h3">Install</h3>
+                <p class="tn-text">One binary for macOS and Linux. Nothing runs on the database host.</p>
+              </div>
+              <div class="tn-pane" data-reveal>
+                <div class="tn-pane-bar">
+                  <div class="alpy-tabs" data-alpy-component="tabs" data-alpy-variant="line" data-alpy-orientation="horizontal">
+                    <div class="alpy-tabs-root" role="tablist" aria-label="Install with" data-alpy-slot="root">
+                      <button class="alpy-tab" type="button" role="tab" id="via-brew" aria-selected="true" aria-controls="install-panel" tabindex="0" data-command="brew install tarn">brew</button>
+                      <button class="alpy-tab" type="button" role="tab" id="via-curl" aria-selected="false" aria-controls="install-panel" tabindex="-1" data-command="curl -fsSL https://tarn.example/install.sh | sh">curl</button>
+                      <button class="alpy-tab" type="button" role="tab" id="via-npm" aria-selected="false" aria-controls="install-panel" tabindex="-1" data-command="npm install --global @tarn/cli">npm</button>
+                    </div>
+                  </div>
+                </div>
+                <div id="install-panel" role="tabpanel" aria-labelledby="via-brew">
+                  <div class="tn-cmd">
+                    <span class="tn-prompt" aria-hidden="true">$</span>
+                    <code>brew install tarn</code>
+                    <button class="alpy-button tn-copy" type="button" data-alpy-component="button" data-alpy-variant="link" data-alpy-size="md" data-alpy-icon-mode="only">
+                      <span class="tn-sr">Copy command</span>
+                      <span data-alpy-slot="IconOnly" data-alpy-icon-id="copy" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18C8.45 18 7.97917 17.8042 7.5875 17.4125C7.19583 17.0208 7 16.55 7 16V4C7 3.45 7.19583 2.97917 7.5875 2.5875C7.97917 2.19583 8.45 2 9 2H18C18.55 2 19.0208 2.19583 19.4125 2.5875C19.8042 2.97917 20 3.45 20 4V16C20 16.55 19.8042 17.0208 19.4125 17.4125C19.0208 17.8042 18.55 18 18 18H9ZM9 16H18V4H9V16ZM5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V6H5V20H16V22H5Z" /></svg></span>
+                    </button>
+                  </div>
+                  <samp class="tn-out"><span class="tn-line" style="--i: 0"><span class="tn-ok">✓</span> tarn 2.4.0 installed</span><span class="tn-line tn-mute" style="--i: 1">Run tarn connect to attach your first database.</span></samp>
+                </div>
+              </div>
+            </li>
+            <li class="tn-step">
+              <div class="tn-step-text" data-reveal>
+                <span class="tn-step-n" aria-hidden="true">2</span>
+                <h3 class="tn-h3">Connect</h3>
+                <p class="tn-text">Point Tarn at a database and a bucket. It takes a base snapshot, then follows every write.</p>
+              </div>
+              <div class="tn-pane" data-reveal>
+                <div class="tn-cmd">
+                  <span class="tn-prompt" aria-hidden="true">$</span>
+                  <code>tarn connect postgres://app@db.example.com/orders --store s3://acme-backups/orders</code>
+                  <button class="alpy-button tn-copy" type="button" data-alpy-component="button" data-alpy-variant="link" data-alpy-size="md" data-alpy-icon-mode="only">
+                    <span class="tn-sr">Copy command</span>
+                    <span data-alpy-slot="IconOnly" data-alpy-icon-id="copy" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18C8.45 18 7.97917 17.8042 7.5875 17.4125C7.19583 17.0208 7 16.55 7 16V4C7 3.45 7.19583 2.97917 7.5875 2.5875C7.97917 2.19583 8.45 2 9 2H18C18.55 2 19.0208 2.19583 19.4125 2.5875C19.8042 2.97917 20 3.45 20 4V16C20 16.55 19.8042 17.0208 19.4125 17.4125C19.0208 17.8042 18.55 18 18 18H9ZM9 16H18V4H9V16ZM5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V6H5V20H16V22H5Z" /></svg></span>
+                  </button>
+                </div>
+                <samp class="tn-out"><span class="tn-line" style="--i: 0"><span class="tn-ok">✓</span> Connected to orders <span class="tn-mute">(Postgres 17.2, 182 GB)</span></span><span class="tn-line" style="--i: 1"><span class="tn-ok">✓</span> Base snapshot written <span class="tn-mute">in 3m 12s</span></span><span class="tn-line" style="--i: 2"><span class="tn-ok">✓</span> Following the write-ahead log</span></samp>
+              </div>
+            </li>
+            <li class="tn-step">
+              <div class="tn-step-text" data-reveal>
+                <span class="tn-step-n" aria-hidden="true">3</span>
+                <h3 class="tn-h3">Restore</h3>
+                <p class="tn-text">Name a database and a moment. Tarn restores into a new database, so production is never touched.</p>
+              </div>
+              <div class="tn-pane" data-reveal>
+                <div class="tn-cmd">
+                  <span class="tn-prompt" aria-hidden="true">$</span>
+                  <code>tarn restore orders --to "2026-11-02 09:14:07"</code>
+                  <button class="alpy-button tn-copy" type="button" data-alpy-component="button" data-alpy-variant="link" data-alpy-size="md" data-alpy-icon-mode="only">
+                    <span class="tn-sr">Copy command</span>
+                    <span data-alpy-slot="IconOnly" data-alpy-icon-id="copy" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18C8.45 18 7.97917 17.8042 7.5875 17.4125C7.19583 17.0208 7 16.55 7 16V4C7 3.45 7.19583 2.97917 7.5875 2.5875C7.97917 2.19583 8.45 2 9 2H18C18.55 2 19.0208 2.19583 19.4125 2.5875C19.8042 2.97917 20 3.45 20 4V16C20 16.55 19.8042 17.0208 19.4125 17.4125C19.0208 17.8042 18.55 18 18 18H9ZM9 16H18V4H9V16ZM5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V6H5V20H16V22H5Z" /></svg></span>
+                  </button>
+                </div>
+                <samp class="tn-out"><span class="tn-line" style="--i: 0"><span class="tn-mute">·</span> Nearest snapshot <span class="tn-mute">09:00:00</span></span><span class="tn-line" style="--i: 1"><span class="tn-mute">·</span> Replaying 14m 07s of log</span><span class="tn-line" style="--i: 2"><span class="tn-ok">✓</span> Restored to orders_0914 <span class="tn-mute">in 41s</span></span></samp>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="tn-section" id="commands" aria-labelledby="commands-title">
+        <div class="tn-col">
+          <div class="tn-head" data-reveal>
+            <h2 class="tn-h2" id="commands-title">Eight commands, one job</h2>
+            <p class="tn-text">Each one prints what it did and what to run next. Add --help to any of them for every flag.</p>
+          </div>
+          <div class="tn-pane" data-reveal>
+            <div class="tn-cmd">
+              <span class="tn-prompt" aria-hidden="true">$</span>
+              <code>tarn --help</code>
+              <span></span>
+            </div>
+            <p class="tn-usage">Usage: tarn &lt;command&gt; [flags]</p>
+            <dl class="tn-help">
+              <div><dt>connect</dt><dd>Attach a database and a storage bucket.</dd></div>
+              <div><dt>restore</dt><dd>Rebuild any second into a new database.</dd></div>
+              <div><dt>snapshot</dt><dd>Take a base snapshot now, off schedule.</dd></div>
+              <div><dt>branch</dt><dd>Make a writable copy of any moment.</dd></div>
+              <div><dt>verify</dt><dd>Restore in the background and check it.</dd></div>
+              <div><dt>list</dt><dd>Show snapshots, log coverage, and gaps.</dd></div>
+              <div><dt>prune</dt><dd>Remove what falls outside your keep rule.</dd></div>
+              <div><dt>status</dt><dd>Report lag, storage, and the last check.</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="tn-section" id="benchmarks" aria-labelledby="bench-title">
+        <div class="tn-col">
+          <div class="tn-head" data-reveal>
+            <h2 class="tn-h2" id="bench-title">Restore time grows with the log, not the database</h2>
+            <p class="tn-text">Tarn starts from the nearest snapshot, so a terabyte comes back in minutes.</p>
+          </div>
+          <div data-reveal>
+            <table class="tn-table">
+              <thead>
+                <tr><th scope="col">Size</th><th scope="col" class="tn-time">Restore</th><th scope="col"><span class="tn-sr">Relative time</span></th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">10 GB</th><td class="tn-time">9s</td><td class="tn-bar" aria-hidden="true">█</td></tr>
+                <tr><th scope="row">50 GB</th><td class="tn-time">18s</td><td class="tn-bar" aria-hidden="true">██</td></tr>
+                <tr><th scope="row">100 GB</th><td class="tn-time">41s</td><td class="tn-bar" aria-hidden="true">█████</td></tr>
+                <tr><th scope="row">500 GB</th><td class="tn-time">2m&nbsp;48s</td><td class="tn-bar" aria-hidden="true">████████████████████</td></tr>
+                <tr><th scope="row">1 TB</th><td class="tn-time">5m&nbsp;31s</td><td class="tn-bar" aria-hidden="true">████████████████████████████████████████</td></tr>
+              </tbody>
+            </table>
+            <p class="tn-caption">Median of 20 restores per size, each replaying 15 minutes of log, on a 16-core host with Postgres 17.2. November 2026.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="tn-section" id="config" aria-labelledby="config-title">
+        <div class="tn-col">
+          <div class="tn-head" data-reveal>
+            <h2 class="tn-h2" id="config-title">One file, checked in beside your code</h2>
+            <p class="tn-text">Tarn reads tarn.toml from the working directory. Three keys do most of the work.</p>
+          </div>
+          <div class="tn-config">
+              <ul class="tn-notes" data-reveal>
+                <li><code>every = "15m"</code><span class="tn-text">A base snapshot every 15 minutes. The log covers each second in between.</span></li>
+                <li><code>keep = "30d"</code><span class="tn-text">Anything older than 30 days is pruned on the next run.</span></li>
+                <li><code>encrypt = true</code><span class="tn-text">Data is encrypted with your key before it leaves the host.</span></li>
+              </ul>
+            <div class="tn-pane" data-reveal>
+              <div class="tn-pane-bar"><span>tarn.toml</span></div>
+              <pre class="tn-file"><span><span class="tn-sect">[database]</span></span><span><span class="tn-key">url</span> = <span class="tn-val">"postgres://app@db.example.com/orders"</span></span><span></span><span><span class="tn-sect">[snapshots]</span></span><span class="is-noted"><span class="tn-key">every</span> = <span class="tn-val">"15m"</span></span><span class="is-noted"><span class="tn-key">keep</span> = <span class="tn-val">"30d"</span></span><span></span><span><span class="tn-sect">[storage]</span></span><span><span class="tn-key">store</span> = <span class="tn-val">"s3://acme-backups/orders"</span></span><span class="is-noted"><span class="tn-key">encrypt</span> = <span class="tn-val">true</span></span></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tn-section" id="changelog" aria-labelledby="log-title">
+        <div class="tn-col">
+          <div class="tn-head" data-reveal>
+            <h2 class="tn-h2" id="log-title">Changelog</h2>
+            <p class="tn-text">A release every few weeks. Every one is signed and backwards compatible.</p>
+          </div>
+          <ol class="tn-log" data-reveal>
+            <li><span class="tn-version">v2.4.0</span><time datetime="2026-10-28">2026-10-28</time><span>Restore to a second inside a long-running transaction.</span></li>
+            <li><span class="tn-version">v2.3.2</span><time datetime="2026-10-09">2026-10-09</time><span>Faster replay for tables with large JSON columns.</span></li>
+            <li><span class="tn-version">v2.3.0</span><time datetime="2026-09-17">2026-09-17</time><span>New tarn branch command makes a writable copy of any moment.</span></li>
+            <li><span class="tn-version">v2.2.0</span><time datetime="2026-08-21">2026-08-21</time><span>tarn verify now runs on a schedule.</span></li>
+          </ol>
+          <a class="alpy-button tn-more" href="#changelog" data-alpy-component="button" data-alpy-variant="outline" data-alpy-size="md" data-alpy-icon-mode="right">
+            <span data-alpy-slot="Label">Full changelog</span>
+            <span data-alpy-slot="IconRight" data-alpy-icon-id="arrow_forward" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="tn-section" id="docs" aria-labelledby="close-title">
+        <div class="tn-col tn-closing">
+          <h2 class="tn-h2" id="close-title" data-reveal>Start with one line</h2>
+          <div class="tn-pane" data-reveal>
+            <div class="tn-cmd">
+              <span class="tn-prompt" aria-hidden="true">$</span>
+              <code>curl -fsSL https://tarn.example/install.sh | sh</code>
+              <button class="alpy-button tn-copy" type="button" data-alpy-component="button" data-alpy-variant="link" data-alpy-size="md" data-alpy-icon-mode="only">
+                <span class="tn-sr">Copy command</span>
+                <span data-alpy-slot="IconOnly" data-alpy-icon-id="copy" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18C8.45 18 7.97917 17.8042 7.5875 17.4125C7.19583 17.0208 7 16.55 7 16V4C7 3.45 7.19583 2.97917 7.5875 2.5875C7.97917 2.19583 8.45 2 9 2H18C18.55 2 19.0208 2.19583 19.4125 2.5875C19.8042 2.97917 20 3.45 20 4V16C20 16.55 19.8042 17.0208 19.4125 17.4125C19.0208 17.8042 18.55 18 18 18H9ZM9 16H18V4H9V16ZM5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V6H5V20H16V22H5Z" /></svg></span>
+              </button>
+            </div>
+          </div>
+          <div class="tn-actions" data-reveal>
+            <a class="alpy-button" href="#docs" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg">
+              <span data-alpy-slot="Label">Read the quickstart</span>
+            </a>
+            <a class="alpy-button" href="#top" data-alpy-component="button" data-alpy-variant="outline" data-alpy-size="lg">
+              <span data-alpy-slot="Label">View on GitHub</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="tn-status">
+      <div class="tn-status-bar">
+        <span class="tn-status-id">tarn<span aria-hidden="true">_</span> 2.4.0</span>
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="#docs">Docs</a></li>
+            <li><a href="#changelog">Changelog</a></li>
+            <li><a href="#top">GitHub</a></li>
+            <li><a href="#top">Status</a></li>
+            <li><a href="#top">Privacy</a></li>
+          </ul>
+        </nav>
+        <p>© 2026 Tarn, a fictional product.</p>
+      </div>
+      <p class="tn-sr" role="status" aria-live="polite" id="copy-status"></p>
+    </footer>
+
+    <script>
+      // Phone and tablet menu: the canonical icon-only Button opens and closes the navigation
+      const menuButton = document.querySelector(".tn-menu");
+      const nav = document.getElementById("primary-nav");
+      const setMenu = (open) => {
+        menuButton.setAttribute("aria-expanded", String(open));
+        nav.classList.toggle("is-open", open);
+      };
+      menuButton.addEventListener("click", () => setMenu(menuButton.getAttribute("aria-expanded") !== "true"));
+      nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape" || !nav.classList.contains("is-open")) return;
+        setMenu(false);
+        menuButton.focus();
+      });
+      window.matchMedia("(max-width: 1019px)").addEventListener("change", () => setMenu(false));
+
+      // Copy: the canonical icon-only Button copies the command beside it and confirms with the check icon
+      const CHECK = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.99387 20L2 12.4158L3.74847 10.5198L8.99387 16.2079L20.2515 4L22 5.89605L8.99387 20Z" /></svg>';
+      const copyStatus = document.getElementById("copy-status");
+      document.querySelectorAll(".tn-copy").forEach((button) => {
+        const icon = button.querySelector('[data-alpy-slot="IconOnly"]');
+        const original = icon.innerHTML;
+        button.addEventListener("click", async () => {
+          const command = button.closest(".tn-cmd").querySelector("code").textContent;
+          try {
+            await navigator.clipboard.writeText(command);
+          } catch {
+            copyStatus.textContent = "Copy failed. Select the command to copy it.";
+            return;
+          }
+          copyStatus.textContent = "Command copied";
+          icon.innerHTML = CHECK;
+          icon.dataset.alpyIconId = "check";
+          setTimeout(() => {
+            icon.innerHTML = original;
+            icon.dataset.alpyIconId = "copy";
+            copyStatus.textContent = "";
+          }, 1600);
+        });
+      });
+
+      // Install tabs: canonical line Tabs; the panel shows the selected tool's command
+      const installTabs = [...document.querySelectorAll("#how .alpy-tab")];
+      const installPanel = document.getElementById("install-panel");
+      const installCode = installPanel.querySelector("code");
+      const selectTab = (tab, focus) => {
+        installTabs.forEach((item) => {
+          const selected = item === tab;
+          item.setAttribute("aria-selected", String(selected));
+          item.tabIndex = selected ? 0 : -1;
+        });
+        installPanel.setAttribute("aria-labelledby", tab.id);
+        installCode.textContent = tab.dataset.command;
+        if (focus) tab.focus();
+      };
+      installTabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => selectTab(tab, false));
+        tab.addEventListener("keydown", (event) => {
+          const target = { ArrowLeft: index - 1, ArrowRight: index + 1, Home: 0, End: installTabs.length - 1 }[event.key];
+          if (target === undefined) return;
+          event.preventDefault();
+          selectTab(installTabs[(target + installTabs.length) % installTabs.length], true);
+        });
+      });
+
+      // Viewport reveal: each marked block rises once; a pane then prints its output line by line
+      if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches && "IntersectionObserver" in window) {
+        document.documentElement.classList.add("tn-motion");
+        const groups = new Map();
+        document.querySelectorAll("[data-reveal]").forEach((item) => {
+          const group = groups.get(item.parentElement) || [];
+          item.style.setProperty("--tn-delay", `${group.length * 80}ms`);
+          group.push(item);
+          groups.set(item.parentElement, group);
+        });
+        const observer = new IntersectionObserver(
+          (entries) =>
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-in");
+              observer.unobserve(entry.target);
+            }),
+          { rootMargin: "0px 0px -10% 0px" },
+        );
+        document.querySelectorAll("[data-reveal]").forEach((item) => observer.observe(item));
+      }
+
+      // Hero art: a dinosaur drawn in characters. It starts as scattered, faint fragments a little way back, is restored
+      // from the ground up, walks three steps forward, holds, then scatters again. Behind it, a dim prehistoric setting.
+      (() => {
+        const box = document.querySelector(".tn-art");
+        const pre = box.querySelector("pre");
+        const ART = [
+          "                                                     .Xai;WMM,",
+          "                                                 raOBZZ77WWa8MBi.",
+          "                                               @MOBMaZ@M0;7SX;XZ80B8aaXX",
+          "                                               M@aMB2Xr7a2S;.2a2;:::.:7Xra",
+          "                                                MW8ZSX7XXri:i;S7;i7i:...72",
+          "                                                iMZa27r7SXSXX;i:.     ,:i...:",
+          "                                                7M22X2a2227r77;7;:;aB8M2W20XS",
+          "                                                MWaXXZa8@MBBMMBWWMSX",
+          "                                                M@X7777r;Z@Z@08Z@a",
+          "                                                 ZMa7;ii;i:ZM0;:XaX;iir7",
+          "                                                 8MWZ027:.  ;WMWaX7MM8a0",
+          "                                                 @@2;,8Z22X,   SB@82a7r",
+          "                                                 MZ8W7r7XiwZZaXi.irSSZW@0.",
+          "                                                 WMZrrS.;Srr:a8ZS227Xr77X",
+          "                                                iM0ZaW8X: 2Sr;0       .::,",
+          "                                             i@M8ZZS:2Si. a 02",
+          "                                           XBBWWaS S@r ::i ,rM",
+          "                                         :MMB2:XZZ7 ;8i :., M:",
+          "                                          XMS;aZX,i8W; :i.  .M",
+          "                                       iBMMSX,X88:. W@S,i,B  78",
+          "                                      .XBMBS222X0XMXi.,7M. @7 .W",
+          "                                  78WMBSa7i;ZZZMi2Sr: :@:Z0  :@",
+          "                               XW@MZS7Zr2Xi,78aWMrX7;i@S;i    M",
+          "                              OM@aXZX7rZ2r0ii,782@MrXiZ@    .  7W",
+          "                           8MBZXX7ZarrrOXS2.i,;S:M@r7aW   . .MaZZ2",
+          "                           SMMXrX8S77B7;i;Z2ZX,:.,;78Mr2W.,  8ZSZXOM.",
+          "                          MMSXZ777ZZrrB7;iiXZ8;. r0 :MSX2aB8S0S.  a2MM,",
+          "                         iMWarXS0S7iSa7;0r;;i;8Z ;B;  7WB8WZZar@W  MMM8",
+          "                         7MZraZrr20ZX2S2Xr8i;ii:Z2B.  .  ,ZS  M8MM: ,",
+          "                        7M2a7Xa8XiZSZBMiX2XS:;i: Ba   .  22   X2Zi",
+          "                        ,M0;SZr7X82ra;SMW rSZaii, Wi    ZM",
+          "                        M8Za;aZr7rSaSa:XM7.:rSai 7W     iM",
+          "                       rMZiWZiZr7;rSaa:rMX ,,,:7B.  .  W",
+          "                       OaZXZ2aS2ZXr;;7aZ:;Ma  7Sr   .  :M7",
+          "                      M87ZBZiXaa0Zr;r;SriiMa Xi     .   Mr2@",
+          "                      WBZZ0aBZ;;XS80Sr7;r;iiMS  ...  aM, SM",
+          "                      SZ02aZ02BB7;7r2ZXrrrr;iiMi  .  iM;i:.SM",
+          "                      :M;X0X88B200Sr77XXX77;r;:7M     iMr:i:i.ZM",
+          "                     Maaiaa7a0@0aXr;77XXXXX;r;,0B   XM; iii;: Wa",
+          "                     B07r7Z2.XX0M@S;r77X7XX7;::;M  88 .:,ii;:,M",
+          "                     BM;SS;XXZBS, :aMWX::;7XXr;ii,WSr22S7iiir77i7a",
+          "                     WMXXS22,XZZr.,   iZWri:i;XSX77W.   iOW0WBS,rS",
+          "                   7MB.a77Sa8@ ,,.  ;rrMMZX;:7808Br    .S:.   .iZ",
+          "                   WW8X2:aX:,a@  . 7W82riSX;777i,X;     M.    .Z2",
+          "                 2M@X;SiaX270S    :@Wri::,..:r.;aX     a0    8  M",
+          "                XMMX2r2Br::8M;     2M2.i::,.:,rr ;W7   0Z  ,M7 8Z",
+          "                :M@a72Z7:07;8a     ,MM; i,,. .XZr a@,   X@:2W;   M",
+          "               .BMBaXX,8a,i88:   r7M@r:..   i20X,7M8      M7    Ba",
+          "             ZMWa:,00:iaZZ:     :Xa;BZ.:7X7XZZX;2B8.     8;XW   M",
+          "           XMM27Z7:;8XaX.     S8Zr,ZS ..  ::;rSZ87       0 Wi Z,",
+          "         7MMZS :8BXZSi   rBB2   O,  . .7SSi              aa   7X",
+          "       SM@2X27raOr  .ZWZ:         2.  ;W@M,              @7 :  8B",
+          "       @ZB ;B8S:  XBWX            a2 .,: 8                0@MX  BW.",
+          "    O0Wa2iZi :Z@Z:                M ,a  M                  .8X    rW7",
+          "    MZZiM2 :0B7                   2@ r0 W7                 XB,   ,O@MMMM0Z",
+          "  XZM7 8;rW,                      M, W .M                  ZO..7XXS7;;;:;X8W@",
+          "  2XWZr:iW                        B7 ra SX ,               MrSBZi:,;X2ZaS7;0Z",
+          "  ,2SSXB 0.                       7X  r  Z@MO               7",
+          " X:ZZ,Zi2                         SX   .XXZB@OOOMB",
+          "B72Ma87                           SW,.   :rSZ8aiZB.",
+          "a82XOaZ                            70808WXZrr;,80,MX",
+          "ZZi.W80:                             ir7rXX0r:0",
+          "   M8:7SBM8.                                 ,",
+          "     ,MBZZ.,O88X:",
+          "        OMM2X2S,XOBa8aSX;i:",
+          "        ,aW@MMZ782 iB2;@@XOMB2BB8SZaX7;::.",
+          "           ,S8W@MW8wa:22 .8: ;0,.88::8@XaZZ2Sr;,",
+          "              ,rXZ8WBBBBZa2X7;;::.     .:i7XS7;",
+          "                 .;:rXS22aa080ZZZ88ZSX7i:  ,irr;",
+          "                       .,;;;7XXX7;;r7;",
+          "                                               ,.:i",
+        ];
+        const LH = 1.2;
+        const CW = 0.6;
+        const LOST = 1.2;
+        const BUILD = 3.2;
+        const PAUSE = 0.4;
+        const STEPS = 3;
+        const STEP = 0.8;
+        const WALK = STEPS * STEP;
+        const HOLD = 3;
+        const SCATTER = 1.1;
+        const CYCLE = LOST + BUILD + PAUSE + WALK + HOLD + SCATTER;
+        const hash = (a, b = 0) => {
+          const s = Math.sin(a * 127.1 + b * 311.7) * 43758.5453;
+          return s - Math.floor(s);
+        };
+        const ease = (x) => (x <= 0 ? 0 : x >= 1 ? 1 : x < 0.5 ? 2 * x * x : 1 - (-2 * x + 2) ** 2 / 2);
+        const esc = { "&": "&amp;", "<": "&lt;", ">": "&gt;" };
+        const tone = (ch) => ("MW@8B0O".includes(ch) ? "s" : ".,:;'`".includes(ch) ? "d" : "l");
+        const artRows = ART.length;
+        const artCols = Math.max(...ART.map((l) => l.length));
+        // The parts that move on their own, in the drawing's own rows and columns
+        const part = (c, r) => {
+          if (r >= 6 && r <= 8 && c >= 62) return "jaw";
+          if (r <= 18 && c >= 41) return "head";
+          if (r >= 19 && r <= 29 && c >= (r === 26 ? 65 : r === 27 ? 66 : 61)) return "arms";
+          if (r >= 44 && r <= 57 && c >= 54) return "near";
+          if (r >= 50 && r <= 61 && c >= 31 && c <= 53) return "far";
+          if (r >= 44 && c < 30) return "tail";
+          return "body";
+        };
+        // Every character of the drawing, with where it lies when scattered and when its restore begins
+        const cells = [];
+        ART.forEach((line, r) =>
+          [...line].forEach((ch, c) => {
+            if (ch === " ") return;
+            const i = cells.length;
+            cells.push({
+              c,
+              r,
+              ch,
+              tone: tone(ch),
+              part: part(c, r),
+              dx: Math.round((hash(i, 1) - 0.5) * 28),
+              dy: Math.round(4 + hash(i, 2) * 14),
+              seen: hash(i, 3) < 0.3,
+              at: (1 - r / artRows) * 0.85 + hash(i, 4) * 0.15,
+            });
+          }),
+        );
+        let cols = 0;
+        let rows = 0;
+        let ox = 0;
+        let oy = 0;
+        let stride = 0;
+        // Per grid row, the first column clear of the text beside it; nothing is drawn left of it
+        let clear = [];
+        const first = ART.map((line) => line.search(/\S/));
+
+        // The setting: a far ridge with one smoking volcano, sparse ground, a few palms and ferns, and two pterosaurs.
+        // It stays dim, keeps clear of the whole text block, and never shows through the dinosaur's body
+        const PALM = [
+          "    __  _.,_  __",
+          " .-'  '/ | \\'  '-.",
+          "/   .-/  |  \\-.   \\",
+          "   /  '  |  '  \\",
+          "  '      )      '",
+          "         (",
+          "         )",
+          "         (",
+          "         )",
+          "        /_\\",
+        ];
+        const SAPLING = [" _\\|/_", "  /|\\", "   )", "   (", "   )"];
+        const FERN = ["  ,\\|/,", " -=(|)=-", "  '/|\\'"];
+        let land = [];
+        let back = [];
+        let vent = { c: 0, r: 0 };
+        // Runs of characters with gaps of three spaces or less count as body, so the setting never shows through them
+        const solid = [];
+        ART.forEach((line, r) => {
+          for (const m of line.matchAll(/\S(?:\s{0,3}\S)*/g)) {
+            for (let c = m.index; c < m.index + m[0].length; c++) solid.push({ c, r, part: part(c, r), at: (1 - r / artRows) * 0.85 + 0.15 });
+          }
+        });
+
+        const scenery = () => {
+          land = Array.from({ length: rows }, () => new Array(cols).fill(null));
+          const set = (c, r, ch, cls = "d") => {
+            if (ch !== " " && r >= 0 && r < rows && c >= 0 && c < cols) land[r][c] = [ch, cls];
+          };
+          const sprite = (lines, c, bottom) => lines.forEach((line, i) => [...line].forEach((ch, j) => set(c + j, bottom - lines.length + 1 + i, ch)));
+          // The ridge: low hills, and a steep cone with a flat crater in the open ground between the text and where the
+          // walk ends, so the dinosaur uncovers it as it walks
+          const horizon = Math.round(rows * 0.6);
+          const from = Math.max(0, ...back);
+          const end = ox + STEPS * stride;
+          // The cone's base is 6 + 2 × its height wide. It centres in the gap when it fits; otherwise it starts just past
+          // the text and the dinosaur stands in front of its far flank
+          const vh = Math.round(rows * 0.16);
+          const vc = Math.max(from + 5 + vh, Math.round((from + end) / 2));
+          const height = [];
+          for (let c = 0; c <= cols; c++) {
+            const u = c / cols;
+            const hills = Math.round(Math.max(0, Math.sin(u * 9.1 + 0.6) * 1.6 + Math.sin(u * 23 + 2) * 0.8 + 0.6));
+            height.push(Math.max(hills, vh - Math.max(0, Math.abs(c - vc) - 3)));
+          }
+          for (let c = 1; c < height.length; c++) if (height[c] - height[c - 1] > 1) height[c] = height[c - 1] + 1;
+          for (let c = height.length - 2; c >= 0; c--) if (height[c] - height[c + 1] > 1) height[c] = height[c + 1] + 1;
+          for (let c = 0; c < cols; c++) {
+            const h = height[c];
+            const n = height[c + 1];
+            if (n > h) set(c, horizon - h, "/");
+            else if (n < h) set(c, horizon - n, "\\");
+            else set(c, horizon - h, "_");
+          }
+          // The crater glows: the one light in the scene, with a thin run of lava down the left flank
+          vent = { c: vc, r: horizon - vh - 1 };
+          for (let i = -2; i <= 2; i++) if (hash(i, 9) > 0.35) set(vc + i, vent.r, i % 2 ? "'" : "^", "h");
+          for (let k = 1; k <= 4; k++) set(vc - 2 - Math.round(k * 0.6), vent.r + k + 1, k % 2 ? ":" : "'", "h");
+          // Ground: sparse marks that thicken toward the front, with the odd tuft and stone
+          for (let r = horizon + 1; r < rows; r++) {
+            const near = ((r - horizon) / (rows - horizon)) ** 1.5;
+            for (let c = 0; c < cols; c++) {
+              const h = hash(c * 7.3, r * 3.1);
+              if (h > 0.998) set(c, r, "o");
+              else if (h > 0.995) [..."\\|/"].forEach((ch, j) => set(c + j, r, ch));
+              else if (h < 0.006 + near * 0.04) set(c, r, ".,'`"[Math.floor(hash(c, r) * 4)]);
+            }
+          }
+          // Palms and ferns: a tall palm at the far right, saplings on the far ridge, ferns along the front
+          sprite(PALM, cols - PALM[2].length - 2, rows - 1);
+          for (const c of [vc - vh - 12, vc + vh + 8]) sprite(SAPLING, c, horizon - height[Math.max(0, Math.min(cols, c + 3))]);
+          sprite(FERN, Math.round(cols * 0.02), rows - 1);
+          sprite(FERN, Math.round(cols * 0.5), rows - 2);
+        };
+
+        const layout = () => {
+          const width = box.clientWidth;
+          const height = box.clientHeight;
+          const size = Math.max(4.5, Math.min(14, (height * 0.9) / (artRows * LH), width / (artCols * CW)));
+          pre.style.fontSize = `${size}px`;
+          cols = Math.max(artCols, Math.floor(width / (size * CW)));
+          rows = Math.max(artRows + 2, Math.floor(height / (size * LH)));
+          oy = Math.floor((rows - artRows) / 2);
+          // Beside the text, each row starts as close to the text beside it as it can, so the tail may tuck in under the
+          // actions; three strides then bring it to the centre of the right column. Stacked under the text, the walk is centred
+          const spare = cols - artCols;
+          const area = box.getBoundingClientRect();
+          const text = document.querySelector(".tn-hero-text");
+          clear = new Array(rows).fill(0);
+          back = new Array(rows).fill(0);
+          if (text.getBoundingClientRect().bottom > area.top + 1) {
+            const cw = size * CW;
+            const ch = size * LH;
+            const left = area.left + (width - cols * cw) / 2;
+            const top = area.top + (height - rows * ch) / 2;
+            const range = document.createRange();
+            const lines = [];
+            // Text by its lines of words, the actions by their Buttons
+            for (const el of text.children) {
+              if (el.children.length) for (const button of el.children) lines.push(button.getBoundingClientRect());
+              else {
+                range.selectNodeContents(el);
+                lines.push(...range.getClientRects());
+              }
+            }
+            for (const line of lines) {
+              const from = Math.max(0, Math.floor((line.top - 8 - top) / ch));
+              const to = Math.min(rows - 1, Math.floor((line.bottom + 8 - top) / ch));
+              for (let r = from; r <= to; r++) clear[r] = Math.max(clear[r], Math.ceil((line.right + 16 - left) / cw));
+            }
+            // The setting keeps clear of the text block as a whole, gaps between lines included
+            const blockTop = Math.min(...lines.map((l) => l.top)) - 24;
+            const blockBottom = Math.max(...lines.map((l) => l.bottom)) + 24;
+            const blockRight = Math.ceil((Math.max(...lines.map((l) => l.right)) + 32 - left) / cw);
+            for (let r = Math.max(0, Math.floor((blockTop - top) / ch)); r <= Math.min(rows - 1, Math.floor((blockBottom - top) / ch)); r++) back[r] = blockRight;
+            ox = 0;
+            first.forEach((c, r) => {
+              if (c >= 0) ox = Math.max(ox, clear[oy + r] - c + 2);
+            });
+            const gap = parseFloat(getComputedStyle(text.parentElement).columnGap) || 0;
+            const middle = (text.getBoundingClientRect().right + gap + area.right) / 2;
+            const end = Math.min(spare - 1, Math.round((middle - left) / cw - artCols / 2));
+            stride = Math.max(0, Math.floor((end - ox) / STEPS));
+          } else {
+            stride = Math.max(3, Math.min(12, Math.round(spare / 4.5)));
+            ox = Math.max(0, Math.floor((spare - STEPS * stride) / 2));
+          }
+          scenery();
+        };
+
+        const draw = (t) => {
+          const w = t % CYCLE;
+          const build = (w - LOST) / BUILD;
+          const walk = Math.min(STEPS, Math.max(0, (w - LOST - BUILD - PAUSE) / STEP));
+          const scatter = ease((w - LOST - BUILD - PAUSE - WALK - HOLD) / SCATTER);
+          // Each step: the body moves one stride and rises a little; one leg lifts and swings forward while the other
+          // stays planted, so it slides back under the body; the tail trails
+          const step = Math.min(STEPS - 1, Math.floor(walk));
+          const s = walk >= STEPS ? 0 : walk - step;
+          const arc = Math.sin(Math.PI * s);
+          const bx = ox + Math.round(stride * (walk >= STEPS ? STEPS : step + ease(s)));
+          const by = -Math.round(arc * 0.7);
+          const swing = step % 2 === 0 ? "near" : "far";
+          // Now and then the head and neck nod forward and the jaw drops open; the small arms paw back and forth.
+          // Each moves a character at a time, sideways or into the mouth's own gap, so the drawing never tears
+          const nod = Math.sin(t * 0.9 + 2) > 0.4 ? 1 : 0;
+          const shift = {
+            head: [nod, 0],
+            jaw: [nod, Math.sin(t * 1.3) > 0.75 ? 1 : 0],
+            arms: [Math.round(Math.sin(t * 2.4)), 0],
+            body: [0, 0],
+            tail: [-Math.round(arc * 1.2), 0],
+            [swing]: [Math.round(stride * 0.4 * arc), -Math.round(arc * 1.8)],
+            [swing === "near" ? "far" : "near"]: [-Math.round(stride * 0.4 * arc), -by],
+          };
+          const grid = land.map((line, r) => line.map((cell, c) => (cell && c >= back[r] ? cell : [" ", "d"])));
+          const put = (c, r, ch, cls) => {
+            if (r >= 0 && r < rows && c >= clear[r] && c < cols) grid[r][c] = [ch, cls];
+          };
+          const air = (c, r, ch) => {
+            if (r >= 0 && r < rows && c >= back[r] && c < cols && grid[r][c][0] === " ") grid[r][c] = [ch, "d"];
+          };
+          // Smoke leaves the crater, widens, and drifts right as it climbs
+          for (let i = 0; i < 14; i++) {
+            const a = (t * 0.07 + i / 14) % 1;
+            if (hash(i, Math.floor(t * 0.07 + i / 14)) < 0.25) continue;
+            const r = vent.r - 1 - Math.round(a * rows * 0.3);
+            const c = vent.c + Math.round(Math.sin(a * 5 + i) * (1 + a * 2) + a * a * 16);
+            air(c, r, a < 0.2 ? "o" : a < 0.5 ? (i % 2 ? "(" : ")") : a < 0.8 ? "~" : ".");
+          }
+          // Two pterosaurs glide across the sky, wings beating now and then
+          [[0.1, 1.6, 0], [0.18, 1.1, 0.55]].forEach(([y, speed, offset], i) => {
+            const span = cols + 10;
+            const c = Math.round(((t * speed + offset * span) % span) - 5);
+            const r = Math.round(rows * y + Math.sin(t * 0.8 + i) * 1.2);
+            [...(Math.floor(t * 3 + i) % 4 === 0 ? "-v-" : "\\v/")].forEach((ch, j) => air(c + j, r, ch));
+          });
+          // The setting never shows through the restored body
+          for (const cell of solid) {
+            if (ease(Math.min(1, Math.max(0, (build - cell.at * 0.75) / 0.25))) * (1 - scatter) < 1) continue;
+            const [mx, my] = shift[cell.part];
+            const c = bx + mx + cell.c;
+            const r = oy + by + my + cell.r;
+            if (r >= 0 && r < rows && c >= 0 && c < cols) grid[r][c] = [" ", "d"];
+          }
+          for (const cell of cells) {
+            const k = ease(Math.min(1, Math.max(0, (build - cell.at * 0.75) / 0.25))) * (1 - scatter);
+            if (k === 0 && !cell.seen) continue;
+            const cls = k >= 1 ? cell.tone : k > 0 ? "w" : "d";
+            const [mx, my] = shift[cell.part];
+            put(bx + mx + cell.c + Math.round(cell.dx * (1 - k)), oy + by + my + cell.r + Math.round(cell.dy * (1 - k)), cell.ch, cls);
+          }
+          let html = "";
+          for (const line of grid) {
+            let run = "";
+            let runClass = "";
+            for (const [ch, cls] of line) {
+              const klass = ch === " " ? runClass : cls;
+              if (klass !== runClass && run) {
+                html += runClass ? `<span class="${runClass}">${run}</span>` : run;
+                run = "";
+              }
+              runClass = klass;
+              run += esc[ch] || ch;
+            }
+            html += (runClass ? `<span class="${runClass}">${run}</span>` : run) + "\n";
+          }
+          pre.innerHTML = html;
+        };
+
+        const still = !window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+        // With motion off, the scene holds on the restored animal where its walk ends
+        const rest = LOST + BUILD + PAUSE + WALK + HOLD / 2;
+        const start = performance.now();
+        const refresh = () => {
+          layout();
+          draw(still ? rest : (performance.now() - start) / 1000);
+        };
+        refresh();
+        document.fonts.ready.then(refresh);
+        new ResizeObserver(refresh).observe(box);
+        if (still) return;
+
+        let visible = true;
+        let last = 0;
+        new IntersectionObserver(([entry]) => (visible = entry.isIntersecting)).observe(box);
+        const tick = (time) => {
+          if (visible && !document.hidden && time - last > 50) {
+            last = time;
+            draw((time - start) / 1000);
+          }
+          requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      })();
+    </script>
+  </body>
+</html>

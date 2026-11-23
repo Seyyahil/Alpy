@@ -1,4 +1,4 @@
-# Grunge / Punk
+# Grunge
 
 Artist and music website prototype.
 

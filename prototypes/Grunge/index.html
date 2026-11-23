@@ -56,6 +56,18 @@
         --rule: 3px;
         --header-h: 76px;
         --hero-progress: 0;
+        /* Canonical Alpy space tokens */
+        --space-0: 0px;
+        --space-4: 4px;
+        --space-8: 8px;
+        --space-12: 12px;
+        --space-16: 16px;
+        --space-20: 20px;
+        --space-24: 24px;
+        --space-32: 32px;
+        --space-40: 40px;
+        --space-48: 48px;
+        --space-64: 64px;
       }
 
       *,
@@ -1021,6 +1033,10 @@
         gap: 40px;
       }
 
+      .merch-cta {
+        margin-top: 76px;
+      }
+
       .merch-note {
         margin: 0 0 14px;
         font-weight: 720;
@@ -1655,6 +1671,140 @@
         }
       }
 
+      /* The live session title is clipped to its paper label, so its widest word, SESSION, must fit the label:
+         the size only shrinks where the label is too narrow for it */
+      @media (min-width: 581px) and (max-width: 940px) {
+        .session-title {
+          font-size: min(clamp(4rem, 8vw, 8rem), calc((46vw - var(--space-32)) / 4.4));
+        }
+      }
+
+      /* Phones: a static page with 24px margins and 32px sections. The hero no longer pins or drifts with
+         scrolling, and the display words are capped so the widest one always fits the column */
+      @media (max-width: 580px) {
+        .hero {
+          height: auto;
+          min-height: 0;
+        }
+
+        .hero-sticky {
+          position: relative;
+        }
+
+        .hero-photo,
+        .hero-register,
+        .hero-cutout,
+        .hero-copy {
+          transform: none;
+          will-change: auto;
+        }
+
+        .wordmark {
+          padding-inline: var(--space-24);
+        }
+
+        .release-stamp {
+          left: var(--space-24);
+        }
+
+        .hero-copy {
+          right: var(--space-24);
+          left: var(--space-24);
+        }
+
+        .hero-panel {
+          width: 100%;
+        }
+
+        .section-inner {
+          padding: var(--space-32) var(--space-24);
+        }
+
+        .session-frame {
+          margin-inline: calc(var(--space-24) * -1);
+        }
+
+        .session-title {
+          left: var(--space-24);
+          font-size: min(clamp(3.4rem, 17vw, 5.3rem), calc((74vw - var(--space-32)) / 4.4));
+        }
+
+        .session-caption {
+          right: var(--space-24);
+          width: calc(100% - var(--space-48));
+        }
+
+        .hero-title {
+          font-size: min(clamp(5.8rem, 30vw, 9.5rem), calc((100vw - var(--space-48)) / 3.4));
+        }
+
+        .booking-title {
+          font-size: min(clamp(5rem, 29vw, 8.8rem), calc((100vw - var(--space-48)) / 3.3));
+        }
+
+        #merch-title {
+          font-size: min(clamp(4.15rem, 22vw, 6.8rem), calc((100vw - var(--space-48)) / 5.2));
+        }
+
+        .merch-poster h3 {
+          font-size: min(clamp(4.2rem, 20vw, 6.7rem), calc((100vw - var(--space-48) - var(--space-48)) / 3.6));
+        }
+
+        /* One rhythm: 32px between groups, 24px from a section's label to its heading,
+           16px from a heading to its text */
+        .section-label {
+          margin-bottom: var(--space-24);
+        }
+
+        .featured-layout,
+        .story-layout,
+        .mailing-layout,
+        .tour-header {
+          gap: var(--space-32);
+        }
+
+        .tour-header {
+          margin-bottom: var(--space-32);
+        }
+
+        .merch-header {
+          gap: var(--space-16);
+        }
+
+        .merch-note {
+          margin-bottom: var(--space-0);
+        }
+
+        .poster-rail,
+        .merch-cta,
+        .booking-strip {
+          margin-top: var(--space-32);
+        }
+
+        .booking {
+          min-height: 0;
+        }
+
+        .footer-inner {
+          gap: var(--space-32);
+          padding-block: var(--space-32);
+        }
+
+        /* Paragraph margins don't add to the rhythm: 16px from a heading to its text, 32px to the next group */
+        .read-copy {
+          margin-block: var(--space-16) var(--space-0);
+        }
+
+        .tour-status,
+        .footer-colophon > p {
+          margin-block: var(--space-0);
+        }
+
+        .pull-quote {
+          margin-top: var(--space-32);
+        }
+      }
+
       /* Gallery cards show the same top-of-page window as the other live
          website previews. Compress only the embedded parallax runway so the
          complete hero and the opening of the next section share that crop. */
@@ -1885,7 +2035,7 @@
             </article>
           </div>
 
-          <div style="margin-top: 76px">
+          <div class="merch-cta">
             <a class="button" href="#mailing-list">Get drop alerts</a>
           </div>
         </div>

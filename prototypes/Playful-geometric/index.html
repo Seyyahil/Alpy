@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root{--ink:#171523;--paper:#fffaf0;--cream:#f5ead6;--blue:#2354ff;--primary-50:#D5DCE8;--primary-100:#B7C5E1;--primary-300:#6C95E5;--primary-500:#0A4FDF;--primary-700:#0B3A9D;--primary-900:#031643;--secondary-100:#C7DAC8;--secondary-300:#7FB581;--secondary-500:#058625;--tertiary-300:#E5BA65;--tertiary-500:#FCA701;--hero-bg:color-mix(in srgb,var(--primary-50) 50%,var(--paper));--yellow:#fbd42e;--coral:#ff6b5c;--mint:#a5e2c2;--line:2px solid var(--ink)}
+    :root{--ink:#171523;--paper:#fffaf0;--cream:#f5ead6;--blue:#2354ff;--primary-50:#EBF1FF;--primary-100:#BDD2FE;--primary-300:#5F92FE;--primary-500:#0051FF;--primary-700:#012F93;--primary-900:#010d28;--secondary-100:#C7DAC8;--secondary-300:#7FB581;--secondary-500:#058625;--tertiary-300:#E5BA65;--tertiary-500:#FCA701;--hero-bg:color-mix(in srgb,var(--primary-50) 50%,var(--paper));--yellow:#fbd42e;--coral:#ff6b5c;--mint:#a5e2c2;--line:2px solid var(--ink)}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Space Grotesk",Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}.eyebrow{font:500 11px/1 "DM Mono",monospace;letter-spacing:.09em;text-transform:uppercase}.section{padding:104px 0}.section-top{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:36px}.section-title{font:700 clamp(34px,5vw,66px)/.98 "Unbounded",sans-serif;letter-spacing:-.07em;margin:0;max-width:780px}.pill,.button{border:var(--line);border-radius:999px;padding:12px 19px;display:inline-flex;align-items:center;gap:9px;font-weight:700}.button{background:var(--blue);color:#fff;box-shadow:4px 4px 0 var(--ink);transition:.2s}.button:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}.button.white{background:#fff;color:var(--ink)}
     header{padding:20px 0;border-bottom:var(--line);background:var(--hero-bg);position:sticky;top:0;z-index:10}.nav{display:flex;justify-content:space-between;align-items:center}.brand{font:800 22px/1 "Unbounded";letter-spacing:-.11em}.brand i{display:inline-block;width:15px;height:15px;background:var(--coral);border-radius:50%;margin-left:3px}.nav-links{display:flex;gap:26px;font-size:14px;font-weight:700}.nav-action{padding:10px 15px;font-size:13px}
     .hero{overflow:hidden;padding:70px 0 66px;background:var(--cream);position:relative}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:56px;min-height:590px}.hero h1{font:700 clamp(48px,6.5vw,84px)/.98 "Unbounded";letter-spacing:-.085em;margin:15px 0 24px;max-width:670px}.hero h1 span{color:var(--blue)}.hero-copy{font-size:18px;line-height:1.5;max-width:510px;margin-bottom:31px}.hero-actions{display:flex;gap:15px;align-items:center;flex-wrap:wrap}.listen{font-size:14px;font-weight:700;text-decoration:underline;text-underline-offset:4px}.hero-art{position:relative;height:510px}.photo-frame{position:absolute;right:0;bottom:14px;width:83%;height:90%;overflow:hidden;border:var(--line);border-radius:49% 49% 13px 13px;background:var(--coral)}.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:62% center;mix-blend-mode:multiply}.sun{position:absolute;width:176px;height:176px;border:var(--line);border-radius:50%;background:var(--yellow);top:6px;left:2px}.play-big{position:absolute;width:105px;height:105px;border:var(--line);border-radius:50%;background:var(--blue);right:0;top:25px;display:grid;place-items:center;transform:rotate(-11deg)}.play-big svg{width:40px;fill:#fff;margin-left:6px}.squiggle{position:absolute;width:180px;left:13px;bottom:2px;transform:rotate(-8deg)}.burst{position:absolute;width:74px;height:74px;right:17px;bottom:-6px;background:var(--yellow);clip-path:polygon(50% 0,59% 32%,78% 9%,69% 39%,100% 38%,72% 52%,93% 73%,62% 62%,57% 100%,47% 67%,26% 91%,36% 61%,0 65%,30% 49%,6% 27%,40% 38%);transform:rotate(15deg)}.episode-stamp{position:absolute;left:0;top:110px;z-index:2;background:#fff;border:var(--line);padding:13px 15px;border-radius:13px;transform:rotate(-7deg);font:500 11px/1.4 "DM Mono"}
@@ -61,48 +61,190 @@
     .hero-copy{max-width:500px}
     .shape-composition{position:relative;width:min(100%,600px);aspect-ratio:600/680;justify-self:end;isolation:isolate}
     .shape-composition *{box-sizing:border-box}
-    .shape-wave-badge{position:absolute;z-index:5;left:18%;top:5%;width:25%;height:12%;display:flex;align-items:center;justify-content:center;gap:4.4%;border:2px solid var(--ink);border-radius:999px;background:#fff}
+    .shape-wave-badge{position:absolute;z-index:5;left:5%;top:6%;width:26.75%;height:12.65%;display:flex;align-items:center;justify-content:center;gap:4.4%;border:2px solid var(--ink);border-radius:999px;background:#fff}
     .shape-wave-badge i{display:block;width:9%;height:37%;border:1.5px solid var(--ink);border-radius:999px;background:var(--tertiary-500)}
     .shape-wave-badge i:nth-child(2),.shape-wave-badge i:nth-child(4){height:55%}
     .shape-wave-badge i:nth-child(3){height:72%}
-    .shape-play{position:absolute;z-index:4;left:18%;top:20%;width:14%;aspect-ratio:1;border:2px solid var(--ink);border-radius:50%;background:var(--secondary-100)}
+    .shape-play{position:absolute;z-index:4;left:4.7%;top:31%;width:15.6%;aspect-ratio:1;border:2px solid var(--ink);border-radius:50%;background:var(--secondary-100)}
     .shape-play:before,.shape-play:after{content:"";position:absolute;width:0;height:0}
     .shape-play:before{left:39%;top:30%;border-top:17px solid transparent;border-bottom:17px solid transparent;border-left:26px solid var(--ink)}
     .shape-play:after{left:42%;top:34%;border-top:13px solid transparent;border-bottom:13px solid transparent;border-left:20px solid #fff}
     .shape-star,.shape-mini-star{position:absolute;z-index:6;background:var(--ink);clip-path:polygon(50% 0,61% 34%,96% 24%,69% 52%,91% 82%,57% 67%,32% 100%,35% 63%,0 55%,35% 43%)}
     .shape-star:after,.shape-mini-star:after{content:"";position:absolute;inset:2px;background:var(--primary-300);clip-path:inherit}
-    .shape-star{left:33%;top:25%;width:8%;aspect-ratio:1;transform:rotate(-9deg)}
-    .shape-mini-star{right:6%;top:44%;width:6%;aspect-ratio:1;transform:rotate(8deg)}
+    .shape-star{left:15.7%;top:20.6%;width:8.8%;aspect-ratio:1;transform:rotate(-9deg)}
+    .shape-star:after{background:var(--primary-500)}
+    .shape-mini-star{left:86.5%;top:48.4%;width:7.6%;aspect-ratio:1;transform:rotate(8deg)}
     .shape-mini-star:after{background:var(--secondary-500)}
-    .shape-arch{position:absolute;z-index:3;left:42%;top:5%;width:29%;height:50%;overflow:hidden;border:2px solid var(--ink);border-radius:50% 50% 26% 26% / 25% 25% 16% 16%;background:var(--tertiary-300)}
-    .shape-speech{position:absolute;z-index:7;left:52%;top:3%;width:21%;padding:3.6% 2%;border:2px solid var(--ink);border-radius:999px;background:#fff;text-align:center;font:700 clamp(17px,2.1vw,28px)/1 "Space Grotesk",sans-serif;transform:rotate(-7deg)}
+    .shape-arch{position:absolute;z-index:3;left:28.4%;top:6%;width:35.5%;height:50%;overflow:hidden;border:2px solid var(--ink);border-radius:26% 26% 17% 17% / 16% 16% 11% 11%;background:var(--tertiary-300)}
+    .shape-speech{position:absolute;z-index:7;left:44.2%;top:.4%;width:23.7%;padding:3.6% 2%;border:2px solid var(--ink);border-radius:999px;background:#fff;text-align:center;font:700 clamp(17px,2.1vw,28px)/1 "Space Grotesk",sans-serif;transform:rotate(-5deg)}
     .shape-speech:before,.shape-speech:after{content:"";position:absolute;left:19%;clip-path:polygon(0 0,100% 0,18% 100%)}
     .shape-speech:before{bottom:-18px;width:28px;height:23px;background:var(--ink)}
     .shape-speech:after{bottom:-13px;width:23px;height:18px;background:#fff}
-    .shape-blob{position:absolute;z-index:2;right:4%;top:5%;width:23%;aspect-ratio:1;background:var(--primary-100);border:2px solid var(--ink);border-radius:42% 58% 55% 45% / 46% 39% 61% 54%;transform:rotate(9deg)}
+    .shape-blob{position:absolute;z-index:2;left:66.1%;top:10.3%;width:25.6%;aspect-ratio:1;background:var(--primary-100);border:2px solid var(--ink);border-radius:42% 58% 55% 45% / 46% 39% 61% 54%;transform:rotate(9deg)}
     .shape-blob:before,.shape-blob:after{content:"";position:absolute;inset:-2px;background:inherit;border:inherit;border-radius:inherit}
     .shape-blob:before{transform:rotate(32deg)}.shape-blob:after{transform:rotate(66deg)}
-    .shape-title-tab{position:absolute;z-index:8;right:2%;top:29%;width:33%;padding:3.5% 3%;border:2px solid var(--ink);border-radius:18px 44px 18px 44px;background:var(--primary-700);color:#fff;text-align:center;font:500 clamp(17px,2.6vw,32px)/1 "Space Grotesk",sans-serif;transform:rotate(8deg)}
-    .shape-slice{position:absolute;z-index:2;left:17%;top:34%;width:28%;height:14%;background:var(--primary-500);border:2px solid var(--ink);border-radius:0 0 999px 999px;transform:rotate(59deg);transform-origin:center}
-    .shape-green{position:absolute;z-index:1;left:18%;top:58%;width:18%;aspect-ratio:1;border:2px solid var(--ink);border-radius:50%;background:var(--secondary-300)}
-    .shape-orange{position:absolute;z-index:2;right:3%;top:48%;width:26%;aspect-ratio:1;border:2px solid var(--ink);border-radius:50%;background:var(--tertiary-500);transform:rotate(-17deg)}
-    .shape-orange i{position:absolute;bottom:25%;width:11%;border:1.5px solid var(--ink);border-radius:999px;background:#fff}
-    .shape-orange i:nth-child(1){left:23%;height:23%}.shape-orange i:nth-child(2){left:41%;height:42%}.shape-orange i:nth-child(3){left:59%;height:57%}.shape-orange i:nth-child(4){left:76%;height:38%}
-    .shape-capsule{position:absolute;z-index:0;left:18%;bottom:5%;width:66%;height:18%;border:2px solid var(--ink);border-radius:999px;background:var(--primary-900)}
-    .shape-outline{position:absolute;z-index:1;right:6%;bottom:5%;width:11%;height:20%;border:2px solid var(--ink);border-radius:999px;background:var(--tertiary-300)}
+    .shape-title-tab{position:absolute;z-index:8;left:66.8%;top:33.9%;width:30%;padding:3.5% 3%;border:2px solid var(--ink);border-radius:20px;background:var(--primary-700);color:#fff;text-align:center;font:500 clamp(17px,2.6vw,32px)/1 "Space Grotesk",sans-serif;transform:rotate(-6deg)}
+    .shape-backdrop{position:absolute;z-index:1;left:11.3%;top:30.3%;width:60.7%;height:29.7%;background:var(--primary-500);border:2px solid var(--ink);border-radius:15% 14% 25% 25% / 27% 25% 45% 45%}
+    .shape-green{position:absolute;z-index:2;left:5.7%;top:54.8%;width:25.3%;aspect-ratio:1;border:2px solid var(--ink);border-radius:50%;background:var(--secondary-300)}
+    .shape-orange{position:absolute;z-index:2;left:62.4%;top:50.9%;width:24.8%;aspect-ratio:1;border:2px solid var(--ink);border-radius:50%;background:var(--tertiary-500)}
+    .shape-orange i{position:absolute;bottom:26%;width:10%;border:1.5px solid var(--ink);border-radius:999px;background:#fff}
+    .shape-orange i:nth-child(1){left:20%;height:20%}.shape-orange i:nth-child(2){left:34%;height:34%}.shape-orange i:nth-child(3){left:48%;height:50%}.shape-orange i:nth-child(4){left:62%;height:42%}.shape-orange i:nth-child(5){left:76%;height:30%}
+    .shape-capsule{position:absolute;z-index:0;left:5.7%;bottom:0;width:75.4%;height:21.3%;border:2px solid var(--ink);border-radius:999px;background:var(--primary-900)}
+    .shape-outline{position:absolute;z-index:1;left:82.9%;top:70.9%;width:11%;height:21.9%;border:2px solid var(--ink);border-radius:999px;background:var(--tertiary-300)}
     .shape-outline:after{content:"";position:absolute;inset:15px 12px;border:2px solid var(--ink);border-radius:999px;background:var(--hero-bg)}
     .hero-host{position:absolute;z-index:6;display:block;object-fit:contain;object-position:center bottom;pointer-events:none;filter:drop-shadow(0 2px 0 rgba(23,21,35,.08))}
-    .shape-arch .hero-host-male{left:50%;bottom:-8%;width:106%;height:79%;transform:translateX(-50%);object-fit:contain;object-position:center bottom}
-    .hero-host-female{left:23%;bottom:5%;width:55%;height:44%;object-fit:cover;object-position:center top}
+    .shape-arch .hero-host-male{left:50%;bottom:0;width:auto;height:80%;transform:translateX(-53.7%);object-fit:contain;object-position:center bottom}
+    .hero-host-female{left:8.75%;bottom:0;width:auto;height:50.1%;object-fit:contain;object-position:center bottom}
+    .shape-spark{position:absolute;z-index:6;width:6%;aspect-ratio:1;overflow:visible;fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linecap:round}
+    .shape-spark-play{left:2.5%;top:26%}.shape-spark-orange{left:55.5%;top:59.5%}
     @media(max-width:980px){.hero-grid{grid-template-columns:.82fr 1.18fr;gap:22px}.shape-composition{width:100%}.shape-title-tab{font-size:24px}}
     @media(max-width:800px){.hero-grid{grid-template-columns:1fr;gap:18px}.shape-composition{order:-1;justify-self:center;width:min(100%,560px)}.hero h1{font-size:clamp(45px,10vw,64px)}.hero-copy{font-size:17px}}
-    @media(max-width:520px){.hero{padding-top:24px}.shape-composition{width:calc(100% + 10px);margin-inline:-5px}.shape-wave-badge,.shape-play,.shape-arch,.shape-blob,.shape-slice,.shape-green,.shape-orange,.shape-capsule{border-width:1.5px}.shape-outline,.shape-outline:after{border-width:1.5px}.shape-outline:after{inset:10px 8px}.shape-speech{border-width:1.5px;font-size:16px}.shape-title-tab{font-size:17px;border-width:1.5px}.shape-play:before{border-top-width:11px;border-bottom-width:11px;border-left-width:18px}.shape-play:after{border-top-width:8px;border-bottom-width:8px;border-left-width:13px}.hero h1{margin-top:10px}}
+    @media(max-width:520px){.hero{padding-top:24px}.shape-composition{width:calc(100% + 10px);margin-inline:-5px}.shape-wave-badge,.shape-play,.shape-arch,.shape-blob,.shape-backdrop,.shape-green,.shape-orange,.shape-capsule{border-width:1.5px}.shape-outline,.shape-outline:after{border-width:1.5px}.shape-outline:after{inset:10px 8px}.shape-speech{border-width:1.5px;font-size:16px}.shape-title-tab{font-size:17px;border-width:1.5px}.shape-play:before{border-top-width:11px;border-bottom-width:11px;border-left-width:18px}.shape-play:after{border-top-width:8px;border-bottom-width:8px;border-left-width:13px}.hero h1{margin-top:10px}}
+  </style>
+  <style>
+    /* Canonical Alpy space tokens */
+    :root {
+      --space-0: 0px;
+      --space-4: 4px;
+      --space-8: 8px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-20: 20px;
+      --space-24: 24px;
+      --space-32: 32px;
+      --space-40: 40px;
+      --space-48: 48px;
+      --space-64: 64px;
+    }
+
+    /* Phones: 24px margins, 32px sections, one rhythm (32px between groups, 24px from a heading to its
+       button or card, 16px from a heading to its text), headlines at the left margin, and every word fits */
+    @media (max-width: 749px) {
+      .wrap {
+        width: min(100% - var(--space-48), 650px);
+      }
+
+      header {
+        padding-block: var(--space-16);
+      }
+
+      .hero,
+      .section,
+      .insiders,
+      .subscribe {
+        padding-block: var(--space-32);
+      }
+
+      footer {
+        padding-block: var(--space-32);
+      }
+
+      .hero h1 {
+        margin: var(--space-16) 0;
+        font-size: min(clamp(45px, 10vw, 64px), calc((100vw - var(--space-48)) / 7.6));
+      }
+
+      .hero-copy {
+        margin-bottom: var(--space-24);
+      }
+
+      .eyebrow {
+        margin-bottom: var(--space-16);
+      }
+
+      .section-title {
+        margin-bottom: var(--space-0);
+        font-size: min(clamp(34px, 5vw, 66px), calc((100vw - var(--space-48)) / 9.5));
+      }
+
+      .section-top,
+      .hosts-intro {
+        margin-bottom: var(--space-32);
+      }
+
+      .section-top .pill,
+      .hosts-intro .pill {
+        margin-top: var(--space-24);
+      }
+
+      .hosts-copy p {
+        margin-top: var(--space-16);
+      }
+
+      .episode-grid,
+      .conversation-grid {
+        gap: var(--space-24);
+      }
+
+      .guest-grid {
+        gap: var(--space-16);
+      }
+
+      /* Text fills each line before it breaks; only a lone last word is avoided */
+      .episode-card h3,
+      .topic h3,
+      .quote {
+        text-wrap: pretty;
+      }
+
+      .topic p {
+        max-width: none;
+      }
+
+      /* Host names wrap inside their cards instead of running off the edge */
+      .guest-label:after {
+        white-space: normal;
+      }
+
+      .insiders-copy-new {
+        padding: var(--space-24);
+      }
+
+      .insiders-copy-new h2 {
+        margin-bottom: var(--space-16);
+        font-size: min(42px, calc((100vw - var(--space-48) - var(--space-48) - var(--space-4)) / 8.6));
+      }
+
+      .insiders-copy-new p {
+        margin-bottom: var(--space-24);
+      }
+
+      .subscribe .wrap {
+        text-align: left;
+      }
+
+      .subscribe h2 {
+        margin: var(--space-16) 0;
+      }
+
+      .subscribe p {
+        margin: 0 0 var(--space-24);
+      }
+
+      /* With the text at the left margin, the sound wave moves to the free bottom-right corner */
+      .mini-wave {
+        top: auto;
+        right: -40px;
+        bottom: var(--space-24);
+        width: 140px;
+      }
+
+      .footer-main {
+        gap: var(--space-32);
+        padding-bottom: var(--space-24);
+      }
+
+      /* 24px above and below the footer's rule */
+      .footer-bottom {
+        padding-top: var(--space-24);
+      }
+    }
   </style>
 </head>
 <body>
   <header><nav class="wrap nav"><a class="brand" href="#top">youpod<i></i></a><div class="nav-links"><a href="#episodes">Episodes</a><a href="#about">About</a><a href="#insiders">Insiders</a></div><a class="button nav-action" href="#subscribe">Subscribe <span>↗</span></a></nav></header>
   <main id="top">
-    <section class="hero"><div class="wrap hero-grid"><div class="hero-message"><div class="eyebrow">An original YouPod production</div><h1>Honest stories.<br><span>Useful</span> takeaways.</h1><p class="hero-copy">A podcast about the things we’re all figuring out: life, money, work, and the stories behind our choices.</p><div class="hero-actions"><a class="button" href="#episodes">Start listening <span>▶</span></a><a class="listen" href="#about">Meet your hosts</a></div></div><div class="shape-composition" role="img" aria-label="Playful geometric composition with two real podcast hosts wearing headphones"><div class="shape-wave-badge" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="shape-play" aria-hidden="true"></div><div class="shape-star" aria-hidden="true"></div><div class="shape-arch" aria-hidden="true"><img class="hero-host hero-host-male" src="assets/hero-host-male.webp" alt=""/></div><div class="shape-speech">Hello!</div><div class="shape-blob" aria-hidden="true"></div><div class="shape-title-tab">YouPod</div><div class="shape-slice" aria-hidden="true"></div><div class="shape-green" aria-hidden="true"></div><div class="shape-mini-star" aria-hidden="true"></div><div class="shape-orange" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="shape-capsule" aria-hidden="true"></div><div class="shape-outline" aria-hidden="true"></div><img class="hero-host hero-host-female" src="assets/hero-host-female-v3.webp" alt="" aria-hidden="true"/></div></div></section>
+    <section class="hero"><div class="wrap hero-grid"><div class="hero-message"><div class="eyebrow">An original YouPod production</div><h1>Honest stories.<br><span>Useful</span> takeaways.</h1><p class="hero-copy">A podcast about the things we’re all figuring out: life, money, work, and the stories behind our choices.</p><div class="hero-actions"><a class="button" href="#episodes">Start listening <span>▶</span></a><a class="listen" href="#about">Meet your hosts</a></div></div><div class="shape-composition" role="img" aria-label="Playful geometric composition with two real podcast hosts wearing headphones"><div class="shape-wave-badge" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><svg class="shape-spark shape-spark-play" viewBox="0 0 40 40" aria-hidden="true"><path d="M2 26l16 10M26 2l6 18"/></svg><div class="shape-play" aria-hidden="true"></div><div class="shape-star" aria-hidden="true"></div><div class="shape-arch" aria-hidden="true"><img class="hero-host hero-host-male" src="assets/hero-host-male-split.webp" alt=""/></div><div class="shape-speech">Hello!</div><div class="shape-blob" aria-hidden="true"></div><div class="shape-title-tab">YouPod</div><div class="shape-backdrop" aria-hidden="true"></div><div class="shape-green" aria-hidden="true"></div><div class="shape-mini-star" aria-hidden="true"></div><svg class="shape-spark shape-spark-orange" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 5 20M32 24 16 40"/></svg><div class="shape-orange" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="shape-capsule" aria-hidden="true"></div><div class="shape-outline" aria-hidden="true"></div><img class="hero-host hero-host-female" src="assets/hero-host-female-split.webp" alt="" aria-hidden="true"/></div></div></section>
     <div class="ticker" aria-hidden="true"><div class="ticker-inner">LIFE <b>✦</b> MONEY <b>✦</b> WORK <b>✦</b> RELATIONSHIPS <b>✦</b> REAL PEOPLE <b>✦</b> PRACTICAL PERSPECTIVES <b>✦</b> LIFE <b>✦</b> MONEY <b>✦</b></div></div>
     <section class="section" id="episodes"><div class="wrap"><div class="section-top"><div><div class="eyebrow">Fresh in your ears</div><h2 class="section-title">The latest<br>from YouPod.</h2></div><a class="pill" href="#">View all episodes ↗</a></div><div class="episode-grid"><article class="episode-card featured"><div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div><div class="episode-number">EP. 028 · 43 MIN</div><h3>What no one tells you about changing your mind.</h3></div><div class="episode-meta"><span>With Mara Hoffman</span><a class="round-play" href="#" aria-label="Play episode"><svg viewBox="0 0 32 32"><path d="M7 4.5v23l20-11.5z"/></svg></a></div></article><article class="episode-card yellow"><div><div class="episode-number">EP. 027 · 37 MIN</div><h3>The weird middle of making more money.</h3></div><div class="episode-meta"><span>Money</span><a class="round-play" href="#" aria-label="Play episode"><svg viewBox="0 0 32 32"><path d="M7 4.5v23l20-11.5z"/></svg></a></div></article><article class="episode-card coral"><div><div class="episode-number">EP. 026 · 51 MIN</div><h3>Starting over without the dramatic exit.</h3></div><div class="episode-meta"><span>Life</span><a class="round-play" href="#" aria-label="Play episode"><svg viewBox="0 0 32 32"><path d="M7 4.5v23l20-11.5z"/></svg></a></div></article></div></div></section>
     <section class="section topics"><div class="wrap"><div class="eyebrow">Choose your rabbit hole</div><div class="section-top"><h2 class="section-title">Conversations for wherever you are.</h2></div><div class="topic-row"><article class="topic"><div class="topic-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3"><path d="M7 28c6-16 20-16 26 0"/><path d="M11 31h18"/></svg></div><h3>Life, lately</h3><p>For the messy, meaningful, in-between stuff.</p></article><article class="topic"><div class="topic-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3"><path d="M7 29h26M10 26l6-13 5 8 5-13 5 18"/></svg></div><h3>Money, honestly</h3><p>Less jargon. More useful ways to think.</p></article><article class="topic"><div class="topic-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3"><rect x="11" y="9" width="18" height="22" rx="5"/><path d="M20 14v12M15 20h10"/></svg></div><h3>Personal notes</h3><p>Intimate stories from people going through it.</p></article><article class="topic"><div class="topic-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 20h28M11 13v14M20 8v24M29 13v14"/></svg></div><h3>Better work</h3><p>On doing things that feel like your own.</p></article></div></div></section>

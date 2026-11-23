@@ -7,6 +7,7 @@ import {
   BigBubbleCanScene,
   FRUIT_ENTRY_SCROLL_VIEWPORTS,
 } from "./BigBubbleCanScene";
+import "./HeroPlaygroundPage.css";
 
 const firstSipFizzUrl = assetUrl("bigbubble-first-sip-fizz-v1.avif");
 const firstSipFriendsUrl = assetUrl("bigbubble-first-sip-friends-v1.avif");

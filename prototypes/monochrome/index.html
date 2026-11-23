@@ -1,0 +1,1597 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Northlight Editions — Fiction, essays and photobooks</title>
+  <meta name="description" content="Northlight Editions is an independent publisher of fiction, essays, photobooks and art books. New this spring: Still, a field guide to portrait photography by Mara Lind. A Monochrome prototype by Alpy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:opsz,wght,SOFT@9..144,400..900,0..100&family=Hanken+Grotesk:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.classList.add("js");
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #ffffff;
+      --ink: #000000;
+      --ink-2: #555555;
+      --panel: #eeeeee;
+      --font: "Hanken Grotesk", Arial, sans-serif;
+      --display: "Bebas Neue", "Arial Narrow", sans-serif;
+      --serif: "Fraunces", Georgia, serif;
+
+      /* Canonical Space tokens used on this page */
+      --space-4: 4px;
+      --space-8: 8px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-20: 20px;
+      --space-24: 24px;
+      --space-32: 32px;
+      --space-40: 40px;
+      --space-48: 48px;
+      --space-64: 64px;
+      --space-80: 80px;
+      --space-96: 96px;
+
+      /* Rhythm: one section padding and one gutter per breakpoint */
+      --section: var(--space-96);
+      --gutter: var(--space-64);
+      --col-gap: var(--space-24);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 400 17px/1.5 var(--font);
+      -webkit-font-smoothing: antialiased;
+      text-wrap: balance;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    ul,
+    ol,
+    figure,
+    blockquote {
+      margin: 0;
+    }
+
+    ul,
+    ol {
+      padding: 0;
+      list-style: none;
+    }
+
+    h2,
+    h3 {
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline 1px;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 2px;
+      box-shadow: 0 0 0 2px var(--paper);
+    }
+
+    .wrap {
+      width: min(100%, 1440px);
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      column-gap: var(--col-gap);
+    }
+
+    /* Every section, hero and footer included, uses the same padding */
+    .section {
+      padding-block: var(--section);
+    }
+
+    .small {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .meta {
+      color: var(--ink-2);
+      font-size: 15px;
+    }
+
+    .book-card .meta span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .display {
+      font-family: var(--display);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: var(--space-8);
+      left: var(--space-8);
+      z-index: 50;
+      padding: var(--space-8) var(--space-16);
+      background: var(--ink);
+      color: var(--paper);
+      font-weight: 500;
+      transform: translateY(-200%);
+    }
+
+    .skip-link:focus-visible {
+      transform: none;
+    }
+
+    /* Buttons: black fill or black outline; hover inverts */
+    .btn {
+      display: inline-flex;
+      gap: var(--space-8);
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 var(--space-20);
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      font: 500 15px/1.2 var(--font);
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 160ms ease-out, color 160ms ease-out;
+    }
+
+    .btn:hover {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .btn--line {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .btn--line:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .btn--small {
+      min-height: 40px;
+      padding: 0 var(--space-16);
+      font-size: 14px;
+    }
+
+    .btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-12);
+    }
+
+    .split-head {
+      display: flex;
+      gap: var(--space-24);
+      align-items: end;
+      justify-content: space-between;
+    }
+
+    .split-head h2 {
+      font-size: clamp(44px, 5vw, 76px);
+    }
+
+    /* Header */
+    .site-header {
+      padding-block: var(--space-24);
+    }
+
+    .navbar {
+      display: flex;
+      gap: var(--space-48);
+      align-items: center;
+    }
+
+    .wordmark {
+      margin-right: auto;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+    }
+
+    .wordmark span {
+      font-weight: 400;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: var(--space-40);
+      font-size: 15px;
+    }
+
+    .main-nav a {
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
+      text-decoration: underline 1px;
+      text-underline-offset: 0.3em;
+    }
+
+    /* Hero: full-bleed studio photograph promoting one book */
+    .hero-stage {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #ffffff;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .pose {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+    }
+
+    .pose.is-active {
+      opacity: 1;
+    }
+
+    /* Wide screens: the photograph fills the first screen, the model centred */
+    @media (min-width: 1200px) {
+      .pose {
+        inset: var(--space-24) auto auto 50%;
+        translate: -49% 0;
+        width: 120%;
+        max-width: none;
+        height: auto;
+        filter: brightness(1.03);
+        mask-image: linear-gradient(transparent, #000 4%);
+      }
+    }
+
+    /* Light flick: a studio flash that blooms from the model's face */
+    .flash {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: radial-gradient(circle at 50% 34%, rgb(255 255 255 / 100%) 0%, rgb(255 255 255 / 96%) 34%, rgb(255 255 255 / 72%) 62%, rgb(255 255 255 / 40%) 86%, rgb(255 255 255 / 18%) 100%);
+      mix-blend-mode: screen;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .flash.is-firing {
+      animation: flash 320ms cubic-bezier(0.15, 0, 0.3, 1);
+    }
+
+    @keyframes flash {
+      0%, 100% { opacity: 0; }
+      6% { opacity: 1; }
+      40% { opacity: 0.72; }
+    }
+
+    /* Each letter is a shutter: it rests as an outline and flicks solid on every shot */
+    .hero-word {
+      position: absolute;
+      inset: 46% 0 auto;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      padding-inline: var(--space-16);
+      color: transparent;
+      -webkit-text-stroke: 1px #ffffff;
+      font-family: var(--serif);
+      font-size: calc((100vw - 32px) / 3.3);
+      font-weight: 900;
+      font-variation-settings: "SOFT" 100;
+      line-height: 0.72;
+      letter-spacing: -0.02em;
+      mix-blend-mode: difference;
+      pointer-events: none;
+    }
+
+    .hero-word span {
+      cursor: pointer;
+      pointer-events: auto;
+      touch-action: manipulation;
+      outline: none;
+    }
+
+    .hero-word span:focus-visible {
+      box-shadow: none;
+      -webkit-text-stroke-width: 3px;
+    }
+
+    .hero-word span.is-shuttering {
+      animation: shutter-letter 240ms cubic-bezier(0.2, 0, 0.2, 1);
+    }
+
+    @keyframes shutter-letter {
+      0%, 100% { color: transparent; }
+      10%, 48% { color: #ffffff; }
+    }
+
+    /* With a mouse, the shot letter stays solid while the pointer rests on it */
+    @media (hover: hover) {
+      .hero-word span:hover {
+        color: #ffffff;
+        animation: none;
+      }
+    }
+
+    .hero {
+      /* Hero text lines up with the header container */
+      --hero-edge: max(var(--gutter), calc((100% - 1440px) / 2 + var(--gutter)));
+      position: relative;
+    }
+
+    .hero-below {
+      display: contents;
+    }
+
+    .hero-intro,
+    .hero-cover {
+      position: absolute;
+      z-index: 4;
+    }
+
+    .hero-intro {
+      top: 116px;
+      left: var(--hero-edge);
+      display: grid;
+      gap: var(--space-24);
+      justify-items: start;
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(28px, 2.6vw, 40px);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-headline .line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .hero-cover {
+      top: 112px;
+      right: var(--hero-edge);
+      width: clamp(96px, 8.5vw, 200px);
+    }
+
+    /* Wide screens: the navigation sits on the photograph, as on a magazine cover */
+    @media (min-width: 1200px) {
+      .site-header {
+        position: absolute;
+        inset: 0 0 auto;
+        z-index: 10;
+      }
+
+      .hero.section {
+        padding-top: 0;
+      }
+
+      .hero-stage {
+        aspect-ratio: auto;
+        height: min(100vw * 20 / 33, 100svh);
+      }
+    }
+
+    /* Book covers: CSS objects so every title stays live text */
+    .book-object {
+      position: relative;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      aspect-ratio: 2 / 3;
+      padding: 10% 8% 11% 12%;
+      overflow: hidden;
+      background: #000000;
+      color: #ffffff;
+      box-shadow: 0 24px 40px rgb(0 0 0 / 0.24), 0 4px 10px rgb(0 0 0 / 0.16);
+      container-type: inline-size;
+    }
+
+    .book-object::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      z-index: 3;
+      width: 7%;
+      background: linear-gradient(90deg, rgb(255 255 255 / 0.16), rgb(255 255 255 / 0) 60%, rgb(0 0 0 / 0.22));
+    }
+
+    .book-object img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .book-object span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .book-title {
+      font-family: var(--display);
+      font-size: 11cqi;
+      line-height: 0.92;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .book-author {
+      font-size: 6cqi;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Photo cover: image full bleed with a soft top and bottom shade */
+    .cover-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(rgb(0 0 0 / 0.6), rgb(0 0 0 / 0) 42%, rgb(0 0 0 / 0) 70%, rgb(0 0 0 / 0.55));
+    }
+
+    /* Photobook: white board, photo window, bold sans title */
+    .cover-photobook {
+      grid-template-rows: auto auto 1fr;
+      align-content: start;
+      background: #ffffff;
+      color: #000000;
+      outline: 1px solid #d4d4d4;
+      outline-offset: -1px;
+    }
+
+    .cover-photobook .book-title {
+      font-family: var(--font);
+      font-size: 17cqi;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      text-transform: none;
+    }
+
+    .cover-photobook .book-author {
+      margin-top: 2cqi;
+    }
+
+    .cover-photobook img {
+      inset: auto 0 0;
+      height: 62%;
+      object-position: 50% 20%;
+    }
+
+    /* Essays: solid ink or white board with a huge condensed title */
+    .cover-essay .book-title {
+      align-self: center;
+      font-size: 16cqi;
+      white-space: normal;
+    }
+
+    .cover-essay--white {
+      background: #ffffff;
+      color: #000000;
+      outline: 1px solid #d4d4d4;
+      outline-offset: -1px;
+    }
+
+    /* Product rail: covers on grey cards with an offset black block */
+    .books-stage {
+      position: relative;
+      margin-top: var(--space-48);
+      padding: var(--space-32) 0 0 var(--space-32);
+    }
+
+    .books-stage::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: clamp(120px, 12vw, 180px);
+      height: 64%;
+      background: #000000;
+    }
+
+    .books {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-auto-columns: calc((100% - 3 * var(--space-32) - var(--space-48)) / 3.4);
+      grid-auto-flow: column;
+      gap: var(--space-32);
+      padding-right: var(--space-48);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+
+    .books::-webkit-scrollbar {
+      display: none;
+    }
+
+    .book-card {
+      display: grid;
+      gap: var(--space-8);
+      align-content: start;
+      justify-items: start;
+      scroll-snap-align: start;
+    }
+
+    .book-card > a {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      margin-bottom: var(--space-8);
+      background: var(--panel);
+      text-decoration: none;
+    }
+
+    .book-card > a .book-object {
+      width: 58%;
+    }
+
+    .book-card .row {
+      display: flex;
+      gap: var(--space-16);
+      justify-content: space-between;
+      width: 100%;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .book-card .btn {
+      margin-top: var(--space-8);
+    }
+
+    .book-card > a:hover + .row span:first-child {
+      text-decoration: underline 1px;
+      text-underline-offset: 0.2em;
+    }
+
+    .rail-controls {
+      display: flex;
+      gap: var(--space-12);
+      justify-content: flex-end;
+      margin-top: var(--space-24);
+    }
+
+    .arrow {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid #000000;
+      background: #ffffff;
+      color: #000000;
+      cursor: pointer;
+    }
+
+    .arrow:hover {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    .arrow svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Subjects: four still-life photographs */
+    .subjects {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-24);
+      margin-top: var(--space-48);
+    }
+
+    .subject a {
+      position: relative;
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .subject img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .subject a::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgb(0 0 0 / 0) 45%, rgb(0 0 0 / 0.78));
+    }
+
+    .subject-label {
+      position: absolute;
+      left: var(--space-20);
+      right: var(--space-20);
+      bottom: var(--space-20);
+      z-index: 1;
+      display: grid;
+      gap: var(--space-4);
+      justify-items: start;
+    }
+
+    .subject-label strong {
+      font-family: var(--display);
+      font-size: clamp(34px, 3.2vw, 48px);
+      font-weight: 400;
+      line-height: 0.9;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .subject-label span {
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .subject a:hover strong {
+      text-decoration: underline 2px;
+      text-underline-offset: 0.12em;
+    }
+
+    /* Coming soon: tall still beside a black panel */
+    .coming {
+      display: grid;
+      grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+      background: #000000;
+      color: #ffffff;
+      --paper: #000000;
+      --ink: #ffffff;
+    }
+
+    .coming-photo img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .coming-panel {
+      display: grid;
+      gap: var(--space-32);
+      align-content: center;
+      padding: var(--section) var(--gutter);
+    }
+
+    .coming-panel h2 {
+      font-size: clamp(32px, 3.6vw, 52px);
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-12);
+    }
+
+    .chip {
+      min-height: 40px;
+      padding: 0 var(--space-16);
+      border: 1px solid #ffffff;
+      background: transparent;
+      color: #ffffff;
+      font: 500 14px/1 var(--font);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+    }
+
+    .chip:hover {
+      background: #262626;
+    }
+
+    .chip[aria-pressed="true"] {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .lists {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+      gap: var(--space-48);
+    }
+
+    .list h3 {
+      font-size: 20px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .list > p {
+      margin-top: var(--space-8);
+      color: #bdbdbd;
+      font-size: 14px;
+    }
+
+    .list ul {
+      margin-top: var(--space-16);
+      border-top: 1px solid #5c5c5c;
+    }
+
+    .list li {
+      display: flex;
+      gap: var(--space-16);
+      justify-content: space-between;
+      padding-block: var(--space-12);
+      border-bottom: 1px solid #5c5c5c;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .list li[hidden] {
+      display: none;
+    }
+
+    .list li span:last-child {
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Work with us */
+    .trade {
+      row-gap: var(--space-48);
+      margin-top: var(--space-48);
+    }
+
+    .trade-photo {
+      position: relative;
+      grid-column: 1 / 5;
+      margin: var(--space-24) 0 0 var(--space-24);
+    }
+
+    .trade-photo::before {
+      content: "";
+      position: absolute;
+      top: calc(var(--space-24) * -1);
+      left: calc(var(--space-24) * -1);
+      width: 100%;
+      height: 100%;
+      background: #000000;
+    }
+
+    .trade-photo img {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .trade-list {
+      display: grid;
+      grid-column: 6 / 13;
+      gap: var(--space-48);
+      align-content: start;
+    }
+
+    .trade-item {
+      display: grid;
+      gap: var(--space-12);
+      justify-items: start;
+    }
+
+    .trade-item h3 {
+      font-family: var(--display);
+      font-size: clamp(32px, 3vw, 44px);
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .trade-item p {
+      max-width: 52ch;
+      font-size: 15px;
+    }
+
+    .trade-item .btn {
+      margin-top: var(--space-4);
+    }
+
+    @media (min-width: 1024px) {
+      .trade-list {
+        align-content: center;
+      }
+
+      .trade-item {
+        grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+        column-gap: var(--space-32);
+      }
+
+      .trade-item h3 {
+        grid-row: span 2;
+        font-size: clamp(28px, 2.5vw, 36px);
+        line-height: 1;
+      }
+    }
+
+    /* Footer: black band with newsletter and sitemap */
+    .site-footer {
+      background: #000000;
+      color: #ffffff;
+      --paper: #000000;
+      --ink: #ffffff;
+    }
+
+    .footer-top {
+      row-gap: var(--space-48);
+    }
+
+    .footer-top h2 {
+      grid-column: 1 / 6;
+      font-size: clamp(40px, 4.6vw, 72px);
+    }
+
+    .signup {
+      display: grid;
+      gap: var(--space-12);
+      grid-column: 7 / 13;
+      align-content: end;
+    }
+
+    .signup label {
+      font-size: 15px;
+    }
+
+    .signup-row {
+      display: flex;
+      gap: var(--space-16);
+      align-items: end;
+    }
+
+    .signup input {
+      flex: 1;
+      min-width: 0;
+      min-height: 46px;
+      padding: 0;
+      border: 0;
+      border-bottom: 1px solid #ffffff;
+      border-radius: 0;
+      background: transparent;
+      color: #ffffff;
+      font: 400 17px/1.2 var(--font);
+    }
+
+    .signup input::placeholder {
+      color: #bdbdbd;
+    }
+
+    .signup .btn {
+      border-color: #ffffff;
+    }
+
+    .signup.is-invalid input {
+      border-bottom: 2px solid #ff9999;
+    }
+
+    .signup-error {
+      display: none;
+      gap: var(--space-8);
+      align-items: center;
+      color: #ff9999;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .signup.is-invalid .signup-error {
+      display: flex;
+    }
+
+    .signup-error svg {
+      flex: none;
+      width: 18px;
+      height: 18px;
+    }
+
+    .signup-status:not(:empty) {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .sitemap {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-32);
+      margin-top: var(--space-64);
+      font-size: 15px;
+    }
+
+    .sitemap h3 {
+      color: #bdbdbd;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .sitemap ul {
+      display: grid;
+      gap: var(--space-8);
+      margin-top: var(--space-16);
+    }
+
+    .sitemap a {
+      text-decoration: none;
+    }
+
+    .sitemap a:hover {
+      text-decoration: underline 1px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-12) var(--space-40);
+      justify-content: space-between;
+      margin-top: var(--space-64);
+      color: #bdbdbd;
+      font-size: 14px;
+    }
+
+    /* Motion: a short fade on entry */
+    @media (prefers-reduced-motion: no-preference) {
+      .js [data-reveal] {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 700ms ease-out, transform 700ms ease-out;
+      }
+
+      .js [data-reveal].is-visible {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* Phones: a static page; nothing fades in with scrolling */
+    @media (max-width: 639px) {
+      .js [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .btn {
+        transition: none;
+      }
+
+      .flash.is-firing,
+      .hero-word span.is-shuttering {
+        animation-duration: 80ms;
+      }
+    }
+
+    @media (max-width: 1199px) {
+      .hero-below {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 180px;
+        gap: var(--space-32) var(--space-48);
+        align-items: start;
+        margin-top: var(--space-48);
+        padding-inline: var(--gutter);
+      }
+
+      .hero-intro,
+      .hero-cover {
+        position: static;
+        width: auto;
+      }
+
+
+      .navbar {
+        gap: var(--space-32);
+      }
+
+      .main-nav {
+        gap: var(--space-24);
+      }
+
+      .books {
+        grid-auto-columns: calc((100% - 2 * var(--space-32) - var(--space-48)) / 2.6);
+      }
+
+    }
+
+    /* Tablet */
+    @media (max-width: 1023px) {
+      :root {
+        --section: var(--space-80);
+        --gutter: var(--space-40);
+      }
+
+      .main-nav {
+        display: none;
+      }
+
+      .hero-stage {
+        aspect-ratio: 1 / 1;
+      }
+
+      .subjects {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .books {
+        grid-auto-columns: calc((100% - var(--space-32) - var(--space-48)) / 2.2);
+      }
+
+      .coming {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .coming-photo img {
+        aspect-ratio: 16 / 9;
+      }
+
+      .trade-photo,
+      .trade-list,
+      .footer-top h2,
+      .signup {
+        grid-column: 1 / -1;
+      }
+
+      .trade-photo {
+        width: min(70%, 420px);
+      }
+
+      .sitemap {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* Phone */
+    @media (max-width: 639px) {
+      :root {
+        --section: var(--space-32);
+        --gutter: var(--space-24);
+        --col-gap: var(--space-16);
+      }
+
+      .navbar {
+        flex-wrap: wrap;
+        gap: var(--space-12) var(--space-16);
+      }
+
+      .sound-toggle {
+        order: 3;
+        margin-left: auto;
+      }
+
+      .hero-stage {
+        aspect-ratio: 4 / 5;
+      }
+
+      .hero-below {
+        grid-template-columns: minmax(0, 1fr);
+        margin-top: var(--space-32);
+      }
+
+      .hero-headline {
+        font-size: 26px;
+      }
+
+      .hero-cover {
+        width: 160px;
+      }
+
+      .split-head {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .split-head h2 {
+        font-size: clamp(32px, 10vw, 44px);
+      }
+
+      .books-stage {
+        padding: var(--space-16) 0 0 var(--space-16);
+      }
+
+      .books {
+        grid-auto-columns: 85%;
+        padding-right: var(--space-24);
+      }
+
+      .subjects {
+        gap: var(--space-16);
+      }
+
+      .subject-label {
+        inset: auto var(--space-16) var(--space-16);
+      }
+
+      .subject-label strong {
+        font-size: clamp(26px, 8vw, 34px);
+      }
+
+      .trade-photo {
+        width: 86%;
+      }
+
+      .signup-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      /* Text fills each line before it breaks; only a lone last word is avoided. The hero headline's two
+         set lines flow as one sentence, so it never runs past the margin */
+      body {
+        text-wrap: pretty;
+      }
+
+      .hero-headline .line {
+        display: inline;
+        white-space: normal;
+      }
+
+      /* Each subject's name fits its photograph's label, even on the narrowest phones */
+      .subject-label strong {
+        font-size: min(clamp(26px, 8vw, 34px), calc(((100vw - var(--space-48) - var(--space-16)) / 2 - var(--space-32)) / 4.1));
+      }
+
+      /* One rhythm: 32px between groups, 24px from a heading to its button */
+      .books-stage,
+      .subjects,
+      .trade {
+        margin-top: var(--space-32);
+      }
+
+      .trade,
+      .footer-top {
+        row-gap: var(--space-32);
+      }
+
+      .trade-list,
+      .lists {
+        gap: var(--space-32);
+      }
+
+      .sitemap,
+      .footer-bottom {
+        margin-top: var(--space-32);
+      }
+    }
+
+    @media (forced-colors: active) {
+      .hero-word {
+        mix-blend-mode: normal;
+        color: CanvasText;
+      }
+
+      .chip,
+      .arrow {
+        border: 1px solid ButtonText;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <audio id="shutter" src="assets/dslr-shutter.mp3" preload="auto" aria-hidden="true"></audio>
+
+  <header class="site-header">
+    <div class="wrap navbar">
+      <a class="wordmark" href="#top">Northlight <span>Editions</span></a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="#new">New books</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#coming">Coming soon</a>
+        <a href="#trade">Work with us</a>
+      </nav>
+      <button class="btn btn--line btn--small sound-toggle" type="button" id="sound-toggle" aria-pressed="false">Enable sound</button>
+      <a class="btn" href="#new" id="basket">Basket (<span id="basket-count">0</span>)</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section hero" id="top" aria-labelledby="hero-title">
+      <h1 class="visually-hidden" id="hero-title">Still: Mara Lind’s new book on portrait photography</h1>
+      <div class="hero-stage" id="hero-stage">
+        <img class="pose is-active" src="assets/pose-2.jpg" width="1536" height="1024" alt="A man in a black sweater rests his chin on his fist against a white studio wall, one of 240 photographs in Still." fetchpriority="high">
+        <img class="pose" src="assets/pose-1.jpg" width="1536" height="1024" alt="">
+        <img class="pose" src="assets/pose-3.jpg" width="1536" height="1024" alt="">
+        <img class="pose" src="assets/pose-4.jpg" width="1536" height="1024" alt="">
+        <img class="pose" src="assets/pose-5.jpg" width="1536" height="1024" alt="">
+        <div class="flash" id="flash" aria-hidden="true"></div>
+        <p class="visually-hidden" id="pose-help">Hover a letter in STILL, or focus it and press Enter, to take another portrait.</p>
+        <div class="hero-word" role="group" aria-label="STILL portrait controls" aria-describedby="pose-help"><span role="button" tabindex="0" data-pose="0" aria-label="S: take portrait 1 of 5" aria-pressed="true">S</span><span role="button" tabindex="0" data-pose="1" aria-label="T: take portrait 2 of 5" aria-pressed="false">T</span><span role="button" tabindex="0" data-pose="2" aria-label="I: take portrait 3 of 5" aria-pressed="false">I</span><span role="button" tabindex="0" data-pose="3" aria-label="L: take portrait 4 of 5" aria-pressed="false">L</span><span role="button" tabindex="0" data-pose="4" aria-label="L: take portrait 5 of 5" aria-pressed="false">L</span></div>
+        <p class="visually-hidden" id="pose-status" aria-live="polite">Portrait pose 1 of 5</p>
+      </div>
+      <div class="hero-below">
+          <div class="hero-intro">
+            <p class="hero-headline"><span class="line">Mara Lind’s new book</span> <span class="line">on portrait photography.</span></p>
+            <a class="btn" href="#new">Pre-order the book for $45</a>
+          </div>
+          <div class="hero-cover">
+            <div class="book-object cover-photobook" role="img" aria-label="Cover of Still by Mara Lind">
+              <img src="assets/pose-3.jpg" width="1536" height="1024" alt="">
+              <span class="book-title" aria-hidden="true">Still</span>
+              <span class="book-author" aria-hidden="true">Mara Lind</span>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="section" id="new" aria-labelledby="new-title">
+      <div class="wrap">
+        <div class="split-head" data-reveal>
+          <h2 class="display" id="new-title">New this month</h2>
+          <a class="btn btn--line" href="#new">All new books <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        </div>
+        <div class="books-stage" data-reveal>
+          <ul class="books" id="book-rail" tabindex="0" aria-label="New books">
+            <li class="book-card">
+              <a href="#top" aria-label="Still by Mara Lind">
+                <span class="book-object cover-photobook" aria-hidden="true"><img src="assets/pose-3.jpg" width="1536" height="1024" alt="" loading="lazy"><span class="book-title">Still</span><span class="book-author">Mara Lind</span></span>
+              </a>
+              <p class="row"><span>Still</span><span>$45.00</span></p>
+              <p class="meta"><span>Mara Lind</span><span>Photobook, hardback</span></p>
+              <button class="btn btn--line btn--small" type="button" data-add="Still">Add to basket</button>
+            </li>
+            <li class="book-card">
+              <a href="#new" aria-label="The Weight of Water by Ingrid Sola">
+                <span class="book-object cover-photo" aria-hidden="true"><img src="assets/cover-salt-and-silence.jpg" width="1024" height="1536" alt="" loading="lazy"><span class="book-title">The Weight of Water</span><span class="book-author">Ingrid Sola</span></span>
+              </a>
+              <p class="row"><span>The Weight of Water</span><span>$18.99</span></p>
+              <p class="meta"><span>Ingrid Sola</span><span>Fiction, hardback</span></p>
+              <button class="btn btn--line btn--small" type="button" data-add="The Weight of Water">Add to basket</button>
+            </li>
+            <li class="book-card">
+              <a href="#new" aria-label="Notes on Leaving by Jonas Eide">
+                <span class="book-object cover-essay" aria-hidden="true"><span class="book-title">Notes on Leaving</span><span class="book-author">Jonas Eide</span></span>
+              </a>
+              <p class="row"><span>Notes on Leaving</span><span>$12.99</span></p>
+              <p class="meta"><span>Jonas Eide</span><span>Essays, paperback</span></p>
+              <button class="btn btn--line btn--small" type="button" data-add="Notes on Leaving">Add to basket</button>
+            </li>
+            <li class="book-card">
+              <a href="#new" aria-label="Concrete Light by Henrik Aas">
+                <span class="book-object cover-photo" aria-hidden="true"><img src="assets/still-shelf.jpg" width="1024" height="1280" alt="" loading="lazy"><span class="book-title">Concrete Light</span><span class="book-author">Henrik Aas</span></span>
+              </a>
+              <p class="row"><span>Concrete Light</span><span>$38.00</span></p>
+              <p class="meta"><span>Henrik Aas</span><span>Art, hardback</span></p>
+              <button class="btn btn--line btn--small" type="button" data-add="Concrete Light">Add to basket</button>
+            </li>
+            <li class="book-card">
+              <a href="#new" aria-label="A Short History of Fog by Maren Holt">
+                <span class="book-object cover-essay cover-essay--white" aria-hidden="true"><span class="book-title">A Short History of Fog</span><span class="book-author">Maren Holt</span></span>
+              </a>
+              <p class="row"><span>A Short History of Fog</span><span>$14.99</span></p>
+              <p class="meta"><span>Maren Holt</span><span>Essays, paperback</span></p>
+              <button class="btn btn--line btn--small" type="button" data-add="A Short History of Fog">Add to basket</button>
+            </li>
+            <li class="book-card">
+              <a href="#new" aria-label="Salt and Silence by Elias Brandt">
+                <span class="book-object cover-photo" aria-hidden="true"><img src="assets/ferry-square.jpg" width="1024" height="1024" alt="" loading="lazy"><span class="book-title">Salt and Silence</span><span class="book-author">Elias Brandt</span></span>
+              </a>
+              <p class="row"><span>Salt and Silence</span><span>$18.99</span></p>
+              <p class="meta"><span>Elias Brandt</span><span>Fiction, hardback</span></p>
+              <button class="btn btn--line btn--small" type="button" data-add="Salt and Silence">Add to basket</button>
+            </li>
+          </ul>
+        </div>
+        <div class="rail-controls">
+          <button class="arrow" type="button" data-rail="-1" aria-controls="book-rail"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3m4-4L3 8l4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="visually-hidden">Previous books</span></button>
+          <button class="arrow" type="button" data-rail="1" aria-controls="book-rail"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="visually-hidden">Next books</span></button>
+        </div>
+        <p class="visually-hidden" id="basket-status" role="status"></p>
+      </div>
+    </section>
+
+    <section class="coming" id="coming" aria-labelledby="coming-title">
+      <figure class="coming-photo">
+        <img src="assets/still-desk-tall.jpg" width="683" height="1024" alt="A finished hardback on a wooden desk in low window light." loading="lazy">
+      </figure>
+      <div class="coming-panel" data-reveal>
+        <h2 id="coming-title">Coming soon</h2>
+        <div class="chips" role="group" aria-label="Filter by subject">
+          <button class="chip" type="button" data-subject="all" aria-pressed="true">All subjects</button>
+          <button class="chip" type="button" data-subject="fiction" aria-pressed="false">Fiction</button>
+          <button class="chip" type="button" data-subject="essays" aria-pressed="false">Essays</button>
+          <button class="chip" type="button" data-subject="photobooks" aria-pressed="false">Photobooks</button>
+        </div>
+        <div class="lists">
+          <div class="list">
+            <h3>Spring 2027</h3>
+            <p>Pre-orders ship on publication day</p>
+            <ul>
+              <li data-subject="photobooks"><span>Night Ferry, Ole Berg</span><span>9 Apr</span></li>
+              <li data-subject="essays"><span>Against Hurry, Ana Ruiz</span><span>23 Apr</span></li>
+              <li data-subject="fiction"><span>Ferry Season, Elias Brandt</span><span>14 May</span></li>
+            </ul>
+          </div>
+          <div class="list">
+            <h3>Summer 2027</h3>
+            <p>Proof copies for booksellers now</p>
+            <ul>
+              <li data-subject="photobooks"><span>Winter Rooms, Kai Moe</span><span>4 Jun</span></li>
+              <li data-subject="fiction"><span>The Second Shore, Ingrid Sola</span><span>18 Jun</span></li>
+              <li data-subject="essays"><span>On Waiting, Jonas Eide</span><span>2 Jul</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="small" id="coming-count" role="status">Showing all 6 forthcoming books.</p>
+      </div>
+    </section>
+
+    <section class="section" id="subjects" aria-labelledby="subjects-title">
+      <div class="wrap">
+        <div class="split-head" data-reveal>
+          <h2 class="display" id="subjects-title">Browse by subject</h2>
+          <a class="btn btn--line" href="#subjects">All 140 books <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        </div>
+        <ul class="subjects" data-reveal>
+          <li class="subject"><a href="#subjects"><img src="assets/still-stack.jpg" width="1024" height="1280" alt="" loading="lazy"><span class="subject-label"><strong>Fiction</strong><span>52 books</span></span></a></li>
+          <li class="subject"><a href="#subjects"><img src="assets/still-hands.jpg" width="1024" height="1280" alt="" loading="lazy"><span class="subject-label"><strong>Essays</strong><span>34 books</span></span></a></li>
+          <li class="subject"><a href="#subjects"><img src="assets/still-photobook.jpg" width="1024" height="1280" alt="" loading="lazy"><span class="subject-label"><strong>Photobooks</strong><span>31 books</span></span></a></li>
+          <li class="subject"><a href="#subjects"><img src="assets/still-shelf.jpg" width="1024" height="1280" alt="" loading="lazy"><span class="subject-label"><strong>Art</strong><span>23 books</span></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="trade" aria-labelledby="trade-title">
+      <div class="wrap">
+        <div class="split-head" data-reveal>
+          <h2 class="display" id="trade-title">Work with Northlight</h2>
+          <a class="btn btn--line" href="#trade">Contact the office <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        </div>
+        <div class="grid trade">
+          <figure class="trade-photo" data-reveal>
+            <img src="assets/still-parcel.jpg" width="1024" height="1280" alt="A parcel of new hardbacks tied with string on a wooden bench in window light." loading="lazy">
+          </figure>
+          <div class="trade-list" data-reveal>
+            <div class="trade-item">
+              <h3>For booksellers</h3>
+              <p>Trade terms, the seasonal catalogue and display material for independent bookshops. Orders ship from Bergen within three days.</p>
+              <a class="btn btn--line btn--small" href="#trade">Trade catalogue <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+            </div>
+            <div class="trade-item">
+              <h3>Rights and permissions</h3>
+              <p>Translation, audio and film rights for 140 titles, with editions so far in eighteen languages.</p>
+              <a class="btn btn--line btn--small" href="#trade">Rights guide <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+            </div>
+            <div class="trade-item">
+              <h3>Submissions</h3>
+              <p>We read unagented fiction, essays and photobook proposals every March. Send a letter, a synopsis and thirty pages or images.</p>
+              <a class="btn btn--line btn--small" href="#trade">How to submit <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section site-footer">
+    <div class="wrap">
+      <div class="grid footer-top">
+        <h2 class="display">One letter a month about new books</h2>
+        <form class="signup" id="signup" novalidate>
+          <label for="email">New titles, publication days and one extract each month.</label>
+          <div class="signup-row">
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="Email address" required aria-describedby="email-error">
+            <button class="btn btn--line" type="submit">Subscribe</button>
+          </div>
+          <p class="signup-error" id="email-error"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 5v6M10 14v1" stroke="currentColor" stroke-width="2"/></svg>Enter an email address like name@example.com</p>
+          <p class="signup-status" id="signup-status" role="status"></p>
+        </form>
+      </div>
+      <nav class="sitemap" aria-label="Footer">
+        <div><h3>Books</h3><ul><li><a href="#new">New this month</a></li><li><a href="#coming">Coming soon</a></li><li><a href="#subjects">All subjects</a></li></ul></div>
+        <div><h3>Northlight</h3><ul><li><a href="#trade">About us</a></li><li><a href="#trade">Submissions</a></li><li><a href="#trade">Jobs</a></li></ul></div>
+        <div><h3>Trade</h3><ul><li><a href="#trade">Booksellers</a></li><li><a href="#trade">Rights</a></li><li><a href="#trade">Review copies</a></li></ul></div>
+        <div><h3>Help</h3><ul><li><a href="#top">Shipping and returns</a></li><li><a href="#top">Contact us</a></li><li><a href="#top">Privacy</a></li></ul></div>
+      </nav>
+      <div class="footer-bottom">
+        <p>Northlight Editions, Havnegata 4, Bergen</p>
+        <p>A fictional publisher made for the Alpy Monochrome prototype; photographs generated.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      var poses = document.querySelectorAll(".pose");
+      var flash = document.getElementById("flash");
+      var current = 0;
+
+      var letters = document.querySelectorAll(".hero-word span");
+      var poseStatus = document.getElementById("pose-status");
+      var shutter = document.getElementById("shutter");
+      var soundToggle = document.getElementById("sound-toggle");
+      var soundOn = false;
+
+      // Every shot fires, even on the same letter: letter flick, light flick, shutter sound.
+      function restart(el, className, duration) {
+        clearTimeout(el.shotTimer);
+        el.classList.remove(className);
+        void el.offsetWidth;
+        el.classList.add(className);
+        el.shotTimer = setTimeout(function () { el.classList.remove(className); }, duration);
+      }
+
+      function takePortrait(letter) {
+        var index = Number(letter.dataset.pose);
+        if (index !== current) {
+          poses[current].classList.remove("is-active");
+          poses[index].classList.add("is-active");
+          current = index;
+        }
+        letters.forEach(function (item) { item.setAttribute("aria-pressed", String(item === letter)); });
+        poseStatus.textContent = "Portrait pose " + (index + 1) + " of " + poses.length;
+        var duration = reduceMotion.matches ? 80 : 240;
+        restart(letter, "is-shuttering", duration);
+        restart(flash, "is-firing", reduceMotion.matches ? 80 : 320);
+        if (soundOn) {
+          shutter.currentTime = 0;
+          shutter.play().catch(function () {});
+        }
+      }
+
+      letters.forEach(function (letter) {
+        letter.addEventListener("pointerenter", function (event) {
+          if (event.pointerType !== "touch") takePortrait(letter);
+        });
+        letter.addEventListener("click", function () { takePortrait(letter); });
+        letter.addEventListener("keydown", function (event) {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          takePortrait(letter);
+        });
+      });
+
+      function setSound(on) {
+        soundOn = on;
+        soundToggle.setAttribute("aria-pressed", String(on));
+        soundToggle.textContent = on ? "Sound on" : "Enable sound";
+      }
+
+      soundToggle.addEventListener("click", function () {
+        shutter.currentTime = 0;
+        if (soundOn) {
+          shutter.pause();
+          setSound(false);
+          return;
+        }
+        shutter.volume = 0.62;
+        shutter.play().then(function () { setSound(true); }).catch(function () { setSound(false); });
+      });
+
+      var rail = document.getElementById("book-rail");
+      document.querySelectorAll("[data-rail]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          var card = rail.querySelector(".book-card");
+          var step = card ? card.getBoundingClientRect().width + 32 : rail.clientWidth / 3;
+          rail.scrollBy({ left: step * Number(button.dataset.rail), behavior: reduceMotion.matches ? "auto" : "smooth" });
+        });
+      });
+
+      var count = 0;
+      var basketCount = document.getElementById("basket-count");
+      var basketStatus = document.getElementById("basket-status");
+      document.querySelectorAll("[data-add]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          count += 1;
+          basketCount.textContent = count;
+          button.textContent = "Added";
+          basketStatus.textContent = button.dataset.add + " added to your basket. " + count + " in basket.";
+        });
+      });
+
+      var chips = document.querySelectorAll(".chip");
+      var rows = document.querySelectorAll(".list li");
+      var comingCount = document.getElementById("coming-count");
+      chips.forEach(function (chip) {
+        chip.addEventListener("click", function () {
+          var subject = chip.dataset.subject;
+          chips.forEach(function (other) { other.setAttribute("aria-pressed", String(other === chip)); });
+          var shown = 0;
+          rows.forEach(function (row) {
+            var match = subject === "all" || row.dataset.subject === subject;
+            row.hidden = !match;
+            if (match) shown += 1;
+          });
+          comingCount.textContent = subject === "all" ? "Showing all " + shown + " forthcoming books." : "Showing " + shown + " forthcoming " + chip.textContent.toLowerCase() + ".";
+        });
+      });
+
+      var form = document.getElementById("signup");
+      var email = document.getElementById("email");
+      var status = document.getElementById("signup-status");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var valid = email.value.trim() !== "" && email.checkValidity();
+        form.classList.toggle("is-invalid", !valid);
+        email.setAttribute("aria-invalid", String(!valid));
+        if (!valid) {
+          status.textContent = "";
+          email.focus();
+          return;
+        }
+        status.textContent = "Thank you. Your first letter arrives next month. This is a prototype, so nothing is sent.";
+        form.reset();
+      });
+
+      var reveals = document.querySelectorAll("[data-reveal]");
+      if (!("IntersectionObserver" in window)) {
+        reveals.forEach(function (el) { el.classList.add("is-visible"); });
+        return;
+      }
+      var observer = new IntersectionObserver(function (items) {
+        items.forEach(function (item) {
+          if (item.isIntersecting) {
+            item.target.classList.add("is-visible");
+            observer.unobserve(item.target);
+          }
+        });
+      }, { rootMargin: "0px 0px -8% 0px" });
+      reveals.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+</body>
+</html>

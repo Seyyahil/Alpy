@@ -1,6 +1,6 @@
 # Bold Typography
 
-Music and culture website prototype.
+Boxing and strength gym website prototype.
 
 [Live preview](https://alpymcp.com/websites/bold-typography/index.html) · [Alpy guidance](https://alpymcp.com/ai-taste#ai-taste-website-design) · [Starter prompt](../../prompts/styles/bold-typography.md)
 

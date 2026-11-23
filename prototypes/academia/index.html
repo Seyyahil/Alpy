@@ -5,32 +5,414 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Civic Horizon is an independent urban futures research institute studying how cities can adapt, include, and endure."
+      content="Halbrook University is a fictional research university of 14,000 students where undergraduates join real research from their first term."
     />
-    <meta name="theme-color" content="#ffffff" />
-    <title>Civic Horizon — Institute for Urban Futures</title>
+    <meta name="theme-color" content="#FFFFFF" />
+    <title>Halbrook University — Real research from your first year</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <!-- Canonical Alpy light tokens; the proposed pairing puts Newsreader in the heading slots and Inter in the body slots -->
+    <style>
+      :root,
+      [data-alpy-mode="light"] {
+        --border-width-0: 0px;
+        --border-width-1: 1px;
+        --border-width-1-5: 1.5px;
+        --border-width-2: 2px;
+        --border-width-4: 4px;
+        --border-width-hairline: 0.5px;
+        --color-border-brand-color-one-strong-one: #0051FF;
+        --color-border-brand-color-one-strong-three: #010d28;
+        --color-border-brand-color-one-strong-two: #012F93;
+        --color-border-brand-color-one-subtle-one: #EBF1FF;
+        --color-border-brand-color-one-subtle-three: #5F92FE;
+        --color-border-brand-color-one-subtle-two: #BDD2FE;
+        --color-border-brand-color-three-strong-one: #FCA701;
+        --color-border-brand-color-three-strong-three: #3F2A00;
+        --color-border-brand-color-three-strong-two: #9E6800;
+        --color-border-brand-color-three-subtle-one: #E8E2D5;
+        --color-border-brand-color-three-subtle-three: #E5BA65;
+        --color-border-brand-color-three-subtle-two: #E2D3B5;
+        --color-border-brand-color-two-strong-one: #058625;
+        --color-border-brand-color-two-strong-three: #0D2E10;
+        --color-border-brand-color-two-strong-two: #156221;
+        --color-border-brand-color-two-subtle-one: #E6EDE5;
+        --color-border-brand-color-two-subtle-three: #7FB581;
+        --color-border-brand-color-two-subtle-two: #C7DAC8;
+        --color-border-functional-danger: #B80808;
+        --color-border-functional-info: #0449BA;
+        --color-border-functional-success: #166534;
+        --color-border-functional-warning: #AE6D00;
+        --color-border-input: #767676;
+        --color-border-interaction-disabled: #A1A1A1;
+        --color-border-interaction-focused: #0051FF;
+        --color-border-interaction-hover: #012F93;
+        --color-border-interaction-pressed: #010d28;
+        --color-border-interaction-selected: #0140C9;
+        --color-border-neutral-strong-one: #333333;
+        --color-border-neutral-strong-three: #151515;
+        --color-border-neutral-strong-two: #242424;
+        --color-border-neutral-subtle-one: #F1F1F1;
+        --color-border-neutral-subtle-three: #767676;
+        --color-border-neutral-subtle-two: #CECECE;
+        --color-border-oncolor: #FFFFFF;
+        --color-functional-danger: #B80808;
+        --color-functional-danger-soft: #EF4444;
+        --color-functional-danger-strong: #4D0000;
+        --color-functional-danger-subtle: #ECDFDF;
+        --color-functional-info: #0449BA;
+        --color-functional-info-soft: #3B82F6;
+        --color-functional-info-strong: #001D4C;
+        --color-functional-info-subtle: #DEE4EC;
+        --color-functional-success: #22C55E;
+        --color-functional-success-soft: #86EFAC;
+        --color-functional-success-strong: #166534;
+        --color-functional-success-subtle: #DCFCE7;
+        --color-functional-warning: #AE6D00;
+        --color-functional-warning-soft: #FFBD4F;
+        --color-functional-warning-strong: #402800;
+        --color-functional-warning-subtle: #E8E2D6;
+        --color-icon-accent: #0051FF;
+        --color-icon-brand-color-one-strong-one: #0051FF;
+        --color-icon-brand-color-one-strong-three: #010d28;
+        --color-icon-brand-color-one-strong-two: #012F93;
+        --color-icon-brand-color-one-subtle-one: #EBF1FF;
+        --color-icon-brand-color-one-subtle-three: #5F92FE;
+        --color-icon-brand-color-one-subtle-two: #BDD2FE;
+        --color-icon-brand-color-three-strong-one: #FCA701;
+        --color-icon-brand-color-three-strong-three: #3F2A00;
+        --color-icon-brand-color-three-strong-two: #9E6800;
+        --color-icon-brand-color-three-subtle-one: #E8E2D5;
+        --color-icon-brand-color-three-subtle-three: #E5BA65;
+        --color-icon-brand-color-three-subtle-two: #E2D3B5;
+        --color-icon-brand-color-two-strong-one: #058625;
+        --color-icon-brand-color-two-strong-three: #0D2E10;
+        --color-icon-brand-color-two-strong-two: #156221;
+        --color-icon-brand-color-two-subtle-one: #E6EDE5;
+        --color-icon-brand-color-two-subtle-three: #7FB581;
+        --color-icon-brand-color-two-subtle-two: #C7DAC8;
+        --color-icon-danger: #B80808;
+        --color-icon-default: #151515;
+        --color-icon-disabled: #A1A1A1;
+        --color-icon-info: #0449BA;
+        --color-icon-interaction-disabled: #8EB2FD;
+        --color-icon-interaction-focused: #0051FF;
+        --color-icon-interaction-hover: #012F93;
+        --color-icon-interaction-pressed: #010d28;
+        --color-icon-interaction-selected: #0140C9;
+        --color-icon-inverse: #FFFFFF;
+        --color-icon-oncolor: #FFFFFF;
+        --color-icon-subtle: #5C5C5C;
+        --color-icon-subtlest: #767676;
+        --color-icon-success: #22C55E;
+        --color-icon-warning: #AE6D00;
+        --color-shades-brand-color-one-strong-one: #0051FF;
+        --color-shades-brand-color-one-strong-three: #010d28;
+        --color-shades-brand-color-one-strong-two: #012F93;
+        --color-shades-brand-color-one-subtle-one: #EBF1FF;
+        --color-shades-brand-color-one-subtle-three: #5F92FE;
+        --color-shades-brand-color-one-subtle-two: #BDD2FE;
+        --color-shades-brand-color-three-strong-one: #FCA701;
+        --color-shades-brand-color-three-strong-three: #3F2A00;
+        --color-shades-brand-color-three-strong-two: #9E6800;
+        --color-shades-brand-color-three-subtle-one: #E8E2D5;
+        --color-shades-brand-color-three-subtle-three: #E5BA65;
+        --color-shades-brand-color-three-subtle-two: #E2D3B5;
+        --color-shades-brand-color-two-strong-one: #058625;
+        --color-shades-brand-color-two-strong-three: #0D2E10;
+        --color-shades-brand-color-two-strong-two: #156221;
+        --color-shades-brand-color-two-subtle-one: #E6EDE5;
+        --color-shades-brand-color-two-subtle-three: #7FB581;
+        --color-shades-brand-color-two-subtle-two: #C7DAC8;
+        --color-shades-neutral-strong-one: #333333;
+        --color-shades-neutral-strong-three: #151515;
+        --color-shades-neutral-strong-two: #242424;
+        --color-shades-neutral-subtle-one: #F1F1F1;
+        --color-shades-neutral-subtle-three: #767676;
+        --color-shades-neutral-subtle-two: #CECECE;
+        --color-shadow-deep: #151515;
+        --color-shadow-medium: #5C5C5C;
+        --color-shadow-soft: #A1A1A1;
+        --color-shadow-strong: #000000;
+        --color-surface-canvas: #FFFFFF;
+        --color-surface-interaction-disabled: #F1F1F1;
+        --color-surface-interaction-focused: #CECECE;
+        --color-surface-interaction-hover: #CECECE;
+        --color-surface-interaction-pressed: #010d28;
+        --color-surface-interaction-selected: #A1A1A1;
+        --color-system-black: #000000;
+        --color-system-transparent: #00000000;
+        --color-system-white: #FFFFFF;
+        --color-text-body: #242424;
+        --color-text-body-muted: #767676;
+        --color-text-body-subtle: #5C5C5C;
+        --color-text-brand-color-one-accent: #0051FF;
+        --color-text-brand-color-one-accent-strong: #012F93;
+        --color-text-brand-color-one-accent-subtle: #3071FE;
+        --color-text-brand-color-three-accent: #FCA701;
+        --color-text-brand-color-three-accent-strong: #9E6800;
+        --color-text-brand-color-three-accent-subtle: #EFB035;
+        --color-text-brand-color-two-accent: #058625;
+        --color-text-brand-color-two-accent-strong: #156221;
+        --color-text-brand-color-two-accent-subtle: #52A457;
+        --color-text-functional-danger: #B80808;
+        --color-text-functional-danger-strong: #4D0000;
+        --color-text-functional-info: #0449BA;
+        --color-text-functional-info-strong: #001D4C;
+        --color-text-functional-success: #22C55E;
+        --color-text-functional-success-strong: #166534;
+        --color-text-functional-warning: #AE6D00;
+        --color-text-functional-warning-strong: #402800;
+        --color-text-heading: #151515;
+        --color-text-heading-oncolor: #FFFFFF;
+        --color-text-inverse: #FFFFFF;
+        --color-text-link: #0051FF;
+        --color-text-link-disabled: #8EB2FD;
+        --color-text-link-hover: #012F93;
+        --color-text-link-inverse: #FFFFFF;
+        --color-text-link-pressed: #010d28;
+        --color-text-link-visited: #156221;
+        --color-text-oncolor: #FFFFFF;
+        --color-text-subheading: #242424;
+        --font-body-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        --font-body-font-size: 16px;
+        --font-body-font-weight: 400;
+        --font-body-large-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        --font-body-large-font-size: 19px;
+        --font-body-large-font-weight: 600;
+        --font-body-large-letter-spacing: 0px;
+        --font-body-large-line-height: 28px;
+        --font-body-letter-spacing: 0px;
+        --font-body-line-height: 24px;
+        --font-body-medium-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        --font-body-medium-font-size: 14px;
+        --font-body-medium-font-weight: 400;
+        --font-body-medium-letter-spacing: 0px;
+        --font-body-medium-line-height: 20px;
+        --font-body-small-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        --font-body-small-font-size: 12px;
+        --font-body-small-font-weight: 400;
+        --font-body-small-letter-spacing: 0px;
+        --font-body-small-line-height: 20px;
+        --font-body-xsmall-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        --font-body-xsmall-font-size: 10px;
+        --font-body-xsmall-font-weight: 400;
+        --font-body-xsmall-letter-spacing: 0px;
+        --font-body-xsmall-line-height: 16px;
+        --font-heading-large-font-family: Newsreader, ui-serif, Georgia, serif;
+        --font-heading-large-font-size: 40px;
+        --font-heading-large-font-weight: 400;
+        --font-heading-large-letter-spacing: -0.02px;
+        --font-heading-large-line-height: 48px;
+        --font-heading-medium-font-family: Newsreader, ui-serif, Georgia, serif;
+        --font-heading-medium-font-size: 33px;
+        --font-heading-medium-font-weight: 400;
+        --font-heading-medium-letter-spacing: -0.02px;
+        --font-heading-medium-line-height: 40px;
+        --font-heading-small-font-family: Newsreader, ui-serif, Georgia, serif;
+        --font-heading-small-font-size: 28px;
+        --font-heading-small-font-weight: 500;
+        --font-heading-small-letter-spacing: -0.02px;
+        --font-heading-small-line-height: 32px;
+        --font-heading-xlarge-font-family: Newsreader, ui-serif, Georgia, serif;
+        --font-heading-xlarge-font-size: 48px;
+        --font-heading-xlarge-font-weight: 400;
+        --font-heading-xlarge-letter-spacing: -0.02px;
+        --font-heading-xlarge-line-height: 56px;
+        --font-heading-xsmall-font-family: Newsreader, ui-serif, Georgia, serif;
+        --font-heading-xsmall-font-size: 23px;
+        --font-heading-xsmall-font-weight: 500;
+        --font-heading-xsmall-letter-spacing: -0.02px;
+        --font-heading-xsmall-line-height: 28px;
+        --font-heading-xxlarge-font-family: Newsreader, ui-serif, Georgia, serif;
+        --font-heading-xxlarge-font-size: 57px;
+        --font-heading-xxlarge-font-weight: 400;
+        --font-heading-xxlarge-letter-spacing: -0.02px;
+        --font-heading-xxlarge-line-height: 68px;
+        --icon-gap-lg: 16px;
+        --icon-gap-md: 12px;
+        --icon-gap-sm: 8px;
+        --icon-gap-xl: 20px;
+        --icon-gap-xs: 4px;
+        --icon-gap-xxl: 24px;
+        --icon-size-12: 12px;
+        --icon-size-128: 128px;
+        --icon-size-16: 16px;
+        --icon-size-20: 20px;
+        --icon-size-24: 24px;
+        --icon-size-32: 32px;
+        --icon-size-48: 48px;
+        --icon-size-56: 56px;
+        --icon-size-64: 64px;
+        --icon-size-8: 8px;
+        --palette-black-and-white-black: #000000;
+        --palette-black-and-white-transparent: #00000000;
+        --palette-black-and-white-white: #FFFFFF;
+        --palette-danger-100: #EF4444;
+        --palette-danger-200: #B80808;
+        --palette-danger-300: #4D0000;
+        --palette-danger-50: #ECDFDF;
+        --palette-info-100: #3B82F6;
+        --palette-info-200: #0449BA;
+        --palette-info-300: #001D4C;
+        --palette-info-50: #DEE4EC;
+        --palette-neutral-100: #CECECE;
+        --palette-neutral-200: #A1A1A1;
+        --palette-neutral-300: #767676;
+        --palette-neutral-400: #5C5C5C;
+        --palette-neutral-50: #F1F1F1;
+        --palette-neutral-500: #333333;
+        --palette-neutral-600: #2E2E2E;
+        --palette-neutral-700: #242424;
+        --palette-neutral-800: #1C1C1C;
+        --palette-neutral-900: #151515;
+        --palette-primary-100: #BDD2FE;
+        --palette-primary-200: #8EB2FD;
+        --palette-primary-300: #5F92FE;
+        --palette-primary-400: #3071FE;
+        --palette-primary-50: #EBF1FF;
+        --palette-primary-500: #0051FF;
+        --palette-primary-600: #0140C9;
+        --palette-primary-700: #012F93;
+        --palette-primary-800: #011e5d;
+        --palette-primary-900: #010d28;
+        --palette-secondary-100: #C7DAC8;
+        --palette-secondary-200: #A6C6A5;
+        --palette-secondary-300: #7FB581;
+        --palette-secondary-400: #52A457;
+        --palette-secondary-50: #E6EDE5;
+        --palette-secondary-500: #058625;
+        --palette-secondary-600: #197C2A;
+        --palette-secondary-700: #156221;
+        --palette-secondary-800: #0F4817;
+        --palette-secondary-900: #0D2E10;
+        --palette-success-100: #86EFAC;
+        --palette-success-200: #22C55E;
+        --palette-success-300: #166534;
+        --palette-success-50: #DCFCE7;
+        --palette-tertiary-100: #E2D3B5;
+        --palette-tertiary-200: #E1C590;
+        --palette-tertiary-300: #E5BA65;
+        --palette-tertiary-400: #EFB035;
+        --palette-tertiary-50: #E8E2D5;
+        --palette-tertiary-500: #FCA701;
+        --palette-tertiary-600: #CD8801;
+        --palette-tertiary-700: #9E6800;
+        --palette-tertiary-800: #6F4900;
+        --palette-tertiary-900: #3F2A00;
+        --palette-warning-100: #FFBD4F;
+        --palette-warning-200: #AE6D00;
+        --palette-warning-300: #402800;
+        --palette-warning-50: #E8E2D6;
+        --radius-full: 9999px;
+        --radius-large: 12px;
+        --radius-medium: 8px;
+        --radius-none: 0px;
+        --radius-small: 4px;
+        --radius-tile: 12px;
+        --radius-xlarge: 16px;
+        --radius-xsmall: 2px;
+        --radius-xxlarge: 24px;
+        --size-0: 0px;
+        --size-0-5: 0.5px;
+        --size-1: 1px;
+        --size-1-5: 1.5px;
+        --size-100: 100px;
+        --size-1020: 1020px;
+        --size-104: 104px;
+        --size-108: 108px;
+        --size-112: 112px;
+        --size-116: 116px;
+        --size-12: 12px;
+        --size-120: 120px;
+        --size-124: 124px;
+        --size-128: 128px;
+        --size-16: 16px;
+        --size-192: 192px;
+        --size-2: 2px;
+        --size-20: 20px;
+        --size-200: 200px;
+        --size-24: 24px;
+        --size-28: 28px;
+        --size-32: 32px;
+        --size-36: 36px;
+        --size-4: 4px;
+        --size-40: 40px;
+        --size-44: 44px;
+        --size-48: 48px;
+        --size-52: 52px;
+        --size-56: 56px;
+        --size-60: 60px;
+        --size-64: 64px;
+        --size-68: 68px;
+        --size-72: 72px;
+        --size-750: 750px;
+        --size-76: 76px;
+        --size-8: 8px;
+        --size-80: 80px;
+        --size-84: 84px;
+        --size-88: 88px;
+        --size-92: 92px;
+        --size-96: 96px;
+        --size-9999: 9999px;
+        --space-0: 0px;
+        --space-1: 1px;
+        --space-100: 100px;
+        --space-104: 104px;
+        --space-108: 108px;
+        --space-112: 112px;
+        --space-116: 116px;
+        --space-12: 12px;
+        --space-120: 120px;
+        --space-124: 124px;
+        --space-128: 128px;
+        --space-16: 16px;
+        --space-192: 192px;
+        --space-2: 2px;
+        --space-20: 20px;
+        --space-24: 24px;
+        --space-28: 28px;
+        --space-32: 32px;
+        --space-36: 36px;
+        --space-4: 4px;
+        --space-40: 40px;
+        --space-48: 48px;
+        --space-52: 52px;
+        --space-56: 56px;
+        --space-60: 60px;
+        --space-64: 64px;
+        --space-68: 68px;
+        --space-72: 72px;
+        --space-76: 76px;
+        --space-8: 8px;
+        --space-80: 80px;
+        --space-84: 84px;
+        --space-88: 88px;
+        --space-92: 92px;
+        --space-96: 96px;
+        --shadow-2xl: 0px 7px 29px 0px color-mix(in srgb, var(--color-shadow-medium) 20%, transparent);
+        --shadow-2xs: 1.95px 1.95px 2.6px 0px color-mix(in srgb, var(--color-shadow-strong) 15%, transparent);
+        --shadow-3xl: 0px 48px 100px 0px color-mix(in srgb, var(--color-shadow-deep) 15%, transparent);
+        --shadow-lg: 0px 5px 15px 0px color-mix(in srgb, var(--color-shadow-strong) 35%, transparent);
+        --shadow-md: 0px 3px 8px 0px color-mix(in srgb, var(--color-shadow-strong) 24%, transparent);
+        --shadow-none: none;
+        --shadow-sm: 0px 2px 8px 0px color-mix(in srgb, var(--color-shadow-medium) 20%, transparent);
+        --shadow-xl: 0px 8px 24px 0px color-mix(in srgb, var(--color-shadow-soft) 20%, transparent);
+        --shadow-xs: 0px 1px 4px 0px color-mix(in srgb, var(--color-shadow-strong) 16%, transparent);
+      }
+    </style>
     <style>
       :root {
         color-scheme: light;
-        --canvas: #ffffff;
-        --surface-subtle: #f1f1f1;
-        --surface-brand-subtle: #d5dce8;
-        --text-heading: #151515;
-        --text-body: #242424;
-        --text-subtle: #5c5c5c;
-        --text-muted: #767676;
-        --border: #cecece;
-        --border-strong: #242424;
-        --brand: #0a4fdf;
-        --brand-hover: #0b3a9d;
-        --brand-pressed: #031643;
-        --secondary: #058625;
-        --secondary-soft: #e6ede5;
-        --focus: #0a4fdf;
-        --inverse: #ffffff;
-        --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        --shell: min(100% - 48px, 1200px);
+        --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+        --hb-gutter: var(--space-48);
+        --hb-container: 1440px;
+        /* Page edge: the gutter, or wider on large screens so the content stays 1440 wide and centred */
+        --hb-edge: max(var(--hb-gutter), calc((100% - var(--hb-container)) / 2 + var(--hb-gutter)));
+        --hb-header-h: calc(var(--space-24) * 2 + var(--space-32));
+        --hb-search-h: calc(var(--space-32) * 2 + var(--space-52) + var(--border-width-1));
+        --hb-rule: var(--border-width-1) solid var(--color-border-neutral-subtle-two);
       }
 
       *,
@@ -45,1746 +427,1544 @@
 
       body {
         margin: 0;
-        background: var(--canvas);
-        color: var(--text-body);
-        font-family: var(--font);
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        text-rendering: optimizeLegibility;
+        background: var(--color-surface-canvas);
+        color: var(--color-text-body);
+        font-family: var(--font-body-font-family);
+        font-size: var(--font-body-font-size);
+        font-weight: var(--font-body-font-weight);
+        line-height: var(--font-body-line-height);
+        letter-spacing: var(--font-body-letter-spacing);
+        -webkit-font-smoothing: antialiased;
       }
 
-      body.nav-open {
-        overflow: hidden;
-      }
-
-      a {
-        color: inherit;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 4px;
-      }
-
-      a:hover {
-        color: var(--brand-hover);
-      }
-
-      button,
-      input {
-        font: inherit;
-      }
-
-      img,
-      svg {
+      img {
         display: block;
         max-width: 100%;
       }
 
-      img {
-        height: auto;
-      }
-
-      h1,
-      h2,
-      h3,
-      p,
-      figure,
-      blockquote,
-      dl,
-      dd {
-        margin: 0;
-      }
-
-      h1,
-      h2,
-      h3 {
-        color: var(--text-heading);
-      }
-
-      h1 {
-        max-width: 680px;
-        font-size: 48px;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        line-height: 56px;
-      }
-
-      h2 {
-        font-size: 40px;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        line-height: 48px;
-      }
-
-      h3 {
-        font-size: 23px;
-        font-weight: 500;
-        letter-spacing: -0.02em;
-        line-height: 28px;
+      a {
+        color: inherit;
       }
 
       :focus-visible {
-        outline: 2px solid var(--focus);
-        outline-offset: 4px;
+        outline: var(--border-width-2) solid var(--color-border-interaction-focused);
+        outline-offset: var(--space-4);
       }
 
-      .skip-link {
-        position: fixed;
-        top: 8px;
-        left: 8px;
-        z-index: 100;
-        min-height: 40px;
-        padding: 8px 16px;
-        border-radius: 8px;
-        background: var(--brand);
-        color: var(--inverse);
-        transform: translateY(-160%);
+      /* On the dark grounds the focus ring takes the on-colour border so it stays visible */
+      .hb-hero :focus-visible,
+      .hb-feature :focus-visible,
+      .hb-campus :focus-visible,
+      .hb-footer :focus-visible {
+        outline-color: var(--color-border-oncolor);
       }
 
-      .skip-link:focus {
-        color: var(--inverse);
-        transform: translateY(0);
+      .hb-skip {
+        position: absolute;
+        left: var(--hb-gutter);
+        top: var(--space-8);
+        z-index: 10;
+        padding: var(--space-8) var(--space-16);
+        background: var(--color-surface-canvas);
+        color: var(--color-text-heading);
+        transform: translateY(-200%);
       }
 
-      .shell {
-        width: var(--shell);
-        margin-inline: auto;
+      .hb-skip:focus-visible {
+        transform: none;
       }
 
-      .eyebrow,
-      .metadata,
-      .publication-type,
-      .researcher-role,
-      .event-meta,
-      .figure-label {
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 20px;
+      .hb-sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
       }
 
-      .eyebrow,
-      .publication-type,
-      .figure-label {
-        color: var(--brand);
-        text-transform: uppercase;
-      }
-
-      .button {
+      /* Canonical Button: anatomy, size, type, and radius stay canonical */
+      .alpy-button {
         display: inline-flex;
-        min-height: 40px;
         align-items: center;
         justify-content: center;
-        gap: 8px;
-        padding: 0 16px;
-        border: 1px solid var(--brand);
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 20px;
+        gap: var(--space-8);
+        border-width: var(--border-width-1);
+        border-style: solid;
+        border-radius: var(--radius-medium);
         text-decoration: none;
-      }
-
-      .button--primary {
-        background: var(--brand);
-        color: var(--inverse);
-      }
-
-      .button--primary:hover {
-        border-color: var(--brand-hover);
-        background: var(--brand-hover);
-        color: var(--inverse);
-      }
-
-      .button--primary:active {
-        border-color: var(--brand-pressed);
-        background: var(--brand-pressed);
-      }
-
-      .button--outline {
-        background: transparent;
-        color: var(--brand);
-      }
-
-      .button--outline:hover {
-        border-color: var(--brand-hover);
-        color: var(--brand-hover);
-      }
-
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        border-top: 4px solid var(--brand);
-        border-bottom: 1px solid var(--border);
-        background: var(--canvas);
-      }
-
-      .site-header__inner {
-        display: grid;
-        min-height: 80px;
-        align-items: center;
-        grid-template-columns: minmax(240px, 1fr) auto auto;
-        gap: 32px;
-      }
-
-      .wordmark {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        color: var(--text-heading);
-        text-decoration: none;
-      }
-
-      .wordmark:hover {
-        color: var(--text-heading);
-      }
-
-      .wordmark__mark {
-        display: grid;
-        width: 40px;
-        height: 40px;
-        place-items: center;
-        border: 1px solid var(--brand-pressed);
-        border-radius: 8px;
-        background: var(--brand-pressed);
-        color: var(--inverse);
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 20px;
-      }
-
-      .wordmark__text {
-        display: grid;
-        gap: 0;
-      }
-
-      .wordmark__name {
-        color: var(--text-heading);
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 24px;
-      }
-
-      .wordmark__descriptor {
-        color: var(--text-subtle);
-        font-size: 12px;
-        line-height: 16px;
-      }
-
-      .primary-nav {
-        display: flex;
-        align-items: center;
-        gap: 28px;
-      }
-
-      .primary-nav a {
-        color: var(--text-body);
-        font-size: 14px;
-        line-height: 20px;
-        text-decoration: none;
-      }
-
-      .primary-nav a:hover {
-        color: var(--brand-hover);
-        text-decoration: underline;
-      }
-
-      .menu-toggle {
-        display: none;
-        min-height: 40px;
-        align-items: center;
-        gap: 8px;
-        padding: 0 12px;
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        background: var(--canvas);
-        color: var(--text-heading);
+        white-space: nowrap;
         cursor: pointer;
-        font-size: 14px;
-        line-height: 20px;
       }
 
-      .menu-toggle__icon {
-        width: 16px;
-        height: 12px;
+      .alpy-button[data-alpy-size="lg"] {
+        min-height: var(--space-52);
+        padding: var(--space-0) var(--space-24);
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+        letter-spacing: var(--font-body-large-letter-spacing);
       }
 
-      .menu-toggle__icon span {
-        display: block;
-        width: 100%;
-        height: 1px;
-        margin-bottom: 4px;
-        background: currentColor;
+      .alpy-button[data-alpy-size="md"] {
+        min-height: var(--space-40);
+        padding: var(--space-0) var(--space-16);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
       }
 
-      .hero {
-        padding-bottom: 40px;
+      .alpy-button [data-alpy-slot^="Icon"] {
+        display: inline-flex;
       }
 
-      .hero__stage {
-        position: relative;
-        min-height: clamp(620px, 72svh, 760px);
-        overflow: hidden;
-        background: var(--brand-pressed);
-        isolation: isolate;
+      .alpy-button[data-alpy-size="lg"] [data-alpy-slot^="Icon"] svg {
+        width: var(--size-20);
+        height: var(--size-20);
       }
 
-      .hero__stage > .shell,
-      .hero__grid {
-        min-height: inherit;
+      .alpy-button[data-alpy-size="md"] [data-alpy-slot^="Icon"] svg {
+        width: var(--icon-size-16);
+        height: var(--icon-size-16);
       }
 
-      .hero__grid {
-        display: grid;
-        align-items: center;
-        grid-template-columns: minmax(0, 680px);
+      .alpy-button[data-alpy-variant="primary"] {
+        border-color: var(--color-border-brand-color-one-strong-one);
+        background: var(--color-shades-brand-color-one-strong-one);
+        color: var(--color-text-oncolor);
       }
 
-      .hero__copy {
-        position: relative;
-        z-index: 2;
-        display: grid;
-        max-width: 680px;
-        gap: 24px;
-        padding: 96px 0;
+      .alpy-button[data-alpy-variant="primary"] [data-alpy-slot^="Icon"] {
+        color: var(--color-icon-oncolor);
       }
 
-      .hero__copy .eyebrow,
-      .hero__copy h1,
-      .hero__helper {
-        color: var(--inverse);
+      .alpy-button[data-alpy-variant="primary"]:hover {
+        border-color: var(--color-border-brand-color-one-strong-two);
+        background: var(--color-shades-brand-color-one-strong-two);
       }
 
-      .hero__helper {
-        max-width: 600px;
-        font-size: 19px;
-        font-weight: 600;
-        line-height: 28px;
+      .alpy-button[data-alpy-variant="primary"]:active {
+        border-color: var(--color-border-brand-color-one-strong-three);
+        background: var(--color-shades-brand-color-one-strong-three);
       }
 
-      .action-row {
+      .alpy-button[data-alpy-variant="link"] {
+        border-color: var(--color-system-transparent);
+        background: var(--color-system-transparent);
+        color: var(--color-text-link);
+      }
+
+      .alpy-button[data-alpy-variant="link"]:hover {
+        color: var(--color-text-link-hover);
+      }
+
+      .alpy-button[data-alpy-icon-mode="only"][data-alpy-size="lg"] {
+        width: var(--space-52);
+        height: var(--space-52);
+        padding: var(--space-0);
+      }
+
+      /* Header: serif wordmark, five sections, a visit link and the one application action */
+      .hb-header {
         display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        padding-top: 8px;
+        align-items: center;
+        gap: var(--space-40);
+        height: var(--hb-header-h);
+        padding-inline: var(--hb-edge);
+        border-bottom: var(--hb-rule);
       }
 
-      .hero__media {
-        position: absolute;
-        z-index: 0;
-        inset: 0;
+      .hb-wordmark {
+        margin-right: auto;
+        color: var(--color-text-heading);
+        font-family: var(--font-heading-xsmall-font-family);
+        font-size: var(--font-heading-xsmall-font-size);
+        font-weight: var(--font-heading-xsmall-font-weight);
+        line-height: var(--font-heading-xsmall-line-height);
+        letter-spacing: var(--font-heading-xsmall-letter-spacing);
+        text-decoration: none;
+      }
+
+      .hb-nav ul {
+        display: flex;
+        gap: var(--space-32);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hb-nav a {
+        color: var(--color-text-heading);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+        text-decoration: underline;
+        text-decoration-color: var(--color-system-transparent);
+        text-underline-offset: var(--space-4);
+        transition: text-decoration-color 150ms var(--ease);
+      }
+
+      .hb-nav a:hover {
+        text-decoration-color: currentColor;
+      }
+
+      /* The visit link joins the menu only on phones, where the header drops it */
+      .hb-nav-visit {
+        display: none;
+      }
+
+      .hb-header-actions {
+        display: flex;
+        align-items: center;
+        gap: var(--space-8);
+      }
+
+      .hb-menu {
+        display: none;
+      }
+
+      /* Hero: a full-bleed photograph of the work itself with the statement and its action centred on it;
+         the course search below stays inside the first screen */
+      .hb-hero {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: calc(100svh - var(--hb-header-h) - var(--hb-search-h));
         overflow: hidden;
+        background: var(--color-shades-neutral-strong-three);
+        color: var(--color-text-inverse);
       }
 
-      .hero__media::before {
+      .hb-hero-media {
         position: absolute;
-        z-index: 1;
+        inset: 0;
+        margin: 0;
+      }
+
+      .hb-hero-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+      }
+
+      /* A soft pool of the darkest neutral behind the centred words, so the statement reads on any photograph */
+      .hb-hero-media::after {
+        content: "";
+        position: absolute;
         inset: 0;
         background:
-          linear-gradient(0deg, rgba(3, 22, 67, 0.72) 0%, rgba(3, 22, 67, 0) 28%),
-          linear-gradient(
-            90deg,
-            rgba(3, 22, 67, 0.96) 0%,
-            rgba(3, 22, 67, 0.86) 38%,
-            rgba(3, 22, 67, 0.32) 72%,
-            rgba(3, 22, 67, 0.08) 100%
-          );
-        content: "";
+          radial-gradient(
+            ellipse 52% 58% at 50% 52%,
+            color-mix(in srgb, var(--color-shades-neutral-strong-three) 62%, var(--color-system-transparent)),
+            var(--color-system-transparent)
+          ),
+          color-mix(in srgb, var(--color-shades-neutral-strong-three) 20%, var(--color-system-transparent));
       }
 
-      .hero__media img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+      .hb-hero-body {
+        position: relative;
+        display: grid;
+        justify-items: center;
+        padding: var(--space-64) var(--hb-edge);
+        text-align: center;
       }
 
-      .hero__media figcaption {
+      .hb-hero-text {
+        display: grid;
+        justify-items: center;
+      }
+
+      .hb-hero h1 {
+        max-width: 11em;
+        margin: 0;
+        color: var(--color-text-heading-oncolor);
+        font-family: var(--font-heading-xxlarge-font-family);
+        font-size: var(--font-heading-xxlarge-font-size);
+        font-weight: var(--font-heading-xxlarge-font-weight);
+        line-height: var(--font-heading-xxlarge-line-height);
+        letter-spacing: var(--font-heading-xxlarge-letter-spacing);
+        text-wrap: balance;
+      }
+
+      .hb-lead {
+        max-width: 36em;
+        margin: var(--space-16) 0 var(--space-32);
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+        letter-spacing: var(--font-body-large-letter-spacing);
+        text-wrap: balance;
+      }
+
+      .hb-credit {
         position: absolute;
-        z-index: 2;
-        right: max(24px, calc((100% - 1200px) / 2));
-        bottom: 24px;
-        max-width: 560px;
-        color: var(--inverse);
-        font-size: 12px;
-        line-height: 20px;
+        right: var(--hb-edge);
+        bottom: var(--space-24);
+        max-width: 22em;
+        margin: 0;
+        color: var(--color-text-inverse);
+        font-family: var(--font-body-small-font-family);
+        font-size: var(--font-body-small-font-size);
+        font-weight: var(--font-body-small-font-weight);
+        line-height: var(--font-body-small-line-height);
+        letter-spacing: var(--font-body-small-letter-spacing);
         text-align: right;
+        text-wrap: balance;
       }
 
-      .events-figure figcaption {
-        margin-top: 12px;
-        color: var(--text-subtle);
-        font-size: 12px;
-        line-height: 20px;
-      }
-
-      .hero .button--outline {
-        border-color: var(--inverse);
-        color: var(--inverse);
-      }
-
-      .hero .button--outline:hover {
-        border-color: var(--inverse);
-        background: var(--inverse);
-        color: var(--brand-pressed);
-      }
-
-      .hero :focus-visible {
-        outline-color: var(--inverse);
-      }
-
-      .hero__ledger {
-        margin-top: 0;
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-      }
-
-      .hero__ledger dl {
+      /* Course search: heading, level tabs, and one search field on a single line */
+      .hb-search {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: auto auto minmax(0, 1fr);
+        align-items: center;
+        gap: var(--space-32);
+        min-height: var(--hb-search-h);
+        padding: var(--space-32) var(--hb-edge);
+        border-bottom: var(--hb-rule);
       }
 
-      .hero__ledger div {
-        display: grid;
-        min-height: 88px;
-        align-content: center;
-        padding: 16px 24px;
-        border-right: 1px solid var(--border);
-        gap: 4px;
+      .hb-search h2 {
+        margin: 0;
+        color: var(--color-text-heading);
+        font-family: var(--font-heading-small-font-family);
+        font-size: var(--font-heading-small-font-size);
+        font-weight: var(--font-heading-small-font-weight);
+        line-height: var(--font-heading-small-line-height);
+        letter-spacing: var(--font-heading-small-letter-spacing);
+        white-space: nowrap;
       }
 
-      .hero__ledger div:first-child {
-        padding-left: 0;
-      }
-
-      .hero__ledger div:last-child {
-        border-right: 0;
-      }
-
-      .hero__ledger dt,
-      .hero__ledger dd {
-        font-size: 14px;
-        line-height: 20px;
-      }
-
-      .hero__ledger dt {
-        color: var(--text-muted);
-      }
-
-      .hero__ledger dd {
-        color: var(--text-heading);
-        font-weight: 600;
-      }
-
-      .section {
-        padding: 96px 0;
-      }
-
-      .section--subtle {
-        background: var(--surface-subtle);
-      }
-
-      .section--subtle .researcher-role,
-      .section--subtle .method-list article::before {
-        color: var(--text-subtle);
-      }
-
-      .section-header {
-        display: grid;
-        margin-bottom: 48px;
-        grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
-        gap: 24px;
-      }
-
-      .section-intro {
-        color: var(--text-subtle);
-      }
-
-      .featured {
-        display: grid;
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      }
-
-      .featured__copy {
-        display: grid;
-        align-content: center;
-        gap: 20px;
-        padding: 56px 64px 56px 0;
-      }
-
-      .featured__copy h3 {
-        max-width: 560px;
-        font-size: 33px;
-        font-weight: 700;
-        line-height: 40px;
-      }
-
-      .featured__abstract {
-        max-width: 600px;
-        color: var(--text-body);
-      }
-
-      .metadata {
+      /* Canonical Tabs on the light ground: the quiet neutral track, the canvas for the selected tab */
+      .alpy-tabs-root {
         display: flex;
-        flex-wrap: wrap;
-        gap: 6px 16px;
-        color: var(--text-muted);
+        width: max-content;
+        align-items: center;
+        padding: var(--space-4);
+        border-radius: var(--radius-medium);
+        background: var(--color-shades-neutral-subtle-one);
       }
 
-      .metadata span + span::before {
-        margin-right: 16px;
-        color: var(--border-strong);
-        content: "·";
-      }
-
-      .text-link {
-        width: fit-content;
-        color: var(--brand);
-        font-size: 14px;
-        line-height: 20px;
-      }
-
-      .research-figure {
-        position: relative;
-        align-self: stretch;
-        border-left: 1px solid var(--border);
-        background: var(--surface-brand-subtle);
-        overflow: hidden;
-      }
-
-      .research-figure img {
-        width: 100%;
-        height: 100%;
-        min-height: 560px;
-        object-fit: cover;
-        object-position: center;
-      }
-
-      .research-figure figcaption {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        padding: 16px 20px;
-        background: var(--canvas);
-        color: var(--text-subtle);
-        font-size: 12px;
-        line-height: 20px;
-      }
-
-      .research-figure__tag {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        padding: 4px 8px;
-        border-radius: 8px;
-        background: var(--canvas);
-        color: var(--brand);
-        font-size: 12px;
-        line-height: 20px;
-        text-transform: uppercase;
-      }
-
-      .area-list {
-        border-top: 1px solid var(--border);
-      }
-
-      .area-item {
-        display: grid;
-        align-items: start;
-        padding: 28px 0;
-        border-bottom: 1px solid var(--border);
-        grid-template-columns: 72px minmax(220px, 0.7fr) minmax(0, 1fr) auto;
-        gap: 24px;
-      }
-
-      .area-item__number {
-        display: grid;
-        width: 40px;
-        height: 40px;
-        place-items: center;
-        border: 1px solid var(--border);
-        border-radius: 9999px;
-        background: var(--canvas);
-        color: var(--brand);
-        font-size: 14px;
-        line-height: 20px;
-      }
-
-      .area-item h3 {
-        font-size: 19px;
-        font-weight: 600;
-        letter-spacing: 0;
-        line-height: 28px;
-      }
-
-      .area-item p {
-        max-width: 600px;
-        color: var(--text-subtle);
-      }
-
-      .area-item a {
-        color: var(--brand);
-        font-size: 14px;
-        line-height: 20px;
-      }
-
-      .publication-list {
-        display: grid;
-        gap: 0;
-        border-top: 1px solid var(--border);
-      }
-
-      .publication {
-        display: grid;
-        padding: 32px 0;
-        border-bottom: 1px solid var(--border);
-        grid-template-columns: 176px minmax(0, 1fr) 180px;
-        gap: 32px;
-      }
-
-      .publication:first-child {
-        padding-inline: 24px;
-        background: var(--surface-brand-subtle);
-      }
-
-      .publication h3 {
-        margin: 6px 0 12px;
-      }
-
-      .publication__summary {
-        max-width: 700px;
-        color: var(--text-subtle);
-      }
-
-      .publication__access {
-        display: grid;
-        align-content: start;
-        justify-items: start;
-        gap: 8px;
-        color: var(--text-muted);
-        font-size: 12px;
-        line-height: 20px;
-      }
-
-      .access-label {
-        padding: 2px 8px;
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        color: var(--text-body);
-      }
-
-      .people-section {
-        background: var(--brand-pressed);
-        color: var(--inverse);
-      }
-
-      .people-section h2,
-      .people-section h3 {
-        color: var(--inverse);
-      }
-
-      .people-section .researcher-role {
-        color: #b7c5e1;
-      }
-
-      .people-section .section-intro,
-      .people-section .researcher p:last-child {
-        color: var(--surface-brand-subtle);
-      }
-
-      .researcher-grid {
-        display: grid;
-        gap: 16px;
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .researcher {
-        min-width: 0;
-        padding-bottom: 8px;
-      }
-
-      .researcher__portrait {
-        width: 100%;
-        margin-bottom: 24px;
-        aspect-ratio: 1;
-        border-radius: 8px;
-        background-image: url("./assets/researcher-portraits.jpg");
-        background-repeat: no-repeat;
-        background-size: 200% 200%;
-      }
-
-      .researcher__portrait--amina {
-        background-position: 0 0;
-      }
-
-      .researcher__portrait--leo {
-        background-position: 100% 0;
-      }
-
-      .researcher__portrait--mei {
-        background-position: 0 100%;
-      }
-
-      .researcher__portrait--samira {
-        background-position: 100% 100%;
-      }
-
-      .researcher-role {
-        margin: 8px 0 16px;
-        color: var(--text-muted);
-      }
-
-      .researcher p:last-child {
-        font-size: 14px;
-        line-height: 20px;
-      }
-
-      .events-layout {
-        display: grid;
-        align-items: start;
-        grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
-        gap: 56px;
-      }
-
-      .events-figure {
-        position: sticky;
-        top: 120px;
-      }
-
-      .events-figure img {
-        width: 100%;
-        aspect-ratio: 4 / 5;
-        object-fit: cover;
-        object-position: center 64%;
-      }
-
-      .event-list {
-        border-top: 1px solid var(--border);
-      }
-
-      .event {
-        display: grid;
-        padding: 28px 0;
-        border-bottom: 1px solid var(--border);
-        grid-template-columns: 132px minmax(0, 1fr);
-        gap: 24px;
-      }
-
-      .event__date {
-        color: var(--text-heading);
-        font-size: 19px;
-        font-weight: 600;
-        line-height: 28px;
-      }
-
-      .event h3 {
-        margin-bottom: 8px;
-      }
-
-      .event__description,
-      .event-meta {
-        color: var(--text-subtle);
-      }
-
-      .event-meta {
-        display: grid;
-        align-content: start;
-        grid-column: 2;
-        gap: 4px;
-      }
-
-      .method-grid {
-        display: grid;
-        grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
-        gap: 72px;
-      }
-
-      .method-intro {
-        display: grid;
-        align-content: start;
-        gap: 24px;
-      }
-
-      .method-intro p:not(.eyebrow) {
-        color: var(--text-subtle);
-      }
-
-      .method-note {
-        display: grid;
-        margin-top: 8px;
-        padding: 20px 20px 20px 24px;
-        border-left: 4px solid var(--secondary);
-        background: var(--secondary-soft);
-        gap: 4px;
-      }
-
-      .method-note span {
-        color: var(--secondary);
-        font-size: 12px;
-        line-height: 20px;
-        text-transform: uppercase;
-      }
-
-      .method-note strong {
-        color: var(--text-heading);
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 24px;
-      }
-
-      .method-list {
-        counter-reset: method;
-        border-top: 1px solid var(--border);
-      }
-
-      .method-list article {
-        position: relative;
-        display: grid;
-        padding: 28px 0 28px 72px;
-        border-bottom: 1px solid var(--border);
-        gap: 8px;
-        counter-increment: method;
-      }
-
-      .method-list article::before {
-        position: absolute;
-        top: 32px;
-        left: 0;
-        color: var(--text-muted);
-        content: "0" counter(method);
-        font-size: 12px;
-        line-height: 20px;
-      }
-
-      .method-list p {
-        color: var(--text-subtle);
-      }
-
-      .newsletter {
-        padding: 72px 0;
-        background: var(--brand-pressed);
-        color: var(--inverse);
-      }
-
-      .newsletter__inner {
-        display: grid;
-        align-items: end;
-        grid-template-columns: minmax(0, 0.9fr) minmax(440px, 1.1fr);
-        gap: 72px;
-      }
-
-      .newsletter h2 {
-        margin: 8px 0 16px;
-        color: var(--inverse);
-      }
-
-      .newsletter__copy > p:last-child {
-        max-width: 560px;
-        color: var(--border);
-      }
-
-      .newsletter-form {
-        display: grid;
-        gap: 12px;
-      }
-
-      .newsletter-form label {
-        font-size: 14px;
-        line-height: 20px;
-      }
-
-      .newsletter-form__row {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 12px;
-      }
-
-      .newsletter-form input {
-        min-width: 0;
-        min-height: 40px;
-        padding: 8px 16px;
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        background: var(--canvas);
-        color: var(--text-body);
-        font-size: 16px;
-        line-height: 24px;
-      }
-
-      .newsletter-form input:focus {
-        border-color: var(--focus);
-      }
-
-      .newsletter-form .button {
+      .alpy-tab {
+        display: flex;
+        padding: var(--space-0);
+        border: 0;
+        border-radius: var(--radius-medium);
+        background: var(--color-system-transparent);
+        color: inherit;
+        font: inherit;
+        appearance: none;
         cursor: pointer;
       }
 
-      .newsletter-form__note,
-      .form-status {
-        color: var(--border);
-        font-size: 12px;
-        line-height: 20px;
+      .alpy-tab[aria-selected="true"] {
+        background: var(--color-surface-canvas);
       }
 
-      .form-status:not(:empty) {
-        padding-top: 4px;
-        color: var(--inverse);
+      .alpy-tab-content {
+        display: inline-flex;
+        min-height: var(--space-40);
+        align-items: center;
+        padding: var(--space-8) var(--space-16);
       }
 
-      .site-footer {
-        padding: 64px 0 32px;
-        border-top: 1px solid var(--border);
+      .alpy-tab-label {
+        color: var(--color-text-body);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+        white-space: nowrap;
       }
 
-      .site-footer__top {
-        display: grid;
-        grid-template-columns: 1.3fr repeat(2, 0.7fr);
-        gap: 48px;
+      .alpy-tab[aria-selected="true"] .alpy-tab-label {
+        color: var(--color-text-brand-color-one-accent);
       }
 
-      .footer-statement {
-        max-width: 520px;
-        margin-top: 20px;
-        color: var(--text-subtle);
-      }
-
-      .footer-nav {
-        display: grid;
-        align-content: start;
-        gap: 12px;
-      }
-
-      .footer-nav h2 {
-        margin-bottom: 4px;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0;
-        line-height: 20px;
-      }
-
-      .footer-nav a {
-        width: fit-content;
-        color: var(--text-subtle);
-        font-size: 14px;
-        line-height: 20px;
-      }
-
-      .site-footer__bottom {
+      .hb-search-form {
         display: flex;
-        justify-content: space-between;
-        gap: 24px;
-        margin-top: 64px;
-        padding-top: 24px;
-        border-top: 1px solid var(--border);
-        color: var(--text-muted);
-        font-size: 12px;
-        line-height: 20px;
+        gap: var(--space-8);
       }
 
-      @media (max-width: 980px) {
-        .site-header__inner {
-          grid-template-columns: 1fr auto;
+      .hb-search-form .alpy-button {
+        flex: none;
+      }
+
+      /* Canonical text input, basic variant, label hidden and named for assistive technology */
+      .alpy-field {
+        display: inline-flex;
+        flex: 1 1 auto;
+        min-width: 0;
+        align-items: center;
+        gap: var(--space-8);
+        height: var(--space-52);
+        padding: var(--space-12) var(--space-16);
+        border: var(--border-width-1) solid var(--color-border-neutral-subtle-two);
+        border-radius: var(--radius-medium);
+        background: var(--color-surface-canvas);
+        color: var(--color-icon-default);
+      }
+
+      .alpy-field:focus-within {
+        border-color: var(--color-border-interaction-focused);
+      }
+
+      .alpy-field svg {
+        flex: none;
+        width: var(--icon-size-20);
+        height: var(--icon-size-20);
+      }
+
+      .alpy-field input {
+        flex: 1 1 auto;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        background: var(--color-system-transparent);
+        color: var(--color-text-body);
+        font-family: var(--font-body-font-family);
+        font-size: var(--font-body-font-size);
+        font-weight: var(--font-body-font-weight);
+        line-height: var(--font-body-line-height);
+        letter-spacing: var(--font-body-letter-spacing);
+      }
+
+      .alpy-field input::placeholder {
+        color: var(--color-text-body-subtle);
+      }
+
+      /* Sections: one padding row for the whole page, on the 1440 container */
+      .hb-section {
+        padding: var(--space-96) var(--hb-edge);
+      }
+
+      .hb-section-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: end;
+        justify-content: space-between;
+        gap: var(--space-16) var(--space-32);
+        margin-bottom: var(--space-48);
+      }
+
+      .hb-h2 {
+        max-width: 18em;
+        margin: 0;
+        color: var(--color-text-heading);
+        font-family: var(--font-heading-xlarge-font-family);
+        font-size: var(--font-heading-xlarge-font-size);
+        font-weight: var(--font-heading-xlarge-font-weight);
+        line-height: var(--font-heading-xlarge-line-height);
+        letter-spacing: var(--font-heading-xlarge-letter-spacing);
+        text-wrap: balance;
+      }
+
+      .hb-h3 {
+        margin: 0;
+        color: var(--color-text-heading);
+        font-family: var(--font-heading-xsmall-font-family);
+        font-size: var(--font-heading-xsmall-font-size);
+        font-weight: var(--font-heading-xsmall-font-weight);
+        line-height: var(--font-heading-xsmall-line-height);
+        letter-spacing: var(--font-heading-xsmall-letter-spacing);
+        text-wrap: balance;
+      }
+
+      .hb-h3 a {
+        text-decoration: none;
+      }
+
+      .hb-h3 a:hover {
+        text-decoration: underline;
+        text-underline-offset: var(--space-4);
+      }
+
+      .hb-text {
+        margin: 0;
+        text-wrap: balance;
+      }
+
+      .hb-meta {
+        margin: 0;
+        text-wrap: balance;
+        color: var(--color-text-body-subtle);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+      }
+
+      /* Text link to the full list or story: the canonical link role with the canonical arrow */
+      .hb-link {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-8);
+        color: var(--color-text-link);
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+        letter-spacing: var(--font-body-large-letter-spacing);
+        text-decoration: none;
+      }
+
+      .hb-link:hover {
+        color: var(--color-text-link-hover);
+        text-decoration: underline;
+        text-underline-offset: var(--space-4);
+      }
+
+      .hb-link svg {
+        width: var(--icon-size-16);
+        height: var(--icon-size-16);
+      }
+
+      .alpy-image {
+        display: block;
+        margin: 0;
+        overflow: hidden;
+        border-radius: var(--radius-none);
+        background: var(--color-surface-interaction-disabled);
+      }
+
+      .alpy-image[data-alpy-variant="3:2"] { aspect-ratio: 3 / 2; }
+      .alpy-image[data-alpy-variant="2:3"] { aspect-ratio: 2 / 3; }
+
+      .alpy-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Featured story: the university's navy, the story beside its photograph, a timeline of years below */
+      .hb-feature {
+        background: var(--color-shades-brand-color-one-strong-three);
+        color: var(--color-text-inverse);
+      }
+
+      .hb-feature-grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        align-items: center;
+        column-gap: var(--space-24);
+      }
+
+      .hb-feature-text {
+        grid-column: 1 / span 5;
+        display: grid;
+        gap: var(--space-24);
+        justify-items: start;
+      }
+
+      .hb-feature .hb-h2 {
+        color: var(--color-text-heading-oncolor);
+      }
+
+      .hb-feature .hb-link {
+        color: var(--color-text-link-inverse);
+      }
+
+      .hb-feature figure {
+        grid-column: 7 / -1;
+        margin: 0;
+      }
+
+      .hb-feature figcaption {
+        padding-top: var(--space-12);
+        color: var(--color-text-inverse);
+        font-family: var(--font-body-small-font-family);
+        font-size: var(--font-body-small-font-size);
+        font-weight: var(--font-body-small-font-weight);
+        line-height: var(--font-body-small-line-height);
+        letter-spacing: var(--font-body-small-letter-spacing);
+      }
+
+      .hb-timeline {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: var(--space-24);
+        margin: var(--space-64) 0 0;
+        padding-top: var(--space-24);
+        border-top: var(--border-width-1) solid var(--color-border-brand-color-one-strong-two);
+      }
+
+      .hb-timeline div {
+        display: grid;
+        gap: var(--space-8);
+        align-content: start;
+      }
+
+      .hb-timeline dt {
+        color: var(--color-text-heading-oncolor);
+        font-family: var(--font-heading-medium-font-family);
+        font-size: var(--font-heading-medium-font-size);
+        font-weight: var(--font-heading-medium-font-weight);
+        line-height: var(--font-heading-medium-line-height);
+        letter-spacing: var(--font-heading-medium-letter-spacing);
+        font-variant-numeric: lining-nums;
+      }
+
+      .hb-timeline dd {
+        margin: 0;
+        text-wrap: balance;
+      }
+
+      /* Research: three findings in columns, each under a heavy rule, ending in its field and citation */
+      .hb-findings {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-48) var(--space-32);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hb-findings li {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: var(--space-12);
+        padding-top: var(--space-24);
+        border-top: var(--border-width-2) solid var(--color-border-neutral-strong-three);
+      }
+
+      .hb-findings .hb-h3 {
+        font-family: var(--font-heading-small-font-family);
+        font-size: var(--font-heading-small-font-size);
+        font-weight: var(--font-heading-small-font-weight);
+        line-height: var(--font-heading-small-line-height);
+        letter-spacing: var(--font-heading-small-letter-spacing);
+      }
+
+      .hb-findings cite {
+        font-style: italic;
+      }
+
+      /* Study: the heading beside three paths, each led by how many courses it holds */
+      .hb-band {
+        background: var(--color-shades-neutral-subtle-one);
+      }
+
+      .hb-study {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        column-gap: var(--space-24);
+      }
+
+      .hb-study-head {
+        grid-column: 1 / span 4;
+        display: grid;
+        gap: var(--space-24);
+        align-content: start;
+      }
+
+      .hb-paths {
+        grid-column: 6 / -1;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: var(--hb-rule);
+      }
+
+      .hb-path {
+        display: grid;
+        grid-template-columns: var(--space-120) minmax(0, 1fr) auto;
+        align-items: baseline;
+        gap: var(--space-32);
+        padding-block: var(--space-32);
+        border-bottom: var(--hb-rule);
+      }
+
+      .hb-path-figure {
+        color: var(--color-text-heading);
+        font-family: var(--font-heading-xlarge-font-family);
+        font-size: var(--font-heading-xlarge-font-size);
+        font-weight: var(--font-heading-xlarge-font-weight);
+        line-height: var(--font-heading-xlarge-line-height);
+        letter-spacing: var(--font-heading-xlarge-letter-spacing);
+        font-variant-numeric: lining-nums;
+      }
+
+      .hb-path div {
+        display: grid;
+        gap: var(--space-8);
+      }
+
+      /* Schools: six photographs in one row, the school's name and size under each */
+      .hb-schools {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: var(--space-24);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hb-schools a {
+        display: grid;
+        gap: var(--space-12);
+        text-decoration: none;
+      }
+
+      .hb-schools .alpy-image img {
+        transition: transform 600ms var(--ease);
+      }
+
+      .hb-schools a:hover .alpy-image img {
+        transform: scale(1.04);
+      }
+
+      .hb-schools a:hover .hb-h3 {
+        text-decoration: underline;
+        text-underline-offset: var(--space-4);
+      }
+
+      .hb-schools .hb-h3 {
+        white-space: nowrap;
+      }
+
+      /* Lectures and events: one dated row each, the date set like a calendar leaf */
+      .hb-events {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: var(--border-width-2) solid var(--color-border-neutral-strong-three);
+      }
+
+      .hb-event {
+        display: grid;
+        grid-template-columns: var(--space-120) minmax(0, 1fr) minmax(0, 18rem);
+        align-items: baseline;
+        gap: var(--space-32);
+        padding-block: var(--space-24);
+        border-bottom: var(--hb-rule);
+      }
+
+      .hb-event time {
+        display: grid;
+        color: var(--color-text-heading);
+      }
+
+      .hb-event-day {
+        font-family: var(--font-heading-medium-font-family);
+        font-size: var(--font-heading-medium-font-size);
+        font-weight: var(--font-heading-medium-font-weight);
+        line-height: var(--font-heading-medium-line-height);
+        letter-spacing: var(--font-heading-medium-letter-spacing);
+        font-variant-numeric: lining-nums;
+      }
+
+      .hb-event div {
+        display: grid;
+        gap: var(--space-4);
+      }
+
+      /* Visit: the campus at full bleed, one centred statement and the tour booking */
+      .hb-campus {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: min(80svh, 720px);
+        overflow: hidden;
+        background: var(--color-shades-neutral-strong-three);
+        color: var(--color-text-inverse);
+        text-align: center;
+      }
+
+      .hb-campus .hb-hero-media::after {
+        background:
+          radial-gradient(
+            ellipse 48% 56% at 50% 50%,
+            color-mix(in srgb, var(--color-shades-neutral-strong-three) 58%, var(--color-system-transparent)),
+            var(--color-system-transparent)
+          ),
+          color-mix(in srgb, var(--color-shades-neutral-strong-three) 20%, var(--color-system-transparent));
+      }
+
+      .hb-campus-body {
+        position: relative;
+        display: grid;
+        justify-items: center;
+        gap: var(--space-24);
+        padding: var(--space-96) var(--hb-edge);
+      }
+
+      .hb-campus .hb-h2 {
+        color: var(--color-text-heading-oncolor);
+      }
+
+      .hb-campus p {
+        max-width: 34em;
+        margin: 0;
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+        letter-spacing: var(--font-body-large-letter-spacing);
+        text-wrap: balance;
+      }
+
+      /* Footer: the navy again, the wordmark and address, three link columns, and the legal line */
+      .hb-footer {
+        padding: var(--space-80) var(--hb-edge) var(--space-32);
+        background: var(--color-shades-brand-color-one-strong-three);
+        color: var(--color-text-inverse);
+      }
+
+      .hb-footer-grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        column-gap: var(--space-24);
+        row-gap: var(--space-48);
+      }
+
+      .hb-footer-id {
+        grid-column: 1 / span 4;
+        display: grid;
+        gap: var(--space-16);
+        align-content: start;
+      }
+
+      .hb-footer .hb-wordmark {
+        color: var(--color-text-heading-oncolor);
+      }
+
+      .hb-footer address {
+        font-style: normal;
+      }
+
+      .hb-footer nav {
+        grid-column: span 2;
+      }
+
+      .hb-footer nav:first-of-type {
+        grid-column: 6 / span 2;
+      }
+
+      .hb-footer h2 {
+        margin: 0 0 var(--space-16);
+        color: var(--color-text-heading-oncolor);
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+        letter-spacing: var(--font-body-large-letter-spacing);
+      }
+
+      .hb-footer ul {
+        display: grid;
+        gap: var(--space-8);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hb-footer a {
+        text-decoration: none;
+      }
+
+      .hb-footer .hb-link {
+        color: var(--color-text-link-inverse);
+      }
+
+      .hb-footer nav a:hover,
+      .hb-legal a:hover {
+        text-decoration: underline;
+        text-underline-offset: var(--space-4);
+      }
+
+      .hb-legal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--space-16);
+        margin-top: var(--space-64);
+        padding-top: var(--space-24);
+        border-top: var(--border-width-1) solid var(--color-border-brand-color-one-strong-two);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+      }
+
+      .hb-legal ul {
+        display: flex;
+        gap: var(--space-24);
+      }
+
+      /* Motion, only when it is allowed: the photograph settles from a slight zoom, the hero words rise,
+         and each marked item rises once as it enters; with motion off everything is already in place */
+      @media (prefers-reduced-motion: no-preference) {
+        .hb-hero-media img {
+          animation: hb-settle 1600ms var(--ease) backwards;
         }
 
-        .header-action {
+        .hb-hero-text > * {
+          animation: hb-rise 800ms var(--ease) backwards;
+        }
+
+        .hb-hero-text > :nth-child(1) { animation-delay: 250ms; }
+        .hb-hero-text > :nth-child(2) { animation-delay: 400ms; }
+        .hb-hero-text > :nth-child(3) { animation-delay: 550ms; }
+
+        .hb-motion [data-reveal] {
+          transition:
+            opacity 600ms var(--ease),
+            transform 700ms var(--ease);
+          transition-delay: var(--hb-delay, 0ms);
+        }
+
+        .hb-motion [data-reveal]:not(.is-in) {
+          opacity: 0;
+          transform: translateY(var(--space-24));
+        }
+      }
+
+      @keyframes hb-settle {
+        from { transform: scale(1.06); }
+      }
+
+      @keyframes hb-rise {
+        from { opacity: 0; transform: translateY(var(--space-16)); }
+      }
+
+      /* Small desktop: the course search wraps so the field keeps a usable width, schools sit in two rows of
+         three, and the story and the study paths stack once their columns get too narrow for the headings */
+      @media (max-width: 1279px) {
+        :root {
+          /* Two search rows: the heading beside the tabs, then the field */
+          --hb-search-h: calc(var(--space-32) * 2 + var(--space-40) + var(--space-4) * 2 + var(--space-16) + var(--space-52) + var(--border-width-1));
+        }
+
+        .hb-search {
+          grid-template-columns: auto minmax(0, 1fr);
+          row-gap: var(--space-16);
+        }
+
+        .hb-search-panel {
+          grid-column: 1 / -1;
+        }
+
+        .hb-schools {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .hb-feature-text,
+        .hb-feature figure,
+        .hb-study-head,
+        .hb-paths {
+          grid-column: 1 / -1;
+        }
+
+        .hb-feature-text {
+          max-width: 44rem;
+        }
+
+        .hb-feature figure,
+        .hb-paths {
+          margin-top: var(--space-48);
+        }
+
+        .hb-timeline {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          row-gap: var(--space-32);
+        }
+
+        .hb-footer-id {
+          grid-column: 1 / -1;
+        }
+
+        .hb-footer nav,
+        .hb-footer nav:first-of-type {
+          grid-column: span 4;
+        }
+      }
+
+      /* Tablet: the menu button replaces the sections and the findings stack */
+      @media (max-width: 1019px) {
+        :root {
+          --hb-gutter: var(--space-32);
+        }
+
+        .hb-nav {
           display: none;
         }
 
-        .menu-toggle {
+        .hb-menu {
           display: inline-flex;
         }
 
-        .primary-nav {
-          position: fixed;
-          inset: 85px 0 auto;
-          display: none;
-          max-height: calc(100vh - 85px);
-          align-items: stretch;
-          padding: 24px;
-          border-bottom: 1px solid var(--border);
-          background: var(--canvas);
+        .hb-nav.is-open {
+          position: absolute;
+          top: var(--hb-header-h);
+          inset-inline: 0;
+          z-index: 5;
+          display: block;
+          padding: var(--space-16) var(--hb-gutter) var(--space-24);
+          background: var(--color-surface-canvas);
+          border-bottom: var(--hb-rule);
+        }
+
+        .hb-nav.is-open ul {
           flex-direction: column;
-          gap: 0;
-          overflow-y: auto;
+          gap: var(--space-16);
         }
 
-        .primary-nav.is-open {
-          display: flex;
+        .hb-hero {
+          min-height: min(80svh, calc(100svh - var(--hb-header-h)));
         }
 
-        .primary-nav a {
-          padding: 16px 0;
-          border-bottom: 1px solid var(--border);
-          font-size: 16px;
-          line-height: 24px;
+        .hb-hero-body {
+          padding-bottom: var(--space-80);
         }
 
-        .method-grid,
-        .newsletter__inner,
-        .events-layout {
-          grid-template-columns: 1fr;
-          gap: 48px;
+        .hb-section {
+          padding-block: var(--space-80);
         }
 
-        .hero__grid {
-          grid-template-columns: minmax(0, 680px);
+        .hb-findings {
+          grid-template-columns: minmax(0, 1fr);
         }
 
-        .hero__media img {
-          object-position: 52% center;
+        .hb-event {
+          grid-template-columns: var(--space-96) minmax(0, 1fr);
         }
 
-        .events-figure {
-          position: static;
-          max-width: 640px;
-        }
-
-        .events-figure img {
-          aspect-ratio: 16 / 9;
-          object-position: center 42%;
-        }
-
-        .section-header {
-          grid-template-columns: 1fr;
-        }
-
-        .section-intro {
-          grid-column: 1;
-        }
-
-        .featured {
-          grid-template-columns: 1fr;
-        }
-
-        .featured__copy {
-          padding-right: 0;
-        }
-
-        .research-figure {
-          border-top: 1px solid var(--border);
-          border-left: 0;
-        }
-
-        .area-item {
-          grid-template-columns: 56px minmax(220px, 0.7fr) minmax(0, 1fr);
-        }
-
-        .area-item a {
-          grid-column: 2 / -1;
-        }
-
-        .publication {
-          grid-template-columns: 132px minmax(0, 1fr);
-        }
-
-        .publication__access {
-          grid-column: 2;
-        }
-
-        .researcher-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .researcher:nth-child(3),
-        .researcher:nth-child(4) {
-          margin-top: 32px;
-        }
-
-        .event {
-          grid-template-columns: 132px minmax(0, 1fr);
-        }
-
-        .event-meta {
+        .hb-event-place {
           grid-column: 2;
         }
       }
 
-      @media (max-width: 640px) {
+      /* Phone: the visit link folds into the menu, headings take smaller roles, the search field takes the
+         full width above its button, and lists drop to one or two columns */
+      @media (max-width: 749px) {
         :root {
-          --shell: min(100% - 32px, 1200px);
+          --hb-gutter: var(--space-24);
         }
 
-        html {
-          scroll-behavior: auto;
+        .hb-header {
+          gap: var(--space-8);
         }
 
-        h1 {
-          font-size: 40px;
-          line-height: 48px;
-        }
-
-        h2 {
-          font-size: 33px;
-          line-height: 40px;
-        }
-
-        .wordmark__descriptor {
+        .hb-visit {
           display: none;
         }
 
-        .site-header__inner {
-          min-height: 64px;
+        .hb-nav-visit {
+          display: block;
         }
 
-        .primary-nav {
-          inset-block-start: 69px;
-          max-height: calc(100vh - 69px);
+        .hb-credit {
+          left: var(--hb-edge);
+          margin-inline: auto;
+          text-align: center;
         }
 
-        .hero {
-          padding-bottom: 32px;
+        .hb-hero h1 {
+          font-family: var(--font-heading-large-font-family);
+          font-size: var(--font-heading-large-font-size);
+          font-weight: var(--font-heading-large-font-weight);
+          line-height: var(--font-heading-large-line-height);
+          letter-spacing: var(--font-heading-large-letter-spacing);
         }
 
-        .hero__stage {
-          min-height: 680px;
+        .hb-search {
+          grid-template-columns: minmax(0, 1fr);
         }
 
-        .hero__grid {
-          grid-template-columns: 1fr;
+        /* The tabs keep their canonical size; on phones narrower than the three tabs the row scrolls sideways.
+           The small inset keeps the focus ring inside the scroll area */
+        .hb-search .alpy-tabs {
+          margin: calc(var(--space-4) * -1);
+          padding: var(--space-4);
+          overflow-x: auto;
+          scroll-padding-inline: var(--space-8);
         }
 
-        .hero__copy {
-          padding: 64px 0 120px;
+        .hb-search-form {
+          flex-wrap: wrap;
         }
 
-        .hero__helper {
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 24px;
+        .hb-search-form .alpy-field {
+          flex-basis: 100%;
         }
 
-        .hero__media::before {
-          background:
-            linear-gradient(0deg, rgba(3, 22, 67, 0.88) 0%, rgba(3, 22, 67, 0.58) 32%, rgba(3, 22, 67, 0.68) 100%),
-            rgba(3, 22, 67, 0.68);
+        .hb-search-form .alpy-button {
+          flex: 1 1 auto;
         }
 
-        .hero__media img {
-          object-position: 48% center;
+        /* Every section, the photo bands included, keeps 32px above and below its content on phones */
+        .hb-section,
+        .hb-hero-body,
+        .hb-campus-body {
+          padding-block: var(--space-32);
         }
 
-        .hero__media figcaption {
-          right: 16px;
-          bottom: 16px;
-          left: 16px;
-          max-width: none;
-          text-align: left;
+        /* One rhythm inside the sections: 32px between a section's groups (heading, story, photo, list),
+           24px above and below every rule */
+        .hb-section-head {
+          margin-bottom: var(--space-32);
         }
 
-        .hero__ledger dl {
-          grid-template-columns: 1fr;
+        .hb-feature figure,
+        .hb-paths,
+        .hb-timeline {
+          margin-top: var(--space-32);
         }
 
-        .hero__ledger div,
-        .hero__ledger div:first-child {
-          min-height: 0;
-          padding: 16px 0;
-          border-right: 0;
-          border-bottom: 1px solid var(--border);
+        .hb-timeline,
+        .hb-findings {
+          row-gap: var(--space-24);
         }
 
-        .hero__ledger div:last-child {
+        .hb-path {
+          padding-block: var(--space-24);
+        }
+
+        /* The last event closes the list without a rule; the section's 32px ends it */
+        .hb-event:last-child {
+          padding-bottom: var(--space-0);
           border-bottom: 0;
         }
 
-        .section {
-          padding: 64px 0;
+        /* The hero keeps to the 24px margins and stays centred: its block takes the screen width and its
+           call to action takes the canonical medium size, which fits the narrowest phones */
+        .hb-hero-body {
+          width: 100%;
         }
 
-        .section-header {
-          margin-bottom: 36px;
-          grid-template-columns: 1fr;
-          gap: 12px;
+        .hb-hero .alpy-button[data-alpy-size="lg"] {
+          min-height: var(--space-40);
+          padding: var(--space-0) var(--space-16);
+          font-family: var(--font-body-medium-font-family);
+          font-size: var(--font-body-medium-font-size);
+          font-weight: var(--font-body-medium-font-weight);
+          line-height: var(--font-body-medium-line-height);
+          letter-spacing: var(--font-body-medium-letter-spacing);
         }
 
-        .section-intro,
-        .section-header h2 {
-          grid-column: 1;
+        .hb-hero .alpy-button[data-alpy-size="lg"] [data-alpy-slot^="Icon"] svg {
+          width: var(--icon-size-16);
+          height: var(--icon-size-16);
         }
 
-        .featured__copy {
-          padding: 36px 0;
+        /* Text fills each line before it breaks; only a lone last word is avoided */
+        .hb-hero h1,
+        .hb-lead,
+        .hb-credit,
+        .hb-h2,
+        .hb-h3,
+        .hb-text,
+        .hb-meta,
+        .hb-timeline dd,
+        .hb-campus p {
+          text-wrap: pretty;
         }
 
-        .featured__copy h3 {
-          font-size: 28px;
-          font-weight: 500;
-          line-height: 32px;
+        .hb-credit {
+          max-width: none;
         }
 
-        .research-figure img {
-          min-height: 480px;
+        .hb-h2 {
+          font-family: var(--font-heading-medium-font-family);
+          font-size: var(--font-heading-medium-font-size);
+          font-weight: var(--font-heading-medium-font-weight);
+          line-height: var(--font-heading-medium-line-height);
+          letter-spacing: var(--font-heading-medium-letter-spacing);
         }
 
-        .area-item,
-        .publication,
-        .event {
-          grid-template-columns: 1fr;
-          gap: 12px;
+        .hb-timeline {
+          grid-template-columns: minmax(0, 1fr);
         }
 
-        .area-item a,
-        .publication__access,
-        .event-meta {
-          grid-column: 1;
+        .hb-path {
+          grid-template-columns: minmax(0, 1fr);
+          gap: var(--space-12);
         }
 
-        .metadata {
-          display: grid;
-          gap: 2px;
+        .hb-schools {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: var(--space-24) var(--space-16);
         }
 
-        .metadata span + span::before {
-          content: none;
+        .hb-schools .hb-h3 {
+          white-space: normal;
+          font-family: var(--font-body-large-font-family);
+          font-size: var(--font-body-large-font-size);
+          font-weight: var(--font-body-large-font-weight);
+          line-height: var(--font-body-large-line-height);
+          letter-spacing: var(--font-body-large-letter-spacing);
         }
 
-        .researcher-grid {
-          grid-template-columns: 1fr;
-          gap: 32px;
+        .hb-event {
+          grid-template-columns: var(--space-64) minmax(0, 1fr);
+          gap: var(--space-16);
         }
 
-        .researcher,
-        .researcher:nth-child(3),
-        .researcher:nth-child(4) {
-          margin-top: 0;
-          padding: 0;
+        .hb-footer nav,
+        .hb-footer nav:first-of-type {
+          grid-column: 1 / -1;
         }
 
-        .newsletter__inner {
-          gap: 36px;
-        }
-
-        .newsletter-form__row {
-          grid-template-columns: 1fr;
-        }
-
-        .site-footer__top {
-          grid-template-columns: 1fr;
-          gap: 36px;
-        }
-
-        .site-footer__bottom {
-          align-items: flex-start;
-          margin-top: 48px;
-          flex-direction: column;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
+        .hb-legal ul {
+          flex-wrap: wrap;
+          gap: var(--space-16);
         }
       }
     </style>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <a class="hb-skip" href="#main">Skip to content</a>
 
-    <header class="site-header" id="top">
-      <div class="site-header__inner shell">
-        <a class="wordmark" href="./index.html" aria-label="Civic Horizon home">
-          <span class="wordmark__mark" aria-hidden="true">CH</span>
-          <span class="wordmark__text">
-            <span class="wordmark__name">Civic Horizon</span>
-            <span class="wordmark__descriptor">Institute for Urban Futures</span>
-          </span>
+    <header class="hb-header">
+      <a class="hb-wordmark" href="#top">Halbrook University</a>
+      <nav class="hb-nav" id="primary-nav" aria-label="Main">
+        <ul>
+          <li><a href="#study">Study</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#schools">Schools</a></li>
+          <li><a href="#events">Campus life</a></li>
+          <li><a href="#about">About</a></li>
+          <li class="hb-nav-visit"><a href="#visit">Visit</a></li>
+        </ul>
+      </nav>
+      <div class="hb-header-actions">
+        <a class="alpy-button hb-visit" href="#visit" data-alpy-component="button" data-alpy-variant="link" data-alpy-size="md">
+          <span data-alpy-slot="Label">Visit</span>
         </a>
-
-        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
-          <a href="#research">Research</a>
-          <a href="#publications">Publications</a>
-          <a href="#people">People</a>
-          <a href="#events">Events</a>
-          <a href="#about">About</a>
-        </nav>
-
-        <a class="button button--outline header-action" href="#newsletter">Get updates</a>
-
+        <a class="alpy-button" href="#study" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="md">
+          <span data-alpy-slot="Label">Apply</span>
+        </a>
         <button
-          class="menu-toggle"
+          class="alpy-button hb-menu"
           type="button"
-          aria-controls="primary-nav"
           aria-expanded="false"
+          aria-controls="primary-nav"
+          data-alpy-component="button"
+          data-alpy-variant="link"
+          data-alpy-size="lg"
+          data-alpy-icon-mode="only"
         >
-          <span>Menu</span>
-          <span class="menu-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="hb-sr">Menu</span>
+          <span data-alpy-slot="IconOnly" data-alpy-icon-id="menu" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z" /></svg>
+          </span>
         </button>
       </div>
     </header>
 
-    <main id="main-content">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__stage">
-          <div class="shell">
-            <div class="hero__grid">
-              <div class="hero__copy">
-                <p class="eyebrow">Independent urban futures research institute</p>
-                <h1 id="hero-title">Research for cities that can adapt, include, and endure.</h1>
-                <p class="hero__helper">
-                  We study the systems that shape everyday urban life—and publish practical,
-                  transparent research for the people changing them.
-                </p>
-                <div class="action-row" aria-label="Introduction actions">
-                  <a class="button button--primary" href="#research">Explore research</a>
-                  <a class="button button--outline" href="#publications">View publications</a>
-                </div>
-              </div>
-
-              <figure class="hero__media">
-                <img
-                  src="./assets/hero-research-studio.jpg"
-                  alt="Urban researchers reviewing maps together in a city studio"
-                  width="1693"
-                  height="929"
-                />
-                <figcaption>
-                  Collaborative inquiry across climate, housing, mobility, and public technology.
-                  Illustrative editorial image.
-                </figcaption>
-              </figure>
-            </div>
+    <main id="main">
+      <section class="hb-hero" id="top" aria-labelledby="hero-title">
+        <figure class="hb-hero-media">
+          <img src="./assets/halbrook-hero-lab.jpg" alt="Three students and their professor talking over a notebook at a long bench in a sunlit laboratory" width="1672" height="941" />
+        </figure>
+        <div class="hb-hero-body">
+          <div class="hb-hero-text">
+            <h1 id="hero-title">Real research, from your first year.</h1>
+            <p class="hb-lead">Halbrook is a research university of 14,000 students. Every undergraduate joins a lab, an archive, or a field team in their first term.</p>
+            <a class="alpy-button" href="#study" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg" data-alpy-icon-mode="right">
+              <span data-alpy-slot="Label">Explore undergraduate study</span>
+              <span data-alpy-slot="IconRight" data-alpy-icon-id="arrow_forward" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg></span>
+            </a>
           </div>
         </div>
-
-        <aside class="hero__ledger shell" aria-label="Institute scope">
-          <dl>
-            <div>
-              <dt>Focus</dt>
-              <dd>Urban systems and public life</dd>
-            </div>
-            <div>
-              <dt>Approach</dt>
-              <dd>Fieldwork, data, and lived experience</dd>
-            </div>
-            <div>
-              <dt>Outputs</dt>
-              <dd>Open briefs, methods, and public forums</dd>
-            </div>
-          </dl>
-        </aside>
+        <p class="hb-credit">First-year students with Professor Daniel Marsh in the Soil Ecology Lab, Founders Hall.</p>
       </section>
 
-      <section class="section" id="research" aria-labelledby="featured-title">
-        <div class="shell">
-          <header class="section-header">
-            <h2 id="featured-title">Featured research</h2>
-            <p class="section-intro">
-              A current inquiry into how heat exposure changes after sunset—and why
-              conventional daytime measures miss the unequal burden.
-            </p>
-          </header>
-
-          <article class="featured">
-            <div class="featured__copy">
-              <p class="publication-type">Working paper · CH–WP–01</p>
-              <h3>Heat after dark: mapping the unequal night-time city</h3>
-              <p class="featured__abstract">
-                This study combines street-level temperature readings, building form,
-                transit access, and resident diaries to examine where heat persists after
-                the sun sets—and which public responses remain available after hours.
-              </p>
-              <p class="metadata">
-                <span>Civic Climate Group</span>
-                <span>July 2026</span>
-                <span>Open methods</span>
-              </p>
-              <a class="text-link" href="#publications">Read the research summary →</a>
-            </div>
-
-            <figure class="research-figure">
-              <span class="research-figure__tag">Field method</span>
-              <img
-                src="./assets/fieldwork-heat.jpg"
-                alt="Two researchers measuring environmental conditions on a city street at dusk"
-                width="1536"
-                height="1024"
-                loading="lazy"
-              />
-              <figcaption>
-                Field observation at dusk. Illustrative editorial image; it does not
-                document an actual Civic Horizon study site.
-              </figcaption>
-            </figure>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section--subtle" id="areas" aria-labelledby="areas-title">
-        <div class="shell">
-          <header class="section-header">
-            <h2 id="areas-title">Research areas</h2>
-            <p class="section-intro">
-              Four connected programs examine the physical, social, and civic systems
-              that determine how urban change is felt.
-            </p>
-          </header>
-
-          <div class="area-list">
-            <article class="area-item">
-              <p class="area-item__number">01</p>
-              <h3>Climate adaptation</h3>
-              <p>Heat, water, resilience infrastructure, and the unequal geography of risk.</p>
-              <a href="#featured-title">Current inquiry</a>
-            </article>
-            <article class="area-item">
-              <p class="area-item__number">02</p>
-              <h3>Housing and land</h3>
-              <p>Affordability, vacancy, tenure, development patterns, and the right to remain.</p>
-              <a href="#publications">Related papers</a>
-            </article>
-            <article class="area-item">
-              <p class="area-item__number">03</p>
-              <h3>Mobility and public realm</h3>
-              <p>Street design, access, care journeys, and the daily experience of moving.</p>
-              <a href="#events">Public forums</a>
-            </article>
-            <article class="area-item">
-              <p class="area-item__number">04</p>
-              <h3>Civic technology</h3>
-              <p>Public data, automated decisions, digital infrastructure, and accountable tools.</p>
-              <a href="#about">Our methods</a>
-            </article>
+      <section class="hb-search" id="courses" aria-labelledby="search-title">
+        <h2 id="search-title">Find your course</h2>
+        <div class="alpy-tabs" data-alpy-component="tabs" data-alpy-variant="basic" data-alpy-orientation="horizontal">
+          <div class="alpy-tabs-root" role="tablist" aria-label="Level of study" data-alpy-slot="root">
+            <button class="alpy-tab" type="button" role="tab" id="level-ug" aria-selected="true" aria-controls="course-panel" tabindex="0" data-level="undergraduate">
+              <span class="alpy-tab-content"><span class="alpy-tab-label">Undergraduate</span></span>
+            </button>
+            <button class="alpy-tab" type="button" role="tab" id="level-pg" aria-selected="false" aria-controls="course-panel" tabindex="-1" data-level="graduate">
+              <span class="alpy-tab-content"><span class="alpy-tab-label">Graduate</span></span>
+            </button>
+            <button class="alpy-tab" type="button" role="tab" id="level-short" aria-selected="false" aria-controls="course-panel" tabindex="-1" data-level="short">
+              <span class="alpy-tab-content"><span class="alpy-tab-label">Short courses</span></span>
+            </button>
           </div>
         </div>
-      </section>
-
-      <section class="section" id="publications" aria-labelledby="publications-title">
-        <div class="shell">
-          <header class="section-header">
-            <h2 id="publications-title">Latest publications</h2>
-            <p class="section-intro">
-              Research notes, field papers, and methods briefs written for close reading
-              and practical use.
-            </p>
-          </header>
-
-          <div class="publication-list">
-            <article class="publication">
-              <div>
-                <p class="publication-type">Research note</p>
-                <p class="metadata"><span>18 July 2026</span></p>
-              </div>
-              <div>
-                <h3>Beyond the cooling center</h3>
-                <p class="publication__summary">
-                  A review of after-hours heat response through libraries, transit hubs,
-                  neighborhood organizations, and other everyday civic spaces.
-                </p>
-              </div>
-              <div class="publication__access">
-                <span class="access-label">Open access</span>
-                <span>12 min read · PDF</span>
-              </div>
-            </article>
-
-            <article class="publication">
-              <div>
-                <p class="publication-type">Field paper</p>
-                <p class="metadata"><span>02 June 2026</span></p>
-              </div>
-              <div>
-                <h3>Vacancy is not emptiness</h3>
-                <p class="publication__summary">
-                  What parcel records miss about informal stewardship, temporary use, and
-                  neighborhood value on land classified as vacant.
-                </p>
-              </div>
-              <div class="publication__access">
-                <span class="access-label">Open access</span>
-                <span>24 min read · PDF</span>
-              </div>
-            </article>
-
-            <article class="publication">
-              <div>
-                <p class="publication-type">Methods brief</p>
-                <p class="metadata"><span>14 May 2026</span></p>
-              </div>
-              <div>
-                <h3>Public algorithms, public streets</h3>
-                <p class="publication__summary">
-                  A field protocol for documenting how automated enforcement changes
-                  movement, discretion, and accountability in shared urban space.
-                </p>
-              </div>
-              <div class="publication__access">
-                <span class="access-label">Open access</span>
-                <span>16 min read · HTML</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section people-section" id="people" aria-labelledby="people-title">
-        <div class="shell">
-          <header class="section-header">
-            <h2 id="people-title">Researchers</h2>
-            <p class="section-intro">
-              A small interdisciplinary team working across climate, housing, mobility,
-              technology, and public participation.
-            </p>
-          </header>
-
-          <div class="researcher-grid">
-            <article class="researcher">
-              <div
-                class="researcher__portrait researcher__portrait--amina"
-                role="img"
-                aria-label="Portrait of Amina Okafor"
-              ></div>
-              <h3>Amina Okafor</h3>
-              <p class="researcher-role">Research director · Urban climate</p>
-              <p>Studies how infrastructure, service hours, and housing shape heat exposure.</p>
-            </article>
-            <article class="researcher">
-              <div
-                class="researcher__portrait researcher__portrait--leo"
-                role="img"
-                aria-label="Portrait of Leo Martínez"
-              ></div>
-              <h3>Leo Martínez</h3>
-              <p class="researcher-role">Research fellow · Mobility systems</p>
-              <p>Examines access, care journeys, and the public life of streets.</p>
-            </article>
-            <article class="researcher">
-              <div
-                class="researcher__portrait researcher__portrait--mei"
-                role="img"
-                aria-label="Portrait of Mei Tan"
-              ></div>
-              <h3>Mei Tan</h3>
-              <p class="researcher-role">Research lead · Housing and land</p>
-              <p>Works on land use, tenure, vacancy, and community-led development.</p>
-            </article>
-            <article class="researcher">
-              <div
-                class="researcher__portrait researcher__portrait--samira"
-                role="img"
-                aria-label="Portrait of Samira Varga"
-              ></div>
-              <h3>Samira Varga</h3>
-              <p class="researcher-role">Research fellow · Public technology</p>
-              <p>Focuses on civic data, automated systems, and institutional accountability.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="events" aria-labelledby="events-title">
-        <div class="shell">
-          <header class="section-header">
-            <h2 id="events-title">Upcoming events</h2>
-            <p class="section-intro">
-              Public conversations that connect emerging evidence with the choices facing
-              cities now.
-            </p>
-          </header>
-
-          <div class="events-layout">
-            <figure class="events-figure">
-              <img
-                src="./assets/community-roundtable.jpg"
-                alt="A researcher facilitating a neighborhood roundtable discussion"
-                width="1024"
-                height="1536"
-                loading="lazy"
-              />
-              <figcaption>
-                Public learning is part of the research process. Illustrative editorial image.
-              </figcaption>
-            </figure>
-
-            <div class="event-list">
-              <article class="event">
-                <p class="event__date"><time datetime="2026-09-24">24 Sep 2026</time></p>
-                <div>
-                  <h3>Night heat and the 24-hour city</h3>
-                  <p class="event__description">
-                    A research briefing on evening exposure, public service hours, and
-                    neighborhood-scale response.
-                  </p>
-                </div>
-                <p class="event-meta"><span>Public briefing</span><span>Online · 13:00 ET</span></p>
-              </article>
-              <article class="event">
-                <p class="event__date"><time datetime="2026-10-15">15 Oct 2026</time></p>
-                <div>
-                  <h3>Who counts vacant land?</h3>
-                  <p class="event__description">
-                    A methods workshop on administrative records, field observation, and
-                    locally held knowledge.
-                  </p>
-                </div>
-                <p class="event-meta"><span>Methods workshop</span><span>Online · 11:00 ET</span></p>
-              </article>
-              <article class="event">
-                <p class="event__date"><time datetime="2026-11-12">12 Nov 2026</time></p>
-                <div>
-                  <h3>Accountability in automated public space</h3>
-                  <p class="event__description">
-                    A forum on procurement, oversight, and public recourse when street-level
-                    decisions are automated.
-                  </p>
-                </div>
-                <p class="event-meta"><span>Public forum</span><span>Online · 16:00 ET</span></p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--subtle" id="about" aria-labelledby="method-title">
-        <div class="method-grid shell">
-          <div class="method-intro">
-            <p class="eyebrow">Method and transparency</p>
-            <h2 id="method-title">Evidence should be inspectable.</h2>
-            <p>
-              Every project is designed to make its evidence, analytical choices, and
-              limits legible. We publish enough context for readers to understand what a
-              finding can—and cannot—support.
-            </p>
-            <div class="method-note">
-              <span>Open by default</span>
-              <strong>Methods and limitations travel with every publication.</strong>
-            </div>
-          </div>
-
-          <div class="method-list">
-            <article>
-              <h3>Traceable source records</h3>
-              <p>Datasets, interviews, observations, and exclusions are documented by source and date.</p>
-            </article>
-            <article>
-              <h3>Visible analytical choices</h3>
-              <p>Definitions, transformations, assumptions, and revisions travel with each output.</p>
-            </article>
-            <article>
-              <h3>Limitations in plain language</h3>
-              <p>Uncertainty and missing evidence are presented with findings, not hidden in an appendix.</p>
-            </article>
-            <article>
-              <h3>Versioned public outputs</h3>
-              <p>Corrections and substantive changes are recorded so prior interpretations remain understandable.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="newsletter" id="newsletter" aria-labelledby="newsletter-title">
-        <div class="newsletter__inner shell">
-          <div class="newsletter__copy">
-            <p class="eyebrow">Field notes</p>
-            <h2 id="newsletter-title">Follow the work as it develops.</h2>
-            <p>
-              A concise monthly note with new research, working questions, public events,
-              and methods updates.
-            </p>
-          </div>
-
-          <form class="newsletter-form" id="newsletter-form">
-            <label for="email">Email address</label>
-            <div class="newsletter-form__row">
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                placeholder="name@example.org"
-                required
-              />
-              <button class="button button--primary" type="submit">Subscribe</button>
-            </div>
-            <p class="newsletter-form__note">
-              Demonstration form: no address is transmitted or stored.
-            </p>
-            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <div class="hb-search-panel" id="course-panel" role="tabpanel" aria-labelledby="level-ug">
+          <form class="hb-search-form" role="search" action="#" aria-labelledby="search-title">
+            <label class="alpy-field" data-alpy-component="text-input" data-alpy-variant="basic">
+              <span class="hb-sr">Course name or subject</span>
+              <svg data-alpy-icon-id="search" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4444 22L13.4444 15C12.8889 15.4444 12.25 15.7963 11.5278 16.0556C10.8056 16.3148 10.037 16.4444 9.22222 16.4444C7.2037 16.4444 5.49537 15.7454 4.09722 14.3472C2.69907 12.9491 2 11.2407 2 9.22222C2 7.2037 2.69907 5.49537 4.09722 4.09722C5.49537 2.69907 7.2037 2 9.22222 2C11.2407 2 12.9491 2.69907 14.3472 4.09722C15.7454 5.49537 16.4444 7.2037 16.4444 9.22222C16.4444 10.037 16.3148 10.8056 16.0556 11.5278C15.7963 12.25 15.4444 12.8889 15 13.4444L22 20.4444L20.4444 22ZM9.22222 14.2222C10.6111 14.2222 11.7917 13.7361 12.7639 12.7639C13.7361 11.7917 14.2222 10.6111 14.2222 9.22222C14.2222 7.83333 13.7361 6.65278 12.7639 5.68056C11.7917 4.70833 10.6111 4.22222 9.22222 4.22222C7.83333 4.22222 6.65278 4.70833 5.68056 5.68056C4.70833 6.65278 4.22222 7.83333 4.22222 9.22222C4.22222 10.6111 4.70833 11.7917 5.68056 12.7639C6.65278 13.7361 7.83333 14.2222 9.22222 14.2222Z" /></svg>
+              <input type="search" name="q" placeholder="Search 240 courses" autocomplete="off" />
+            </label>
+            <button class="alpy-button" type="submit" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg">
+              <span data-alpy-slot="Label">Search</span>
+            </button>
           </form>
+        </div>
+      </section>
+
+      <section class="hb-section hb-feature" id="about" aria-labelledby="feature-title">
+        <div class="hb-feature-grid">
+          <div class="hb-feature-text" data-reveal>
+            <h2 class="hb-h2" id="feature-title">150 years of students measuring the same river</h2>
+            <p class="hb-text">In 1876, Halbrook's first chemistry class walked to the Wend with glass bottles and a notebook. Every autumn since, first-year students have gone back to the same bend to sample the water. The record is now one of the longest river surveys in Europe.</p>
+            <a class="hb-link" href="#research">Read the story<svg data-alpy-icon-id="arrow_forward" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg></a>
+          </div>
+          <figure data-reveal>
+            <span class="alpy-image" data-alpy-component="image" data-alpy-variant="3:2">
+              <img src="./assets/halbrook-story-river.jpg" alt="Students in waders taking water samples from a shallow river in autumn" width="1536" height="1024" loading="lazy" />
+            </span>
+            <figcaption>First-year chemistry students at the Wend survey point, October 2026.</figcaption>
+          </figure>
+        </div>
+        <dl class="hb-timeline">
+          <div data-reveal><dt>1876</dt><dd>The first class takes twelve samples and records them by hand.</dd></div>
+          <div data-reveal><dt>1931</dt><dd>The survey becomes part of every first-year science course.</dd></div>
+          <div data-reveal><dt>1974</dt><dd>Students install the first automatic gauge on the riverbank.</dd></div>
+          <div data-reveal><dt>2026</dt><dd>Over 4,800 students have now added to the same record.</dd></div>
+        </dl>
+      </section>
+
+      <section class="hb-section" id="research" aria-labelledby="research-title">
+        <div class="hb-section-head">
+          <h2 class="hb-h2" id="research-title">New from our research</h2>
+          <a class="hb-link" href="#research">All research news<svg data-alpy-icon-id="arrow_forward" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg></a>
+        </div>
+        <ul class="hb-findings">
+          <li data-reveal>
+            <h3 class="hb-h3"><a href="#research">City parks store more carbon than the farmland around them</a></h3>
+            <p class="hb-text">Undergraduates sampled 300 sites across Halbrook and found the oldest parks hold almost twice the carbon of nearby fields.</p>
+            <p class="hb-meta">Soil ecology · <cite>Global Change Biology</cite>, October 2026</p>
+          </li>
+          <li data-reveal>
+            <h3 class="hb-h3"><a href="#research">A shipping ledger from 1910 explains a missing generation</a></h3>
+            <p class="hb-text">A misfiled ledger in the university archive shows where 2,000 families from the port went when the records stop.</p>
+            <p class="hb-meta">History · <cite>Journal of Social History</cite>, September 2026</p>
+          </li>
+          <li data-reveal>
+            <h3 class="hb-h3"><a href="#research">Older bees teach younger ones where the flowers are</a></h3>
+            <p class="hb-text">Tracking 900 bumblebees showed that new foragers copy the routes of experienced ones for their first three days.</p>
+            <p class="hb-meta">Behavioural ecology · <cite>Current Biology</cite>, September 2026</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="hb-section hb-band" id="study" aria-labelledby="study-title">
+        <div class="hb-study">
+          <div class="hb-study-head" data-reveal>
+            <h2 class="hb-h2" id="study-title">Three ways to study at Halbrook</h2>
+            <p class="hb-text">Whichever way you join, you work alongside the people who run the research.</p>
+          </div>
+          <ul class="hb-paths">
+            <li class="hb-path" data-reveal>
+              <span class="hb-path-figure">240</span>
+              <div>
+                <h3 class="hb-h3">Undergraduate</h3>
+                <p class="hb-text">Three- and four-year degrees, each with a research placement in the first term.</p>
+              </div>
+              <a class="hb-link" href="#courses">Explore<span class="hb-sr"> undergraduate courses</span><svg data-alpy-icon-id="arrow_forward" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg></a>
+            </li>
+            <li class="hb-path" data-reveal>
+              <span class="hb-path-figure">310</span>
+              <div>
+                <h3 class="hb-h3">Graduate</h3>
+                <p class="hb-text">Taught master's degrees and doctorates, with funded places in every school.</p>
+              </div>
+              <a class="hb-link" href="#courses">Explore<span class="hb-sr"> graduate programmes</span><svg data-alpy-icon-id="arrow_forward" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg></a>
+            </li>
+            <li class="hb-path" data-reveal>
+              <span class="hb-path-figure">85</span>
+              <div>
+                <h3 class="hb-h3">Short courses</h3>
+                <p class="hb-text">Evening and summer courses open to anyone, with no entry requirements.</p>
+              </div>
+              <a class="hb-link" href="#courses">Explore<span class="hb-sr"> short courses</span><svg data-alpy-icon-id="arrow_forward" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="hb-section" id="schools" aria-labelledby="schools-title">
+        <div class="hb-section-head">
+          <h2 class="hb-h2" id="schools-title">Six schools, one campus</h2>
+          <a class="hb-link" href="#schools">All departments<svg data-alpy-icon-id="arrow_forward" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg></a>
+        </div>
+        <ul class="hb-schools">
+          <li data-reveal><a href="#schools"><span class="alpy-image" data-alpy-component="image" data-alpy-variant="2:3"><img src="./assets/halbrook-school-humanities.jpg" alt="A student reading a bound manuscript in the library archive" width="328" height="492" loading="lazy" /></span><span class="hb-h3">Humanities</span><span class="hb-meta">9 departments</span></a></li>
+          <li data-reveal><a href="#schools"><span class="alpy-image" data-alpy-component="image" data-alpy-variant="2:3"><img src="./assets/halbrook-school-social.jpg" alt="Four students in a seminar discussion by a tall window" width="328" height="492" loading="lazy" /></span><span class="hb-h3">Social Sciences</span><span class="hb-meta">7 departments</span></a></li>
+          <li data-reveal><a href="#schools"><span class="alpy-image" data-alpy-component="image" data-alpy-variant="2:3"><img src="./assets/halbrook-school-life.jpg" alt="A student at a microscope beside plant samples in a greenhouse lab" width="328" height="492" loading="lazy" /></span><span class="hb-h3">Life Sciences</span><span class="hb-meta">6 departments</span></a></li>
+          <li data-reveal><a href="#schools"><span class="alpy-image" data-alpy-component="image" data-alpy-variant="2:3"><img src="./assets/halbrook-school-engineering.jpg" alt="Two students adjusting a small robotic arm in a workshop" width="328" height="492" loading="lazy" /></span><span class="hb-h3">Engineering</span><span class="hb-meta">8 departments</span></a></li>
+          <li data-reveal><a href="#schools"><span class="alpy-image" data-alpy-component="image" data-alpy-variant="2:3"><img src="./assets/halbrook-school-medicine.jpg" alt="A student practising with a stethoscope in a clinical skills room" width="328" height="492" loading="lazy" /></span><span class="hb-h3">Medicine</span><span class="hb-meta">5 departments</span></a></li>
+          <li data-reveal><a href="#schools"><span class="alpy-image" data-alpy-component="image" data-alpy-variant="2:3"><img src="./assets/halbrook-school-law.jpg" alt="A student speaking at a lectern in a wood-panelled moot court" width="328" height="492" loading="lazy" /></span><span class="hb-h3">Business &amp; Law</span><span class="hb-meta">4 departments</span></a></li>
+        </ul>
+      </section>
+
+      <section class="hb-section" id="events" aria-labelledby="events-title">
+        <div class="hb-section-head">
+          <h2 class="hb-h2" id="events-title">Lectures and events</h2>
+          <a class="hb-link" href="#events">All events<svg data-alpy-icon-id="arrow_forward" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg></a>
+        </div>
+        <ol class="hb-events">
+          <li class="hb-event" data-reveal>
+            <time datetime="2026-11-12"><span class="hb-event-day">12</span><span class="hb-meta">November</span></time>
+            <div><h3 class="hb-h3"><a href="#events">What a river remembers: 150 years of the Wend survey</a></h3><p class="hb-meta">Professor Ruth Okafor, School of Life Sciences</p></div>
+            <p class="hb-meta hb-event-place">Founders Hall, 6:30&nbsp;pm. Free, open to all.</p>
+          </li>
+          <li class="hb-event" data-reveal>
+            <time datetime="2026-11-19"><span class="hb-event-day">19</span><span class="hb-meta">November</span></time>
+            <div><h3 class="hb-h3"><a href="#events">The archive as a laboratory</a></h3><p class="hb-meta">Dr Samuel Lindqvist, School of Humanities</p></div>
+            <p class="hb-meta hb-event-place">Library Reading Room, 5:00&nbsp;pm. Book a free seat.</p>
+          </li>
+          <li class="hb-event" data-reveal>
+            <time datetime="2026-11-26"><span class="hb-event-day">26</span><span class="hb-meta">November</span></time>
+            <div><h3 class="hb-h3"><a href="#events">Can a robot learn to be careful?</a></h3><p class="hb-meta">Professor Mei Tanaka, School of Engineering</p></div>
+            <p class="hb-meta hb-event-place">Engineering Building, 6:00&nbsp;pm. Also streamed online.</p>
+          </li>
+          <li class="hb-event" data-reveal>
+            <time datetime="2026-12-05"><span class="hb-event-day">5</span><span class="hb-meta">December</span></time>
+            <div><h3 class="hb-h3"><a href="#visit">Undergraduate open day</a></h3><p class="hb-meta">Tours, taster lectures, and time in the teaching labs</p></div>
+            <p class="hb-meta hb-event-place">Whole campus, 10:00&nbsp;am to 4:00&nbsp;pm. Booking required.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="hb-campus" id="visit" aria-labelledby="visit-title">
+        <figure class="hb-hero-media">
+          <img src="./assets/halbrook-campus.jpg" alt="Students crossing a stone quadrangle at Halbrook in late afternoon light" width="1672" height="941" loading="lazy" />
+        </figure>
+        <div class="hb-campus-body" data-reveal>
+          <h2 class="hb-h2" id="visit-title">Come and see the campus for yourself.</h2>
+          <p>Campus tours run every weekday at 11&nbsp;am and 2&nbsp;pm, led by current students. The next open day is on Saturday 5 December.</p>
+          <a class="alpy-button" href="#visit" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg" data-alpy-icon-mode="right">
+            <span data-alpy-slot="Label">Book a campus tour</span>
+            <span data-alpy-slot="IconRight" data-alpy-icon-id="arrow_forward" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg></span>
+          </a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="shell">
-        <div class="site-footer__top">
-          <div>
-            <a class="wordmark" href="./index.html" aria-label="Civic Horizon home">
-              <span class="wordmark__mark" aria-hidden="true">CH</span>
-              <span class="wordmark__text">
-                <span class="wordmark__name">Civic Horizon</span>
-                <span class="wordmark__descriptor">Institute for Urban Futures</span>
-              </span>
-            </a>
-            <p class="footer-statement">
-              Independent research on the systems, choices, and lived experiences
-              shaping urban futures.
-            </p>
-          </div>
-
-          <nav class="footer-nav" aria-label="Research links">
-            <h2>Explore</h2>
-            <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
-            <a href="#people">People</a>
-            <a href="#events">Events</a>
-          </nav>
-
-          <nav class="footer-nav" aria-label="Institute links">
-            <h2>Institute</h2>
-            <a href="#about">About</a>
-            <a href="#about">Method and transparency</a>
-            <a href="#newsletter">Newsletter</a>
-            <a href="./index.html">Home</a>
-          </nav>
+    <footer class="hb-footer" aria-label="Halbrook University">
+      <div class="hb-footer-grid">
+        <div class="hb-footer-id">
+          <a class="hb-wordmark" href="#top">Halbrook University</a>
+          <address>Founders Hall, College Road<br />Halbrook HB1 4QR</address>
+          <a class="hb-link" href="#about">Support Halbrook<svg data-alpy-icon-id="arrow_forward" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z" /></svg></a>
         </div>
-
-        <div class="site-footer__bottom">
-          <p>Concept institute · Standalone website demonstration</p>
-          <p>Research titles, profiles, and event details are illustrative.</p>
-        </div>
+        <nav aria-labelledby="footer-study">
+          <h2 id="footer-study">Study</h2>
+          <ul>
+            <li><a href="#courses">Undergraduate</a></li>
+            <li><a href="#courses">Graduate</a></li>
+            <li><a href="#courses">Short courses</a></li>
+            <li><a href="#study">How to apply</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-research">
+          <h2 id="footer-research">Research</h2>
+          <ul>
+            <li><a href="#research">Research news</a></li>
+            <li><a href="#schools">Schools and departments</a></li>
+            <li><a href="#research">Libraries and archives</a></li>
+            <li><a href="#research">Fellowships</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-university">
+          <h2 id="footer-university">University</h2>
+          <ul>
+            <li><a href="#about">About Halbrook</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#visit">Visit and tours</a></li>
+            <li><a href="#about">Jobs</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="hb-legal">
+        <p class="hb-text">© 2026 Halbrook University, a fictional institution.</p>
+        <ul>
+          <li><a href="#top">Privacy</a></li>
+          <li><a href="#top">Accessibility</a></li>
+          <li><a href="#top">Contact</a></li>
+        </ul>
       </div>
     </footer>
 
     <script>
-      const menuButton = document.querySelector(".menu-toggle");
-      const navigation = document.querySelector("#primary-nav");
-      const navLinks = navigation.querySelectorAll("a");
-
-      const closeMenu = () => {
-        menuButton.setAttribute("aria-expanded", "false");
-        navigation.classList.remove("is-open");
-        document.body.classList.remove("nav-open");
+      // Phone and tablet menu: the canonical icon-only Button opens and closes the navigation
+      const menuButton = document.querySelector(".hb-menu");
+      const nav = document.getElementById("primary-nav");
+      const setMenu = (open) => {
+        menuButton.setAttribute("aria-expanded", String(open));
+        nav.classList.toggle("is-open", open);
       };
-
-      menuButton.addEventListener("click", () => {
-        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-        menuButton.setAttribute("aria-expanded", String(!isOpen));
-        navigation.classList.toggle("is-open", !isOpen);
-        document.body.classList.toggle("nav-open", !isOpen);
+      menuButton.addEventListener("click", () => setMenu(menuButton.getAttribute("aria-expanded") !== "true"));
+      nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape" || !nav.classList.contains("is-open")) return;
+        setMenu(false);
+        menuButton.focus();
       });
+      window.matchMedia("(max-width: 1019px)").addEventListener("change", () => setMenu(false));
 
-      navLinks.forEach((link) => link.addEventListener("click", closeMenu));
-
-      window.addEventListener("resize", () => {
-        if (window.innerWidth > 980) closeMenu();
+      // Course level: canonical Tabs behaviour; the search field names the selected level's catalogue
+      const levelTabs = [...document.querySelectorAll(".alpy-tab")];
+      const coursePanel = document.getElementById("course-panel");
+      const searchForm = document.querySelector(".hb-search-form");
+      const searchInput = searchForm.querySelector("input");
+      const placeholders = {
+        undergraduate: "Search 240 courses",
+        graduate: "Search 310 programmes",
+        short: "Search 85 short courses",
+      };
+      const selectLevel = (tab, focus) => {
+        levelTabs.forEach((item) => {
+          const selected = item === tab;
+          item.setAttribute("aria-selected", String(selected));
+          item.tabIndex = selected ? 0 : -1;
+        });
+        coursePanel.setAttribute("aria-labelledby", tab.id);
+        searchInput.placeholder = placeholders[tab.dataset.level];
+        if (focus) tab.focus();
+        // On narrow phones the tab row scrolls; bring the selected tab fully into view
+        tab.scrollIntoView({ block: "nearest", inline: "nearest" });
+      };
+      levelTabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => selectLevel(tab, false));
+        tab.addEventListener("keydown", (event) => {
+          const target = { ArrowLeft: index - 1, ArrowRight: index + 1, Home: 0, End: levelTabs.length - 1 }[event.key];
+          if (target === undefined) return;
+          event.preventDefault();
+          selectLevel(levelTabs[(target + levelTabs.length) % levelTabs.length], true);
+        });
       });
+      searchForm.addEventListener("submit", (event) => event.preventDefault());
 
-      const newsletterForm = document.querySelector("#newsletter-form");
-      const formStatus = document.querySelector("#form-status");
-
-      newsletterForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        if (!newsletterForm.checkValidity()) {
-          newsletterForm.reportValidity();
-          return;
-        }
-
-        formStatus.textContent =
-          "Thank you. This demonstration does not transmit or store your address.";
-        newsletterForm.reset();
-      });
+      // Viewport reveal: each marked item plays once as it enters; items in one group follow in a short stagger
+      if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches && "IntersectionObserver" in window) {
+        document.documentElement.classList.add("hb-motion");
+        const groups = new Map();
+        document.querySelectorAll("[data-reveal]").forEach((item) => {
+          const group = groups.get(item.parentElement) || [];
+          item.style.setProperty("--hb-delay", `${group.length * 80}ms`);
+          group.push(item);
+          groups.set(item.parentElement, group);
+        });
+        const observer = new IntersectionObserver(
+          (entries) => entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-in");
+            observer.unobserve(entry.target);
+          }),
+          { rootMargin: "0px 0px -10% 0px" },
+        );
+        document.querySelectorAll("[data-reveal]").forEach((item) => observer.observe(item));
+      }
     </script>
   </body>
 </html>

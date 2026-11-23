@@ -1,0 +1,3313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Keeplane keeps projects moving with tasks, project boards, deadlines, team updates, and file sharing in one clear plan."
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
+    <title>Keeplane — Keep every project moving.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Unchanged Alpy MCP token CSS: Alpy Library, revision 309, standard light tokens. The site is dark by concept and has no light mode. -->
+    <style id="canonical-tokens">
+/* Generated from canonical Alpy tokens. Import once before using the components. */
+:root,
+[data-alpy-mode="light"] {
+  --border-width-0: 0px;
+  --border-width-1: 1px;
+  --border-width-1-5: 1.5px;
+  --border-width-2: 2px;
+  --border-width-4: 4px;
+  --border-width-hairline: 0.5px;
+  --color-border-brand-color-one-strong-one: #0051FF;
+  --color-border-brand-color-one-strong-three: #010d28;
+  --color-border-brand-color-one-strong-two: #012F93;
+  --color-border-brand-color-one-subtle-one: #EBF1FF;
+  --color-border-brand-color-one-subtle-three: #5F92FE;
+  --color-border-brand-color-one-subtle-two: #BDD2FE;
+  --color-border-brand-color-three-strong-one: #FCA701;
+  --color-border-brand-color-three-strong-three: #3F2A00;
+  --color-border-brand-color-three-strong-two: #9E6800;
+  --color-border-brand-color-three-subtle-one: #E8E2D5;
+  --color-border-brand-color-three-subtle-three: #E5BA65;
+  --color-border-brand-color-three-subtle-two: #E2D3B5;
+  --color-border-brand-color-two-strong-one: #058625;
+  --color-border-brand-color-two-strong-three: #0D2E10;
+  --color-border-brand-color-two-strong-two: #156221;
+  --color-border-brand-color-two-subtle-one: #E6EDE5;
+  --color-border-brand-color-two-subtle-three: #7FB581;
+  --color-border-brand-color-two-subtle-two: #C7DAC8;
+  --color-border-functional-danger: #B80808;
+  --color-border-functional-info: #0449BA;
+  --color-border-functional-success: #166534;
+  --color-border-functional-warning: #AE6D00;
+  --color-border-input: #767676;
+  --color-border-interaction-disabled: #A1A1A1;
+  --color-border-interaction-focused: #0051FF;
+  --color-border-interaction-hover: #012F93;
+  --color-border-interaction-pressed: #010d28;
+  --color-border-interaction-selected: #0140C9;
+  --color-border-neutral-strong-one: #333333;
+  --color-border-neutral-strong-three: #151515;
+  --color-border-neutral-strong-two: #242424;
+  --color-border-neutral-subtle-one: #F1F1F1;
+  --color-border-neutral-subtle-three: #767676;
+  --color-border-neutral-subtle-two: #CECECE;
+  --color-border-oncolor: #FFFFFF;
+  --color-functional-danger: #B80808;
+  --color-functional-danger-soft: #EF4444;
+  --color-functional-danger-strong: #4D0000;
+  --color-functional-danger-subtle: #ECDFDF;
+  --color-functional-info: #0449BA;
+  --color-functional-info-soft: #3B82F6;
+  --color-functional-info-strong: #001D4C;
+  --color-functional-info-subtle: #DEE4EC;
+  --color-functional-success: #22C55E;
+  --color-functional-success-soft: #86EFAC;
+  --color-functional-success-strong: #166534;
+  --color-functional-success-subtle: #DCFCE7;
+  --color-functional-warning: #AE6D00;
+  --color-functional-warning-soft: #FFBD4F;
+  --color-functional-warning-strong: #402800;
+  --color-functional-warning-subtle: #E8E2D6;
+  --color-icon-accent: #0051FF;
+  --color-icon-brand-color-one-strong-one: #0051FF;
+  --color-icon-brand-color-one-strong-three: #010d28;
+  --color-icon-brand-color-one-strong-two: #012F93;
+  --color-icon-brand-color-one-subtle-one: #EBF1FF;
+  --color-icon-brand-color-one-subtle-three: #5F92FE;
+  --color-icon-brand-color-one-subtle-two: #BDD2FE;
+  --color-icon-brand-color-three-strong-one: #FCA701;
+  --color-icon-brand-color-three-strong-three: #3F2A00;
+  --color-icon-brand-color-three-strong-two: #9E6800;
+  --color-icon-brand-color-three-subtle-one: #E8E2D5;
+  --color-icon-brand-color-three-subtle-three: #E5BA65;
+  --color-icon-brand-color-three-subtle-two: #E2D3B5;
+  --color-icon-brand-color-two-strong-one: #058625;
+  --color-icon-brand-color-two-strong-three: #0D2E10;
+  --color-icon-brand-color-two-strong-two: #156221;
+  --color-icon-brand-color-two-subtle-one: #E6EDE5;
+  --color-icon-brand-color-two-subtle-three: #7FB581;
+  --color-icon-brand-color-two-subtle-two: #C7DAC8;
+  --color-icon-danger: #B80808;
+  --color-icon-default: #151515;
+  --color-icon-disabled: #A1A1A1;
+  --color-icon-info: #0449BA;
+  --color-icon-interaction-disabled: #8EB2FD;
+  --color-icon-interaction-focused: #0051FF;
+  --color-icon-interaction-hover: #012F93;
+  --color-icon-interaction-pressed: #010d28;
+  --color-icon-interaction-selected: #0140C9;
+  --color-icon-inverse: #FFFFFF;
+  --color-icon-oncolor: #FFFFFF;
+  --color-icon-subtle: #5C5C5C;
+  --color-icon-subtlest: #767676;
+  --color-icon-success: #22C55E;
+  --color-icon-warning: #AE6D00;
+  --color-shades-brand-color-one-strong-one: #0051FF;
+  --color-shades-brand-color-one-strong-three: #010d28;
+  --color-shades-brand-color-one-strong-two: #012F93;
+  --color-shades-brand-color-one-subtle-one: #EBF1FF;
+  --color-shades-brand-color-one-subtle-three: #5F92FE;
+  --color-shades-brand-color-one-subtle-two: #BDD2FE;
+  --color-shades-brand-color-three-strong-one: #FCA701;
+  --color-shades-brand-color-three-strong-three: #3F2A00;
+  --color-shades-brand-color-three-strong-two: #9E6800;
+  --color-shades-brand-color-three-subtle-one: #E8E2D5;
+  --color-shades-brand-color-three-subtle-three: #E5BA65;
+  --color-shades-brand-color-three-subtle-two: #E2D3B5;
+  --color-shades-brand-color-two-strong-one: #058625;
+  --color-shades-brand-color-two-strong-three: #0D2E10;
+  --color-shades-brand-color-two-strong-two: #156221;
+  --color-shades-brand-color-two-subtle-one: #E6EDE5;
+  --color-shades-brand-color-two-subtle-three: #7FB581;
+  --color-shades-brand-color-two-subtle-two: #C7DAC8;
+  --color-shades-neutral-strong-one: #333333;
+  --color-shades-neutral-strong-three: #151515;
+  --color-shades-neutral-strong-two: #242424;
+  --color-shades-neutral-subtle-one: #F1F1F1;
+  --color-shades-neutral-subtle-three: #767676;
+  --color-shades-neutral-subtle-two: #CECECE;
+  --color-shadow-deep: #151515;
+  --color-shadow-medium: #5C5C5C;
+  --color-shadow-soft: #A1A1A1;
+  --color-shadow-strong: #000000;
+  --color-surface-canvas: #FFFFFF;
+  --color-surface-interaction-disabled: #F1F1F1;
+  --color-surface-interaction-focused: #CECECE;
+  --color-surface-interaction-hover: #CECECE;
+  --color-surface-interaction-pressed: #010d28;
+  --color-surface-interaction-selected: #A1A1A1;
+  --color-system-black: #000000;
+  --color-system-transparent: #00000000;
+  --color-system-white: #FFFFFF;
+  --color-text-body: #242424;
+  --color-text-body-muted: #767676;
+  --color-text-body-subtle: #5C5C5C;
+  --color-text-brand-color-one-accent: #0051FF;
+  --color-text-brand-color-one-accent-strong: #012F93;
+  --color-text-brand-color-one-accent-subtle: #3071FE;
+  --color-text-brand-color-three-accent: #FCA701;
+  --color-text-brand-color-three-accent-strong: #9E6800;
+  --color-text-brand-color-three-accent-subtle: #EFB035;
+  --color-text-brand-color-two-accent: #058625;
+  --color-text-brand-color-two-accent-strong: #156221;
+  --color-text-brand-color-two-accent-subtle: #52A457;
+  --color-text-functional-danger: #B80808;
+  --color-text-functional-danger-strong: #4D0000;
+  --color-text-functional-info: #0449BA;
+  --color-text-functional-info-strong: #001D4C;
+  --color-text-functional-success: #22C55E;
+  --color-text-functional-success-strong: #166534;
+  --color-text-functional-warning: #AE6D00;
+  --color-text-functional-warning-strong: #402800;
+  --color-text-heading: #151515;
+  --color-text-heading-oncolor: #FFFFFF;
+  --color-text-inverse: #FFFFFF;
+  --color-text-link: #0051FF;
+  --color-text-link-disabled: #8EB2FD;
+  --color-text-link-hover: #012F93;
+  --color-text-link-inverse: #FFFFFF;
+  --color-text-link-pressed: #010d28;
+  --color-text-link-visited: #156221;
+  --color-text-oncolor: #FFFFFF;
+  --color-text-subheading: #242424;
+  --font-body-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-body-font-size: 16px;
+  --font-body-font-weight: 400;
+  --font-body-large-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-body-large-font-size: 19px;
+  --font-body-large-font-weight: 600;
+  --font-body-large-letter-spacing: 0px;
+  --font-body-large-line-height: 28px;
+  --font-body-letter-spacing: 0px;
+  --font-body-line-height: 24px;
+  --font-body-medium-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-body-medium-font-size: 14px;
+  --font-body-medium-font-weight: 400;
+  --font-body-medium-letter-spacing: 0px;
+  --font-body-medium-line-height: 20px;
+  --font-body-small-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-body-small-font-size: 12px;
+  --font-body-small-font-weight: 400;
+  --font-body-small-letter-spacing: 0px;
+  --font-body-small-line-height: 20px;
+  --font-body-xsmall-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-body-xsmall-font-size: 10px;
+  --font-body-xsmall-font-weight: 400;
+  --font-body-xsmall-letter-spacing: 0px;
+  --font-body-xsmall-line-height: 16px;
+  --font-heading-large-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-heading-large-font-size: 40px;
+  --font-heading-large-font-weight: 700;
+  --font-heading-large-letter-spacing: -0.02px;
+  --font-heading-large-line-height: 48px;
+  --font-heading-medium-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-heading-medium-font-size: 33px;
+  --font-heading-medium-font-weight: 700;
+  --font-heading-medium-letter-spacing: -0.02px;
+  --font-heading-medium-line-height: 40px;
+  --font-heading-small-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-heading-small-font-size: 28px;
+  --font-heading-small-font-weight: 500;
+  --font-heading-small-letter-spacing: -0.02px;
+  --font-heading-small-line-height: 32px;
+  --font-heading-xlarge-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-heading-xlarge-font-size: 48px;
+  --font-heading-xlarge-font-weight: 700;
+  --font-heading-xlarge-letter-spacing: -0.02px;
+  --font-heading-xlarge-line-height: 56px;
+  --font-heading-xsmall-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-heading-xsmall-font-size: 23px;
+  --font-heading-xsmall-font-weight: 500;
+  --font-heading-xsmall-letter-spacing: -0.02px;
+  --font-heading-xsmall-line-height: 28px;
+  --font-heading-xxlarge-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-heading-xxlarge-font-size: 57px;
+  --font-heading-xxlarge-font-weight: 700;
+  --font-heading-xxlarge-letter-spacing: -0.02px;
+  --font-heading-xxlarge-line-height: 68px;
+  --icon-gap-lg: 16px;
+  --icon-gap-md: 12px;
+  --icon-gap-sm: 8px;
+  --icon-gap-xl: 20px;
+  --icon-gap-xs: 4px;
+  --icon-gap-xxl: 24px;
+  --icon-size-12: 12px;
+  --icon-size-128: 128px;
+  --icon-size-16: 16px;
+  --icon-size-20: 20px;
+  --icon-size-24: 24px;
+  --icon-size-32: 32px;
+  --icon-size-48: 48px;
+  --icon-size-56: 56px;
+  --icon-size-64: 64px;
+  --icon-size-8: 8px;
+  --palette-black-and-white-black: #000000;
+  --palette-black-and-white-transparent: #00000000;
+  --palette-black-and-white-white: #FFFFFF;
+  --palette-danger-100: #EF4444;
+  --palette-danger-200: #B80808;
+  --palette-danger-300: #4D0000;
+  --palette-danger-50: #ECDFDF;
+  --palette-info-100: #3B82F6;
+  --palette-info-200: #0449BA;
+  --palette-info-300: #001D4C;
+  --palette-info-50: #DEE4EC;
+  --palette-neutral-100: #CECECE;
+  --palette-neutral-200: #A1A1A1;
+  --palette-neutral-300: #767676;
+  --palette-neutral-400: #5C5C5C;
+  --palette-neutral-50: #F1F1F1;
+  --palette-neutral-500: #333333;
+  --palette-neutral-600: #2E2E2E;
+  --palette-neutral-700: #242424;
+  --palette-neutral-800: #1C1C1C;
+  --palette-neutral-900: #151515;
+  --palette-primary-100: #BDD2FE;
+  --palette-primary-200: #8EB2FD;
+  --palette-primary-300: #5F92FE;
+  --palette-primary-400: #3071FE;
+  --palette-primary-50: #EBF1FF;
+  --palette-primary-500: #0051FF;
+  --palette-primary-600: #0140C9;
+  --palette-primary-700: #012F93;
+  --palette-primary-800: #011e5d;
+  --palette-primary-900: #010d28;
+  --palette-secondary-100: #C7DAC8;
+  --palette-secondary-200: #A6C6A5;
+  --palette-secondary-300: #7FB581;
+  --palette-secondary-400: #52A457;
+  --palette-secondary-50: #E6EDE5;
+  --palette-secondary-500: #058625;
+  --palette-secondary-600: #197C2A;
+  --palette-secondary-700: #156221;
+  --palette-secondary-800: #0F4817;
+  --palette-secondary-900: #0D2E10;
+  --palette-success-100: #86EFAC;
+  --palette-success-200: #22C55E;
+  --palette-success-300: #166534;
+  --palette-success-50: #DCFCE7;
+  --palette-tertiary-100: #E2D3B5;
+  --palette-tertiary-200: #E1C590;
+  --palette-tertiary-300: #E5BA65;
+  --palette-tertiary-400: #EFB035;
+  --palette-tertiary-50: #E8E2D5;
+  --palette-tertiary-500: #FCA701;
+  --palette-tertiary-600: #CD8801;
+  --palette-tertiary-700: #9E6800;
+  --palette-tertiary-800: #6F4900;
+  --palette-tertiary-900: #3F2A00;
+  --palette-warning-100: #FFBD4F;
+  --palette-warning-200: #AE6D00;
+  --palette-warning-300: #402800;
+  --palette-warning-50: #E8E2D6;
+  --radius-full: 9999px;
+  --radius-large: 12px;
+  --radius-medium: 8px;
+  --radius-none: 0px;
+  --radius-small: 4px;
+  --radius-tile: 12px;
+  --radius-xlarge: 16px;
+  --radius-xsmall: 2px;
+  --radius-xxlarge: 24px;
+  --size-0: 0px;
+  --size-0-5: 0.5px;
+  --size-1: 1px;
+  --size-1-5: 1.5px;
+  --size-100: 100px;
+  --size-1020: 1020px;
+  --size-104: 104px;
+  --size-108: 108px;
+  --size-112: 112px;
+  --size-116: 116px;
+  --size-12: 12px;
+  --size-120: 120px;
+  --size-124: 124px;
+  --size-128: 128px;
+  --size-16: 16px;
+  --size-192: 192px;
+  --size-2: 2px;
+  --size-20: 20px;
+  --size-200: 200px;
+  --size-24: 24px;
+  --size-28: 28px;
+  --size-32: 32px;
+  --size-36: 36px;
+  --size-4: 4px;
+  --size-40: 40px;
+  --size-44: 44px;
+  --size-48: 48px;
+  --size-52: 52px;
+  --size-56: 56px;
+  --size-60: 60px;
+  --size-64: 64px;
+  --size-68: 68px;
+  --size-72: 72px;
+  --size-750: 750px;
+  --size-76: 76px;
+  --size-8: 8px;
+  --size-80: 80px;
+  --size-84: 84px;
+  --size-88: 88px;
+  --size-92: 92px;
+  --size-96: 96px;
+  --size-9999: 9999px;
+  --space-0: 0px;
+  --space-1: 1px;
+  --space-100: 100px;
+  --space-104: 104px;
+  --space-108: 108px;
+  --space-112: 112px;
+  --space-116: 116px;
+  --space-12: 12px;
+  --space-120: 120px;
+  --space-124: 124px;
+  --space-128: 128px;
+  --space-16: 16px;
+  --space-192: 192px;
+  --space-2: 2px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-36: 36px;
+  --space-4: 4px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-52: 52px;
+  --space-56: 56px;
+  --space-60: 60px;
+  --space-64: 64px;
+  --space-68: 68px;
+  --space-72: 72px;
+  --space-76: 76px;
+  --space-8: 8px;
+  --space-80: 80px;
+  --space-84: 84px;
+  --space-88: 88px;
+  --space-92: 92px;
+  --space-96: 96px;
+  --shadow-2xl: 0px 7px 29px 0px color-mix(in srgb, var(--color-shadow-medium) 20%, transparent);
+  --shadow-2xs: 1.95px 1.95px 2.6px 0px color-mix(in srgb, var(--color-shadow-strong) 15%, transparent);
+  --shadow-3xl: 0px 48px 100px 0px color-mix(in srgb, var(--color-shadow-deep) 15%, transparent);
+  --shadow-lg: 0px 5px 15px 0px color-mix(in srgb, var(--color-shadow-strong) 35%, transparent);
+  --shadow-md: 0px 3px 8px 0px color-mix(in srgb, var(--color-shadow-strong) 24%, transparent);
+  --shadow-none: none;
+  --shadow-sm: 0px 2px 8px 0px color-mix(in srgb, var(--color-shadow-medium) 20%, transparent);
+  --shadow-xl: 0px 8px 24px 0px color-mix(in srgb, var(--color-shadow-soft) 20%, transparent);
+  --shadow-xs: 0px 1px 4px 0px color-mix(in srgb, var(--color-shadow-strong) 16%, transparent);
+}
+    </style>
+    <style id="page-styles">
+      :root {
+        color-scheme: dark;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background: var(--color-system-black);
+      }
+
+      body {
+        margin: 0;
+        min-width: calc(var(--size-200) + var(--size-120));
+        overflow-x: hidden;
+        background: var(--color-system-black);
+        color: var(--color-text-inverse);
+        font-family: var(--font-body-font-family);
+        font-size: var(--font-body-font-size);
+        font-weight: var(--font-body-font-weight);
+        line-height: var(--font-body-line-height);
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      figure {
+        margin: 0;
+      }
+
+      img {
+        height: auto;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      summary {
+        font: inherit;
+      }
+
+      button {
+        color: inherit;
+      }
+
+      :focus-visible {
+        outline: var(--border-width-2) solid var(--color-border-interaction-focused);
+        outline-offset: var(--space-4);
+      }
+
+      ::selection {
+        background: var(--color-shades-brand-color-one-strong-one);
+        color: var(--color-text-oncolor);
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 100;
+        top: var(--space-16);
+        left: var(--space-16);
+        min-height: var(--space-40);
+        padding: var(--space-8) var(--space-16);
+        transform: translateY(calc(-100% - var(--space-24)));
+        border-radius: var(--radius-medium);
+        background: var(--color-shades-neutral-subtle-one);
+        color: var(--color-text-heading);
+        font-size: var(--font-body-medium-font-size);
+        line-height: var(--font-body-medium-line-height);
+        transition: transform 180ms ease;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .container {
+        width: min(calc(100% - var(--space-32)), calc(var(--size-1020) + var(--space-192)));
+        margin-inline: auto;
+      }
+
+      .section {
+        position: relative;
+        padding-block: var(--space-96);
+        background: var(--color-system-black);
+      }
+
+      section[id] {
+        scroll-margin-top: var(--space-96);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--color-text-inverse);
+      }
+
+      h1 {
+        text-wrap: balance;
+        margin-bottom: var(--space-24);
+        font-size: var(--font-heading-xxlarge-font-size);
+        font-weight: var(--font-heading-small-font-weight);
+        line-height: var(--font-heading-xxlarge-line-height);
+        letter-spacing: var(--font-heading-xlarge-letter-spacing);
+      }
+
+      h2 {
+        max-width: 18ch;
+        margin-bottom: var(--space-20);
+        font-size: var(--font-heading-xlarge-font-size);
+        font-weight: var(--font-heading-small-font-weight);
+        line-height: var(--font-heading-xlarge-line-height);
+        letter-spacing: var(--font-heading-xlarge-letter-spacing);
+      }
+
+      h3 {
+        margin-bottom: var(--space-8);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+      }
+
+      .lead {
+        max-width: 58ch;
+        color: var(--color-text-inverse);
+        font-size: var(--font-body-font-size);
+        font-weight: var(--font-body-font-weight);
+        line-height: var(--font-body-line-height);
+      }
+
+      /* Canonical Button: sizes, radius, gap, and type are canonical; colour slots resolve for the dark page */
+      .alpy-button {
+        box-sizing: border-box;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-8);
+        border-width: var(--border-width-1);
+        border-style: solid;
+        border-radius: var(--radius-medium);
+        cursor: pointer;
+      }
+
+      .alpy-button[data-alpy-size="md"] {
+        min-height: var(--space-40);
+        padding: var(--space-0) var(--space-16);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+      }
+
+      .alpy-button[data-alpy-size="lg"] {
+        min-height: var(--space-52);
+        padding: var(--space-0) var(--space-24);
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+        letter-spacing: var(--font-body-large-letter-spacing);
+      }
+
+      .alpy-button[data-alpy-icon-mode="only"] {
+        min-height: var(--space-0);
+        gap: var(--space-0);
+        padding: var(--space-0);
+      }
+
+      .alpy-button[data-alpy-icon-mode="only"][data-alpy-size="md"] {
+        width: var(--space-40);
+        height: var(--space-40);
+      }
+
+      .alpy-button[data-alpy-icon-mode="only"][data-alpy-size="lg"] {
+        width: var(--space-52);
+        height: var(--space-52);
+      }
+
+      .alpy-button [data-alpy-slot^="Icon"] {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .alpy-button[data-alpy-size="md"] [data-alpy-slot^="Icon"] svg {
+        width: var(--icon-size-16);
+        height: var(--icon-size-16);
+      }
+
+      .alpy-button[data-alpy-size="lg"] [data-alpy-slot^="Icon"] svg {
+        width: var(--size-20);
+        height: var(--size-20);
+      }
+
+      /* Primary: the confirmed yellow action colour, with dark text and icon for contrast */
+      .alpy-button[data-alpy-variant="primary"] {
+        border-color: var(--color-border-brand-color-three-strong-one);
+        background: var(--color-shades-brand-color-three-strong-one);
+        color: var(--color-text-heading);
+      }
+
+      .alpy-button[data-alpy-variant="primary"] [data-alpy-slot^="Icon"] {
+        color: var(--color-icon-default);
+      }
+
+      .alpy-button[data-alpy-variant="primary"]:hover {
+        border-color: var(--color-border-brand-color-three-subtle-three);
+        background: var(--color-shades-brand-color-three-subtle-three);
+      }
+
+      .alpy-button[data-alpy-variant="primary"]:active {
+        border-color: var(--color-border-brand-color-three-subtle-two);
+        background: var(--color-shades-brand-color-three-subtle-two);
+      }
+
+      /* Secondary: Alpy blue */
+      .alpy-button[data-alpy-variant="secondary"] {
+        border-color: var(--color-border-brand-color-one-strong-one);
+        background: var(--color-shades-brand-color-one-strong-one);
+        color: var(--color-text-oncolor);
+      }
+
+      .alpy-button[data-alpy-variant="secondary"] [data-alpy-slot^="Icon"] {
+        color: var(--color-icon-oncolor);
+      }
+
+      .alpy-button[data-alpy-variant="secondary"]:hover {
+        border-color: var(--color-border-brand-color-one-strong-two);
+        background: var(--color-shades-brand-color-one-strong-two);
+      }
+
+      .alpy-button[data-alpy-variant="secondary"]:active {
+        border-color: var(--color-border-brand-color-one-strong-three);
+        background: var(--color-shades-brand-color-one-strong-three);
+      }
+
+      /* Link: inverse text and icon on dark surfaces */
+      .alpy-button[data-alpy-variant="link"] {
+        border-color: var(--color-system-transparent);
+        background: var(--color-system-transparent);
+        color: var(--color-text-link-inverse);
+      }
+
+      .alpy-button[data-alpy-variant="link"] [data-alpy-slot^="Icon"] {
+        color: var(--color-icon-inverse);
+      }
+
+      .alpy-button[data-alpy-variant="link"]:hover [data-alpy-slot^="Icon"],
+      .alpy-button[data-alpy-variant="link"]:active [data-alpy-slot^="Icon"] {
+        color: var(--color-icon-brand-color-one-subtle-three);
+      }
+
+      .site-header {
+        position: sticky;
+        z-index: 50;
+        top: 0;
+        border-bottom: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+        background: var(--color-system-black);
+      }
+
+      .nav-shell {
+        display: flex;
+        min-height: var(--space-80);
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-24);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-12);
+        color: var(--color-text-inverse);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+      }
+
+      .brand-mark {
+        position: relative;
+        width: var(--space-32);
+        height: var(--space-32);
+        flex: 0 0 auto;
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        border-radius: var(--radius-medium);
+        background: var(--color-shades-neutral-strong-two);
+      }
+
+      .brand-mark::before,
+      .brand-mark::after {
+        position: absolute;
+        content: "";
+      }
+
+      .brand-mark::before {
+        top: var(--space-8);
+        left: var(--space-8);
+        width: var(--space-12);
+        height: var(--space-12);
+        border-radius: var(--radius-small);
+        background: var(--color-shades-brand-color-one-subtle-three);
+      }
+
+      .brand-mark::after {
+        right: var(--space-4);
+        bottom: var(--space-4);
+        width: var(--space-12);
+        height: var(--size-1);
+        background: var(--color-shades-neutral-subtle-one);
+        transform: rotate(-45deg);
+        transform-origin: right center;
+      }
+
+      .desktop-nav,
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: var(--space-32);
+      }
+
+      .desktop-nav a,
+      .sign-in {
+        color: var(--color-text-inverse);
+        font-size: var(--font-body-medium-font-size);
+        line-height: var(--font-body-medium-line-height);
+        transition: color 360ms ease;
+      }
+
+      .desktop-nav a:hover,
+      .sign-in:hover {
+        color: var(--color-text-inverse);
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: none;
+        padding: 0 0 var(--space-24);
+      }
+
+      .mobile-nav[data-open="true"] {
+        display: grid;
+        gap: var(--space-8);
+      }
+
+      .mobile-nav a {
+        display: flex;
+        min-height: var(--space-48);
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: var(--space-16);
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+        border-radius: var(--radius-medium);
+        color: var(--color-text-inverse);
+      }
+
+      .hero {
+        position: relative;
+        isolation: isolate;
+        min-height: 160svh;
+        padding: 0;
+      }
+
+      .hero::before {
+        position: absolute;
+        z-index: -1;
+        inset: 0 0 auto;
+        height: 100svh;
+        background-image: linear-gradient(var(--color-shades-neutral-strong-three) var(--size-1), var(--color-system-transparent) var(--size-1)), linear-gradient(90deg, var(--color-shades-neutral-strong-three) var(--size-1), var(--color-system-transparent) var(--size-1)), radial-gradient(ellipse at 50% 44%, var(--color-shades-neutral-strong-two), var(--color-system-transparent) 64%);
+        background-size: var(--space-48) var(--space-48), var(--space-48) var(--space-48), 100% 100%;
+        content: "";
+        mask-image: linear-gradient(to bottom, black, transparent);
+      }
+
+      .hero-sticky {
+        position: sticky;
+        top: var(--space-80);
+        display: grid;
+        min-height: calc(100svh - var(--space-80));
+        align-items: center;
+        padding-block: var(--space-40);
+      }
+
+      .hero-layout {
+        display: grid;
+        grid-template-areas: "copy product" "scenes product";
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        grid-template-rows: auto auto;
+        align-items: center;
+        gap: var(--space-32) var(--space-48);
+      }
+
+      .hero-copy {
+        display: grid;
+        grid-area: copy;
+        justify-items: start;
+        align-self: end;
+        max-width: 46ch;
+        text-align: left;
+      }
+
+      .hero-copy .lead {
+        max-width: 44ch;
+        margin-bottom: var(--space-32);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: var(--space-12);
+        margin-bottom: 0;
+      }
+
+      .hero-product {
+        position: relative;
+        width: 100%;
+        max-width: none;
+        grid-area: product;
+        margin: 0;
+        padding: var(--space-12);
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        border-radius: var(--radius-xxlarge);
+        background: var(--color-shades-neutral-strong-three);
+      }
+
+      .product-visual {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+        border-radius: var(--radius-xlarge);
+        background: var(--color-system-black);
+      }
+
+      .planner-shell {
+        display: grid;
+        height: 100%;
+        grid-template-rows: var(--space-64) minmax(0, 1fr);
+        background: var(--color-system-black);
+        color: var(--color-text-body-muted);
+        font-size: var(--font-body-small-font-size);
+        line-height: var(--font-body-medium-line-height);
+      }
+
+      .planner-topbar {
+        display: flex;
+        min-width: 0;
+        align-items: center;
+        gap: var(--space-16);
+        padding-inline: var(--space-20);
+        border-bottom: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+      }
+
+      .planner-mark {
+        display: grid;
+        width: var(--space-32);
+        height: var(--space-32);
+        flex: 0 0 auto;
+        place-items: center;
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        border-radius: var(--radius-medium);
+        background: var(--color-shades-neutral-strong-two);
+        color: var(--color-text-brand-color-one-accent-subtle);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-heading-xlarge-font-weight);
+      }
+
+      .planner-project {
+        min-width: 0;
+      }
+
+      .planner-project strong,
+      .planner-project span {
+        display: block;
+      }
+
+      .planner-project strong {
+        color: var(--color-text-inverse);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-large-font-weight);
+      }
+
+      .planner-project span {
+        color: var(--color-text-body-muted);
+      }
+
+      .planner-topbar-meta {
+        display: flex;
+        align-items: center;
+        gap: var(--space-12);
+        margin-inline-start: auto;
+        padding-inline-end: calc(var(--space-192) + var(--space-24));
+      }
+
+      .planner-status {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-8);
+        color: var(--color-text-body-muted);
+      }
+
+      .planner-status::before {
+        width: var(--space-8);
+        height: var(--space-8);
+        border-radius: var(--radius-full);
+        background: var(--color-shades-brand-color-one-subtle-three);
+        content: "";
+      }
+
+      .planner-avatars {
+        display: flex;
+        padding-inline-start: var(--space-8);
+      }
+
+      .planner-avatar {
+        display: grid;
+        width: var(--space-24);
+        height: var(--space-24);
+        margin-inline-start: calc(var(--space-8) * -1);
+        place-items: center;
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-three);
+        border-radius: var(--radius-full);
+        background: var(--color-shades-neutral-strong-one);
+        color: var(--color-text-inverse);
+        font-size: var(--font-body-xsmall-font-size);
+        font-weight: var(--font-body-large-font-weight);
+      }
+
+      .planner-workspace {
+        display: grid;
+        min-height: 0;
+        grid-template-columns: var(--space-192) minmax(0, 1fr);
+      }
+
+      .planner-sidebar {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        padding: var(--space-16) var(--space-12);
+        border-inline-end: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+      }
+
+      .planner-nav-label {
+        margin: 0 0 var(--space-8) var(--space-12);
+        color: var(--color-text-body-muted);
+        font-size: var(--font-body-xsmall-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        letter-spacing: var(--font-body-letter-spacing);
+        text-transform: uppercase;
+      }
+
+      .planner-nav {
+        display: grid;
+        gap: var(--space-4);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .planner-nav li {
+        display: grid;
+        min-height: var(--space-40);
+        grid-template-columns: var(--space-24) minmax(0, 1fr);
+        align-items: center;
+        gap: var(--space-8);
+        padding-inline: var(--space-12);
+        border-radius: var(--radius-medium);
+        color: var(--color-text-body-muted);
+      }
+
+      .hero[data-story-state="0"] .planner-nav-item--board,
+      .hero[data-story-state="1"] .planner-nav-item--timeline,
+      .hero[data-story-state="2"] .planner-nav-item--updates {
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        background: var(--color-shades-neutral-strong-three);
+        color: var(--color-text-inverse);
+      }
+
+      .planner-nav svg {
+        width: var(--space-16);
+        height: var(--space-16);
+      }
+
+      .planner-sidebar-note {
+        margin-top: auto;
+        padding: var(--space-12);
+        border-top: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+        color: var(--color-text-body-muted);
+      }
+
+      .planner-sidebar-note strong {
+        display: block;
+        margin-bottom: var(--space-4);
+        color: var(--color-text-body-muted);
+        font-weight: var(--font-body-large-font-weight);
+      }
+
+      .planner-stage {
+        position: absolute;
+        inset: var(--space-64) 0 0 var(--space-192);
+        overflow: hidden;
+      }
+
+      .planner-view {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        gap: var(--space-16);
+        padding: var(--space-20);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(var(--space-12));
+        transition: opacity 180ms ease, transform 180ms ease;
+      }
+
+      .hero[data-story-state="0"] .planner-view--board,
+      .hero[data-story-state="1"] .planner-view--timeline,
+      .hero[data-story-state="2"] .planner-view--updates {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .planner-view-heading {
+        display: flex;
+        min-width: 0;
+        align-items: center;
+        gap: var(--space-16);
+      }
+
+      .planner-view-heading div:first-child {
+        min-width: 0;
+      }
+
+      .planner-view-heading strong,
+      .planner-view-heading span {
+        display: block;
+      }
+
+      .planner-view-heading strong {
+        color: var(--color-text-inverse);
+        font-size: var(--font-body-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-line-height);
+      }
+
+      .planner-view-heading span {
+        color: var(--color-text-body-muted);
+      }
+
+      .planner-view-chip {
+        display: inline-flex;
+        min-height: var(--space-32);
+        align-items: center;
+        gap: var(--space-8);
+        margin-inline-start: auto;
+        padding-inline: var(--space-12);
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        border-radius: var(--radius-medium);
+        color: var(--color-text-body-muted);
+        white-space: nowrap;
+      }
+
+      .planner-view-chip::before {
+        width: var(--space-8);
+        height: var(--space-8);
+        border-radius: var(--radius-full);
+        background: var(--color-shades-brand-color-one-subtle-three);
+        content: "";
+      }
+
+      .board-grid {
+        display: grid;
+        min-height: 0;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-12);
+      }
+
+      .board-column {
+        min-width: 0;
+        padding: var(--space-12);
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+        border-radius: var(--radius-large);
+        background: var(--color-shades-neutral-strong-three);
+      }
+
+      .board-column-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-8);
+        margin-bottom: var(--space-12);
+        color: var(--color-text-body-muted);
+        font-weight: var(--font-body-large-font-weight);
+      }
+
+      .board-count {
+        display: grid;
+        min-width: var(--space-24);
+        height: var(--space-24);
+        place-items: center;
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        border-radius: var(--radius-small);
+        color: var(--color-text-body-muted);
+        font-weight: var(--font-heading-small-font-weight);
+      }
+
+      .task-card {
+        display: grid;
+        gap: var(--space-12);
+        padding: var(--space-12);
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        border-radius: var(--radius-medium);
+        background: var(--color-shades-neutral-strong-two);
+      }
+
+      .task-card + .task-card {
+        margin-top: var(--space-8);
+      }
+
+      .task-card.is-active {
+        border-color: var(--color-border-brand-color-one-subtle-three);
+      }
+
+      .task-card-title {
+        color: var(--color-text-inverse);
+        font-weight: var(--font-heading-small-font-weight);
+      }
+
+      .task-card-meta {
+        display: flex;
+        align-items: center;
+        gap: var(--space-8);
+        color: var(--color-text-body-muted);
+      }
+
+      .task-card-meta .planner-avatar {
+        margin: 0;
+      }
+
+      .task-priority {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-4);
+        margin-inline-start: auto;
+      }
+
+      .task-priority::before {
+        width: var(--space-4);
+        height: var(--space-4);
+        border-radius: var(--radius-full);
+        background: var(--color-shades-brand-color-one-subtle-three);
+        content: "";
+      }
+
+      .timeline-board,
+      .activity-panel,
+      .files-panel {
+        min-width: 0;
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+        border-radius: var(--radius-large);
+        background: var(--color-shades-neutral-strong-three);
+      }
+
+      .timeline-board {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .timeline-dates,
+      .timeline-row {
+        display: grid;
+        grid-template-columns: calc(var(--space-120) + var(--space-24)) repeat(5, minmax(0, 1fr));
+      }
+
+      .timeline-dates {
+        min-height: var(--space-40);
+        align-items: center;
+        border-bottom: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        color: var(--color-text-body-muted);
+      }
+
+      .timeline-dates span,
+      .timeline-row > span {
+        padding-inline: var(--space-12);
+      }
+
+      .timeline-dates span + span {
+        border-inline-start: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+      }
+
+      .timeline-row {
+        position: relative;
+        min-height: var(--space-64);
+        align-items: center;
+        border-bottom: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+      }
+
+      .timeline-row:last-child {
+        border-bottom: 0;
+      }
+
+      .timeline-row > span {
+        color: var(--color-text-body-muted);
+        font-weight: var(--font-heading-small-font-weight);
+      }
+
+      .timeline-track {
+        position: relative;
+        height: 100%;
+        grid-column: 2 / -1;
+        border-inline-start: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+        background-image: repeating-linear-gradient( to right, var(--color-system-transparent) 0, var(--color-system-transparent) calc(20% - var(--size-1)), var(--color-shades-neutral-strong-two) calc(20% - var(--size-1)), var(--color-shades-neutral-strong-two) 20% );
+      }
+
+      .timeline-bar {
+        position: absolute;
+        top: 50%;
+        height: var(--space-24);
+        transform: translateY(-50%);
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        border-radius: var(--radius-small);
+        background: var(--color-shades-neutral-strong-two);
+      }
+
+      .timeline-bar--research {
+        left: 4%;
+        width: 32%;
+      }
+
+      .timeline-bar--prototype {
+        left: 24%;
+        width: 46%;
+        border-color: var(--color-border-brand-color-one-subtle-three);
+        background: var(--color-shades-brand-color-one-strong-three);
+      }
+
+      .timeline-bar--launch {
+        left: 62%;
+        width: 30%;
+      }
+
+      .timeline-today {
+        position: absolute;
+        z-index: 1;
+        top: var(--space-40);
+        bottom: 0;
+        left: 58%;
+        width: var(--size-1);
+        background: var(--color-shades-brand-color-one-subtle-three);
+      }
+
+      .timeline-today::before {
+        position: absolute;
+        top: calc(var(--space-4) * -1);
+        left: calc(var(--space-4) * -1);
+        width: var(--space-8);
+        height: var(--space-8);
+        border-radius: var(--radius-full);
+        background: var(--color-shades-brand-color-one-subtle-three);
+        content: "";
+      }
+
+      .updates-grid {
+        display: grid;
+        min-height: 0;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: var(--space-12);
+      }
+
+      .activity-panel,
+      .files-panel {
+        padding: var(--space-16);
+      }
+
+      .panel-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-12);
+        margin-bottom: var(--space-12);
+        color: var(--color-text-inverse);
+        font-weight: var(--font-body-large-font-weight);
+      }
+
+      .panel-title span {
+        color: var(--color-text-body-muted);
+        font-weight: var(--font-body-font-weight);
+      }
+
+      .activity-item {
+        display: grid;
+        grid-template-columns: var(--space-32) minmax(0, 1fr) auto;
+        align-items: start;
+        gap: var(--space-12);
+        padding-block: var(--space-12);
+        border-top: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+      }
+
+      .activity-copy strong,
+      .activity-copy span {
+        display: block;
+      }
+
+      .activity-copy strong {
+        color: var(--color-text-inverse);
+        font-weight: var(--font-heading-small-font-weight);
+      }
+
+      .activity-copy span,
+      .activity-time {
+        color: var(--color-text-body-muted);
+      }
+
+      .file-card {
+        display: grid;
+        grid-template-columns: var(--space-40) minmax(0, 1fr);
+        align-items: center;
+        gap: var(--space-12);
+        padding-block: var(--space-12);
+        border-top: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+      }
+
+      .file-icon {
+        display: grid;
+        width: var(--space-40);
+        height: var(--space-40);
+        place-items: center;
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        border-radius: var(--radius-medium);
+        background: var(--color-shades-neutral-strong-two);
+        color: var(--color-text-body-muted);
+      }
+
+      .file-icon svg {
+        width: var(--space-20);
+        height: var(--space-20);
+      }
+
+      .file-card strong,
+      .file-card span {
+        display: block;
+      }
+
+      .file-card strong {
+        color: var(--color-text-inverse);
+        font-weight: var(--font-heading-small-font-weight);
+      }
+
+      .file-card span {
+        color: var(--color-text-body-muted);
+      }
+
+      .product-events {
+        position: absolute;
+        z-index: 3;
+        bottom: var(--space-24);
+        left: var(--space-24);
+        min-width: calc(var(--space-192) + var(--space-40));
+        min-height: var(--space-40);
+        pointer-events: none;
+      }
+
+      .product-event {
+        position: absolute;
+        inset: 0 auto auto 0;
+        display: inline-flex;
+        min-height: var(--space-40);
+        align-items: center;
+        gap: var(--space-8);
+        padding: var(--space-8) var(--space-12);
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        border-radius: var(--radius-medium);
+        background: var(--color-shades-neutral-strong-two);
+        color: var(--color-text-inverse);
+        font-size: var(--font-body-small-font-size);
+        line-height: var(--font-body-medium-line-height);
+        opacity: 0;
+        transform: translateY(var(--space-12));
+        transition: opacity 240ms ease, transform 240ms ease;
+      }
+
+      .product-event::before {
+        width: var(--space-8);
+        height: var(--space-8);
+        flex: 0 0 auto;
+        border-radius: var(--radius-full);
+        background: var(--color-shades-brand-color-one-subtle-three);
+        content: "";
+      }
+
+      .hero[data-story-state="0"] .product-event[data-event="0"],
+      .hero[data-story-state="1"] .product-event[data-event="1"],
+      .hero[data-story-state="2"] .product-event[data-event="2"] {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Compact vertical product story: copy stays stacked above the mockup. */
+      .hero {
+        min-height: 0;
+        padding: var(--space-96) 0 var(--space-80);
+      }
+
+      .hero-sticky {
+        position: static;
+        min-height: 0;
+        padding-block: 0;
+      }
+
+      .hero-layout {
+        grid-template-areas: "copy" "product";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: var(--space-64);
+      }
+
+      .hero-copy {
+        justify-items: center;
+        justify-self: center;
+        align-self: auto;
+        max-width: var(--size-1020);
+        text-align: center;
+      }
+
+      .hero-copy .lead {
+        max-width: 55ch;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-product-flow {
+        position: relative;
+        grid-area: product;
+      }
+
+      .hero-product {
+        width: 100%;
+        max-width: calc(var(--size-1020) + var(--space-192));
+        margin-inline: auto;
+      }
+
+      .product-flow-enabled .hero-product-flow {
+        height: calc(100svh + (var(--space-192) * 3));
+      }
+
+      .product-flow-enabled .hero-product {
+        position: sticky;
+        top: var(--space-96);
+        transform: translate3d(0, var(--product-flow-y, var(--space-24)), 0);
+        will-change: transform;
+      }
+
+      .product-event {
+        transition: opacity 100ms linear, transform 100ms ease-out;
+      }
+
+      .product-story-static {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: var(--space-12);
+        border-block: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+      }
+
+      .product-story-static div {
+        display: grid;
+        gap: var(--space-4);
+        padding: var(--space-16);
+      }
+
+      .product-story-static div + div {
+        border-left: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+      }
+
+      .product-story-static strong {
+        color: var(--color-text-inverse);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-medium-line-height);
+      }
+
+      .product-story-static span {
+        color: var(--color-text-body-muted);
+        font-size: var(--font-body-small-font-size);
+        line-height: var(--font-body-medium-line-height);
+      }
+
+      .product-flow-enabled .product-story-static {
+        position: absolute;
+        width: var(--size-1);
+        height: var(--size-1);
+        overflow: hidden;
+        margin: calc(var(--size-1) * -1);
+        padding: 0;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+      .motion-ready .reveal {
+        opacity: 0;
+        transform: translateY(var(--space-24));
+        transition: opacity 600ms ease, transform 600ms ease;
+      }
+
+      .motion-ready .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 960px) {
+        .desktop-nav,
+        .nav-actions {
+          display: none;
+        }
+
+        .menu-toggle {
+          display: inline-flex;
+        }
+
+        .hero {
+          min-height: 0;
+          padding: var(--space-64) 0 var(--space-80);
+        }
+
+        .hero-sticky {
+          position: static;
+          min-height: 0;
+          padding-block: 0;
+        }
+
+        .hero-layout {
+          grid-template-areas: "copy" "product";
+          grid-template-columns: 1fr;
+          gap: var(--space-48);
+        }
+
+        .hero-copy {
+          justify-items: center;
+          justify-self: center;
+          max-width: var(--size-1020);
+          text-align: center;
+        }
+
+        .hero-actions {
+          justify-content: center;
+        }
+
+        .hero-product {
+          max-width: var(--size-1020);
+          margin-inline: auto;
+        }
+
+        .product-events {
+          display: none;
+        }
+
+        .planner-topbar-meta {
+          padding-inline-end: 0;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .section {
+          padding-block: var(--space-64);
+        }
+
+        h1 {
+          font-size: var(--font-heading-large-font-size);
+          line-height: var(--font-heading-large-line-height);
+        }
+
+        h2 {
+          font-size: var(--font-heading-medium-font-size);
+          line-height: var(--font-heading-medium-line-height);
+        }
+
+        .lead {
+          font-size: var(--font-body-font-size);
+          font-weight: var(--font-body-font-weight);
+          line-height: var(--font-body-line-height);
+        }
+
+        .hero {
+          padding-top: var(--space-64);
+        }
+
+        .hero-actions,
+        .hero-actions .alpy-button {
+          width: 100%;
+        }
+
+        .hero-product {
+          margin-top: 0;
+          padding: var(--space-8);
+          border-radius: var(--radius-xlarge);
+        }
+
+        .product-visual {
+          min-height: calc(var(--space-192) + var(--space-120));
+          aspect-ratio: auto;
+        }
+
+        .planner-shell {
+          grid-template-rows: var(--space-52) minmax(0, 1fr);
+        }
+
+        .planner-topbar {
+          gap: var(--space-12);
+          padding-inline: var(--space-12);
+        }
+
+        .planner-topbar-meta,
+        .planner-sidebar {
+          display: none;
+        }
+
+        .planner-workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .planner-stage {
+          inset: var(--space-52) 0 0;
+        }
+
+        .planner-view {
+          gap: var(--space-12);
+          padding: var(--space-12);
+        }
+
+        .planner-view-heading strong {
+          font-size: var(--font-body-medium-font-size);
+          line-height: var(--font-body-medium-line-height);
+        }
+
+        .planner-view-heading > div > span,
+        .planner-view-chip {
+          display: none;
+        }
+
+        .board-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: var(--space-8);
+        }
+
+        .board-column {
+          padding: var(--space-8);
+        }
+
+        .board-column:last-child {
+          display: none;
+        }
+
+        .task-card {
+          gap: var(--space-8);
+          padding: var(--space-8);
+        }
+
+        .product-story-static {
+          grid-template-columns: 1fr;
+        }
+
+        .product-story-static div + div {
+          border-top: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+          border-left: 0;
+        }
+      }
+
+      @media (max-width: 440px) {
+        .container {
+          width: min(calc(100% - var(--space-24)), calc(var(--size-1020) + var(--space-192)));
+        }
+      }
+
+      @media (min-width: 961px) and (max-height: 720px) {
+        .hero {
+          min-height: 0;
+          padding: var(--space-64) 0 var(--space-80);
+        }
+
+        .hero-sticky {
+          position: static;
+          min-height: 0;
+          padding-block: 0;
+        }
+
+        .product-events {
+          display: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .hero {
+          min-height: 0;
+          padding: var(--space-96) 0 var(--space-80);
+        }
+
+        .hero-sticky {
+          position: static;
+          min-height: 0;
+          padding-block: 0;
+        }
+
+        .product-events {
+          display: none;
+        }
+
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+
+        .motion-ready .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* Page sections below the hero: canonical Alpy tokens only */
+      .section--alt {
+        background: var(--color-shades-neutral-strong-three);
+      }
+
+      .section h2,
+      .section h3 {
+        text-wrap: balance;
+      }
+
+      .section p,
+      .section li {
+        text-wrap: pretty;
+      }
+
+      .lead,
+      .card p,
+      .footer-brand p {
+        text-wrap: balance;
+      }
+
+      .section-head {
+        display: grid;
+        justify-items: center;
+        gap: var(--space-16);
+        max-width: var(--size-750);
+        margin: 0 auto var(--space-48);
+        text-align: center;
+      }
+
+      .section-head h2 {
+        max-width: none;
+        margin: 0;
+      }
+
+      .section-head p {
+        max-width: 56ch;
+        margin: 0;
+        color: var(--color-text-inverse);
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-24);
+      }
+
+      .card {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        gap: var(--space-16);
+        padding: var(--space-32);
+        overflow: hidden;
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+        border-radius: var(--radius-xxlarge);
+        background:
+          radial-gradient(ellipse 90% 55% at 50% 0%, var(--color-shades-neutral-strong-two), var(--color-system-transparent)),
+          var(--color-shades-neutral-strong-three);
+      }
+
+      .section--alt .card {
+        border-color: var(--color-border-neutral-strong-one);
+        background:
+          radial-gradient(ellipse 90% 55% at 50% 0%, var(--color-shades-neutral-strong-one), var(--color-system-transparent)),
+          var(--color-shades-neutral-strong-two);
+      }
+
+      .card h3 {
+        margin: 0;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--color-text-inverse);
+      }
+
+      .icon-well {
+        display: grid;
+        width: var(--size-48);
+        height: var(--size-48);
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: var(--radius-full);
+        background: var(--color-system-white);
+      }
+
+      .icon-well--brand-three {
+        color: var(--color-icon-brand-color-three-strong-one);
+      }
+
+      .icon-well--brand-one {
+        color: var(--color-icon-brand-color-one-strong-one);
+      }
+
+      .icon-well--brand-two {
+        color: var(--color-icon-brand-color-two-strong-one);
+      }
+
+      .icon-well svg {
+        width: var(--icon-size-24);
+        height: var(--icon-size-24);
+      }
+
+      /* Canonical Card (default, image top): bindings unchanged except colour slots, which take dark-page roles */
+      .alpy-card {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        overflow: hidden;
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+        border-radius: var(--radius-medium);
+        background: var(--color-shades-neutral-strong-three);
+        color: var(--color-text-inverse);
+      }
+
+      .alpy-card-image {
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        border-radius: var(--radius-none);
+      }
+
+      /* Canonical Image, 16:9 */
+      .alpy-image {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        border-radius: var(--radius-none);
+        background: var(--color-surface-interaction-disabled);
+      }
+
+      .alpy-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .alpy-card-content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-12);
+        padding: var(--space-16);
+      }
+
+      .alpy-card-header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+      }
+
+      .alpy-card-title-row {
+        display: flex;
+        align-items: center;
+        gap: var(--space-8);
+      }
+
+      .alpy-card-title-row h3 {
+        margin: 0;
+        color: var(--color-text-inverse);
+        font-family: var(--font-body-large-font-family);
+        font-size: var(--font-body-large-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-large-line-height);
+        letter-spacing: var(--font-body-large-letter-spacing);
+      }
+
+      .alpy-card-body {
+        display: grid;
+        gap: var(--space-8);
+      }
+
+      .alpy-card-body p {
+        margin: 0;
+        color: var(--color-text-inverse);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+      }
+
+      .alpy-card-footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--space-8);
+      }
+
+      /* Resources: one panel, a product view beside a divided list */
+      .resource-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+        gap: 0;
+        padding: 0;
+      }
+
+      .resource-media {
+        overflow: hidden;
+        border-right: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        background: var(--color-system-black);
+      }
+
+      .resource-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .resource-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--space-8) var(--space-32);
+      }
+
+      .resource-item {
+        display: grid;
+        gap: var(--space-8);
+        padding: var(--space-24) 0;
+      }
+
+      .resource-item + .resource-item {
+        border-top: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+      }
+
+      .resource-item h3 {
+        display: flex;
+        align-items: center;
+        gap: var(--space-8);
+      }
+
+      .resource-item h3 svg {
+        width: var(--icon-size-20);
+        height: var(--icon-size-20);
+        flex: 0 0 auto;
+        color: var(--color-icon-brand-color-one-subtle-three);
+      }
+
+      .resource-item .alpy-button {
+        justify-self: start;
+      }
+
+      /* Pricing */
+      .billing {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-12);
+        margin: calc(var(--space-16) * -1) 0 var(--space-48);
+      }
+
+      /* Canonical Tabs (basic, horizontal): bindings unchanged except the container and unselected text, which take dark-page roles */
+      .alpy-tabs-root {
+        box-sizing: border-box;
+        display: flex;
+        width: max-content;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-0);
+        padding: var(--space-4);
+        border-radius: var(--radius-medium);
+        background: var(--color-shades-neutral-strong-two);
+      }
+
+      .alpy-tab {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-0);
+        padding: var(--space-0);
+        border: 0;
+        border-radius: var(--radius-medium);
+        background: var(--color-system-transparent);
+        color: inherit;
+        font: inherit;
+        text-align: inherit;
+        appearance: none;
+        cursor: pointer;
+      }
+
+      .alpy-tab[aria-selected="true"] {
+        background: var(--color-surface-canvas);
+      }
+
+      .alpy-tab-content {
+        box-sizing: border-box;
+        display: inline-flex;
+        min-height: var(--space-40);
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-8) var(--space-16);
+      }
+
+      .alpy-tab-label {
+        color: var(--color-text-inverse);
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+        white-space: nowrap;
+      }
+
+      .alpy-tab[aria-selected="true"] .alpy-tab-label {
+        color: var(--color-text-brand-color-one-accent);
+      }
+
+      /* Canonical Badge, brand two variant */
+      .badge-save {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-4);
+        padding: var(--space-4) var(--space-8);
+        border: var(--border-width-1) solid var(--color-border-brand-color-two-strong-two);
+        border-radius: var(--radius-full);
+        background: var(--color-shades-brand-color-two-subtle-one);
+        color: var(--color-text-body);
+        font-family: var(--font-body-small-font-family);
+        font-size: var(--font-body-small-font-size);
+        font-weight: var(--font-body-small-font-weight);
+        line-height: var(--font-body-small-line-height);
+      }
+
+      .plan h3 {
+        margin: 0;
+      }
+
+      .plan-price {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: var(--space-8);
+        margin: 0;
+        color: var(--color-text-inverse);
+        font-size: var(--font-heading-small-font-size);
+        font-weight: var(--font-heading-small-font-weight);
+        line-height: var(--font-heading-small-line-height);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .plan-price span:not(.plan-amount) {
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+      }
+
+      .plan ul {
+        display: grid;
+        gap: var(--space-12);
+        margin: var(--space-8) 0 var(--space-16);
+        padding: var(--space-24) 0 0;
+        border-top: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+        list-style: none;
+      }
+
+      .plan li {
+        display: grid;
+        grid-template-columns: var(--icon-size-20) minmax(0, 1fr);
+        gap: var(--space-12);
+        align-items: start;
+        color: var(--color-text-inverse);
+      }
+
+      .plan li svg {
+        width: var(--icon-size-20);
+        height: var(--icon-size-20);
+        margin-top: var(--space-2);
+        color: var(--color-icon-brand-color-two-subtle-three);
+      }
+
+      .plan .alpy-button {
+        width: 100%;
+        margin-top: auto;
+      }
+
+      .plan-note {
+        margin: var(--space-24) 0 0;
+        color: var(--color-text-body-muted);
+        font-size: var(--font-body-medium-font-size);
+        line-height: var(--font-body-medium-line-height);
+        text-align: center;
+      }
+
+      /* Canonical Accordion, in-card variant, on a dark surface */
+      /* Wrapper card behind the FAQ */
+      .faq-card {
+        max-width: var(--size-750);
+        margin-inline: auto;
+        padding: var(--space-8) var(--space-24);
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+        border-radius: var(--radius-xxlarge);
+        background: var(--color-shades-neutral-strong-three);
+      }
+
+      /* Canonical Accordion (basic, chevron): bindings unchanged except colour slots, which take dark-page roles */
+      .alpy-accordion {
+        box-sizing: border-box;
+        display: grid;
+        width: 100%;
+        max-width: 100%;
+        color: var(--color-text-inverse);
+      }
+
+      .alpy-accordion-items {
+        display: grid;
+        width: 100%;
+        gap: var(--space-8);
+        overflow: hidden;
+        border-radius: var(--radius-none);
+      }
+
+      .alpy-accordion-item {
+        box-sizing: border-box;
+        display: grid;
+        overflow: hidden;
+        background: var(--color-system-transparent);
+      }
+
+      .alpy-accordion-item:not(:last-child) {
+        border-bottom: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+      }
+
+      .alpy-accordion-trigger {
+        box-sizing: border-box;
+        display: flex;
+        width: 100%;
+        min-height: var(--space-40);
+        align-items: center;
+        gap: var(--space-8);
+        padding: var(--space-16) var(--space-0);
+        border: 0;
+        background: var(--color-system-transparent);
+        color: var(--color-text-inverse);
+        font-family: var(--font-body-font-family);
+        font-size: var(--font-body-font-size);
+        font-weight: var(--font-body-font-weight);
+        line-height: var(--font-body-line-height);
+        letter-spacing: var(--font-body-letter-spacing);
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .alpy-accordion-trigger:focus-visible {
+        outline: var(--border-width-1) solid var(--color-border-brand-color-one-subtle-three);
+        outline-offset: calc(var(--border-width-1) * -1);
+      }
+
+      .alpy-accordion-label {
+        flex: 1 1 auto;
+        overflow-wrap: anywhere;
+      }
+
+      .alpy-accordion-icon {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-icon-inverse);
+      }
+
+      .alpy-accordion-icon svg {
+        width: var(--icon-size-12);
+        height: var(--icon-size-12);
+      }
+
+      .alpy-accordion-panel {
+        padding: 0 var(--space-0) var(--space-8);
+        background: var(--color-system-transparent);
+        color: var(--color-text-inverse);
+      }
+
+      .alpy-accordion-panel p {
+        margin: 0;
+        font-family: var(--font-body-medium-font-family);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-medium-font-weight);
+        line-height: var(--font-body-medium-line-height);
+        letter-spacing: var(--font-body-medium-letter-spacing);
+      }
+
+      .faq-more {
+        margin: var(--space-24) 0 0;
+        color: var(--color-text-body-muted);
+        font-size: var(--font-body-medium-font-size);
+        line-height: var(--font-body-medium-line-height);
+        text-align: center;
+      }
+
+      .faq-more a {
+        color: var(--color-text-link-inverse);
+        text-decoration: underline;
+        text-underline-offset: var(--space-4);
+      }
+
+      /* Closing panel: the strongest gradient light on the page */
+      .closing-panel {
+        display: grid;
+        justify-items: center;
+        gap: var(--space-16);
+        padding: var(--space-96) var(--space-32);
+        overflow: hidden;
+        border: var(--border-width-1) solid var(--color-border-neutral-strong-two);
+        border-radius: var(--radius-xxlarge);
+        background:
+          radial-gradient(ellipse 75% 85% at 50% 0%, var(--color-shades-brand-color-three-strong-three), var(--color-system-transparent) 72%),
+          var(--color-shades-neutral-strong-three);
+        text-align: center;
+      }
+
+      .closing-panel h2 {
+        max-width: 20ch;
+        margin: 0;
+      }
+
+      .closing-panel p {
+        max-width: 52ch;
+        margin: 0 0 var(--space-16);
+        color: var(--color-text-inverse);
+      }
+
+      /* Footer */
+      .site-footer {
+        padding-block: var(--space-96);
+        background: var(--color-shades-neutral-strong-three);
+      }
+
+      .footer-top {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr));
+        gap: var(--space-40);
+      }
+
+      .footer-brand p {
+        max-width: 32ch;
+        margin: var(--space-16) 0 0;
+        color: var(--color-text-inverse);
+        font-size: var(--font-body-medium-font-size);
+        line-height: var(--font-body-medium-line-height);
+      }
+
+      .footer-top nav {
+        display: grid;
+        align-content: start;
+        gap: var(--space-12);
+      }
+
+      .footer-top h3 {
+        margin: 0 0 var(--space-4);
+        font-size: var(--font-body-medium-font-size);
+        font-weight: var(--font-body-large-font-weight);
+        line-height: var(--font-body-medium-line-height);
+      }
+
+      .footer-top nav a {
+        width: fit-content;
+        color: var(--color-text-inverse);
+        font-size: var(--font-body-medium-font-size);
+        line-height: var(--font-body-medium-line-height);
+      }
+
+      .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--space-16);
+        margin-top: var(--space-64);
+        padding-top: var(--space-24);
+        border-top: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        color: var(--color-text-inverse);
+        font-size: var(--font-body-medium-font-size);
+        line-height: var(--font-body-medium-line-height);
+      }
+
+      .footer-bottom p {
+        margin: 0;
+      }
+
+      .footer-bottom nav {
+        display: flex;
+        gap: var(--space-24);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .card {
+          transition: border-color 180ms ease;
+        }
+
+        .card:hover {
+          border-color: var(--color-border-neutral-strong-one);
+        }
+
+        .section--alt .card:hover {
+          border-color: var(--color-border-neutral-subtle-three);
+        }
+
+        .alpy-accordion-trigger:hover .alpy-accordion-icon {
+          color: var(--color-icon-brand-color-one-subtle-three);
+        }
+
+        .footer-top nav a:hover,
+        .footer-bottom a:hover {
+          text-decoration: underline;
+          text-underline-offset: var(--space-4);
+        }
+      }
+
+      @media (forced-colors: active) {
+        .card,
+        .faq-card,
+        .closing-panel,
+        .alpy-tabs-root,
+        .icon-well {
+          border: var(--border-width-1) solid CanvasText;
+        }
+      }
+
+      @media (max-width: 960px) {
+        .grid-3 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid-3--media,
+        .grid-3--plans,
+        .resource-panel {
+          grid-template-columns: minmax(0, 1fr);
+          max-width: var(--size-750);
+          margin-inline: auto;
+        }
+
+        .resource-media {
+          aspect-ratio: 16 / 10;
+          border-right: 0;
+          border-bottom: var(--border-width-1) solid var(--color-border-neutral-strong-one);
+        }
+
+        .footer-top {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .footer-brand {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .grid-3 {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .section-head {
+          margin-bottom: var(--space-40);
+        }
+
+        .card {
+          padding: var(--space-24);
+        }
+
+        .resource-panel {
+          padding: 0;
+        }
+
+        .resource-list {
+          padding: var(--space-4) var(--space-24);
+        }
+
+
+        .faq-card {
+          padding: var(--space-4) var(--space-20);
+        }
+
+        .closing-panel {
+          padding: var(--space-64) var(--space-24);
+        }
+
+        .footer-top {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+        }
+      }
+
+      /* Phone: a 24px margin, 32px above and below every section, 24px between the blocks inside it and 24px inside every card. Headlines and helpers read from the left */
+      @media (max-width: 720px) {
+        .container {
+          width: min(calc(100% - var(--space-48)), calc(var(--size-1020) + var(--space-192)));
+        }
+
+        .section,
+        .site-footer {
+          padding-block: var(--space-32);
+        }
+
+        .hero {
+          padding: var(--space-32) 0;
+        }
+
+        .hero-layout {
+          gap: var(--space-24);
+        }
+
+        .hero-copy {
+          justify-items: start;
+          justify-self: stretch;
+          text-align: left;
+        }
+
+        .hero-copy .lead {
+          margin-bottom: var(--space-24);
+        }
+
+        .section-head {
+          justify-items: start;
+          gap: var(--space-24);
+          margin: 0 0 var(--space-24);
+          text-align: left;
+        }
+
+        .billing {
+          justify-content: flex-start;
+          margin: 0 0 var(--space-24);
+        }
+
+        .plan ul {
+          margin-bottom: var(--space-8);
+        }
+
+        .plan-note,
+        .faq-more {
+          text-align: left;
+        }
+
+        .resource-list {
+          padding: 0 var(--space-24);
+        }
+
+        .faq-card {
+          padding: var(--space-8) var(--space-24);
+        }
+
+        .closing-panel {
+          justify-items: start;
+          gap: var(--space-24);
+          padding: var(--space-24);
+          text-align: left;
+        }
+
+        .closing-panel p {
+          margin: 0;
+        }
+
+        .footer-top {
+          gap: var(--space-24);
+        }
+
+        .footer-bottom {
+          margin-top: var(--space-24);
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="nav-shell">
+          <a class="brand" href="#top" aria-label="Keeplane home">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>Keeplane</span>
+          </a>
+
+          <nav class="desktop-nav" aria-label="Primary navigation">
+            <a href="#product">Product</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#resources">Resources</a>
+          </nav>
+
+          <div class="nav-actions">
+            <a class="sign-in" href="/auth">Sign in</a>
+            <a class="alpy-button" href="/auth" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="md" data-alpy-icon-mode="none"><span data-alpy-slot="Label">Start planning</span></a>
+          </div>
+
+          <button class="alpy-button menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation" data-alpy-component="button" data-alpy-variant="link" data-alpy-size="lg" data-alpy-icon-mode="only"><span data-alpy-slot="IconLeft" data-alpy-icon-id="menu" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z"/></svg></span></button>
+        </div>
+
+        <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile navigation" data-open="false">
+          <a href="#product">Product</a>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#resources">Resources</a>
+          <a href="/auth">Sign in</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title" data-product-story data-story-state="0">
+        <div class="container hero-sticky">
+          <div class="hero-layout">
+            <div class="hero-copy reveal">
+              <h1 id="hero-title">Keep every project moving.</h1>
+              <p class="lead">
+                Keeplane gives growing product teams one calm place to plan tasks, see deadlines,
+                share updates, and keep the files that move work forward.
+              </p>
+              <div class="hero-actions">
+                <a class="alpy-button" href="/auth" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg" data-alpy-icon-mode="right"><span data-alpy-slot="Label">Start planning free</span><span data-alpy-slot="IconRight" data-alpy-icon-id="arrow_forward" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z"/></svg></span></a>
+                <a class="alpy-button" href="#product" data-alpy-component="button" data-alpy-variant="secondary" data-alpy-size="lg" data-alpy-icon-mode="none"><span data-alpy-slot="Label">See the product</span></a>
+              </div>
+            </div>
+
+            <div class="hero-product-flow" data-product-flow>
+              <figure class="hero-product">
+                <div class="product-visual">
+                  <div
+                    class="planner-shell"
+                    role="img"
+                    aria-label="Conceptual Keeplane project planner switching between a task board, milestone timeline, and team updates with shared files."
+                  >
+                    <div class="planner-topbar">
+                      <span class="planner-mark">K</span>
+                      <div class="planner-project">
+                        <strong>Website launch</strong>
+                        <span>Product &amp; Marketing</span>
+                      </div>
+                      <div class="planner-topbar-meta">
+                        <span class="planner-status">On track</span>
+                        <span class="planner-avatars">
+                          <span class="planner-avatar">AM</span>
+                          <span class="planner-avatar">JL</span>
+                          <span class="planner-avatar">SK</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="planner-workspace">
+                      <aside class="planner-sidebar">
+                        <p class="planner-nav-label">Workspace</p>
+                        <ul class="planner-nav">
+                          <li>
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.5 20.5556H8.25V13.2222H15.75V20.5556H19.5V9.55556L12 4.05556L4.5 9.55556V20.5556ZM2 23V8.33333L12 1L22 8.33333V23H13.25V15.6667H10.75V23H2Z"/></svg>
+                            Overview
+                          </li>
+                          <li class="planner-nav-item--board">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.15 13H8V11H20.15L18.6 9.45L20 8L24 12L20 16L18.6 14.55L20.15 13ZM15 9V5H5V19H15V15H17V19C17 19.55 16.8042 20.0208 16.4125 20.4125C16.0208 20.8042 15.55 21 15 21H5C4.45 21 3.97917 20.8042 3.5875 20.4125C3.19583 20.0208 3 19.55 3 19V5C3 4.45 3.19583 3.97917 3.5875 3.5875C3.97917 3.19583 4.45 3 5 3H15C15.55 3 16.0208 3.19583 16.4125 3.5875C16.8042 3.97917 17 4.45 17 5V9H15Z"/></svg>
+                            Project board
+                          </li>
+                          <li class="planner-nav-item--timeline">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.3 16.7L16.7 15.3L13 11.6V7H11V12.4L15.3 16.7ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22ZM12 20C14.2167 20 16.1042 19.2208 17.6625 17.6625C19.2208 16.1042 20 14.2167 20 12C20 9.78333 19.2208 7.89583 17.6625 6.3375C16.1042 4.77917 14.2167 4 12 4C9.78333 4 7.89583 4.77917 6.3375 6.3375C4.77917 7.89583 4 9.78333 4 12C4 14.2167 4.77917 16.1042 6.3375 17.6625C7.89583 19.2208 9.78333 20 12 20Z"/></svg>
+                            Timeline
+                          </li>
+                          <li class="planner-nav-item--updates">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 20C3.45 20 2.97917 19.8042 2.5875 19.4125C2.19583 19.0208 2 18.55 2 18V6C2 5.45 2.19583 4.97917 2.5875 4.5875C2.97917 4.19583 3.45 4 4 4H10L12 6H20C20.55 6 21.0208 6.19583 21.4125 6.5875C21.8042 6.97917 22 7.45 22 8V18C22 18.55 21.8042 19.0208 21.4125 19.4125C21.0208 19.8042 20.55 20 20 20H4ZM4 18H20V8H11.175L9.175 6H4V18Z"/></svg>
+                            Updates &amp; files
+                          </li>
+                        </ul>
+                        <div class="planner-sidebar-note">
+                          <strong>Next milestone</strong>
+                          Beta handoff · Jun 24
+                        </div>
+                      </aside>
+                    </div>
+
+                    <div class="planner-stage">
+                      <section class="planner-view planner-view--board">
+                        <div class="planner-view-heading">
+                          <div>
+                            <strong>Project board</strong>
+                            <span>12 open tasks across three stages</span>
+                          </div>
+                        </div>
+
+                        <div class="board-grid">
+                          <div class="board-column">
+                            <div class="board-column-heading"><span>Backlog</span><span class="board-count">3</span></div>
+                            <div class="task-card">
+                              <span class="task-card-title">Finalize launch checklist</span>
+                              <span class="task-card-meta"><span class="planner-avatar">SK</span><span>Jun 20</span></span>
+                            </div>
+                            <div class="task-card">
+                              <span class="task-card-title">Review analytics events</span>
+                              <span class="task-card-meta"><span class="planner-avatar">AM</span><span>Jun 21</span></span>
+                            </div>
+                          </div>
+
+                          <div class="board-column">
+                            <div class="board-column-heading"><span>In progress</span><span class="board-count">4</span></div>
+                            <div class="task-card is-active">
+                              <span class="task-card-title">Confirm onboarding copy</span>
+                              <span class="task-card-meta"><span class="planner-avatar">JL</span><span>Today</span><span class="task-priority">High</span></span>
+                            </div>
+                            <div class="task-card">
+                              <span class="task-card-title">Build pricing page</span>
+                              <span class="task-card-meta"><span class="planner-avatar">AM</span><span>Jun 22</span></span>
+                            </div>
+                          </div>
+
+                          <div class="board-column">
+                            <div class="board-column-heading"><span>Done</span><span class="board-count">5</span></div>
+                            <div class="task-card">
+                              <span class="task-card-title">Approve visual direction</span>
+                              <span class="task-card-meta"><span class="planner-avatar">SK</span><span>Completed</span></span>
+                            </div>
+                            <div class="task-card">
+                              <span class="task-card-title">Set launch milestones</span>
+                              <span class="task-card-meta"><span class="planner-avatar">JL</span><span>Completed</span></span>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="planner-view planner-view--timeline">
+                        <div class="planner-view-heading">
+                          <div>
+                            <strong>Milestone timeline</strong>
+                            <span>Every deadline in the same working view</span>
+                          </div>
+                          <span class="planner-view-chip">Beta handoff · Jun 24</span>
+                        </div>
+
+                        <div class="timeline-board">
+                          <div class="timeline-dates">
+                            <span>Workstream</span><span>Jun 17</span><span>Jun 20</span><span>Jun 24</span><span>Jun 27</span><span>Jul 01</span>
+                          </div>
+                          <div class="timeline-today"></div>
+                          <div class="timeline-row">
+                            <span>Research</span><div class="timeline-track"><span class="timeline-bar timeline-bar--research"></span></div>
+                          </div>
+                          <div class="timeline-row">
+                            <span>Build &amp; test</span><div class="timeline-track"><span class="timeline-bar timeline-bar--prototype"></span></div>
+                          </div>
+                          <div class="timeline-row">
+                            <span>Launch</span><div class="timeline-track"><span class="timeline-bar timeline-bar--launch"></span></div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="planner-view planner-view--updates">
+                        <div class="planner-view-heading">
+                          <div>
+                            <strong>Team updates</strong>
+                            <span>Discussion and files stay attached to the plan</span>
+                          </div>
+                          <span class="planner-view-chip">3 new updates</span>
+                        </div>
+
+                        <div class="updates-grid">
+                          <div class="activity-panel">
+                            <div class="panel-title">Latest activity <span>Today</span></div>
+                            <div class="activity-item">
+                              <span class="planner-avatar">AM</span>
+                              <span class="activity-copy"><strong>Ari moved “Confirm onboarding copy”</strong><span>Backlog → In progress</span></span>
+                              <span class="activity-time">9:42</span>
+                            </div>
+                            <div class="activity-item">
+                              <span class="planner-avatar">JL</span>
+                              <span class="activity-copy"><strong>Jon shared a project update</strong><span>Beta handoff remains on track for Jun 24.</span></span>
+                              <span class="activity-time">9:18</span>
+                            </div>
+                            <div class="activity-item">
+                              <span class="planner-avatar">SK</span>
+                              <span class="activity-copy"><strong>Sasha attached launch-notes.pdf</strong><span>Added to the launch milestone</span></span>
+                              <span class="activity-time">8:55</span>
+                            </div>
+                          </div>
+
+                          <div class="files-panel">
+                            <div class="panel-title">Shared files <span>6 files</span></div>
+                            <div class="file-card">
+                              <span class="file-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M9 18C8.45 18 7.97917 17.8042 7.5875 17.4125C7.19583 17.0208 7 16.55 7 16V4C7 3.45 7.19583 2.97917 7.5875 2.5875C7.97917 2.19583 8.45 2 9 2H18C18.55 2 19.0208 2.19583 19.4125 2.5875C19.8042 2.97917 20 3.45 20 4V16C20 16.55 19.8042 17.0208 19.4125 17.4125C19.0208 17.8042 18.55 18 18 18H9ZM9 16H18V4H9V16ZM5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V6H5V20H16V22H5Z"/></svg></span>
+                              <span><strong>launch-notes.pdf</strong><span>2.4 MB · just now</span></span>
+                            </div>
+                            <div class="file-card">
+                              <span class="file-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 20C3.45 20 2.97917 19.8042 2.5875 19.4125C2.19583 19.0208 2 18.55 2 18V6C2 5.45 2.19583 4.97917 2.5875 4.5875C2.97917 4.19583 3.45 4 4 4H10L12 6H20C20.55 6 21.0208 6.19583 21.4125 6.5875C21.8042 6.97917 22 7.45 22 8V18C22 18.55 21.8042 19.0208 21.4125 19.4125C21.0208 19.8042 20.55 20 20 20H4ZM4 18H20V8H11.175L9.175 6H4V18Z"/></svg></span>
+                              <span><strong>Brand assets</strong><span>14 items · updated today</span></span>
+                            </div>
+                            <div class="file-card">
+                              <span class="file-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M5 21C4.45 21 3.975 20.8083 3.575 20.425C3.19167 20.025 3 19.55 3 19V5C3 4.45 3.19167 3.98333 3.575 3.6C3.975 3.2 4.45 3 5 3H19C19.55 3 20.0167 3.2 20.4 3.6C20.8 3.98333 21 4.45 21 5V19C21 19.55 20.8 20.025 20.4 20.425C20.0167 20.8083 19.55 21 19 21H5ZM5 19H19V5H5V19ZM6 17H18L14.25 12L11.25 16L9 13L6 17ZM5 19V5V19Z"/></svg></span>
+                              <span><strong>Homepage-final.png</strong><span>1.8 MB · yesterday</span></span>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                  <div class="product-events" aria-hidden="true">
+                    <span class="product-event" data-event="0">Task moved to In progress</span>
+                    <span class="product-event" data-event="1">Next milestone brought into focus</span>
+                    <span class="product-event" data-event="2">Update and files shared with the project</span>
+                  </div>
+                </div>
+                <figcaption class="product-story-static">
+                  <div>
+                    <strong>Tasks and boards</strong>
+                    <span>Organize what moves next.</span>
+                  </div>
+                  <div>
+                    <strong>Deadlines</strong>
+                    <span>Keep milestones visible.</span>
+                  </div>
+                  <div>
+                    <strong>Updates and files</strong>
+                    <span>Keep project context together.</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="product" aria-labelledby="product-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 id="product-title">One plan instead of three tools.</h2>
+            <p>Most teams keep tasks in one app, status in a document, and deadlines in a spreadsheet. Keeplane keeps all three in the same plan, so nothing goes out of date.</p>
+          </div>
+
+          <div class="grid-3 grid-3--media reveal">
+            <article class="alpy-card" data-alpy-component="card" data-alpy-variant="default.oneCta.top" data-alpy-visual-variant="default" data-alpy-footer="oneCta" data-alpy-image-position="top">
+              <div class="alpy-card-image" data-alpy-slot="image" data-alpy-nested-component="component.image">
+                <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="16:9">
+                  <img data-alpy-image src="assets/keeplane-board.jpg" width="1536" height="1024" alt="Keeplane board for Website launch with tasks in Backlog and In progress." loading="lazy" decoding="async" />
+                </figure>
+              </div>
+              <div class="alpy-card-content" data-alpy-slot="content">
+                <header class="alpy-card-header" data-alpy-slot="header">
+                  <span class="alpy-card-title-row" data-alpy-slot="title-row"><h3 data-alpy-slot="title">Tasks your team actually updates</h3></span>
+                </header>
+                <div class="alpy-card-body" data-alpy-slot="body">
+                  <p data-alpy-slot="description">Move a card and everyone sees the new status. Nobody copies progress into a spreadsheet again.</p>
+                </div>
+                <footer class="alpy-card-footer" data-alpy-slot="footer">
+                  <a class="alpy-button" href="#features" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="md" data-alpy-icon-mode="none"><span data-alpy-slot="Label">Explore boards</span></a>
+                </footer>
+              </div>
+            </article>
+
+            <article class="alpy-card" data-alpy-component="card" data-alpy-variant="default.oneCta.top" data-alpy-visual-variant="default" data-alpy-footer="oneCta" data-alpy-image-position="top">
+              <div class="alpy-card-image" data-alpy-slot="image" data-alpy-nested-component="component.image">
+                <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="16:9">
+                  <img data-alpy-image src="assets/keeplane-timeline.jpg" width="1536" height="1024" alt="Keeplane timeline with Design and Build bars and the Beta handoff milestone on June 24." loading="lazy" decoding="async" />
+                </figure>
+              </div>
+              <div class="alpy-card-content" data-alpy-slot="content">
+                <header class="alpy-card-header" data-alpy-slot="header">
+                  <span class="alpy-card-title-row" data-alpy-slot="title-row"><h3 data-alpy-slot="title">Deadlines you can see coming</h3></span>
+                </header>
+                <div class="alpy-card-body" data-alpy-slot="body">
+                  <p data-alpy-slot="description">Milestones sit on one timeline, so a slipping task shows up while there is still time to move it.</p>
+                </div>
+                <footer class="alpy-card-footer" data-alpy-slot="footer">
+                  <a class="alpy-button" href="#features" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="md" data-alpy-icon-mode="none"><span data-alpy-slot="Label">Explore timelines</span></a>
+                </footer>
+              </div>
+            </article>
+
+            <article class="alpy-card" data-alpy-component="card" data-alpy-variant="default.oneCta.top" data-alpy-visual-variant="default" data-alpy-footer="oneCta" data-alpy-image-position="top">
+              <div class="alpy-card-image" data-alpy-slot="image" data-alpy-nested-component="component.image">
+                <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="16:9">
+                  <img data-alpy-image src="assets/keeplane-updates.jpg" width="1536" height="1024" alt="Keeplane updates thread with team posts and an attached launch notes file." loading="lazy" decoding="async" />
+                </figure>
+              </div>
+              <div class="alpy-card-content" data-alpy-slot="content">
+                <header class="alpy-card-header" data-alpy-slot="header">
+                  <span class="alpy-card-title-row" data-alpy-slot="title-row"><h3 data-alpy-slot="title">Status without the meeting</h3></span>
+                </header>
+                <div class="alpy-card-body" data-alpy-slot="body">
+                  <p data-alpy-slot="description">Updates, files, and decisions stay on the task, so the weekly check-in becomes a five-minute read.</p>
+                </div>
+                <footer class="alpy-card-footer" data-alpy-slot="footer">
+                  <a class="alpy-button" href="#features" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="md" data-alpy-icon-mode="none"><span data-alpy-slot="Label">Explore updates</span></a>
+                </footer>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="features" aria-labelledby="features-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 id="features-title">Everything a project needs, in one place.</h2>
+            <p>Six tools share the same data, so a change in one shows up everywhere else.</p>
+          </div>
+
+          <div class="grid-3 reveal">
+            <article class="card">
+              <span class="icon-well icon-well--brand-three" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.15 13H8V11H20.15L18.6 9.45L20 8L24 12L20 16L18.6 14.55L20.15 13ZM15 9V5H5V19H15V15H17V19C17 19.55 16.8042 20.0208 16.4125 20.4125C16.0208 20.8042 15.55 21 15 21H5C4.45 21 3.97917 20.8042 3.5875 20.4125C3.19583 20.0208 3 19.55 3 19V5C3 4.45 3.19583 3.97917 3.5875 3.5875C3.97917 3.19583 4.45 3 5 3H15C15.55 3 16.0208 3.19583 16.4125 3.5875C16.8042 3.97917 17 4.45 17 5V9H15Z"/></svg></span>
+              <h3>Boards</h3>
+              <p>Set your own stages, from Backlog to Done, and see every task at a glance.</p>
+            </article>
+            <article class="card">
+              <span class="icon-well icon-well--brand-one" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.3 16.7L16.7 15.3L13 11.6V7H11V12.4L15.3 16.7ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22ZM12 20C14.2167 20 16.1042 19.2208 17.6625 17.6625C19.2208 16.1042 20 14.2167 20 12C20 9.78333 19.2208 7.89583 17.6625 6.3375C16.1042 4.77917 14.2167 4 12 4C9.78333 4 7.89583 4.77917 6.3375 6.3375C4.77917 7.89583 4 9.78333 4 12C4 14.2167 4.77917 16.1042 6.3375 17.6625C7.89583 19.2208 9.78333 20 12 20Z"/></svg></span>
+              <h3>Timeline</h3>
+              <p>Plan milestones and see how one delay moves the work that depends on it.</p>
+            </article>
+            <article class="card">
+              <span class="icon-well icon-well--brand-two" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 14H18V12H6V14ZM6 11H18V9H6V11ZM6 8H18V6H6V8ZM22 22L18 18H4C3.45 18 2.97917 17.8042 2.5875 17.4125C2.19583 17.0208 2 16.55 2 16V4C2 3.45 2.19583 2.97917 2.5875 2.5875C2.97917 2.19583 3.45 2 4 2H20C20.55 2 21.0208 2.19583 21.4125 2.5875C21.8042 2.97917 22 3.45 22 4V22ZM4 16H18.85L20 17.125V4H4V16Z"/></svg></span>
+              <h3>Updates</h3>
+              <p>Post progress on the task itself, with mentions and replies in one thread.</p>
+            </article>
+            <article class="card">
+              <span class="icon-well icon-well--brand-three" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 20C3.45 20 2.97917 19.8042 2.5875 19.4125C2.19583 19.0208 2 18.55 2 18V6C2 5.45 2.19583 4.97917 2.5875 4.5875C2.97917 4.19583 3.45 4 4 4H10L12 6H20C20.55 6 21.0208 6.19583 21.4125 6.5875C21.8042 6.97917 22 7.45 22 8V18C22 18.55 21.8042 19.0208 21.4125 19.4125C21.0208 19.8042 20.55 20 20 20H4ZM4 18H20V8H11.175L9.175 6H4V18Z"/></svg></span>
+              <h3>Files</h3>
+              <p>Attach briefs, designs, and documents to the task they support.</p>
+            </article>
+            <article class="card">
+              <span class="icon-well icon-well--brand-one" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 12C10.9 12 9.95833 11.6083 9.175 10.825C8.39167 10.0417 8 9.1 8 8C8 6.9 8.39167 5.95833 9.175 5.175C9.95833 4.39167 10.9 4 12 4C13.1 4 14.0417 4.39167 14.825 5.175C15.6083 5.95833 16 6.9 16 8C16 9.1 15.6083 10.0417 14.825 10.825C14.0417 11.6083 13.1 12 12 12ZM4 20V17.2C4 16.6333 4.14583 16.1125 4.4375 15.6375C4.72917 15.1625 5.11667 14.8 5.6 14.55C6.63333 14.0333 7.68333 13.6458 8.75 13.3875C9.81667 13.1292 10.9 13 12 13C13.1 13 14.1833 13.1292 15.25 13.3875C16.3167 13.6458 17.3667 14.0333 18.4 14.55C18.8833 14.8 19.2708 15.1625 19.5625 15.6375C19.8542 16.1125 20 16.6333 20 17.2V20H4ZM6 18H18V17.2C18 17.0167 17.9542 16.85 17.8625 16.7C17.7708 16.55 17.65 16.4333 17.5 16.35C16.6 15.9 15.6917 15.5625 14.775 15.3375C13.8583 15.1125 12.9333 15 12 15C11.0667 15 10.1417 15.1125 9.225 15.3375C8.30833 15.5625 7.4 15.9 6.5 16.35C6.35 16.4333 6.22917 16.55 6.1375 16.7C6.04583 16.85 6 17.0167 6 17.2V18ZM12 10C12.55 10 13.0208 9.80417 13.4125 9.4125C13.8042 9.02083 14 8.55 14 8C14 7.45 13.8042 6.97917 13.4125 6.5875C13.0208 6.19583 12.55 6 12 6C11.45 6 10.9792 6.19583 10.5875 6.5875C10.1958 6.97917 10 7.45 10 8C10 8.55 10.1958 9.02083 10.5875 9.4125C10.9792 9.80417 11.45 10 12 10Z"/></svg></span>
+              <h3>Workload</h3>
+              <p>See who already has too much on their plate before you assign the next task.</p>
+            </article>
+            <article class="card">
+              <span class="icon-well icon-well--brand-two" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11 18H7C5.61667 18 4.4375 17.415 3.4625 16.245C2.4875 15.075 2 13.66 2 12C2 10.34 2.4875 8.925 3.4625 7.755C4.4375 6.585 5.61667 6 7 6H11V8.4H7C6.16667 8.4 5.45833 8.75 4.875 9.45C4.29167 10.15 4 11 4 12C4 13 4.29167 13.85 4.875 14.55C5.45833 15.25 6.16667 15.6 7 15.6H11V18ZM8 13.2V10.8H16V13.2H8ZM13 18V15.6H17C17.8333 15.6 18.5417 15.25 19.125 14.55C19.7083 13.85 20 13 20 12C20 11 19.7083 10.15 19.125 9.45C18.5417 8.75 17.8333 8.4 17 8.4H13V6H17C18.3833 6 19.5625 6.585 20.5375 7.755C21.5125 8.925 22 10.34 22 12C22 13.66 21.5125 15.075 20.5375 16.245C19.5625 17.415 18.3833 18 17 18H13Z"/></svg></span>
+              <h3>Integrations</h3>
+              <p>Connect your chat, calendar, and code tools so updates reach the plan on their own.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="teams" aria-labelledby="teams-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 id="teams-title">Made for teams that ship together.</h2>
+            <p>From a two-person studio to a product group with ten squads.</p>
+          </div>
+
+          <div class="grid-3 reveal">
+            <article class="alpy-card" data-alpy-component="card" data-alpy-variant="default.noCta.top" data-alpy-visual-variant="default" data-alpy-footer="noCta" data-alpy-image-position="top">
+              <div class="alpy-card-image" data-alpy-slot="image" data-alpy-nested-component="component.image">
+                <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="16:9">
+                  <img data-alpy-image src="assets/team-planning-session.jpg" width="1536" height="1024" alt="Three product teammates planning together around a laptop and paper task cards." loading="lazy" decoding="async" />
+                </figure>
+              </div>
+              <div class="alpy-card-content" data-alpy-slot="content">
+                <header class="alpy-card-header" data-alpy-slot="header">
+                  <span class="alpy-card-title-row" data-alpy-slot="title-row"><h3 data-alpy-slot="title">Product teams</h3></span>
+                </header>
+                <div class="alpy-card-body" data-alpy-slot="body">
+                  <p data-alpy-slot="description">Plan releases and keep design, engineering, and QA on the same board.</p>
+                </div>
+              </div>
+            </article>
+            <article class="alpy-card" data-alpy-component="card" data-alpy-variant="default.noCta.top" data-alpy-visual-variant="default" data-alpy-footer="noCta" data-alpy-image-position="top">
+              <div class="alpy-card-image" data-alpy-slot="image" data-alpy-nested-component="component.image">
+                <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="16:9">
+                  <img data-alpy-image src="assets/product-lead-planning.jpg" width="640" height="800" alt="A project lead reviewing a printed timeline at a dark studio desk." loading="lazy" decoding="async" />
+                </figure>
+              </div>
+              <div class="alpy-card-content" data-alpy-slot="content">
+                <header class="alpy-card-header" data-alpy-slot="header">
+                  <span class="alpy-card-title-row" data-alpy-slot="title-row"><h3 data-alpy-slot="title">Project leads</h3></span>
+                </header>
+                <div class="alpy-card-body" data-alpy-slot="body">
+                  <p data-alpy-slot="description">See every project’s status and next deadline without asking anyone for an update.</p>
+                </div>
+              </div>
+            </article>
+            <article class="alpy-card" data-alpy-component="card" data-alpy-variant="default.noCta.top" data-alpy-visual-variant="default" data-alpy-footer="noCta" data-alpy-image-position="top">
+              <div class="alpy-card-image" data-alpy-slot="image" data-alpy-nested-component="component.image">
+                <figure class="alpy-image" data-alpy-component="image" data-alpy-variant="16:9">
+                  <img data-alpy-image src="assets/agency-team-review.jpg" width="1536" height="1024" alt="Two agency teammates reviewing a client project board on a large monitor." loading="lazy" decoding="async" />
+                </figure>
+              </div>
+              <div class="alpy-card-content" data-alpy-slot="content">
+                <header class="alpy-card-header" data-alpy-slot="header">
+                  <span class="alpy-card-title-row" data-alpy-slot="title-row"><h3 data-alpy-slot="title">Agencies</h3></span>
+                </header>
+                <div class="alpy-card-body" data-alpy-slot="body">
+                  <p data-alpy-slot="description">Run client projects side by side and share progress without exporting slides.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="pricing" aria-labelledby="pricing-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 id="pricing-title">Simple pricing that grows with your team.</h2>
+            <p>Start free. Upgrade when you need more projects or more people.</p>
+          </div>
+
+          <div class="billing reveal">
+            <section class="alpy-tabs" data-alpy-component="tabs" data-alpy-component-id="component.tabs" data-alpy-variant="basic" data-alpy-orientation="horizontal" data-alpy-state="default" data-alpy-icon="false">
+              <div class="alpy-tabs-root" role="tablist" aria-orientation="horizontal" aria-label="Billing period" data-alpy-slot="root">
+                <button class="alpy-tab" type="button" role="tab" id="billing-annual" aria-selected="true" aria-controls="plans" tabindex="0" data-alpy-slot="tabs[0]" data-alpy-visual-state="selected" data-billing="annual">
+                  <span class="alpy-tab-content" data-alpy-slot="tabs[0].content"><span class="alpy-tab-label" data-alpy-slot="tabs[0].label">Billed yearly</span></span>
+                </button>
+                <button class="alpy-tab" type="button" role="tab" id="billing-monthly" aria-selected="false" aria-controls="plans" tabindex="-1" data-alpy-slot="tabs[1]" data-alpy-visual-state="inactive" data-billing="monthly">
+                  <span class="alpy-tab-content" data-alpy-slot="tabs[1].content"><span class="alpy-tab-label" data-alpy-slot="tabs[1].label">Billed monthly</span></span>
+                </button>
+              </div>
+            </section>
+            <span class="badge-save" data-alpy-component="badge" data-alpy-variant="brandTwo">Save 20% yearly</span>
+          </div>
+
+          <div class="grid-3 grid-3--plans reveal" id="plans" role="tabpanel" aria-labelledby="billing-annual">
+            <article class="card plan">
+              <h3>Free</h3>
+              <p class="plan-price">$0 <span>forever</span></p>
+              <p>For trying Keeplane on a real project.</p>
+              <ul>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.99387 20L2 12.4158L3.74847 10.5198L8.99387 16.2079L20.2515 4L22 5.89605L8.99387 20Z"/></svg><span>Up to 3 projects</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.99387 20L2 12.4158L3.74847 10.5198L8.99387 16.2079L20.2515 4L22 5.89605L8.99387 20Z"/></svg><span>Boards and timeline</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.99387 20L2 12.4158L3.74847 10.5198L8.99387 16.2079L20.2515 4L22 5.89605L8.99387 20Z"/></svg><span>Up to 5 members</span></li>
+              </ul>
+              <a class="alpy-button" href="/auth" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg" data-alpy-icon-mode="none"><span data-alpy-slot="Label">Start free</span></a>
+            </article>
+
+            <article class="card plan">
+              <h3>Team</h3>
+              <p class="plan-price"><span class="plan-amount" data-annual="$8" data-monthly="$10">$8</span> <span class="plan-period" data-annual="per user, per month, billed yearly" data-monthly="per user, per month">per user, per month, billed yearly</span></p>
+              <p>For teams running several projects at once.</p>
+              <ul>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.99387 20L2 12.4158L3.74847 10.5198L8.99387 16.2079L20.2515 4L22 5.89605L8.99387 20Z"/></svg><span>Unlimited projects</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.99387 20L2 12.4158L3.74847 10.5198L8.99387 16.2079L20.2515 4L22 5.89605L8.99387 20Z"/></svg><span>Updates and file sharing</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.99387 20L2 12.4158L3.74847 10.5198L8.99387 16.2079L20.2515 4L22 5.89605L8.99387 20Z"/></svg><span>Workload view</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.99387 20L2 12.4158L3.74847 10.5198L8.99387 16.2079L20.2515 4L22 5.89605L8.99387 20Z"/></svg><span>Integrations</span></li>
+              </ul>
+              <a class="alpy-button" href="/auth" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg" data-alpy-icon-mode="none"><span data-alpy-slot="Label">Start a 14-day trial</span></a>
+            </article>
+
+            <article class="card plan">
+              <h3>Business</h3>
+              <p class="plan-price">Custom <span>for 50+ members</span></p>
+              <p>For organizations with security and admin needs.</p>
+              <ul>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.99387 20L2 12.4158L3.74847 10.5198L8.99387 16.2079L20.2515 4L22 5.89605L8.99387 20Z"/></svg><span>Everything in Team</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.99387 20L2 12.4158L3.74847 10.5198L8.99387 16.2079L20.2515 4L22 5.89605L8.99387 20Z"/></svg><span>Single sign-on and audit log</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.99387 20L2 12.4158L3.74847 10.5198L8.99387 16.2079L20.2515 4L22 5.89605L8.99387 20Z"/></svg><span>Priority support</span></li>
+              </ul>
+              <a class="alpy-button" href="/auth" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg" data-alpy-icon-mode="none"><span data-alpy-slot="Label">Talk to sales</span></a>
+            </article>
+          </div>
+          <p class="plan-note">Prices in US dollars. Cancel any time.</p>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="resources" aria-labelledby="resources-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 id="resources-title">Get your first project running this week.</h2>
+            <p>Guides and templates written by the team that builds Keeplane.</p>
+          </div>
+
+          <div class="card resource-panel reveal">
+            <div class="resource-media">
+              <img src="assets/keeplane-product-mockup.jpg" alt="Keeplane workspace with a board, a timeline, shared files, and team updates" width="1200" height="750" loading="lazy" decoding="async" />
+            </div>
+            <div class="resource-list">
+              <article class="resource-item">
+                <h3><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M5 21V5C5 4.45 5.19583 3.97917 5.5875 3.5875C5.97917 3.19583 6.45 3 7 3H17C17.55 3 18.0208 3.19583 18.4125 3.5875C18.8042 3.97917 19 4.45 19 5V21L12 18L5 21ZM7 17.95L12 15.8L17 17.95V5H7V17.95Z"/></svg>Getting started guide</h3>
+                <p>Set up your workspace, invite your team, and plan your first project.</p>
+                <a class="alpy-button" href="#resources" data-alpy-component="button" data-alpy-variant="link" data-alpy-size="md" data-alpy-icon-mode="right"><span data-alpy-slot="Label">Read the guide</span><span data-alpy-slot="IconRight" data-alpy-icon-id="arrow_forward" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z"/></svg></span></a>
+              </article>
+              <article class="resource-item">
+                <h3><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M9 18C8.45 18 7.97917 17.8042 7.5875 17.4125C7.19583 17.0208 7 16.55 7 16V4C7 3.45 7.19583 2.97917 7.5875 2.5875C7.97917 2.19583 8.45 2 9 2H18C18.55 2 19.0208 2.19583 19.4125 2.5875C19.8042 2.97917 20 3.45 20 4V16C20 16.55 19.8042 17.0208 19.4125 17.4125C19.0208 17.8042 18.55 18 18 18H9ZM9 16H18V4H9V16ZM5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V6H5V20H16V22H5Z"/></svg>Project templates</h3>
+                <p>Start from ready plans for product launches, sprints, and client work.</p>
+                <a class="alpy-button" href="#resources" data-alpy-component="button" data-alpy-variant="link" data-alpy-size="md" data-alpy-icon-mode="right"><span data-alpy-slot="Label">Browse templates</span><span data-alpy-slot="IconRight" data-alpy-icon-id="arrow_forward" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z"/></svg></span></a>
+              </article>
+              <article class="resource-item">
+                <h3><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 19V17H6V10C6 8.61667 6.41667 7.39167 7.25 6.325C8.08333 5.24167 9.16667 4.53333 10.5 4.2V3.5C10.5 3.08333 10.6417 2.73333 10.925 2.45C11.225 2.15 11.5833 2 12 2C12.4167 2 12.7667 2.15 13.05 2.45C13.35 2.73333 13.5 3.08333 13.5 3.5V4.2C14.8333 4.53333 15.9167 5.24167 16.75 6.325C17.5833 7.39167 18 8.61667 18 10V17H20V19H4ZM12 22C11.45 22 10.975 21.8083 10.575 21.425C10.1917 21.025 10 20.55 10 20H14C14 20.55 13.8 21.025 13.4 21.425C13.0167 21.8083 12.55 22 12 22ZM8 17H16V10C16 8.9 15.6083 7.95833 14.825 7.175C14.0417 6.39167 13.1 6 12 6C10.9 6 9.95833 6.39167 9.175 7.175C8.39167 7.95833 8 8.9 8 10V17Z"/></svg>What’s new</h3>
+                <p>See the latest features and fixes, published every two weeks.</p>
+                <a class="alpy-button" href="#resources" data-alpy-component="button" data-alpy-variant="link" data-alpy-size="md" data-alpy-icon-mode="right"><span data-alpy-slot="Label">Read the changelog</span><span data-alpy-slot="IconRight" data-alpy-icon-id="arrow_forward" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z"/></svg></span></a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="questions" aria-labelledby="questions-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 id="questions-title">Questions teams ask before switching.</h2>
+          </div>
+
+          <div class="faq-card reveal">
+            <section class="alpy-accordion" aria-labelledby="questions-title" data-alpy-component="accordion" data-alpy-variant="basic" data-alpy-icon-mode="chevron" data-alpy-size="md" data-alpy-state="expanded">
+              <div class="alpy-accordion-items" data-alpy-slot="items">
+                <div class="alpy-accordion-item" data-alpy-accordion-item data-open="true">
+                  <button class="alpy-accordion-trigger" type="button" id="faq-item-1-trigger" aria-controls="faq-item-1-panel" aria-expanded="true" data-alpy-slot="trigger">
+                    <span class="alpy-accordion-label" data-alpy-slot="label">Can we import our current plan?</span>
+                    <span class="alpy-accordion-icon" aria-hidden="true" data-alpy-slot="chevron-icon" data-alpy-icon-id="chevron_up"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22 16.2251L20.225 18.0001L12 9.7751L3.775 18.0001L2 16.2251L12 6.2251L22 16.2251Z"/></svg></span>
+                  </button>
+                  <div class="alpy-accordion-panel" id="faq-item-1-panel" role="region" aria-labelledby="faq-item-1-trigger" data-alpy-slot="panel">
+                    <p>Yes. Import tasks from a CSV file or paste a list, and Keeplane turns each row into a card.</p>
+                  </div>
+                </div>
+                <div class="alpy-accordion-item" data-alpy-accordion-item data-open="false">
+                  <button class="alpy-accordion-trigger" type="button" id="faq-item-2-trigger" aria-controls="faq-item-2-panel" aria-expanded="false" data-alpy-slot="trigger">
+                    <span class="alpy-accordion-label" data-alpy-slot="label">How long does setup take?</span>
+                    <span class="alpy-accordion-icon" aria-hidden="true" data-alpy-slot="chevron-icon" data-alpy-icon-id="chevron_down"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M2 8.0001L3.775 6.2251L12 14.4501L20.225 6.2251L22 8.0001L12 18.0001L2 8.0001Z"/></svg></span>
+                  </button>
+                  <div class="alpy-accordion-panel" id="faq-item-2-panel" role="region" aria-labelledby="faq-item-2-trigger" data-alpy-slot="panel" hidden>
+                    <p>Most teams plan their first project in under an hour. Templates cover launches, sprints, and client work.</p>
+                  </div>
+                </div>
+                <div class="alpy-accordion-item" data-alpy-accordion-item data-open="false">
+                  <button class="alpy-accordion-trigger" type="button" id="faq-item-3-trigger" aria-controls="faq-item-3-panel" aria-expanded="false" data-alpy-slot="trigger">
+                    <span class="alpy-accordion-label" data-alpy-slot="label">Is there a free plan?</span>
+                    <span class="alpy-accordion-icon" aria-hidden="true" data-alpy-slot="chevron-icon" data-alpy-icon-id="chevron_down"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M2 8.0001L3.775 6.2251L12 14.4501L20.225 6.2251L22 8.0001L12 18.0001L2 8.0001Z"/></svg></span>
+                  </button>
+                  <div class="alpy-accordion-panel" id="faq-item-3-panel" role="region" aria-labelledby="faq-item-3-trigger" data-alpy-slot="panel" hidden>
+                    <p>Yes. The Free plan includes up to three projects and five members, with no time limit.</p>
+                  </div>
+                </div>
+                <div class="alpy-accordion-item" data-alpy-accordion-item data-open="false">
+                  <button class="alpy-accordion-trigger" type="button" id="faq-item-4-trigger" aria-controls="faq-item-4-panel" aria-expanded="false" data-alpy-slot="trigger">
+                    <span class="alpy-accordion-label" data-alpy-slot="label">Who can see our projects?</span>
+                    <span class="alpy-accordion-icon" aria-hidden="true" data-alpy-slot="chevron-icon" data-alpy-icon-id="chevron_down"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M2 8.0001L3.775 6.2251L12 14.4501L20.225 6.2251L22 8.0001L12 18.0001L2 8.0001Z"/></svg></span>
+                  </button>
+                  <div class="alpy-accordion-panel" id="faq-item-4-panel" role="region" aria-labelledby="faq-item-4-trigger" data-alpy-slot="panel" hidden>
+                    <p>Only the people you invite. The Business plan adds single sign-on and an audit log.</p>
+                  </div>
+                </div>
+                <div class="alpy-accordion-item" data-alpy-accordion-item data-open="false">
+                  <button class="alpy-accordion-trigger" type="button" id="faq-item-5-trigger" aria-controls="faq-item-5-panel" aria-expanded="false" data-alpy-slot="trigger">
+                    <span class="alpy-accordion-label" data-alpy-slot="label">Can we cancel at any time?</span>
+                    <span class="alpy-accordion-icon" aria-hidden="true" data-alpy-slot="chevron-icon" data-alpy-icon-id="chevron_down"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M2 8.0001L3.775 6.2251L12 14.4501L20.225 6.2251L22 8.0001L12 18.0001L2 8.0001Z"/></svg></span>
+                  </button>
+                  <div class="alpy-accordion-panel" id="faq-item-5-panel" role="region" aria-labelledby="faq-item-5-trigger" data-alpy-slot="panel" hidden>
+                    <p>Yes. Monthly plans end at the next billing date, and you can export all of your data first.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <p class="faq-more">Still deciding? <a href="/auth">Talk to our team</a>.</p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="closing-panel reveal">
+            <h2 id="cta-title">Plan your next project in Keeplane.</h2>
+            <p>Free for up to three projects. No credit card required.</p>
+            <a class="alpy-button" href="/auth" data-alpy-component="button" data-alpy-variant="primary" data-alpy-size="lg" data-alpy-icon-mode="right"><span data-alpy-slot="Label">Start planning free</span><span data-alpy-slot="IconRight" data-alpy-icon-id="arrow_forward" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.2188 13.25H2V10.75H17.2188L10.2188 3.75L12 2L22 12L12 22L10.2188 20.25L17.2188 13.25Z"/></svg></span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a class="brand" href="#top" aria-label="Keeplane home">
+              <span class="brand-mark" aria-hidden="true"></span>
+              <span>Keeplane</span>
+            </a>
+            <p>Project planning for teams that want fewer status meetings and no surprise deadlines.</p>
+          </div>
+
+          <nav aria-label="Product links">
+            <h3>Product</h3>
+            <a href="#product">Overview</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+          </nav>
+
+          <nav aria-label="Resource links">
+            <h3>Resources</h3>
+            <a href="#resources">Getting started</a>
+            <a href="#resources">Templates</a>
+            <a href="#questions">Questions</a>
+          </nav>
+
+          <nav aria-label="Account links">
+            <h3>Account</h3>
+            <a href="/auth">Sign in</a>
+            <a href="/auth">Start free</a>
+          </nav>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© <span id="year">2026</span> Keeplane.</p>
+          <nav aria-label="Legal links">
+            <a href="#top">Privacy</a>
+            <a href="#top">Terms</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.documentElement.classList.add("motion-ready");
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const mobileMenu = document.querySelector("#mobile-menu");
+
+      const closeMenu = () => {
+        if (!menuToggle || !mobileMenu) return;
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        mobileMenu.dataset.open = "false";
+      };
+
+      menuToggle?.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+        mobileMenu.dataset.open = String(!isOpen);
+      });
+
+      mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
+      });
+
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealItems = document.querySelectorAll(".reveal");
+
+      if (reducedMotion || !("IntersectionObserver" in window)) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+      } else {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { rootMargin: "0px 0px -48px", threshold: 0.08 },
+        );
+
+        revealItems.forEach((item) => observer.observe(item));
+      }
+
+      const productStory = document.querySelector("[data-product-story]");
+      const productFlow = document.querySelector("[data-product-flow]");
+      const productMockup = productFlow?.querySelector(".hero-product");
+      const staticStoryLayout = window.matchMedia("(max-width: 960px), (max-height: 720px)");
+      let storyFrame = 0;
+      let currentStoryState = -1;
+
+      const setStoryState = (nextState) => {
+        if (!productStory || nextState === currentStoryState) return;
+        currentStoryState = nextState;
+        productStory.dataset.storyState = String(nextState);
+      };
+
+      const updateProductStory = () => {
+        storyFrame = 0;
+        if (!productStory || !productFlow || !productMockup) return;
+
+        if (reducedMotion || staticStoryLayout.matches) {
+          document.documentElement.classList.remove("product-flow-enabled");
+          productMockup.style.removeProperty("--product-flow-y");
+          setStoryState(0);
+          return;
+        }
+
+        document.documentElement.classList.add("product-flow-enabled");
+
+        const flowBounds = productFlow.getBoundingClientRect();
+        const stickyOffset = 96;
+        const scrollDistance = Math.max(productFlow.offsetHeight - productMockup.offsetHeight, 1);
+        const progress = Math.min(Math.max((stickyOffset - flowBounds.top) / scrollDistance, 0), 1);
+        const nextState = progress < 0.34 ? 0 : progress < 0.67 ? 1 : 2;
+        const verticalTravel = 24 - progress * 48;
+
+        productMockup.style.setProperty("--product-flow-y", `${verticalTravel.toFixed(2)}px`);
+        setStoryState(nextState);
+      };
+
+      const requestProductStoryUpdate = () => {
+        if (storyFrame) return;
+        storyFrame = window.requestAnimationFrame(updateProductStory);
+      };
+
+      if (productStory && productFlow && productMockup) {
+        updateProductStory();
+        if (!reducedMotion) {
+          window.addEventListener("scroll", requestProductStoryUpdate, { passive: true });
+          window.addEventListener("resize", requestProductStoryUpdate);
+          staticStoryLayout.addEventListener?.("change", requestProductStoryUpdate);
+        }
+      }
+
+
+      const billingTabs = [...document.querySelectorAll("[data-billing]")];
+      const plans = document.querySelector("#plans");
+      const setBilling = (period) => {
+        billingTabs.forEach((tab) => {
+          const selected = tab.dataset.billing === period;
+          tab.setAttribute("aria-selected", String(selected));
+          tab.tabIndex = selected ? 0 : -1;
+          tab.dataset.alpyVisualState = selected ? "selected" : "inactive";
+          if (selected) plans?.setAttribute("aria-labelledby", tab.id);
+        });
+        document.querySelectorAll("[data-annual][data-monthly]").forEach((element) => {
+          element.textContent = element.dataset[period];
+        });
+      };
+      billingTabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => setBilling(tab.dataset.billing));
+        tab.addEventListener("keydown", (event) => {
+          const moves = { ArrowRight: index + 1, ArrowLeft: index - 1, Home: 0, End: billingTabs.length - 1 };
+          if (!(event.key in moves)) return;
+          event.preventDefault();
+          const next = billingTabs[(moves[event.key] + billingTabs.length) % billingTabs.length];
+          next.focus();
+          setBilling(next.dataset.billing);
+        });
+      });
+
+      const chevrons = { chevron_down: "M2 8.0001L3.775 6.2251L12 14.4501L20.225 6.2251L22 8.0001L12 18.0001L2 8.0001Z", chevron_up: "M22 16.2251L20.225 18.0001L12 9.7751L3.775 18.0001L2 16.2251L12 6.2251L22 16.2251Z" };
+      document.querySelectorAll("[data-alpy-component='accordion']").forEach((accordion) => {
+        const items = [...accordion.querySelectorAll("[data-alpy-accordion-item]")];
+        const setOpen = (item, open) => {
+          const icon = item.querySelector("[data-alpy-slot='chevron-icon']");
+          const iconId = open ? "chevron_up" : "chevron_down";
+          item.dataset.open = String(open);
+          item.querySelector("[data-alpy-slot='trigger']").setAttribute("aria-expanded", String(open));
+          item.querySelector("[data-alpy-slot='panel']").hidden = !open;
+          icon.dataset.alpyIconId = iconId;
+          icon.querySelector("path").setAttribute("d", chevrons[iconId]);
+        };
+        items.forEach((item) => {
+          item.querySelector("[data-alpy-slot='trigger']").addEventListener("click", () => {
+            const opening = item.dataset.open !== "true";
+            items.forEach((other) => setOpen(other, opening && other === item));
+          });
+        });
+      });
+
+      document.querySelector("#year").textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+</html>
